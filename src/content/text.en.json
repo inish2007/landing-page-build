@@ -152,23 +152,28 @@
         },
         {
           "tag": "P",
-          "text": "HOME IS WHERE THE ART ISW MAGAZINE"
+          "text": "HOME IS WHERE THE ART ISW MAGAZINE",
+          "highlight": "press-marker"
         },
         {
           "tag": "P",
-          "text": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECTARCHITECTURAL DIGEST"
+          "text": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECTARCHITECTURAL DIGEST",
+          "highlight": "press-marker"
         },
         {
           "tag": "P",
-          "text": "FOUR QUESTIONS FOR LANA GOMEZGULFSHORE LIFE"
+          "text": "FOUR QUESTIONS FOR LANA GOMEZGULFSHORE LIFE",
+          "highlight": "press-marker"
         },
         {
           "tag": "P",
-          "text": "ARTIST LANA GOMEZ USES LIFE AS HER CANVASJEWISH JOURNAL"
+          "text": "ARTIST LANA GOMEZ USES LIFE AS HER CANVASJEWISH JOURNAL",
+          "highlight": "press-marker"
         },
         {
           "tag": "P",
-          "text": "ART BASEL MIAMI RECAPHUFF POST STYLE"
+          "text": "ART BASEL MIAMI RECAPHUFF POST STYLE",
+          "highlight": "press-marker"
         }
       ],
       "links": [

@@ -10,13 +10,14 @@ import SiteIcon from './SiteIcon.astro';
 const { page } = Astro.props;
 const copy = getCopy<EditorialCopy>(page.textNamespace!);
 const goldTitle = page.textNamespace?.startsWith('editorial.') && page.textNamespace !== 'editorial.home-1';
+const proseGroups = copy.blocks.reduce<{marked:boolean;blocks:typeof copy.blocks}[]>((groups,block)=>{const marked=block.tag==='P'&&block.highlight==='press-marker';const last=groups.at(-1);if(last?.marked===marked)last.blocks.push(block);else groups.push({marked,blocks:[block]});return groups;},[]);
 const imageKeys = page.imageKeys || [];
 ---
 <article class="editorial-page page-shell">
   <header class="page-heading" data-motion="reveal"><h1 data-accent={goldTitle ? "outline" : undefined}>{goldTitle ? <GoldenOutlineText text={copy.title} /> : copy.title}</h1></header>
   <div class="editorial-grid">
     {(page.imageCount || 0) > 0 && <ResponsiveImage imageKey={imageKeys[0] || "homeHero"} aspectRatio="4 / 5" eager />}
-    <div class="editorial-prose" data-motion-group>{copy.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
+    <div class="editorial-prose" data-motion-group>{proseGroups.map(group=>group.marked ? <div class="press-marker-group" data-motion="press-marker"><svg class="press-marker-strokes" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g><path pathLength="1" d="M 35 190 C 130 130 270 153 420 35"/><path pathLength="1" d="M 40 345 C 220 240 370 273 645 120"/><path pathLength="1" d="M 260 465 C 450 366 640 310 865 205"/></g></svg>{group.blocks.map(block=><div class="editorial-block"><p>{block.text}</p></div>)}</div> : group.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>))}</div>
   </div>
   {page.mediaKey && <AnimatedMedia mediaKey={page.mediaKey} />}
   {copy.links && copy.links.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a class="playful-link" href={link.href}>{link.label}<span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
