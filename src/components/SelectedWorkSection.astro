@@ -17,10 +17,10 @@ const archive = getNavigation('footer').find(link => link.id === 'archived');
   <ResponsiveImage imageKey={imageKey} aspectRatio="2 / 1" />
   <div class="collaboration-copy"><h2 id={id + '-title'}>{copy.heading}</h2><div class="collaboration-links">{navigation.collaborations.map(link => <a class="pill-link" href={link.path}>{getCopy(link.labelKey)}</a>)}</div></div>
 </section> : <section id={id} class="home-collage section-shell" aria-label={copy.heading}>
-  <a class="collage-about" href={about.path}><ResponsiveImage imageKey="aboutPreview" aspectRatio="4 / 3" /><h2>{copy.aboutLabel}<span aria-hidden="true"> →</span></h2></a>
-  <a class="collage-press" href={press.path}><ResponsiveImage imageKey="pressPreview" aspectRatio="2 / 3" /><h2>{copy.pressLabel}<span aria-hidden="true"> →</span></h2></a>
+  <a class="collage-about" href={about.path}><ResponsiveImage sizes="(max-width: 47.999rem) 100vw, 66vw" imageKey="aboutPreview" aspectRatio="4 / 3" /><h2>{copy.aboutLabel}<span aria-hidden="true"> →</span></h2></a>
+  <a class="collage-press" href={press.path}><ResponsiveImage sizes="30vw" imageKey="pressPreview" aspectRatio="2 / 3" /><h2>{copy.pressLabel}<span aria-hidden="true"> →</span></h2></a>
   <blockquote class="collage-quote"><p><FormattedText segments={copy.quoteSegments} /></p></blockquote>
-  <a class="collage-archive" href={archive.path}><ResponsiveImage imageKey="archivePreview" aspectRatio="2 / 3" /><h2>{copy.archivedLabel}<span aria-hidden="true"> →</span></h2></a>
-  <ResponsiveImage imageKey="artworkDetail" aspectRatio="1 / 1" class="collage-artwork" />
-  <a class="collage-contact" href={contact.path}><ResponsiveImage imageKey="contactPreview" aspectRatio="3 / 2" /><h2>{copy.contactLabel}<span aria-hidden="true"> →</span></h2></a>
+  <a class="collage-archive" href={archive.path}><ResponsiveImage sizes="30vw" imageKey="archivePreview" aspectRatio="2 / 3" /><h2>{copy.archivedLabel}<span aria-hidden="true"> →</span></h2></a>
+  <ResponsiveImage sizes="40vw" imageKey="artworkDetail" aspectRatio="1 / 1" class="collage-artwork" />
+  <a class="collage-contact" href={contact.path}><ResponsiveImage sizes="(max-width: 47.999rem) 85vw, 50vw" imageKey="contactPreview" aspectRatio="3 / 2" /><h2>{copy.contactLabel}<span aria-hidden="true"> →</span></h2></a>
 </section>}

@@ -1,3 +1,7 @@
+## Current authoritative stop point — Stage 06
+
+User supplied artist content replaces the earlier Aura architecture plan. Stages 05 and 06 are complete; do not proceed to Stage 07 without a new request. Only / is implemented. Stage 05: d7d5ccf. Production build and two browser suites pass. Details: changes/005-homepage-desktop.md and changes/006-responsive-homepage.md. Historical notes below may describe superseded content.
+
 # Build Progress: Editable Astro Portfolio Website
 
 ## Project Scope & Foundations
@@ -15,8 +19,8 @@
 | 02 | Astro Scaffolding | `chore: scaffold Astro HTML CSS and JavaScript project` | Complete | astro.config.mjs, SiteLayout.astro, minimal index.astro, dev/build verify |
 | 03 | Content & Design Tokens | `feat: add editable content assets and design tokens` | Complete | 5 JSON schemas, tokens.css, fonts.css, global.css, local assets, validator |
 | 04 | Shared Navigation | `feat: reproduce shared header footer and navigation` | Complete | Header, MobileDrawer, Footer, accessible native dialog and responsive chrome |
-| 05 | Desktop Homepage | `feat: reproduce homepage desktop sections` | Planned | Hero, Statement, SelectedWork, ContactCta, ResponsiveImage |
-| 06 | Responsive & Motion | `feat: match responsive homepage and motion` | Planned | Mobile viewports, fluid typography, motion tokens, responsive test suite |
+| 05 | Desktop Homepage | `feat: reproduce homepage desktop sections` | Complete | Artist homepage sections, centralized supplied content, local brush branding |
+| 06 | Responsive & Motion | `feat: match responsive homepage and motion` | Complete | Six viewports, crops, local derivatives, reduced motion and browser suite |
 | 07 | About & Process | `feat: add about and process pages` | Planned | about.astro, process.astro, ProcessStep.astro, editorial layouts |
 | 08 | Work Gallery & Lightbox | `feat: add editable gallery pages` | Planned | work.astro, Gallery.astro, Lightbox.astro, artworks.json, modal focus trap |
 | 09 | Supporting Pages | `feat: add supporting feature pages` | Planned | colophon.astro, privacy.astro, legal/notice routes, complete footer links |

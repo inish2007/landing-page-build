@@ -7,9 +7,23 @@
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
-      "mobile": "50% 50%"
+      "mobile": "50% 45%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/home-hero-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/home-hero-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/home-hero-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "homeIntroSide": {
     "src": "/images/artist-content/home-intro-side.jpg",
@@ -21,7 +35,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/home-intro-side-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/home-intro-side-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/home-intro-side-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "collaborationBackdrop": {
     "src": "/images/artist-content/collaboration-backdrop.jpg",
@@ -31,9 +59,23 @@
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
-      "mobile": "50% 50%"
+      "mobile": "42% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/collaboration-backdrop-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/collaboration-backdrop-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/collaboration-backdrop-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "aboutPreview": {
     "src": "/images/artist-content/about-preview.jpg",
@@ -45,7 +87,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/about-preview-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/about-preview-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/about-preview-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "pressPreview": {
     "src": "/images/artist-content/press-preview.jpg",
@@ -57,7 +113,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/press-preview-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/press-preview-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/press-preview-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "archivePreview": {
     "src": "/images/artist-content/archive-preview.png",
@@ -69,7 +139,13 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/archive-preview-480.webp",
+        "width": 480
+      }
+    ]
   },
   "artworkDetail": {
     "src": "/images/artist-content/artwork-detail.png",
@@ -81,7 +157,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/artwork-detail-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/artwork-detail-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/artwork-detail-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "contactPreview": {
     "src": "/images/artist-content/contact-preview.jpg",
@@ -93,7 +183,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/contact-preview-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/contact-preview-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/contact-preview-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "studioWide": {
     "src": "/images/artist-content/studio-wide.jpg",
@@ -105,7 +209,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/studio-wide-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/studio-wide-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/studio-wide-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social1": {
     "src": "/images/artist-content/social1.jpg",
@@ -117,7 +235,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social1-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social1-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social2": {
     "src": "/images/artist-content/social2.jpg",
@@ -129,7 +261,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social2-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social2-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social3": {
     "src": "/images/artist-content/social3.jpg",
@@ -141,7 +287,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social3-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social3-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social4": {
     "src": "/images/artist-content/social4.jpg",
@@ -153,7 +313,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social4-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social4-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social4-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social5": {
     "src": "/images/artist-content/social5.jpg",
@@ -165,7 +339,21 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social5-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social5-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social5-1600.webp",
+        "width": 1600
+      }
+    ]
   },
   "social6": {
     "src": "/images/artist-content/social6.jpg",
@@ -177,6 +365,20 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
+    "sources": [
+      {
+        "src": "/images/artist-content/social6-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/artist-content/social6-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/artist-content/social6-1600.webp",
+        "width": 1600
+      }
+    ]
   }
 }

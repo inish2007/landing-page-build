@@ -14,7 +14,7 @@ async function verifyNavigation() {
       await page.goto('http://127.0.0.1:4321/');
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('header').count(), 1);
-      assert.equal(await page.locator('footer nav a').count(), 6);
+      assert.equal(await page.locator('footer nav a[href^="/"]').count(), 6);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       const opener = page.locator('[data-menu-open]');
       assert.equal(await opener.isVisible(), width < 1024);

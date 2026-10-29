@@ -90,3 +90,14 @@ Stage 04 updates: SiteLayout now imports local shared styles/fonts, Header/Foote
 | ResponsiveImage | src/components/ResponsiveImage.astro | imageKey, aspectRatio, eager, class; local image with independent crop/ratio | Homepage sections; eager hero/lazy others | build |
 
 Index now maps pages.home.sections to four supported components. Footer now groups centralized reference navigation and preserves original credit. validateChromeKeys retains its signature; required key list now covers existing chrome, dropping unused future contact requirements. Other validator functions unchanged. No runtime functions added or removed in Stage 05.
+
+## Stage 06 registry
+
+| Symbol | File | Inputs/outputs and consumers | Side effects/checks |
+|---|---|---|---|
+| generateResponsiveImages | scripts/generate-responsive-images.mjs | No args; Promise<void>; script entry; reads images.json and selected source files | Writes quality-82 WebP derivatives and sources metadata; generation/build verified |
+| launchBrowser | tests/test-helper.mjs | No args; Promise<Browser>; responsive test | Launches headless installed Edge; caller closes |
+| decodeImages | tests/test-helper.mjs | Page; Promise<void>; responsive test | Scrolls to trigger lazy loads, decodes images, resets scroll/focus before captures |
+| verifyResponsiveHome | tests/responsive.test.mjs | No args; Promise<void>; node:test | Opens/closes browser, blocks external requests, checks six viewports and writes ignored captures |
+
+Changed verifyNavigation in tests/navigation.test.mjs: footer count now counts six internal route links separately from the two social links; interaction behavior/assertions preserved. Changed ResponsiveImage: optional sizes prop and metadata-driven srcset; asset dimensions and ratio stay independent. StatementSection/SelectedWorkSection/ContactCtaSection now pass presentation-specific image sizes. Index imports home-responsive.css. No functions removed/renamed.

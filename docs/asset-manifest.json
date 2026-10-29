@@ -192,20 +192,26 @@
   ],
   "referenceAssets": [
     {
-      "id": "brandLogo",
-      "localPath": "/images/artist-content/brand-logo.png",
-      "source": "User-supplied local snapshot",
-      "license": "Not verified; original owners retain rights",
-      "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
-    },
-    {
       "id": "homeHero",
       "localPath": "/images/artist-content/home-hero.webp",
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/home-hero-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/home-hero-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/home-hero-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "homeIntroSide",
@@ -213,7 +219,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/home-intro-side-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/home-intro-side-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/home-intro-side-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "collaborationBackdrop",
@@ -221,7 +241,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/collaboration-backdrop-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/collaboration-backdrop-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/collaboration-backdrop-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "aboutPreview",
@@ -229,7 +263,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/about-preview-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/about-preview-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/about-preview-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "pressPreview",
@@ -237,7 +285,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/press-preview-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/press-preview-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/press-preview-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "archivePreview",
@@ -245,7 +307,13 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/archive-preview-480.webp",
+          "width": 480
+        }
+      ]
     },
     {
       "id": "artworkDetail",
@@ -253,7 +321,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/artwork-detail-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/artwork-detail-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/artwork-detail-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "contactPreview",
@@ -261,7 +343,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/contact-preview-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/contact-preview-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/contact-preview-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "studioWide",
@@ -269,7 +365,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/studio-wide-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/studio-wide-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/studio-wide-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social1",
@@ -277,7 +387,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social1-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social1-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social1-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social2",
@@ -285,7 +409,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social2-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social2-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social2-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social3",
@@ -293,7 +431,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social3-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social3-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social3-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social4",
@@ -301,7 +453,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social4-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social4-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social4-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social5",
@@ -309,7 +475,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social5-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social5-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social5-1600.webp",
+          "width": 1600
+        }
+      ]
     },
     {
       "id": "social6",
@@ -317,15 +497,21 @@
       "source": "User-supplied local snapshot",
       "license": "Not verified; original owners retain rights",
       "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
-    },
-    {
-      "id": "footerLogo",
-      "localPath": "/images/artist-content/footer-logo.png",
-      "source": "User-supplied local snapshot",
-      "license": "Not verified; original owners retain rights",
-      "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed only"
+      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
+      "derivatives": [
+        {
+          "src": "/images/artist-content/social6-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/artist-content/social6-960.webp",
+          "width": 960
+        },
+        {
+          "src": "/images/artist-content/social6-1600.webp",
+          "width": 1600
+        }
+      ]
     }
   ]
 }

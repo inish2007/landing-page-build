@@ -1,3 +1,7 @@
+## Current scope update — 29 October 2026
+
+The user replaced the architecture-studio direction with their supplied artist homepage content for this temporary local build. Preserve its copy, image sequence, editorial collage and credits; retain centralized editable content and use licensed local Caveat Brush for provisional brand lettering only. The earlier neutral architecture examples below are superseded. Stop after Stage 06; supporting routes await later work. No publication or push. See docs/IMPLEMENTATION_PLAN.md.
+
 # Design specification — Landing Page Build
 
 Status: authored implementation direction. Numerical values below are starting tokens, not measured proof of a finished design.
