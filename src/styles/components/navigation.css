@@ -64,3 +64,22 @@ main { flex: 1; }
 .desktop-nav a[aria-current="page"]:hover { text-underline-offset: .4em; }
 
 .desktop-nav, .mobile-drawer nav { font-weight: var(--font-weight-navigation); }
+
+/* The wrapper reserves scaled width; larger type reserves scaled multiline height. */
+.brand .wordmark-box,.footer-brand .wordmark-box,#drawer-title .wordmark-box { display: block; font-style: normal; width: calc(var(--text-brand) * 3.3 * var(--wordmark-width-scale)); max-width: none; flex: none; }
+.brand .wordmark-text,.footer-brand .wordmark-text,#drawer-title .wordmark-text { display: block; font-size: calc(var(--text-brand) * var(--wordmark-height-scale)); line-height: var(--line-brand); width: 3.3em; max-width: none; transform: scaleX(var(--wordmark-x-compensation)); transform-origin: left top; }
+.footer-brand:has(.wordmark-box) { max-width: none; width: fit-content; }
+/* Native decorations stay under text fragments, never the full nav column. */
+html[data-motion-enabled] a.playful-link::before { content: none !important; }
+:is(#top,#main-content,#mobile-drawer,.site-footer) a:is(.playful-link,.text-link), .mobile-drawer nav a { text-decoration-thickness: var(--press-link-line); text-underline-offset: .3em; transition: text-decoration-thickness var(--press-link-duration) ease; }
+:is(#top,#main-content,#mobile-drawer,.site-footer) a:is(.playful-link,.text-link):is(:hover,:focus-visible),:is(#mobile-drawer) nav a:is(:hover,:focus-visible) { text-decoration-line: underline; text-decoration-thickness: var(--press-link-line-hover); }
+html[data-motion-enabled] .desktop-nav a[aria-current="page"] { text-decoration-line: underline; text-underline-offset: .4em; }
+html[data-motion-enabled] :is(.brand,.footer-brand,.footer-social a,.pill-link,.home-collage a):is(:hover,:focus-visible) { text-decoration: none; }
+html[data-motion-enabled] .small-link:is(:hover,:focus-visible) { text-decoration: none; }
+.process-underline path { transition: stroke-width var(--press-link-duration) ease; }
+.small-link:is(:hover,:focus-visible) .process-underline path { stroke-width: var(--press-link-line-hover); }
+@media (prefers-reduced-motion: reduce) { .process-underline path,html[data-motion-enabled] a { transition: none; } }
+
+.wordmark-text { overflow-wrap: anywhere; }
+
+html[data-motion-enabled="false"] a,html[data-motion-enabled="false"] .process-underline path { transition: none; }

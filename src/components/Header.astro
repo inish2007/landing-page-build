@@ -4,13 +4,14 @@ import { getBrandName, getCopy, getNavigation } from '../utils/content';
 import GoldenOutlineText from './GoldenOutlineText.astro';
 import site from '../config/site';
 import SiteIcon from './SiteIcon.astro';
+import BrandWordmark from './BrandWordmark.astro';
 const logo = site.branding.logo;
 const current = Astro.url.pathname;
 ---
 <header class="site-header" id="top">
   <a class="brand" data-accent="shine" href={site.links.home} aria-label={getBrandName()}>
     {logo?.src && <img src={logo.src} alt="" width={logo.width} height={logo.height} />}
-    <span class="gold-shine">{getBrandName()}</span>
+    <BrandWordmark />
   </a>
   <nav class="desktop-nav" aria-label={getCopy('common.primaryNavigation')}>
     {getNavigation('header').map(link => <a data-accent="outline" class="playful-link" href={link.path} aria-current={current === link.path ? 'page' : undefined}><GoldenOutlineText text={getCopy(link.labelKey)} /></a>)}

@@ -21,6 +21,7 @@ export const site = {
   pages: pages satisfies Record<string,PageConfiguration>,
   artworks: artworks satisfies Artwork[],
   branding: {
+    wordmarkScale:{width:1.3,height:1.55},
     // null preserves the current text wordmark. To enable an image, provide its metadata here.
     logo: null as ImageAsset | null,
     favicon: null as string | null,

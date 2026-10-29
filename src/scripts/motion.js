@@ -2,15 +2,16 @@ import {createPhotoReveals} from './photo-reveals.js';
 import {readMotionSettings} from './motion-settings.js';
 import {chooseSocialDropDirection} from './social-drop.js';
 let disposeCurrent;
+let disposePhotos;
 let socialDirection;
 /** Own one reveal observer, replayable SVG strokes and abortable lifecycle handlers. Base DOM is complete and visible. @returns {void} */
 export function initMotion(){
-  disposeCurrent?.();const settings=readMotionSettings();if(!settings.enabled)return;
+  disposeCurrent?.();disposePhotos?.();const settings=readMotionSettings();if(!settings.enabled)return;
   const canReveal=('IntersectionObserver' in window)&&Boolean(Element.prototype.animate);
   const preference=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
   if(canReveal&&settings.playful)document.querySelector('.collage-about h2')?.setAttribute('data-about-glow','');
   const events=new AbortController(),seen=new WeakSet(),accentSeen=new WeakSet(),active=new Map();
-  const photos=createPhotoReveals(settings,preference,events.signal,protectedTarget);
+  const photos=createPhotoReveals(settings,preference,events.signal,protectedTarget);disposePhotos=photos.dispose;
   const strip=document.querySelector('[data-motion="social-drop"]');
   const socialEnabled=Boolean(strip&&canReveal&&settings.playful&&settings.socialDrop.enabled&&!preference.matches);
   if(socialEnabled&&socialDirection===undefined){try{socialDirection=settings.socialDrop.alternateOnLoad?chooseSocialDropDirection(window.localStorage,true,window.performance?.getEntriesByType?.('navigation')?.[0]?.type!=='back_forward'):'forward';}catch{socialDirection='forward';}}
