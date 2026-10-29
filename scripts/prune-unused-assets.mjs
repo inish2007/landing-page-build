@@ -4,6 +4,7 @@ import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} fro
 /** Filter dist/images to active configured image paths. @returns {number} Removed file count; deletes only resolved files inside dist/images. */
 export function pruneUnusedAssets(){
   const root=path.resolve('dist/images');const images=site.images;const keep=new Set();for(const image of Object.values(images)){keep.add(path.resolve('dist'+image.src));for(const source of image.sources||[])keep.add(path.resolve('dist'+source.src));}
+  for(const media of Object.values(site.media))for(const file of [media.src,media.poster])keep.add(path.resolve('dist'+file));
   if(site.branding.logo)keep.add(path.resolve('dist'+site.branding.logo.src));
   for(const icon of Object.values(site.icons))if(icon.src)keep.add(path.resolve('dist'+icon.src));
   if(site.branding.favicon)keep.add(path.resolve('dist'+site.branding.favicon));

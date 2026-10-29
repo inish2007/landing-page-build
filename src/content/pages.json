@@ -46,6 +46,13 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.about"
       }
+    ],
+    "imageKeys": [
+      "aboutImage1",
+      "aboutImage2",
+      "aboutImage3",
+      "aboutImage4",
+      "aboutImage5"
     ]
   },
   "the-process": {
@@ -61,7 +68,15 @@
         "textNamespace": "editorial.the-process"
       }
     ],
-    "mediaKey": "processVideo"
+    "mediaKey": "processVideo",
+    "imageKeys": [
+      "the-processImage1",
+      "the-processImage2",
+      "the-processImage3",
+      "the-processImage4",
+      "the-processImage5",
+      "the-processImage6"
+    ]
   },
   "available-art": {
     "path": "/available-art/",
@@ -111,6 +126,10 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.press"
       }
+    ],
+    "imageKeys": [
+      "pressImage1",
+      "pressImage2"
     ]
   },
   "collaborations": {
@@ -125,6 +144,14 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.collaborations"
       }
+    ],
+    "imageKeys": [
+      "collaborationsImage1",
+      "collaborationsImage2",
+      "collaborationsImage3",
+      "collaborationsImage4",
+      "collaborationsImage5",
+      "collaborationsImage6"
     ]
   },
   "pagerie-lana-gomez-luxury-bags": {
@@ -139,6 +166,14 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.pagerie-lana-gomez-luxury-bags"
       }
+    ],
+    "imageKeys": [
+      "pagerie-lana-gomez-luxury-bagsImage1",
+      "pagerie-lana-gomez-luxury-bagsImage2",
+      "pagerie-lana-gomez-luxury-bagsImage3",
+      "pagerie-lana-gomez-luxury-bagsImage4",
+      "pagerie-lana-gomez-luxury-bagsImage5",
+      "pagerie-lana-gomez-luxury-bagsImage6"
     ]
   },
   "shay-lanagomez-luxury-jewelry-collection": {
@@ -153,6 +188,16 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.shay-lanagomez-luxury-jewelry-collection"
       }
+    ],
+    "imageKeys": [
+      "shay-lanagomez-luxury-jewelry-collectionImage1",
+      "shay-lanagomez-luxury-jewelry-collectionImage2",
+      "shay-lanagomez-luxury-jewelry-collectionImage3",
+      "shay-lanagomez-luxury-jewelry-collectionImage4",
+      "shay-lanagomez-luxury-jewelry-collectionImage5",
+      "shay-lanagomez-luxury-jewelry-collectionImage6",
+      "shay-lanagomez-luxury-jewelry-collectionImage7",
+      "shay-lanagomez-luxury-jewelry-collectionImage8"
     ]
   },
   "contact": {

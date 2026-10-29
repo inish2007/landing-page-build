@@ -117,6 +117,7 @@ export function validateComponentWhitelist(pagesData) {
   }
 
   for (const [pageId, pageConfig] of Object.entries(pagesData)) {
+
     if (!pageConfig || !Array.isArray(pageConfig.sections)) {
       errors.push(`Page "${pageId}" is missing a valid "sections" array`);
       continue;
@@ -205,6 +206,10 @@ export function validateCrossReferences({ textData, imageData, navigationData, p
   // 1. Validate pages.json references
   if (pagesData && typeof pagesData === 'object') {
     for (const [pageId, pageConfig] of Object.entries(pagesData)) {
+      if (pageConfig.imageKeys !== undefined) {
+        if (!Array.isArray(pageConfig.imageKeys) || pageConfig.imageKeys.length !== pageConfig.imageCount) errors.push('Page "'+pageId+'" imageKeys must match imageCount');
+        else for (const key of pageConfig.imageKeys) if (typeof key !== 'string' || !imageData?.[key]) errors.push('Page "'+pageId+'" references non-existent editorial imageKey: '+key);
+      }
       if (pageConfig.titleKey && resolvePath(textData, pageConfig.titleKey) === undefined) {
         errors.push(`Page "${pageId}" references non-existent titleKey: "${pageConfig.titleKey}"`);
       }

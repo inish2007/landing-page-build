@@ -4,7 +4,7 @@
     "collection": "available",
     "titleKey": "artworks.available-1.title",
     "captionKey": "artworks.available-1.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-1Image",
     "order": 1
   },
   {
@@ -12,7 +12,7 @@
     "collection": "available",
     "titleKey": "artworks.available-2.title",
     "captionKey": "artworks.available-2.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-2Image",
     "order": 2
   },
   {
@@ -20,7 +20,7 @@
     "collection": "available",
     "titleKey": "artworks.available-3.title",
     "captionKey": "artworks.available-3.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-3Image",
     "order": 3
   },
   {
@@ -28,7 +28,7 @@
     "collection": "available",
     "titleKey": "artworks.available-4.title",
     "captionKey": "artworks.available-4.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-4Image",
     "order": 4
   },
   {
@@ -36,7 +36,7 @@
     "collection": "available",
     "titleKey": "artworks.available-5.title",
     "captionKey": "artworks.available-5.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-5Image",
     "order": 5
   },
   {
@@ -44,7 +44,7 @@
     "collection": "available",
     "titleKey": "artworks.available-6.title",
     "captionKey": "artworks.available-6.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-6Image",
     "order": 6
   },
   {
@@ -52,7 +52,7 @@
     "collection": "available",
     "titleKey": "artworks.available-7.title",
     "captionKey": "artworks.available-7.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-7Image",
     "order": 7
   },
   {
@@ -60,7 +60,7 @@
     "collection": "available",
     "titleKey": "artworks.available-8.title",
     "captionKey": "artworks.available-8.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-8Image",
     "order": 8
   },
   {
@@ -68,7 +68,7 @@
     "collection": "available",
     "titleKey": "artworks.available-9.title",
     "captionKey": "artworks.available-9.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-9Image",
     "order": 9
   },
   {
@@ -76,7 +76,7 @@
     "collection": "available",
     "titleKey": "artworks.available-10.title",
     "captionKey": "artworks.available-10.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-10Image",
     "order": 10
   },
   {
@@ -84,7 +84,7 @@
     "collection": "available",
     "titleKey": "artworks.available-11.title",
     "captionKey": "artworks.available-11.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-11Image",
     "order": 11
   },
   {
@@ -92,7 +92,7 @@
     "collection": "available",
     "titleKey": "artworks.available-12.title",
     "captionKey": "artworks.available-12.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-12Image",
     "order": 12
   },
   {
@@ -100,7 +100,7 @@
     "collection": "available",
     "titleKey": "artworks.available-13.title",
     "captionKey": "artworks.available-13.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-13Image",
     "order": 13
   },
   {
@@ -108,7 +108,7 @@
     "collection": "available",
     "titleKey": "artworks.available-14.title",
     "captionKey": "artworks.available-14.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-14Image",
     "order": 14
   },
   {
@@ -116,7 +116,7 @@
     "collection": "available",
     "titleKey": "artworks.available-15.title",
     "captionKey": "artworks.available-15.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-15Image",
     "order": 15
   },
   {
@@ -124,7 +124,7 @@
     "collection": "available",
     "titleKey": "artworks.available-16.title",
     "captionKey": "artworks.available-16.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-16Image",
     "order": 16
   },
   {
@@ -132,7 +132,7 @@
     "collection": "available",
     "titleKey": "artworks.available-17.title",
     "captionKey": "artworks.available-17.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-17Image",
     "order": 17
   },
   {
@@ -140,7 +140,7 @@
     "collection": "available",
     "titleKey": "artworks.available-18.title",
     "captionKey": "artworks.available-18.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-18Image",
     "order": 18
   },
   {
@@ -148,7 +148,7 @@
     "collection": "available",
     "titleKey": "artworks.available-19.title",
     "captionKey": "artworks.available-19.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-19Image",
     "order": 19
   },
   {
@@ -156,7 +156,7 @@
     "collection": "available",
     "titleKey": "artworks.available-20.title",
     "captionKey": "artworks.available-20.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-20Image",
     "order": 20
   },
   {
@@ -164,7 +164,7 @@
     "collection": "available",
     "titleKey": "artworks.available-21.title",
     "captionKey": "artworks.available-21.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-21Image",
     "order": 21
   },
   {
@@ -172,7 +172,7 @@
     "collection": "available",
     "titleKey": "artworks.available-22.title",
     "captionKey": "artworks.available-22.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-22Image",
     "order": 22
   },
   {
@@ -180,7 +180,7 @@
     "collection": "available",
     "titleKey": "artworks.available-23.title",
     "captionKey": "artworks.available-23.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-23Image",
     "order": 23
   },
   {
@@ -188,7 +188,7 @@
     "collection": "available",
     "titleKey": "artworks.available-24.title",
     "captionKey": "artworks.available-24.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-24Image",
     "order": 24
   },
   {
@@ -196,7 +196,7 @@
     "collection": "available",
     "titleKey": "artworks.available-25.title",
     "captionKey": "artworks.available-25.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-25Image",
     "order": 25
   },
   {
@@ -204,7 +204,7 @@
     "collection": "available",
     "titleKey": "artworks.available-26.title",
     "captionKey": "artworks.available-26.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-26Image",
     "order": 26
   },
   {
@@ -212,7 +212,7 @@
     "collection": "available",
     "titleKey": "artworks.available-27.title",
     "captionKey": "artworks.available-27.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-27Image",
     "order": 27
   },
   {
@@ -220,7 +220,7 @@
     "collection": "available",
     "titleKey": "artworks.available-28.title",
     "captionKey": "artworks.available-28.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-28Image",
     "order": 28
   },
   {
@@ -228,7 +228,7 @@
     "collection": "available",
     "titleKey": "artworks.available-29.title",
     "captionKey": "artworks.available-29.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-29Image",
     "order": 29
   },
   {
@@ -236,7 +236,7 @@
     "collection": "available",
     "titleKey": "artworks.available-30.title",
     "captionKey": "artworks.available-30.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-30Image",
     "order": 30
   },
   {
@@ -244,7 +244,7 @@
     "collection": "available",
     "titleKey": "artworks.available-31.title",
     "captionKey": "artworks.available-31.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-31Image",
     "order": 31
   },
   {
@@ -252,7 +252,7 @@
     "collection": "available",
     "titleKey": "artworks.available-32.title",
     "captionKey": "artworks.available-32.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-32Image",
     "order": 32
   },
   {
@@ -260,7 +260,7 @@
     "collection": "available",
     "titleKey": "artworks.available-33.title",
     "captionKey": "artworks.available-33.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-33Image",
     "order": 33
   },
   {
@@ -268,7 +268,7 @@
     "collection": "available",
     "titleKey": "artworks.available-34.title",
     "captionKey": "artworks.available-34.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-34Image",
     "order": 34
   },
   {
@@ -276,7 +276,7 @@
     "collection": "available",
     "titleKey": "artworks.available-35.title",
     "captionKey": "artworks.available-35.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-35Image",
     "order": 35
   },
   {
@@ -284,7 +284,7 @@
     "collection": "available",
     "titleKey": "artworks.available-36.title",
     "captionKey": "artworks.available-36.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-36Image",
     "order": 36
   },
   {
@@ -292,7 +292,7 @@
     "collection": "available",
     "titleKey": "artworks.available-37.title",
     "captionKey": "artworks.available-37.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-37Image",
     "order": 37
   },
   {
@@ -300,7 +300,7 @@
     "collection": "available",
     "titleKey": "artworks.available-38.title",
     "captionKey": "artworks.available-38.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-38Image",
     "order": 38
   },
   {
@@ -308,7 +308,7 @@
     "collection": "available",
     "titleKey": "artworks.available-39.title",
     "captionKey": "artworks.available-39.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-39Image",
     "order": 39
   },
   {
@@ -316,7 +316,7 @@
     "collection": "available",
     "titleKey": "artworks.available-40.title",
     "captionKey": "artworks.available-40.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "available-40Image",
     "order": 40
   },
   {
@@ -324,7 +324,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-1.title",
     "captionKey": "artworks.archived-1.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-1Image",
     "order": 1
   },
   {
@@ -332,7 +332,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-2.title",
     "captionKey": "artworks.archived-2.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-2Image",
     "order": 2
   },
   {
@@ -340,7 +340,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-3.title",
     "captionKey": "artworks.archived-3.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-3Image",
     "order": 3
   },
   {
@@ -348,7 +348,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-4.title",
     "captionKey": "artworks.archived-4.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-4Image",
     "order": 4
   },
   {
@@ -356,7 +356,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-5.title",
     "captionKey": "artworks.archived-5.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-5Image",
     "order": 5
   },
   {
@@ -364,7 +364,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-6.title",
     "captionKey": "artworks.archived-6.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-6Image",
     "order": 6
   },
   {
@@ -372,7 +372,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-7.title",
     "captionKey": "artworks.archived-7.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-7Image",
     "order": 7
   },
   {
@@ -380,7 +380,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-8.title",
     "captionKey": "artworks.archived-8.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-8Image",
     "order": 8
   },
   {
@@ -388,7 +388,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-9.title",
     "captionKey": "artworks.archived-9.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-9Image",
     "order": 9
   },
   {
@@ -396,7 +396,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-10.title",
     "captionKey": "artworks.archived-10.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-10Image",
     "order": 10
   },
   {
@@ -404,7 +404,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-11.title",
     "captionKey": "artworks.archived-11.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-11Image",
     "order": 11
   },
   {
@@ -412,7 +412,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-12.title",
     "captionKey": "artworks.archived-12.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-12Image",
     "order": 12
   },
   {
@@ -420,7 +420,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-13.title",
     "captionKey": "artworks.archived-13.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-13Image",
     "order": 13
   },
   {
@@ -428,7 +428,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-14.title",
     "captionKey": "artworks.archived-14.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-14Image",
     "order": 14
   },
   {
@@ -436,7 +436,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-15.title",
     "captionKey": "artworks.archived-15.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-15Image",
     "order": 15
   },
   {
@@ -444,7 +444,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-16.title",
     "captionKey": "artworks.archived-16.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-16Image",
     "order": 16
   },
   {
@@ -452,7 +452,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-17.title",
     "captionKey": "artworks.archived-17.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-17Image",
     "order": 17
   },
   {
@@ -460,7 +460,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-18.title",
     "captionKey": "artworks.archived-18.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-18Image",
     "order": 18
   },
   {
@@ -468,7 +468,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-19.title",
     "captionKey": "artworks.archived-19.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-19Image",
     "order": 19
   },
   {
@@ -476,7 +476,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-20.title",
     "captionKey": "artworks.archived-20.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-20Image",
     "order": 20
   },
   {
@@ -484,7 +484,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-21.title",
     "captionKey": "artworks.archived-21.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-21Image",
     "order": 21
   },
   {
@@ -492,7 +492,7 @@
     "collection": "archived",
     "titleKey": "artworks.archived-22.title",
     "captionKey": "artworks.archived-22.caption",
-    "imageKey": "artworkDetail",
+    "imageKey": "archived-22Image",
     "order": 22
   }
 ]

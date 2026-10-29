@@ -8,7 +8,7 @@ export interface TextSegment { text:string; emphasis?:string; highlight?:string 
 export interface EditorialBlock { tag:string; text:string }
 export interface EditorialCopy { title:string; blocks:EditorialBlock[]; links?:{label:string;href:string}[] }
 export interface PageSection { id:string; component:string; imageKey?:string; textNamespace?:string }
-export interface PageConfiguration { path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
+export interface PageConfiguration { path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; imageKeys?:string[]; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
 export interface Artwork { id:string; collection:string; titleKey:string; captionKey:string; imageKey:string; order:number }
 export interface SiteTheme {
   colors: Record<'circle'|'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;

@@ -111,3 +111,7 @@ At the user’s request, this local build uses text and images from their suppli
 
 Source: https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif
 Retrieved 2026-10-29. The user explicitly selected this asset for video slots. Local original: public/media/video-placeholder.gif; local first-frame poster: public/media/video-placeholder-poster.png. Original GIF retained unchanged; poster generated with sharp. No creator identity, open license or redistribution permission is asserted. Other ownership/attribution obligations remain with the original rights holder. The local build does not contact the source host at runtime.
+
+## CC0 museum demo image collection
+
+The110 active demo pictures in public/images/demo/ were downloaded from the Cleveland Museum of Art Open Access API on2026-10-29. Every selected object supplied an image and share_license_status=CC0. Museum policy: https://www.clevelandart.org/open-access . License: https://creativecommons.org/publicdomain/zero/1.0/ . Individual titles, creators, object/source URLs, download URLs, original license status, local dimensions and SHA-256 hashes are recorded in docs/demo-image-sources.json. Images were resized without changing proportions and encoded as WebP. These are third-party demo images, not works created by the named site owner; no museum endorsement is implied. The previous dark placeholder is retained locally, but no longer fills the110 picture slots. Existing GIF/poster and font/icon notices remain unchanged.

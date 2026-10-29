@@ -1,182 +1,1322 @@
 {
   "homeHero": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/hero.webp",
+    "alt": "Demo image: Paint Box of Vizier Amenemope — .",
+    "width": 1508,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
-      "mobile": "50% 45%"
+      "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Paint Box of Vizier Amenemope — . Cleveland Museum of Art, CC0."
   },
   "homeIntroSide": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/introduction.webp",
+    "alt": "Demo image: Buddha Calling on Earth to Witness — .",
+    "width": 1275,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Buddha Calling on Earth to Witness — . Cleveland Museum of Art, CC0."
   },
   "collaborationBackdrop": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/collaborations-banner.webp",
+    "alt": "Demo image: View of Florence — Thomas Cole (American, born England,1801–1848).",
+    "width": 1920,
+    "height": 1182,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
-      "mobile": "42% 50%"
+      "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "View of Florence — Thomas Cole (American, born England,1801–1848). Cleveland Museum of Art, CC0."
   },
   "aboutPreview": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/about-preview.webp",
+    "alt": "Demo image: Table Fountain — .",
+    "width": 1646,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Table Fountain — . Cleveland Museum of Art, CC0."
   },
   "pressPreview": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/press-preview.webp",
+    "alt": "Demo image: Covered Tureen on Stand (Pot-à-oille) — Juste-Aurèle Meissonnier (French, 1695–1750); Pierre-François Bonnestrenne (French); Henry Adnet (French, 1745).",
+    "width": 1920,
+    "height": 1377,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Covered Tureen on Stand (Pot-à-oille) — Juste-Aurèle Meissonnier (French, 1695–1750); Pierre-François Bonnestrenne (French); Henry Adnet (French, 1745). Cleveland Museum of Art, CC0."
   },
   "archivePreview": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/archive-preview.webp",
+    "alt": "Demo image: Ballgame Palma — .",
+    "width": 1294,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Ballgame Palma — . Cleveland Museum of Art, CC0."
   },
   "artworkDetail": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/artwork-detail.webp",
+    "alt": "Demo image: Stag at Sharkey's — George Bellows (American, 1882–1925).",
+    "width": 1920,
+    "height": 1435,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Stag at Sharkey's — George Bellows (American, 1882–1925). Cleveland Museum of Art, CC0."
   },
   "contactPreview": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/contact-preview.webp",
+    "alt": "Demo image: Portrait of a Family Playing Music — Pieter de Hooch (Dutch, 1629–1684).",
+    "width": 1920,
+    "height": 1619,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Portrait of a Family Playing Music — Pieter de Hooch (Dutch, 1629–1684). Cleveland Museum of Art, CC0."
   },
   "studioWide": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/studio-banner.webp",
+    "alt": "Demo image: Two Poplars in the Alpilles near Saint-Rémy — Vincent van Gogh (Dutch, 1853–1890).",
+    "width": 1436,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Two Poplars in the Alpilles near Saint-Rémy — Vincent van Gogh (Dutch, 1853–1890). Cleveland Museum of Art, CC0."
   },
   "social1": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-01.webp",
+    "alt": "Demo image: The Sacrifice of Isaac — Andrea del Sarto (Italian, 1486–1530).",
+    "width": 1487,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "The Sacrifice of Isaac — Andrea del Sarto (Italian, 1486–1530). Cleveland Museum of Art, CC0."
   },
   "social2": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-02.webp",
+    "alt": "Demo image: Mme L . . . (Laure Borreau) — Gustave Courbet (French, 1819–1877).",
+    "width": 1470,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Mme L . . . (Laure Borreau) — Gustave Courbet (French, 1819–1877). Cleveland Museum of Art, CC0."
   },
   "social3": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-03.webp",
+    "alt": "Demo image: The Annunciation — Albert Bouts (Netherlandish, 1451/55–1549).",
+    "width": 1590,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "The Annunciation — Albert Bouts (Netherlandish, 1451/55–1549). Cleveland Museum of Art, CC0."
   },
   "social4": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-04.webp",
+    "alt": "Demo image: Portrait of a Man, Possibly Girolamo Rosati — Lorenzo Lotto (Italian, 1480–1556).",
+    "width": 1773,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Portrait of a Man, Possibly Girolamo Rosati — Lorenzo Lotto (Italian, 1480–1556). Cleveland Museum of Art, CC0."
   },
   "social5": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-05.webp",
+    "alt": "Demo image: Tomb Guardian with Animal Head — .",
+    "width": 1366,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Tomb Guardian with Animal Head — . Cleveland Museum of Art, CC0."
   },
   "social6": {
-    "src": "/images/client-placeholder.png",
-    "alt": "Dark textured background.",
-    "width": 474,
-    "height": 266,
+    "src": "/images/demo/home/social-06.webp",
+    "alt": "Demo image: Ganesha — .",
+    "width": 1162,
+    "height": 1920,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "User-supplied image."
+    "credit": "Ganesha — . Cleveland Museum of Art, CC0."
+  },
+  "aboutImage1": {
+    "src": "/images/demo/about/image-01.webp",
+    "alt": "Demo image: Portrait of Tieleman Roosterman — Frans Hals (Dutch, c. 1581–1666).",
+    "width": 664,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of Tieleman Roosterman — Frans Hals (Dutch, c. 1581–1666). Cleveland Museum of Art, CC0."
+  },
+  "aboutImage2": {
+    "src": "/images/demo/about/image-02.webp",
+    "alt": "Demo image: View of Schroon Mountain, Essex County, New York, After a Storm — Thomas Cole (American, born England,1801–1848).",
+    "width": 1263,
+    "height": 775,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "View of Schroon Mountain, Essex County, New York, After a Storm — Thomas Cole (American, born England,1801–1848). Cleveland Museum of Art, CC0."
+  },
+  "aboutImage3": {
+    "src": "/images/demo/about/image-03.webp",
+    "alt": "Demo image: Seated Male Carrying Maize — .",
+    "width": 915,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Seated Male Carrying Maize — . Cleveland Museum of Art, CC0."
+  },
+  "aboutImage4": {
+    "src": "/images/demo/about/image-04.webp",
+    "alt": "Demo image: Nataraja, Shiva as the Lord of Dance — .",
+    "width": 714,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Nataraja, Shiva as the Lord of Dance — . Cleveland Museum of Art, CC0."
+  },
+  "aboutImage5": {
+    "src": "/images/demo/about/image-05.webp",
+    "alt": "Demo image: Hours of Queen Isabella the Catholic, Queen of Spain — Master of the First Prayerbook of Maximillian (Flemish, c. 1444–1519); Associates.",
+    "width": 900,
+    "height": 610,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Hours of Queen Isabella the Catholic, Queen of Spain — Master of the First Prayerbook of Maximillian (Flemish, c. 1444–1519); Associates. Cleveland Museum of Art, CC0."
+  },
+  "the-processImage1": {
+    "src": "/images/demo/the-process/image-01.webp",
+    "alt": "Demo image: The Burning of the Houses of Lords and Commons, 16 October 1834 — Joseph Mallord William Turner (British, 1775–1851).",
+    "width": 900,
+    "height": 668,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Burning of the Houses of Lords and Commons, 16 October 1834 — Joseph Mallord William Turner (British, 1775–1851). Cleveland Museum of Art, CC0."
+  },
+  "the-processImage2": {
+    "src": "/images/demo/the-process/image-02.webp",
+    "alt": "Demo image: Early Morning After a Storm at Sea — Winslow Homer (American, 1836–1910).",
+    "width": 1263,
+    "height": 762,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Early Morning After a Storm at Sea — Winslow Homer (American, 1836–1910). Cleveland Museum of Art, CC0."
+  },
+  "the-processImage3": {
+    "src": "/images/demo/the-process/image-03.webp",
+    "alt": "Demo image: George III — Benjamin West (American, born The Thirteen Colonies, 1738–1820).",
+    "width": 720,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "George III — Benjamin West (American, born The Thirteen Colonies, 1738–1820). Cleveland Museum of Art, CC0."
+  },
+  "the-processImage4": {
+    "src": "/images/demo/the-process/image-04.webp",
+    "alt": "Demo image: The Holy Family on the Steps — Nicolas Poussin (French, 1594–1665).",
+    "width": 1263,
+    "height": 867,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Holy Family on the Steps — Nicolas Poussin (French, 1594–1665). Cleveland Museum of Art, CC0."
+  },
+  "the-processImage5": {
+    "src": "/images/demo/the-process/image-05.webp",
+    "alt": "Demo image: Amulet in the Form of a Seated Figure with Bovine Head — .",
+    "width": 605,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Amulet in the Form of a Seated Figure with Bovine Head — . Cleveland Museum of Art, CC0."
+  },
+  "the-processImage6": {
+    "src": "/images/demo/the-process/image-06.webp",
+    "alt": "Demo image: Sunny Autumn Day — George Inness (American, 1825–1894).",
+    "width": 1179,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Sunny Autumn Day — George Inness (American, 1825–1894). Cleveland Museum of Art, CC0."
+  },
+  "pressImage1": {
+    "src": "/images/demo/press/image-01.webp",
+    "alt": "Demo image: Antiochus and Stratonice — Jean-Auguste-Dominique Ingres (French, 1780–1867).",
+    "width": 900,
+    "height": 674,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Antiochus and Stratonice — Jean-Auguste-Dominique Ingres (French, 1780–1867). Cleveland Museum of Art, CC0."
+  },
+  "pressImage2": {
+    "src": "/images/demo/press/image-02.webp",
+    "alt": "Demo image: Saint John the Baptist in a Landscape — Petrus Christus (Netherlandish, c. 1410–1475/76).",
+    "width": 287,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Saint John the Baptist in a Landscape — Petrus Christus (Netherlandish, c. 1410–1475/76). Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage1": {
+    "src": "/images/demo/collaborations/image-01.webp",
+    "alt": "Demo image: Virgin and Child — Hans Memling (Netherlandish, 1494).",
+    "width": 625,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Virgin and Child — Hans Memling (Netherlandish, 1494). Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage2": {
+    "src": "/images/demo/collaborations/image-02.webp",
+    "alt": "Demo image: La Cervara, the Roman Campagna — Jean Baptiste Camille Corot (French, 1796–1875).",
+    "width": 1245,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "La Cervara, the Roman Campagna — Jean Baptiste Camille Corot (French, 1796–1875). Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage3": {
+    "src": "/images/demo/collaborations/image-03.webp",
+    "alt": "Demo image: Portrait of the Ladies Amabel and Mary Jemima Yorke — Joshua Reynolds (British, 1723–1792).",
+    "width": 777,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of the Ladies Amabel and Mary Jemima Yorke — Joshua Reynolds (British, 1723–1792). Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage4": {
+    "src": "/images/demo/collaborations/image-04.webp",
+    "alt": "Demo image: Icon of the New Testament Trinity — .",
+    "width": 900,
+    "height": 527,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Icon of the New Testament Trinity — . Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage5": {
+    "src": "/images/demo/collaborations/image-05.webp",
+    "alt": "Demo image: Standing Buddha — .",
+    "width": 685,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Standing Buddha — . Cleveland Museum of Art, CC0."
+  },
+  "collaborationsImage6": {
+    "src": "/images/demo/collaborations/image-06.webp",
+    "alt": "Demo image: The Large Plane Trees (Road Menders at Saint-Rémy) — Vincent van Gogh (Dutch, 1853–1890).",
+    "width": 900,
+    "height": 718,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Large Plane Trees (Road Menders at Saint-Rémy) — Vincent van Gogh (Dutch, 1853–1890). Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage1": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-01.webp",
+    "alt": "Demo image: Portrait of Lisa Colt Curtis — John Singer Sargent (American, born Italy, 1856–1925).",
+    "width": 425,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of Lisa Colt Curtis — John Singer Sargent (American, born Italy, 1856–1925). Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage2": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-02.webp",
+    "alt": "Demo image: Violette Heymann — Odilon Redon (French, 1840–1916).",
+    "width": 900,
+    "height": 705,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Violette Heymann — Odilon Redon (French, 1840–1916). Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage3": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-03.webp",
+    "alt": "Demo image: Sideboard — Joseph Alexis Bailly (American, 1825–1883).",
+    "width": 728,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Sideboard — Joseph Alexis Bailly (American, 1825–1883). Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage4": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-04.webp",
+    "alt": "Demo image: Prayer Niche (Mihrab) — .",
+    "width": 766,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Prayer Niche (Mihrab) — . Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage5": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-05.webp",
+    "alt": "Demo image: The Wade Cup with Animated Script — .",
+    "width": 900,
+    "height": 794,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Wade Cup with Animated Script — . Cleveland Museum of Art, CC0."
+  },
+  "pagerie-lana-gomez-luxury-bagsImage6": {
+    "src": "/images/demo/pagerie-lana-gomez-luxury-bags/image-06.webp",
+    "alt": "Demo image: Adeline Ravoux — Vincent van Gogh (Dutch, 1853–1890).",
+    "width": 900,
+    "height": 897,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Adeline Ravoux — Vincent van Gogh (Dutch, 1853–1890). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage1": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-01.webp",
+    "alt": "Demo image: Cup with Daoist Figures — .",
+    "width": 900,
+    "height": 527,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Cup with Daoist Figures — . Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage2": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-02.webp",
+    "alt": "Demo image: Hunting near Hartenfels Castle — Lucas Cranach (German, 1472–1553).",
+    "width": 1263,
+    "height": 866,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Hunting near Hartenfels Castle — Lucas Cranach (German, 1472–1553). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage3": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-03.webp",
+    "alt": "Demo image: Branch Hill Pond, Hampstead — John Constable (British, 1776–1837).",
+    "width": 1155,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Branch Hill Pond, Hampstead — John Constable (British, 1776–1837). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage4": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-04.webp",
+    "alt": "Demo image: Frieze of Dancers — Edgar Degas (French, 1834–1917).",
+    "width": 900,
+    "height": 314,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Frieze of Dancers — Edgar Degas (French, 1834–1917). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage5": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-05.webp",
+    "alt": "Demo image: The Kiss of Peace and Justice — Laurent de La Hyre (French, 1606–1656).",
+    "width": 1260,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Kiss of Peace and Justice — Laurent de La Hyre (French, 1606–1656). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage6": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-06.webp",
+    "alt": "Demo image: Water Lilies (Agapanthus) — Claude Monet (French, 1840–1926).",
+    "width": 900,
+    "height": 419,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Water Lilies (Agapanthus) — Claude Monet (French, 1840–1926). Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage7": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-07.webp",
+    "alt": "Demo image: Front Cover for a Gospel Book of French Cardinal Jean La Balou (1421–1491) — .",
+    "width": 666,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Front Cover for a Gospel Book of French Cardinal Jean La Balou (1421–1491) — . Cleveland Museum of Art, CC0."
+  },
+  "shay-lanagomez-luxury-jewelry-collectionImage8": {
+    "src": "/images/demo/shay-lanagomez-luxury-jewelry-collection/image-08.webp",
+    "alt": "Demo image: Wineglass and a Bowl of Fruit — Willem Kalf (Dutch, 1619–1693).",
+    "width": 747,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Wineglass and a Bowl of Fruit — Willem Kalf (Dutch, 1619–1693). Cleveland Museum of Art, CC0."
+  },
+  "available-1Image": {
+    "src": "/images/demo/available/artwork-01.webp",
+    "alt": "Demo image: Low Waterfall in a Wooded Landscape with a Dead Beech Tree — Jacob van Ruisdael (Dutch, 1628/29–1682).",
+    "width": 1184,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Low Waterfall in a Wooded Landscape with a Dead Beech Tree — Jacob van Ruisdael (Dutch, 1628/29–1682). Cleveland Museum of Art, CC0."
+  },
+  "available-2Image": {
+    "src": "/images/demo/available/artwork-02.webp",
+    "alt": "Demo image: Christ and the Virgin in the House at Nazareth — Francisco de Zurbarán (Spanish, 1598–1664).",
+    "width": 900,
+    "height": 668,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Christ and the Virgin in the House at Nazareth — Francisco de Zurbarán (Spanish, 1598–1664). Cleveland Museum of Art, CC0."
+  },
+  "available-3Image": {
+    "src": "/images/demo/available/artwork-03.webp",
+    "alt": "Demo image: Buffalo Mask — .",
+    "width": 600,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Buffalo Mask — . Cleveland Museum of Art, CC0."
+  },
+  "available-4Image": {
+    "src": "/images/demo/available/artwork-04.webp",
+    "alt": "Demo image: Nathaniel Hurd — John Singleton Copley (American, born The Thirteen Colonies, 1738–1815).",
+    "width": 748,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Nathaniel Hurd — John Singleton Copley (American, born The Thirteen Colonies, 1738–1815). Cleveland Museum of Art, CC0."
+  },
+  "available-5Image": {
+    "src": "/images/demo/available/artwork-05.webp",
+    "alt": "Demo image: Icon of the Mother of God and Infant Christ (Virgin Eleousa) — Angelos Akotantos (Cretan, died 1450).",
+    "width": 659,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Icon of the Mother of God and Infant Christ (Virgin Eleousa) — Angelos Akotantos (Cretan, died 1450). Cleveland Museum of Art, CC0."
+  },
+  "available-6Image": {
+    "src": "/images/demo/available/artwork-06.webp",
+    "alt": "Demo image: Virupa — .",
+    "width": 718,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Virupa — . Cleveland Museum of Art, CC0."
+  },
+  "available-7Image": {
+    "src": "/images/demo/available/artwork-07.webp",
+    "alt": "Demo image: Saint Lawrence — Tilman Riemenschneider (German, active Würzburg, c. 1460–1531).",
+    "width": 629,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Saint Lawrence — Tilman Riemenschneider (German, active Würzburg, c. 1460–1531). Cleveland Museum of Art, CC0."
+  },
+  "available-8Image": {
+    "src": "/images/demo/available/artwork-08.webp",
+    "alt": "Demo image: Portable Altar of Countess Gertrude — .",
+    "width": 900,
+    "height": 535,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portable Altar of Countess Gertrude — . Cleveland Museum of Art, CC0."
+  },
+  "available-9Image": {
+    "src": "/images/demo/available/artwork-09.webp",
+    "alt": "Demo image: Portrait of Hottō Enmyō Kokushi — .",
+    "width": 678,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of Hottō Enmyō Kokushi — . Cleveland Museum of Art, CC0."
+  },
+  "available-10Image": {
+    "src": "/images/demo/available/artwork-10.webp",
+    "alt": "Demo image: Mourner from the Tomb of John the Fearless and Margaret of Bavaria — Jean de la Huerta (Spanish, active Burgundy, 1431–62).",
+    "width": 688,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mourner from the Tomb of John the Fearless and Margaret of Bavaria — Jean de la Huerta (Spanish, active Burgundy, 1431–62). Cleveland Museum of Art, CC0."
+  },
+  "available-11Image": {
+    "src": "/images/demo/available/artwork-11.webp",
+    "alt": "Demo image: Wrestlers in a Circus — Ernst Ludwig Kirchner (German, 1880–1938).",
+    "width": 750,
+    "height": 640,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Wrestlers in a Circus — Ernst Ludwig Kirchner (German, 1880–1938). Cleveland Museum of Art, CC0."
+  },
+  "available-12Image": {
+    "src": "/images/demo/available/artwork-12.webp",
+    "alt": "Demo image: The Call — Paul Gauguin (French, 1848–1903).",
+    "width": 606,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Call — Paul Gauguin (French, 1848–1903). Cleveland Museum of Art, CC0."
+  },
+  "available-13Image": {
+    "src": "/images/demo/available/artwork-13.webp",
+    "alt": "Demo image: Mount Starr King, Yosemite — Albert Bierstadt (American, born Prussia [now Germany], 1830–1902).",
+    "width": 1263,
+    "height": 855,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mount Starr King, Yosemite — Albert Bierstadt (American, born Prussia [now Germany], 1830–1902). Cleveland Museum of Art, CC0."
+  },
+  "available-14Image": {
+    "src": "/images/demo/available/artwork-14.webp",
+    "alt": "Demo image: Basket of Plums — Anne Vallayer-Coster (French, 1744–1818).",
+    "width": 750,
+    "height": 622,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Basket of Plums — Anne Vallayer-Coster (French, 1744–1818). Cleveland Museum of Art, CC0."
+  },
+  "available-15Image": {
+    "src": "/images/demo/available/artwork-15.webp",
+    "alt": "Demo image: The Red Kerchief — Claude Monet (French, 1840–1926).",
+    "width": 723,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Red Kerchief — Claude Monet (French, 1840–1926). Cleveland Museum of Art, CC0."
+  },
+  "available-16Image": {
+    "src": "/images/demo/available/artwork-16.webp",
+    "alt": "Demo image: Portrait of Dora Wheeler — William Merritt Chase (American, 1849–1916).",
+    "width": 939,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of Dora Wheeler — William Merritt Chase (American, 1849–1916). Cleveland Museum of Art, CC0."
+  },
+  "available-17Image": {
+    "src": "/images/demo/available/artwork-17.webp",
+    "alt": "Demo image: Samuel Williams — Washington Allston (American, 1779–1843).",
+    "width": 702,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Samuel Williams — Washington Allston (American, 1779–1843). Cleveland Museum of Art, CC0."
+  },
+  "available-18Image": {
+    "src": "/images/demo/available/artwork-18.webp",
+    "alt": "Demo image: Vale of Kashmir — Robert S. Duncanson (American, 1821–1872).",
+    "width": 900,
+    "height": 492,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Vale of Kashmir — Robert S. Duncanson (American, 1821–1872). Cleveland Museum of Art, CC0."
+  },
+  "available-19Image": {
+    "src": "/images/demo/available/artwork-19.webp",
+    "alt": "Demo image: The Pigeon Tower at Bellevue — Paul Cezanne (French, 1839–1906).",
+    "width": 900,
+    "height": 723,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Pigeon Tower at Bellevue — Paul Cezanne (French, 1839–1906). Cleveland Museum of Art, CC0."
+  },
+  "available-20Image": {
+    "src": "/images/demo/available/artwork-20.webp",
+    "alt": "Demo image: Teapot — Nathaniel Hurd (American, 1730–1778).",
+    "width": 1156,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Teapot — Nathaniel Hurd (American, 1730–1778). Cleveland Museum of Art, CC0."
+  },
+  "available-21Image": {
+    "src": "/images/demo/available/artwork-21.webp",
+    "alt": "Demo image: The Race Track (Death on a Pale Horse) — Albert Pinkham Ryder (American, 1847–1917).",
+    "width": 900,
+    "height": 711,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Race Track (Death on a Pale Horse) — Albert Pinkham Ryder (American, 1847–1917). Cleveland Museum of Art, CC0."
+  },
+  "available-22Image": {
+    "src": "/images/demo/available/artwork-22.webp",
+    "alt": "Demo image: Interior of the Pantheon, Rome — Giovanni Paolo Panini (Italian, 1691–1765).",
+    "width": 693,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Interior of the Pantheon, Rome — Giovanni Paolo Panini (Italian, 1691–1765). Cleveland Museum of Art, CC0."
+  },
+  "available-23Image": {
+    "src": "/images/demo/available/artwork-23.webp",
+    "alt": "Demo image: Fire-flame Cooking Vessel (Ka'en Doki) — .",
+    "width": 758,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Fire-flame Cooking Vessel (Ka'en Doki) — . Cleveland Museum of Art, CC0."
+  },
+  "available-24Image": {
+    "src": "/images/demo/available/artwork-24.webp",
+    "alt": "Demo image: Romaine Lacaux — Pierre-Auguste Renoir (French, 1841–1919).",
+    "width": 716,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Romaine Lacaux — Pierre-Auguste Renoir (French, 1841–1919). Cleveland Museum of Art, CC0."
+  },
+  "available-25Image": {
+    "src": "/images/demo/available/artwork-25.webp",
+    "alt": "Demo image: Amitabha Triad — .",
+    "width": 900,
+    "height": 675,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Amitabha Triad — . Cleveland Museum of Art, CC0."
+  },
+  "available-26Image": {
+    "src": "/images/demo/available/artwork-26.webp",
+    "alt": "Demo image: Portrait of a Couple — .",
+    "width": 1257,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of a Couple — . Cleveland Museum of Art, CC0."
+  },
+  "available-27Image": {
+    "src": "/images/demo/available/artwork-27.webp",
+    "alt": "Demo image: Elizabeth Beltzhoover Mason — Gilbert Stuart (American, born The Thirteen Colonies, 1755–1828).",
+    "width": 743,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Elizabeth Beltzhoover Mason — Gilbert Stuart (American, born The Thirteen Colonies, 1755–1828). Cleveland Museum of Art, CC0."
+  },
+  "available-28Image": {
+    "src": "/images/demo/available/artwork-28.webp",
+    "alt": "Demo image: Saluting Protective Spirit — .",
+    "width": 668,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Saluting Protective Spirit — . Cleveland Museum of Art, CC0."
+  },
+  "available-29Image": {
+    "src": "/images/demo/available/artwork-29.webp",
+    "alt": "Demo image: Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439).",
+    "width": 689,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439). Cleveland Museum of Art, CC0."
+  },
+  "available-30Image": {
+    "src": "/images/demo/available/artwork-30.webp",
+    "alt": "Demo image: Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439).",
+    "width": 688,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439). Cleveland Museum of Art, CC0."
+  },
+  "available-31Image": {
+    "src": "/images/demo/available/artwork-31.webp",
+    "alt": "Demo image: Backrest of a Litter — .",
+    "width": 1263,
+    "height": 858,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Backrest of a Litter — . Cleveland Museum of Art, CC0."
+  },
+  "available-32Image": {
+    "src": "/images/demo/available/artwork-32.webp",
+    "alt": "Demo image: Zaō Gongen — .",
+    "width": 644,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Zaō Gongen — . Cleveland Museum of Art, CC0."
+  },
+  "available-33Image": {
+    "src": "/images/demo/available/artwork-33.webp",
+    "alt": "Demo image: Jonah Cast Up — .",
+    "width": 690,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Jonah Cast Up — . Cleveland Museum of Art, CC0."
+  },
+  "available-34Image": {
+    "src": "/images/demo/available/artwork-34.webp",
+    "alt": "Demo image: Portrait of Machtelt Suijs — Maerten van Heemskerck (Dutch, 1498–1574).",
+    "width": 779,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of Machtelt Suijs — Maerten van Heemskerck (Dutch, 1498–1574). Cleveland Museum of Art, CC0."
+  },
+  "available-35Image": {
+    "src": "/images/demo/available/artwork-35.webp",
+    "alt": "Demo image: Commemorative figure (lefem) — Ateu Atsa (Bangwa, c. 1840–1910).",
+    "width": 582,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Commemorative figure (lefem) — Ateu Atsa (Bangwa, c. 1840–1910). Cleveland Museum of Art, CC0."
+  },
+  "available-36Image": {
+    "src": "/images/demo/available/artwork-36.webp",
+    "alt": "Demo image: Elizabeth Shewell West and Her Son, Raphael — Benjamin West (American, born The Thirteen Colonies, 1738–1820).",
+    "width": 890,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Elizabeth Shewell West and Her Son, Raphael — Benjamin West (American, born The Thirteen Colonies, 1738–1820). Cleveland Museum of Art, CC0."
+  },
+  "available-37Image": {
+    "src": "/images/demo/available/artwork-37.webp",
+    "alt": "Demo image: Apis Bull — .",
+    "width": 900,
+    "height": 675,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Apis Bull — . Cleveland Museum of Art, CC0."
+  },
+  "available-38Image": {
+    "src": "/images/demo/available/artwork-38.webp",
+    "alt": "Demo image: The Young Eastern Woman — Friedrich Amerling (Austrian, 1803–1887).",
+    "width": 719,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Young Eastern Woman — Friedrich Amerling (Austrian, 1803–1887). Cleveland Museum of Art, CC0."
+  },
+  "available-39Image": {
+    "src": "/images/demo/available/artwork-39.webp",
+    "alt": "Demo image: Jar with Lion-Head Handles — .",
+    "width": 900,
+    "height": 861,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Jar with Lion-Head Handles — . Cleveland Museum of Art, CC0."
+  },
+  "available-40Image": {
+    "src": "/images/demo/available/artwork-40.webp",
+    "alt": "Demo image: Tea Table — Carlo Bugatti (Italian, 1856–1940).",
+    "width": 720,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Tea Table — Carlo Bugatti (Italian, 1856–1940). Cleveland Museum of Art, CC0."
+  },
+  "archived-1Image": {
+    "src": "/images/demo/archived/artwork-01.webp",
+    "alt": "Demo image: Ballgame Hip Protector (Yoke) — .",
+    "width": 1263,
+    "height": 741,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Ballgame Hip Protector (Yoke) — . Cleveland Museum of Art, CC0."
+  },
+  "archived-2Image": {
+    "src": "/images/demo/archived/artwork-02.webp",
+    "alt": "Demo image: The Holy Family with Saint John the Baptist and Saint Margaret — Filippino Lippi (Italian, c. 1457–1504).",
+    "width": 900,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Holy Family with Saint John the Baptist and Saint Margaret — Filippino Lippi (Italian, c. 1457–1504). Cleveland Museum of Art, CC0."
+  },
+  "archived-3Image": {
+    "src": "/images/demo/archived/artwork-03.webp",
+    "alt": "Demo image: Portrait of a Woman — Rembrandt van Rijn (Dutch, 1606–1669); Studio.",
+    "width": 738,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Portrait of a Woman — Rembrandt van Rijn (Dutch, 1606–1669); Studio. Cleveland Museum of Art, CC0."
+  },
+  "archived-4Image": {
+    "src": "/images/demo/archived/artwork-04.webp",
+    "alt": "Demo image: Raft Cup — Zhu Bishan (Chinese, c. 1300–after 1362).",
+    "width": 900,
+    "height": 871,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Raft Cup — Zhu Bishan (Chinese, c. 1300–after 1362). Cleveland Museum of Art, CC0."
+  },
+  "archived-5Image": {
+    "src": "/images/demo/archived/artwork-05.webp",
+    "alt": "Demo image: Eleven-Headed Bodhisattva of Compassion (Avalokiteshvara) — .",
+    "width": 607,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Eleven-Headed Bodhisattva of Compassion (Avalokiteshvara) — . Cleveland Museum of Art, CC0."
+  },
+  "archived-6Image": {
+    "src": "/images/demo/archived/artwork-06.webp",
+    "alt": "Demo image: Stele with Sakyamuni and Bodhisattvas — .",
+    "width": 635,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Stele with Sakyamuni and Bodhisattvas — . Cleveland Museum of Art, CC0."
+  },
+  "archived-7Image": {
+    "src": "/images/demo/archived/artwork-07.webp",
+    "alt": "Demo image: Ruin by the Sea — Arnold Böcklin (Swiss, 1827–1901).",
+    "width": 656,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Ruin by the Sea — Arnold Böcklin (Swiss, 1827–1901). Cleveland Museum of Art, CC0."
+  },
+  "archived-8Image": {
+    "src": "/images/demo/archived/artwork-08.webp",
+    "alt": "Demo image: The Power of Music — William Sidney Mount (American, 1807–1868).",
+    "width": 1106,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Power of Music — William Sidney Mount (American, 1807–1868). Cleveland Museum of Art, CC0."
+  },
+  "archived-9Image": {
+    "src": "/images/demo/archived/artwork-09.webp",
+    "alt": "Demo image: Twilight in the Wilderness — Frederic Edwin Church (American, 1826–1900).",
+    "width": 900,
+    "height": 562,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Twilight in the Wilderness — Frederic Edwin Church (American, 1826–1900). Cleveland Museum of Art, CC0."
+  },
+  "archived-10Image": {
+    "src": "/images/demo/archived/artwork-10.webp",
+    "alt": "Demo image: The Crucifixion of Saint Andrew — Caravaggio (Italian, 1571–1610).",
+    "width": 678,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Crucifixion of Saint Andrew — Caravaggio (Italian, 1571–1610). Cleveland Museum of Art, CC0."
+  },
+  "archived-11Image": {
+    "src": "/images/demo/archived/artwork-11.webp",
+    "alt": "Demo image: Corner Railing Pillar with Drinking Scenes, Yakshis, and Musicians — .",
+    "width": 560,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Corner Railing Pillar with Drinking Scenes, Yakshis, and Musicians — . Cleveland Museum of Art, CC0."
+  },
+  "archived-12Image": {
+    "src": "/images/demo/archived/artwork-12.webp",
+    "alt": "Demo image: A Genoese Lady with Her Child — Anthony van Dyck (Flemish, 1599–1641).",
+    "width": 595,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "A Genoese Lady with Her Child — Anthony van Dyck (Flemish, 1599–1641). Cleveland Museum of Art, CC0."
+  },
+  "archived-13Image": {
+    "src": "/images/demo/archived/artwork-13.webp",
+    "alt": "Demo image: George Washington at Princeton — Charles Willson Peale (American, born The Thirteen Colonies, 1741–1827); Workshop.",
+    "width": 823,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "George Washington at Princeton — Charles Willson Peale (American, born The Thirteen Colonies, 1741–1827); Workshop. Cleveland Museum of Art, CC0."
+  },
+  "archived-14Image": {
+    "src": "/images/demo/archived/artwork-14.webp",
+    "alt": "Demo image: Edge of the Woods Near L'Hermitage, Pontoise — Camille Pissarro (French, 1830–1903).",
+    "width": 900,
+    "height": 690,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Edge of the Woods Near L'Hermitage, Pontoise — Camille Pissarro (French, 1830–1903). Cleveland Museum of Art, CC0."
+  },
+  "archived-15Image": {
+    "src": "/images/demo/archived/artwork-15.webp",
+    "alt": "Demo image: Red-Figure Calyx-Krater (Mixing Vessel): Medea in Chariot (A); Telephos with Baby Orestes (B) — Policoro Painter (South Italian, Lucanian, active c. 400 BCE).",
+    "width": 838,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Red-Figure Calyx-Krater (Mixing Vessel): Medea in Chariot (A); Telephos with Baby Orestes (B) — Policoro Painter (South Italian, Lucanian, active c. 400 BCE). Cleveland Museum of Art, CC0."
+  },
+  "archived-16Image": {
+    "src": "/images/demo/archived/artwork-16.webp",
+    "alt": "Demo image: Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439).",
+    "width": 687,
+    "height": 900,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404) — Claus de Werve (Netherlandish, 1380–1439). Cleveland Museum of Art, CC0."
+  },
+  "archived-17Image": {
+    "src": "/images/demo/archived/artwork-17.webp",
+    "alt": "Demo image: Peregrine Falcons (Duck Hawks) — John James Audubon (American, born Haiti, 1785–1851).",
+    "width": 1263,
+    "height": 892,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Peregrine Falcons (Duck Hawks) — John James Audubon (American, born Haiti, 1785–1851). Cleveland Museum of Art, CC0."
+  },
+  "archived-18Image": {
+    "src": "/images/demo/archived/artwork-18.webp",
+    "alt": "Demo image: The Troubadour — Honoré Daumier (French, 1808–1879).",
+    "width": 595,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Troubadour — Honoré Daumier (French, 1808–1879). Cleveland Museum of Art, CC0."
+  },
+  "archived-19Image": {
+    "src": "/images/demo/archived/artwork-19.webp",
+    "alt": "Demo image: Mount Sainte-Victoire — Paul Cezanne (French, 1839–1906).",
+    "width": 900,
+    "height": 714,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Mount Sainte-Victoire — Paul Cezanne (French, 1839–1906). Cleveland Museum of Art, CC0."
+  },
+  "archived-20Image": {
+    "src": "/images/demo/archived/artwork-20.webp",
+    "alt": "Demo image: Crucifix with Scenes of the Passion — .",
+    "width": 668,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Crucifix with Scenes of the Passion — . Cleveland Museum of Art, CC0."
+  },
+  "archived-21Image": {
+    "src": "/images/demo/archived/artwork-21.webp",
+    "alt": "Demo image: Saint Peter Repentant — Georges de La Tour (French, 1593–1652).",
+    "width": 727,
+    "height": 893,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Saint Peter Repentant — Georges de La Tour (French, 1593–1652). Cleveland Museum of Art, CC0."
+  },
+  "archived-22Image": {
+    "src": "/images/demo/archived/artwork-22.webp",
+    "alt": "Demo image: The Biglin Brothers Turning the Stake — Thomas Eakins (American, 1844–1916).",
+    "width": 1263,
+    "height": 835,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "The Biglin Brothers Turning the Stake — Thomas Eakins (American, 1844–1916). Cleveland Museum of Art, CC0."
   }
 }
