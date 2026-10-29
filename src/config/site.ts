@@ -45,6 +45,7 @@ export const site = {
       overlay:'rgb(23 23 23 / .45)', modalOverlay:'rgb(0 0 0 / .7)',
     },
     typography: {
+      loading:{preload:true as boolean,display:'block' as 'block'|'swap'|'fallback'|'optional'},
       fonts: {
         // Footer reference uses a plain Arial-style face; system fonts need no download.
         footer: {family:'Arial',fallback:'Helvetica, sans-serif',faces:[]},

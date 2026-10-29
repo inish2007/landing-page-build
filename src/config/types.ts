@@ -12,7 +12,7 @@ export interface PageConfiguration { path?:string; titleKey:string; kind?:string
 export interface Artwork { id:string; collection:string; titleKey:string; captionKey:string; imageKey:string; order:number }
 export interface SiteTheme {
   colors: Record<'aboutFill'|'aboutOutline'|'aboutShadow'|'plaque'|'plaqueText'|'goldDark'|'goldMid'|'goldLight'|'circle'|'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;
-  typography: { fonts:Record<'primary'|'secondary'|'brand'|'footer',FontDefinition>; sizes:Record<'labelStroke'|'aboutStroke'|'plaquePadding'|'footer'|'processLink'|'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'navigation'|'regular'|'heading'|'brand'|'strong',string>; lineHeights:Record<'footer'|'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
+  typography: { loading:{preload:boolean;display:'block'|'swap'|'fallback'|'optional'}; fonts:Record<'primary'|'secondary'|'brand'|'footer',FontDefinition>; sizes:Record<'labelStroke'|'aboutStroke'|'plaquePadding'|'footer'|'processLink'|'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'navigation'|'regular'|'heading'|'brand'|'strong',string>; lineHeights:Record<'footer'|'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
   pressLinks:{normalThickness:number;hoverThickness:number;duration:number};
   pressMarker:{color:string;opacity:number;thickness:number;overhang:number;edgeCurve:number;duration:number;stagger:number};
   spacing:Record<'1'|'2'|'3'|'4'|'5'|'6',string>;

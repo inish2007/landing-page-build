@@ -30,7 +30,15 @@ export function createThemeCss(config:SiteConfiguration):string {
   for(const [name,value]of Object.entries(spacing))variables['--space-'+name]=value;
   for(const value of Object.values(variables))if(/[{};<>]/.test(String(value)))throw new Error('Invalid CSS token in site.ts');
   const root=':root{'+Object.entries(variables).map(([key,value])=>key+':'+value).join(';')+'}';
-  const faces=Object.values(fonts).flatMap(font=>font.faces.map(face=>'@font-face{font-family:'+JSON.stringify(font.family)+';src:url('+JSON.stringify(face.src)+') format('+JSON.stringify(face.format)+');font-weight:'+face.weight+';font-style:'+face.style+';font-display:swap}')).join('');
+  const faces=Object.values(fonts).flatMap(font=>font.faces.map(face=>'@font-face{font-family:'+JSON.stringify(font.family)+';src:url('+JSON.stringify(face.src)+') format('+JSON.stringify(face.format)+');font-weight:'+face.weight+';font-style:'+face.style+';font-display:'+typography.loading.display+'}')).join('');
   const navigation = motion.enabled && motion.pageTransitions ? '@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}' : '';
   return (root+faces+navigation).replace(/</g,'\\3c ');
+}
+
+/** Preload one configured normal face per family, deduplicating shared font choices. */
+export function getFontPreloads(config:SiteConfiguration):{href:string;type:string}[]{
+  if(!config.theme.typography.loading.preload)return[];
+  const assets=new Map<string,{href:string;type:string}>();
+  for(const name of ['primary','secondary','brand'] as const){const face=config.theme.typography.fonts[name].faces.find(face=>face.style==='normal');if(face)assets.set(face.src,{href:face.src,type:face.format.startsWith('woff2')?'font/woff2':face.format==='truetype'?'font/ttf':face.format==='opentype'?'font/otf':'font/woff'});}
+  return [...assets.values()];
 }

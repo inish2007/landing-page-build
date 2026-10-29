@@ -12,5 +12,5 @@ const method = getNavigation('header').find(link => link.id === 'process')!;
 ---
 <section id={id} class="home-intro section-shell" data-motion-group aria-labelledby={id + '-title'}>
   <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" sizes="(max-width: 47.999rem) 100vw, 55vw" />
-  <div class="intro-copy" data-motion="reveal"><h2 id={id + '-title'}><FormattedText segments={copy.statementSegments} /></h2><a data-accent="outline" class="small-link" href={method.path}><GoldenOutlineText text={copy.buttonLabel} /><svg class="process-underline" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M 2 5 C 49 3 98 2 148 3 C 169 3 185 5 198 3" /></svg></a></div>
+  <div class="intro-copy" data-motion="reveal"><h2 id={id + '-title'}><FormattedText segments={copy.statementSegments} /></h2><a data-accent="outline" data-text-jelly class="small-link" href={method.path}><GoldenOutlineText text={copy.buttonLabel} jelly /><svg class="process-underline" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M 2 5 C 49 3 98 2 148 3 C 169 3 185 5 198 3" /></svg></a></div>
 </section>

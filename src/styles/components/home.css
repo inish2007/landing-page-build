@@ -61,3 +61,6 @@ html:is([data-motion-enabled="false"],[data-motion-inactive="true"]) .pill-link:
 @media (prefers-reduced-motion: no-preference) {
  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) [data-accent="outline"][data-glow-visible="true"] .outlined-label:not(.outlined-label-about) { animation: label-gold-glow var(--label-glow-duration) ease-in-out infinite; }
 }
+
+/* Text has its own transform layer; link hitboxes, underlines and pictures stay stationary. */
+.jelly-text { display: inline-block; transform-origin: center; }

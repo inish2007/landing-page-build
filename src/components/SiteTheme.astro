@@ -1,6 +1,7 @@
 ---
 /** Emits the configured CSS variables/font faces once per shared layout; no props. */
 import site from '../config/site';
-import { createThemeCss } from '../config/theme';
+import { createThemeCss, getFontPreloads } from '../config/theme';
 ---
+{getFontPreloads(site).map(font => <link rel="preload" href={font.href} as="font" type={font.type} crossorigin="anonymous" />)}
 <style is:inline set:html={createThemeCss(site)} />

@@ -9,7 +9,7 @@ const current = Astro.url.pathname;
 <dialog id="mobile-drawer" class="mobile-drawer" aria-labelledby="drawer-title">
   <div class="drawer-top"><p id="drawer-title"><BrandWordmark /></p><button class="playful-button" data-menu-close autofocus>{getCopy('common.menuCloseLabel')}<span aria-hidden="true"> <SiteIcon name="close" /></span></button></div>
   <nav aria-label={getCopy('common.primaryNavigation')}>
-    {getNavigation('header').map(link => <a data-accent="outline" href={link.path} aria-current={current === link.path ? 'page' : undefined}><GoldenOutlineText text={getCopy(link.labelKey)} /></a>)}
+    {getNavigation('header').map(link => <a data-accent="outline" data-text-jelly href={link.path} aria-current={current === link.path ? 'page' : undefined}><GoldenOutlineText text={getCopy(link.labelKey)} jelly /></a>)}
   </nav>
   <p class="drawer-note">{getCopy('common.statusIndicator')}</p>
 </dialog>
