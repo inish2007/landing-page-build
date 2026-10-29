@@ -22,3 +22,6 @@ export function getPageConfig(pageId:string):PageConfiguration|undefined{return 
 export function getArtworks():Artwork[];
 export function getArtworks(artworkId:string):Artwork|undefined;
 export function getArtworks(artworkId?:string):Artwork[]|Artwork|undefined{return artworkId?site.artworks.find(item=>item.id===artworkId):site.artworks;}
+
+/** Read the single editable brand name for every wordmark and its accessible label. Pure; edit common.siteName in text.en.json, not callers. */
+export function getBrandName():string { return getCopy('common.siteName'); }

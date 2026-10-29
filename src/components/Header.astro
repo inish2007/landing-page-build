@@ -1,15 +1,15 @@
 ---
 /** Shared brand and responsive navigation. No props; consumes common.*, nav.*, images.siteLogo and navigation.header. */
-import { getCopy, getNavigation } from '../utils/content';
+import { getBrandName, getCopy, getNavigation } from '../utils/content';
 import site from '../config/site';
 import SiteIcon from './SiteIcon.astro';
 const logo = site.branding.logo;
 const current = Astro.url.pathname;
 ---
 <header class="site-header" id="top">
-  <a class="brand playful-brand" href={site.links.home} aria-label={getCopy('common.siteName')}>
+  <a class="brand playful-brand" href={site.links.home} aria-label={getBrandName()}>
     {logo?.src && <img src={logo.src} alt="" width={logo.width} height={logo.height} />}
-    <span>{getCopy('common.siteName')}</span>
+    <span>{getBrandName()}</span>
   </a>
   <nav class="desktop-nav" aria-label={getCopy('common.primaryNavigation')}>
     {getNavigation('header').map(link => <a class="playful-link" href={link.path} aria-current={current === link.path ? 'page' : undefined}>{getCopy(link.labelKey)}</a>)}
