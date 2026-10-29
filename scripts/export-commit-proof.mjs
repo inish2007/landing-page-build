@@ -1,0 +1,5 @@
+/** Export genuine ordered Git metadata; output remains ignored because the latest hash cannot be embedded in its own commit. */
+import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+/** Read ordered commits and their actual files/notes. @returns {object[]} Evidence entries; writes ignored commit-proof.json and .txt. */
+export function exportCommitProof(){const commits=execFileSync('git',['log','--reverse','--format=%H|%s|%aI'],{encoding:'utf8'}).trim().split('\n').map(line=>{const[hash,subject,authoredAt]=line.split('|');const files=execFileSync('git',['diff-tree','--root','--no-commit-id','--name-only','-r',hash],{encoding:'utf8'}).trim().split('\n');return{hash,subject,authoredAt,files,changeNotes:files.filter(file=>file.startsWith('docs/changes/'))};});fs.writeFileSync('commit-proof.json',JSON.stringify(commits,null,2)+'\n');fs.writeFileSync('commit-proof.txt',commits.map(c=>[c.hash,c.subject,c.authoredAt,...c.files].join('\n')).join('\n\n')+'\n');return commits;}
+if(process.argv[1]===fileURLToPath(import.meta.url))console.log('Exported '+exportCommitProof().length+' real commits.');

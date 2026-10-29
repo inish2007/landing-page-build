@@ -1,169 +1,82 @@
-# Function and Component Index
+# Current function and component index
 
-This document serves as the project's living registry of all active components, utility functions, client scripts, build tools, and test helpers across `D:\projects\landing-page-build`.
+Updated at final handoff. Each function below includes source JSDoc; historical per-commit details remain in docs/changes. Inline mapping/assertion callbacks are owned by the named component/test.
 
-## Purpose and Usage
-- **For Contributors and Editors**: Locate the exact component or function responsible for a given layout, interaction, or build check.
-- **Maintenance Rule**: Whenever a function or component is added, modified, renamed, or deleted, this index must be updated in the same Git commit.
-- **Deletions**: Obsolete symbols are removed from this index and preserved in the historical change notes under `docs/changes/`.
-- **Tooling Coverage**: In addition to UI components and application helpers, all tracked build, validation, and test scripts must be registered here.
-
----
-
-## 1. Layouts and Page Routes (`src/layouts/`, `src/pages/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
+| Symbol | File | Responsibility | Inputs / returns | Consumers | Side effects | Checks |
 |---|---|---|---|---|---|---|
-| `SiteLayout` | `src/layouts/SiteLayout.astro` | Semantic HTML5 document shell, viewport metadata, skip link, and default title | Props: `{ title?: string }`, Slot: main content | Page routes (`src/pages/*.astro`) | Renders document shell, sets `<title>`, defines `#main-content` landmark | `npm run build`, `npx astro check` |
-| `Index` (Home) | `src/pages/index.astro` | Homepage entry route rendering initial studio welcome container within `SiteLayout` | Props: none (page route), Output: static HTML document | Browser requests to `/` | Serves root HTML document | `npm run build`, `npx astro check` |
+| getCopy | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (keyPath, fallback = ''); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getImage | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (imageKey); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getNavigation | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (area); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getPageConfig | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (pageId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getArtworks | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (artworkId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| initNavigation | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| openMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| closeMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| restoreMenuState | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| handleMenuKeydown | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| handleMenuCancel | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| handleDrawerClick | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| handleViewportChange | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
+| initMotion | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
+| fadeElement | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (element, delay = 0); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
+| handleEntries | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (entries); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
+| handleMotionPreference | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
+| initGallery | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| renderArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| openArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (event); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| closeArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| restoreGallery | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| previousArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| nextArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| handleGalleryKeydown | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (event); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
+| initContactForm | src/scripts/contact.js | Local inquiry validation/status | (); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
+| handleInquirySubmit | src/scripts/contact.js | Local inquiry validation/status | (event); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
+| clearInquiryStatus | src/scripts/contact.js | Local inquiry validation/status | (); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
+| initAnimatedMedia | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
+| setPlayback | src/scripts/media.js | Local GIF/poster control and preference response | (value); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
+| togglePlayback | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
+| handleMediaPreference | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
+| resolvePath | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (obj, keyPath); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateChromeKeys | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (textData); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateComponentWhitelist | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (pagesData); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateImageMetadata | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (imageData, rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateCrossReferences | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | ({ textData, imageData, navigationData, pagesData, artworksData }); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateRoutesAndMedia | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (schemas, rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| validateContent | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
+| generateResponsiveImages | scripts/generate-responsive-images.mjs | Generate configured local image width variants | (); see JSDoc return | Manual CLI | Writes variants and image metadata | build / audit / relevant browser suite |
+| pruneUnusedAssets | scripts/prune-unused-assets.mjs | Prune inactive production image copies with path containment | (); see JSDoc return | npm postbuild; source-swap test | Deletes only dist/images files; source preserved | build / audit / relevant browser suite |
+| visitImages | scripts/prune-unused-assets.mjs | Prune inactive production image copies with path containment | (directory); see JSDoc return | npm postbuild; source-swap test | Deletes only dist/images files; source preserved | build / audit / relevant browser suite |
+| auditBuild | scripts/audit-build.mjs | Production local-link/media/private/runtime audit | (); see JSDoc return | npm audit | Reads dist; throws on diagnostics | build / audit / relevant browser suite |
+| walk | scripts/audit-build.mjs | Production local-link/media/private/runtime audit | (dir); see JSDoc return | npm audit | Reads dist; throws on diagnostics | build / audit / relevant browser suite |
+| exportCommitProof | scripts/export-commit-proof.mjs | Read genuine ordered Git history/files/timestamps | (); see JSDoc return | Manual final CLI | Writes ignored proof files | build / audit / relevant browser suite |
+| getStaticPaths | src/pages/[...slug].astro | Static supporting route enumeration | (); see JSDoc return | Astro build | No writes beyond Astro generation | build / audit / relevant browser suite |
+| buildFixture | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyContentSwap | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| restoreContent | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyNavigation | tests/navigation.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyResponsiveHome | tests/responsive.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyAllRoutes | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyInteractions | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| verifyMotionFallbacks | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| launchBrowser | tests/test-helper.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| decodeImages | tests/test-helper.mjs | Browser/source-edit regression owned by test entry | (page); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
 
----
+## Components and routes
 
-## 2. Reusable UI & Section Components (`src/components/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
-|---|---|---|---|---|---|---|
-| `Header`, `MobileDrawer`, `Footer` | `src/components/{Header,MobileDrawer,Footer}.astro` | Shared responsive chrome, native modal and footer | No props; common/nav/footer copy and navigation JSON; optional images.siteLogo | SiteLayout | Semantic navigation, current-page state, dialog markup | build, navigation browser test |
-
----
-
-## 3. Content Query & Utility Helpers (`src/utils/`, `src/config/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
-|---|---|---|---|---|---|---|
-| `getCopy` | `src/utils/content.js` | Resolves dot-notation path into centralized text dictionary | Inputs: `(keyPath: string, fallback?: any)`, Output: string, segment array, or object | Astro components, section templates | None (pure lookup) | `node scripts/validate-content.mjs`, `npm run build` |
-| `getImage` | `src/utils/content.js` | Retrieves image metadata object from images.json | Inputs: `(imageKey: string)`, Output: object `{ src, alt, width, height, position, credit }` | `ResponsiveImage.astro`, page routes | Throws Error if key missing | `node scripts/validate-content.mjs`, `npm run build` |
-| `getNavigation` | `src/utils/content.js` | Retrieves navigation link hierarchy array for header, footer, or social | Inputs: `(area: 'header'\|'footer'\|'social')`, Output: `Array<object>` | `Header.astro`, `Footer.astro`, `MobileDrawer.astro` | None | `node scripts/validate-content.mjs`, `npm run build` |
-| `getPageConfig` | `src/utils/content.js` | Retrieves page layout composition and section sequence | Inputs: `(pageId: string)`, Output: `object\|undefined` | Page routes (`src/pages/*.astro`) | None | `node scripts/validate-content.mjs`, `npm run build` |
-| `getArtworks` | `src/utils/content.js` | Retrieves portfolio artworks array or single artwork record by ID | Inputs: `(artworkId?: string)`, Output: `Array<object>\|object\|undefined` | `work.astro`, `Gallery.astro`, `SelectedWorkSection.astro` | None | `node scripts/validate-content.mjs`, `npm run build` |
-
----
-
-## 4. Client-Side Behavior Modules (`src/scripts/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
-|---|---|---|---|---|---|---|
-| `initNavigation` | `src/scripts/site.js` | Initialize drawer once per document | No arguments; void | SiteLayout bundled script | Registers handlers and reveals mobile trigger | navigation browser test |
-| `openMenu`, `closeMenu`, `restoreMenuState` | `src/scripts/site.js` | Modal lifecycle with focus restoration and scroll locking | No arguments; void | Drawer event handlers | Dialog, body overflow, focus, expanded state | navigation browser test |
-| `handleMenuKeydown`, `handleMenuCancel`, `handleDrawerClick`, `handleViewportChange` | `src/scripts/site.js` | Tab wrapping, native Escape, backdrop/link dismissal, desktop resize cleanup | KeyboardEvent/Event/MouseEvent/no arguments respectively; void | DOM and matchMedia events | May prevent default, move focus and close drawer | navigation browser test |
-
----
-
-## 5. Build, Validation & Audit Scripts (`scripts/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
-|---|---|---|---|---|---|---|
-| `validateContent` | `scripts/validate-content.mjs` | Main content validation orchestrator verifying schemas, chrome keys, components, and assets | Inputs: `(rootDir?: string)`, Output: `boolean` | CLI execution, npm `prebuild` & `pretest` hooks | Logs diagnostics to stdout/stderr | `node scripts/validate-content.mjs`, `npm run build` |
-| `validateImageMetadata` | `scripts/validate-content.mjs` | Verifies image asset existence on disk, positive dimensions, and valid focal percentages | Inputs: `(imageData: object, rootDir?: string)`, Output: `Array<string>` | `validateContent()` | Reads filesystem (`public/images/`) | `node scripts/validate-content.mjs` |
-| `validateChromeKeys` | `scripts/validate-content.mjs` | Verifies required root chrome copy keys in text dictionary | Inputs: `(textData: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
-| `validateComponentWhitelist` | `scripts/validate-content.mjs` | Verifies section component names in pages.json against authorized whitelist | Inputs: `(pagesData: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
-| `validateCrossReferences` | `scripts/validate-content.mjs` | Verifies cross-referenced text and image keys across schemas | Inputs: `(schemas: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
-| `resolvePath` | `scripts/validate-content.mjs` | Resolves dot-notation string key in nested object structure | Inputs: `(obj: object, keyPath: string)`, Output: `any` | Validator helper functions | None | `node scripts/validate-content.mjs` |
-
----
-
-## 6. Test Helpers & Test Suites (`tests/`)
-
-| Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
-|---|---|---|---|---|---|---|
-| `verifyNavigation` | `tests/navigation.test.mjs` | Production chrome browser regression | No arguments; Promise<void> | node:test | Launches Edge, exercises DOM, writes ignored captures; preview required | npm test |
-
----
-
-## Maintenance & Integrity Contract
-- Every exported or non-trivial JavaScript function must include concise JSDoc describing purpose, parameters, return value, and side effects.
-- Every Astro component must include a frontmatter header comment describing its responsibility, accepted props, and content keys.
-- Do not use anonymous callbacks to conceal meaningful business logic; extract to named, documented functions.
-- Every commit updating this file must have a corresponding note in `docs/changes/NNN-*.md`.
-
-Stage 04 updates: SiteLayout now imports local shared styles/fonts, Header/Footer/MobileDrawer and navigation behavior; its title and skip link use common copy. Index remains a scaffold, now reading common.siteName/home.hero.eyebrow with shared font tokens. No function removals or renames.
-
-## Stage 05 homepage registry
-
-| Component | File | Inputs / responsibility | Consumers / effects | Checks |
+| Component | File | Props / content | Responsibility / consumers | Checks |
 |---|---|---|---|---|
-| HeroSection | src/components/HeroSection.astro | id, textNamespace, imageKey; image opening with accessible h1 | Index; renders static local image | build, desktop review |
-| StatementSection | src/components/StatementSection.astro | id, textNamespace, imageKey; artist intro and process link | Index; structured text | build, desktop review |
-| SelectedWorkSection | src/components/SelectedWorkSection.astro | id, textNamespace, imageKey?; collaboration banner or editorial collage | Index; static links/images | build, desktop review |
-| ContactCtaSection | src/components/ContactCtaSection.astro | id, textNamespace, imageKey; studio image/social strip | Index; external social links only | build |
-| FormattedText | src/components/FormattedText.astro | segments; safe escaped text with approved formatting | Homepage sections; no raw HTML | build |
-| ResponsiveImage | src/components/ResponsiveImage.astro | imageKey, aspectRatio, eager, class; local image with independent crop/ratio | Homepage sections; eager hero/lazy others | build |
-
-Index now maps pages.home.sections to four supported components. Footer now groups centralized reference navigation and preserves original credit. validateChromeKeys retains its signature; required key list now covers existing chrome, dropping unused future contact requirements. Other validator functions unchanged. No runtime functions added or removed in Stage 05.
-
-## Stage 06 registry
-
-| Symbol | File | Inputs/outputs and consumers | Side effects/checks |
-|---|---|---|---|
-| generateResponsiveImages | scripts/generate-responsive-images.mjs | No args; Promise<void>; script entry; reads images.json and selected source files | Writes quality-82 WebP derivatives and sources metadata; generation/build verified |
-| launchBrowser | tests/test-helper.mjs | No args; Promise<Browser>; responsive test | Launches headless installed Edge; caller closes |
-| decodeImages | tests/test-helper.mjs | Page; Promise<void>; responsive test | Scrolls to trigger lazy loads, decodes images, resets scroll/focus before captures |
-| verifyResponsiveHome | tests/responsive.test.mjs | No args; Promise<void>; node:test | Opens/closes browser, blocks external requests, checks six viewports and writes ignored captures |
-
-Changed verifyNavigation in tests/navigation.test.mjs: footer count now counts six internal route links separately from the two social links; interaction behavior/assertions preserved. Changed ResponsiveImage: optional sizes prop and metadata-driven srcset; asset dimensions and ratio stay independent. StatementSection/SelectedWorkSection/ContactCtaSection now pass presentation-specific image sizes. Index imports home-responsive.css. No functions removed/renamed.
-
-Image replacement after Stage 06: no functions/components added, changed, removed or renamed. All image selections updated through images.json; see changes/006a-image-replacement.md.
-
-Documentation-only animation planning update: no functions/components added, changed, removed or renamed. Shared animation behavior and future route coverage are planned in IMPLEMENTATION_PLAN.md; no new runtime module exists. See changes/006b-animation-plan.md.
-
-Master plan correction: docs/implementation-plan.md now contains the current scope and future animation policy as well as its labeled historical proposal. No function/component changes; see changes/006c-master-plan-update.md.
-
-## Stage 007 — about-process-motion
-
-Added: initMotion(), fadeElement(element,delay), handleEntries(entries), handleMotionPreference() in src/scripts/motion.js: shared opacity entry, observer and preference cleanup; SiteLayout consumer. getStaticPaths() in src/pages/[...slug].astro: pure route enumeration.
-
-Changed: None
-
-Components: EditorialPage(page) and static dynamic route added; about and the-process content added; SiteLayout imports shared pages styles and motion.
-
-Checks: npm run build passed: 3 routes. Browser checks follow in Stage 12.
-
-## Stage 008 — galleries
-
-Added: initGallery(), renderArtwork(), openArtwork(event), closeArtwork(), restoreGallery(), previousArtwork(), nextArtwork(), handleGalleryKeydown(event) in gallery.js; native dialog, local data, keyboard navigation and focus/scroll restoration; Gallery consumer.
-
-Changed: getStaticPaths now enumerates added gallery configurations; unchanged signature.
-
-Components: Gallery(page) renders available/archived/work routes, ordered cards and native lightbox.
-
-Checks: npm run build passed: 6 routes; browser verification scheduled Stage 12.
-
-## Stage 009 — press-collaborations
-
-Added: None
-
-Changed: getStaticPaths enumerates four added route configurations; no signature change.
-
-Components: EditorialPage now renders configured source article/shop links; Press, Collaborations, Pagerie and SHAY detail routes added.
-
-Checks: npm run build passed: 10 routes.
-
-## Stage 010 — contact-media-secondary
-
-Added: initContactForm(), handleInquirySubmit(event), clearInquiryStatus() in contact.js: local validation/status only. initAnimatedMedia(), setPlayback(value), togglePlayback(), handleMediaPreference() in media.js: GIF/poster pause and reduced motion.
-
-Changed: getStaticPaths adds configured contact/legal/home-1 routes; EditorialPage supports optional media.
-
-Components: ContactForm and AnimatedMedia added; EditorialPage and dynamic route updated; home/process redirect aliases.
-
-Checks: npm run build passed; browser verification follows Stage 12.
-
-## Stage 011 — editing-gaps
-
-Added: buildFixture(), verifyContentSwap(), restoreContent() in tests/content-swap.test.mjs: validates real six-file dictionary backups, altered source text/image build, browser wrapping/ratio/fonts, byte-for-byte restoration and baseline rebuild in finally.
-
-Changed: verifyNavigation expects two new legal links. clearInquiryStatus JSDoc corrected; behavior unchanged.
-
-Components: Footer exposes legal routes; ContactForm uses method=dialog for no-JS safety; long brand wrapping corrected.
-
-Checks: Build passed; content-swap browser test passed with exact source restoration. Mobile all-route preliminary overflow check returned no issues. Process mobile capture reviewed.
-
-## Stage 012 — verification
-
-Added: pruneUnusedAssets(), visitImages(directory) in prune-unused-assets.mjs: remove only inactive dist/images copies, preserve source. auditBuild(), walk(dir) in audit-build.mjs: static route/link/private/tracking/media audit. validateRoutesAndMedia(schemas,rootDir) in validate-content.mjs: six-schema route/media/font/title checks. verifyAllRoutes(), verifyInteractions(), verifyMotionFallbacks() in tests/site.test.mjs: isolated browser matrices and interactions.
-
-Changed: validateContent loads media.json and invokes route/media validation. buildFixture runs output pruning. Existing browser tests accept SITE_TEST_URL. npm tests run sequentially to isolate source edits.
-
-Components: Shared mobile footer corrected on every page; source assets preserved but inactive image copies excluded from output.
-
-Checks: Production build/audit passed: 16 HTML documents and 25 output files. All six tests passed against isolated production preview on port 4322: 14 routes × six viewports, internal links, labels/IDs, gallery, contact, GIF, fade timing, reduced motion, no-JS/API fallbacks, real source edits restored. Initial development-toolbar false failure isolated and corrected by configurable production URL. Screenshot captures reviewed.
+| SiteLayout | src/layouts/SiteLayout.astro | Document shell with shared chrome, local fonts/styles, skip link and menu behavior. Props: title?: string; main slot. Copy: common.*. | Shared page/component composition; see source imports | build and browser suite |
+| index | src/pages/index.astro | Home route: ordered page configuration maps to shared section components. No props. | Shared page/component composition; see source imports | build and browser suite |
+| AnimatedMedia | src/components/AnimatedMedia.astro | GIF video-slot replacement. Props: mediaKey. Static poster is default/no-JS/reduced-motion fallback; controls use centralized copy. | Shared page/component composition; see source imports | build and browser suite |
+| ContactCtaSection | src/components/ContactCtaSection.astro | Full-width studio image and static social strip. Props: id, textNamespace, imageKey. No online embeds or submission. | Shared page/component composition; see source imports | build and browser suite |
+| ContactForm | src/components/ContactForm.astro | Local-only inquiry preview. No props. Labels/messages from contact.*; no network or storage. | Shared page/component composition; see source imports | build and browser suite |
+| EditorialPage | src/components/EditorialPage.astro | Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. | Shared page/component composition; see source imports | build and browser suite |
+| Footer | src/components/Footer.astro | Footer using temporary reference copy and configured navigation/social labels. No props. | Shared page/component composition; see source imports | build and browser suite |
+| FormattedText | src/components/FormattedText.astro | Safe structured inline text. Prop: segments; italic and circle/accent options only. | Shared page/component composition; see source imports | build and browser suite |
+| Gallery | src/components/Gallery.astro | Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. | Shared page/component composition; see source imports | build and browser suite |
+| Header | src/components/Header.astro | Shared brand and responsive navigation. No props; consumes common.*, nav.*, images.siteLogo and navigation.header. | Shared page/component composition; see source imports | build and browser suite |
+| HeroSection | src/components/HeroSection.astro | Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. | Shared page/component composition; see source imports | build and browser suite |
+| MobileDrawer | src/components/MobileDrawer.astro | Native modal navigation drawer; no props. Uses common menu labels and navigation.header. | Shared page/component composition; see source imports | build and browser suite |
+| ResponsiveImage | src/components/ResponsiveImage.astro | Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, sizes='100vw', class. Responsive sources come from images.json. Asset dimensions never dictate presentation ratio. | Shared page/component composition; see source imports | build and browser suite |
+| SelectedWorkSection | src/components/SelectedWorkSection.astro | Collaboration banner or editorial collage, chosen by textNamespace. Props: id, textNamespace, imageKey?. Centralized text and image keys. | Shared page/component composition; see source imports | build and browser suite |
+| StatementSection | src/components/StatementSection.astro | Artist introduction. Props: id, textNamespace, imageKey. Copy from home.statement. | Shared page/component composition; see source imports | build and browser suite |

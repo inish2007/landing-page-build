@@ -106,3 +106,8 @@ Designed by Impallari Type. Copyright 2015 Google Inc. All Rights Reserved. SIL 
 
 ## Temporary reference content
 At the user’s request, this local build uses text and images from their supplied saved artist website. Copyright remains with the original owners; no open license or redistribution permission for these images/copy is asserted. Original footer design credit is retained. This is local reference content, not a completed client identity or published website. The brush lettering is a separate licensed font, not the source logo image.
+
+## User-selected GIF video replacement
+
+Source: https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif
+Retrieved 2026-10-29. The user explicitly selected this asset for video slots. Local original: public/media/video-placeholder.gif; local first-frame poster: public/media/video-placeholder-poster.png. Original GIF retained unchanged; poster generated with sharp. No creator identity, open license or redistribution permission is asserted. Other ownership/attribution obligations remain with the original rights holder. The local build does not contact the source host at runtime.
