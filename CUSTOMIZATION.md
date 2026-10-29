@@ -294,3 +294,11 @@ Footer social links use local icons from site.icons.instagram and site.icons.fac
 The110 image slots now have separate local WebP files under public/images/demo/, organized by homepage, editorial page, available and archived. See IMAGE_REPLACEMENT_GUIDE.md for every filename, image key and displayed ratio. Replace a file using the same path, then update its actual dimensions, alt text, crop position and credit in src/content/images.json. Editorial pages select their imageKeys array in src/content/pages.json; artworks select their imageKey in src/content/artworks.json. Work reuses the Available collection. All settings remain exposed through site.ts; component edits are unnecessary.
 
 The museum pictures are temporary CC0 demos, not the client’s own artwork. Their license/source records live in docs/demo-image-sources.json. Replacing a picture with a different third-party image requires recording that image’s actual rights/source. The existing logo/icons and GIF/poster remain separate.
+
+## Readable labels, gold shine and jelly buttons
+
+About uses a compact opaque charcoal plaque so text stays readable without dimming its picture. Edit theme.colors.plaque/plaqueText and theme.typography.sizes.plaquePadding in src/config/site.ts. Footer underlines fit their text; active navbar links use one steady underline. Yellow collaboration buttons never underline.
+
+Text wordmarks in header/footer and the collaboration heading play one gold sweep on precise-pointer hover or keyboard focus. Image logos do not shine. Gold colors are theme.colors.goldDark/goldMid/goldLight; duration is theme.motion.playful.shineDuration(default1000ms). The heading remains a heading and gains a focus outline.
+
+Collaboration pills animate only their decorative yellow background; lettering and click targets stay steady. playful.jellyDuration(default600ms), jellyWide(1.04) and jellyNarrow(0.96) control the principal squash/stretch. The secondary settling frames are0.98/1.02 and1.01/0.99, endingat1. No looping. Shared master/playful switches, reduced motion and inactive/navigation cancellation restore settled visuals. Missing animation/text-clipping APIs or JavaScript keep readable ordinary text and solid buttons. No library or media downloads are required.
