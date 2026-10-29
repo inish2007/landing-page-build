@@ -33,5 +33,6 @@
 /* Original marker strokes live behind prose and cannot affect its geometry. */
 .press-marker-group { position: relative; isolation: isolate; margin-top: var(--space-3); }
 .press-marker-group > .editorial-block { position: relative; z-index: 1; opacity: 1; }
-.press-marker-strokes { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; z-index: 0; overflow: hidden; opacity: var(--press-marker-opacity); }
-.press-marker-strokes path { fill: none; stroke: var(--press-marker-color); stroke-width: var(--press-marker-thickness); stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+
+/* Inline fragments repeat the marker independently behind every wrapped text line. */
+.press-marker-ink { -webkit-box-decoration-break: clone; box-decoration-break: clone; background-image: linear-gradient(to bottom,transparent 8%,var(--press-marker-ink) 16%,var(--press-marker-ink) 82%,transparent 94%); background-repeat: no-repeat; background-position: left center; background-size: 100% var(--press-marker-thickness); }

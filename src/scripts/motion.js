@@ -30,13 +30,13 @@ export function initMotion(){
     cancelReveals();const ordered=socialDirection==='reverse'?[...items].reverse():items;
     try{for(const [index,item]of ordered.entries())trackEffect(item,item.animate([{opacity:0,transform:`translateY(${-settings.socialDrop.distance}px)`},{opacity:1,transform:'translateY(0px)'}],{duration:settings.socialDrop.duration,delay:index*settings.socialDrop.stagger,easing:settings.imageEasing,fill:'backwards'}));}catch{for(const item of items){active.get(item)?.cancel();active.delete(item);}}
   }
-  /** Draw three owned marker paths once; cancellation exposes complete base strokes. @param {Element} group Marked prose wrapper. @returns {void} */
+  /** Draw horizontal marker bands per paragraph; cancellation restores full inline-fragment highlights. @param {Element} group Marked prose wrapper. @returns {void} */
   function playPressMarker(group){
     if(!canReveal||!settings.playful||preference.matches||document.hidden||protectedTarget(group)||window.performance?.getEntriesByType?.('navigation')?.[0]?.type==='back_forward')return;
-    const paths=[...group.querySelectorAll('.press-marker-strokes path')];if(paths.length!==3)return;
+    const paths=[...group.querySelectorAll('.press-marker-ink')];if(!paths.length)return;
     for(const[element,effect]of active)if(element.contains(group)||group.contains(element)){effect.cancel();active.delete(element);seen.add(element);}
     const css=getComputedStyle(document.documentElement),duration=Number(css.getPropertyValue('--press-marker-duration'))||900,stagger=Number(css.getPropertyValue('--press-marker-stagger'))||1000;
-    try{for(const[index,path]of paths.entries())trackEffect(path,path.animate([{strokeDashoffset:'1'},{strokeDashoffset:'0'}],{duration,delay:index*stagger,easing:'ease-in-out',fill:'backwards'}));}
+    try{for(const[index,path]of paths.entries())trackEffect(path,path.animate([{backgroundSize:'0% '+css.getPropertyValue('--press-marker-thickness').trim()},{backgroundSize:'100% '+css.getPropertyValue('--press-marker-thickness').trim()}],{duration,delay:index*stagger,easing:'ease-in-out',fill:'backwards'}));}
     catch{for(const path of paths){active.get(path)?.cancel();active.delete(path);}}
   }
   /** Observe entered units once, sharing the same budget/delay cap with stroke draws. @param {IntersectionObserverEntry[]} entries Visible candidates. @returns {void} */

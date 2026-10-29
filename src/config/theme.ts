@@ -4,6 +4,7 @@ export function createThemeCss(config:SiteConfiguration):string {
   const {colors,typography,spacing,layout,motion}=config.theme;
   const fonts=typography.fonts;
   const variables:Record<string,string|number>={
+    '--press-marker-ink':'color-mix(in srgb, '+config.theme.pressMarker.color+' '+(config.theme.pressMarker.opacity*100)+'%, transparent)',
     '--press-marker-color':config.theme.pressMarker.color,'--press-marker-opacity':config.theme.pressMarker.opacity,'--press-marker-thickness':config.theme.pressMarker.thickness+'px','--press-marker-duration':config.theme.pressMarker.duration,'--press-marker-stagger':config.theme.pressMarker.stagger,
     '--about-fill':colors.aboutFill,'--about-outline':colors.aboutOutline,'--about-shadow':colors.aboutShadow,'--font-weight-navigation':typography.weights.navigation,
     '--color-plaque':colors.plaque,'--color-plaque-text':colors.plaqueText,'--gold-dark':colors.goldDark,'--gold-mid':colors.goldMid,'--gold-light':colors.goldLight,'--label-glow-duration':motion.playful.labelGlowDuration+'ms','--label-glow-low':motion.playful.labelGlowLow+'px','--label-glow-high':motion.playful.labelGlowHigh+'px',
