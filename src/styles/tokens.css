@@ -20,3 +20,57 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Opt-in utilities: current DOM styles are the visible, stationary fallback. */
+@utility playful-card {
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
+    @media (prefers-reduced-motion: no-preference) {
+      img { transition: transform var(--playful-hover-duration) var(--motion-ease); }
+      &:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))); }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:focus-visible) img { transform: translateY(calc(-1 * var(--playful-card-lift))) rotate(var(--playful-card-tilt)) scale(var(--playful-card-scale)); }
+      }
+    }
+  }
+}
+@utility playful-button {
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform var(--playful-hover-duration) var(--motion-ease);
+      &:focus-visible { transform: translateY(-2px); }
+      &:active { transform: scale(var(--playful-press-scale)); }
+      @media (hover: hover) and (pointer: fine) { &:hover:not(:active) { transform: translateY(-2px); } }
+    }
+  }
+}
+@utility playful-link {
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
+    @media (prefers-reduced-motion: no-preference) {
+      /* A transform on a decoration avoids animating background-size on each frame. */
+      position: relative;
+      &::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--playful-hover-duration) var(--motion-ease); pointer-events: none; }
+      &:focus-visible::before { transform: scaleX(1); }
+      @media (hover: hover) and (pointer: fine) { &:hover::before { transform: scaleX(1); } }
+    }
+  }
+}
+@utility playful-arrow {
+  display: inline-block;
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) :is(a,button):is(:hover,:focus-visible) & {
+    @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+      transform: translate(var(--arrow-x,var(--playful-arrow-travel)),var(--arrow-y,0px));
+    }
+  }
+  transition: transform var(--playful-hover-duration) var(--motion-ease);
+  &[data-direction="previous"] { --arrow-x: calc(-1 * var(--playful-arrow-travel)); }
+  &[data-direction="external"] { --arrow-y: calc(-1 * var(--playful-arrow-travel)); }
+}
+@utility playful-brand {
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
+    @media (prefers-reduced-motion: no-preference) {
+      &:focus-visible > span { animation: playful-wobble calc(var(--playful-accent-duration) * 1ms) var(--motion-ease); }
+      @media (hover: hover) and (pointer: fine) { &:hover > span { animation: playful-wobble calc(var(--playful-accent-duration) * 1ms) var(--motion-ease); } }
+    }
+  }
+}
+@keyframes playful-wobble { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(calc(-1 * var(--playful-card-tilt))); } 65% { transform: rotate(var(--playful-card-tilt)); } }

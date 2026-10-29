@@ -58,7 +58,9 @@ export const site = {
     },
     spacing:{'1':'0.5rem','2':'1rem','3':'1.5rem','4':'2.5rem','5':'4rem','6':'6rem'},
     layout:{maxWidth:'90rem',narrowWidth:'56rem',pageGutter:'clamp(1.25rem, 3vw, 3rem)'},
-    motion:{enabled:true as boolean,pageTransitions:true as boolean,entryDuration:360,entryStagger:40,maxStagger:120,maxConcurrent:6,dialogOpen:220,dialogClose:160,pageDuration:160,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)'},
+    motion:{enabled:true as boolean,pageTransitions:true as boolean,entryDuration:360,entryStagger:40,maxStagger:120,maxConcurrent:6,dialogOpen:220,dialogClose:160,pageDuration:160,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
+      // Playful interactions: distances in px, tilt in degrees, durations in ms.
+      playful:{enabled:true as boolean,hoverDuration:220,cardLift:4,cardTilt:1,cardScale:1.015,pressScale:0.98,arrowTravel:4,revealTravel:8,accentDuration:420}},
   } satisfies SiteTheme,
 };
 export type SiteConfiguration = typeof site;

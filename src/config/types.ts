@@ -15,5 +15,5 @@ export interface SiteTheme {
   typography: { fonts:Record<'primary'|'secondary'|'brand',FontDefinition>; sizes:Record<'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'heading'|'brand'|'strong',string>; lineHeights:Record<'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
   spacing:Record<'1'|'2'|'3'|'4'|'5'|'6',string>;
   layout: { maxWidth:string; narrowWidth:string; pageGutter:string };
-  motion: { enabled:boolean; pageTransitions:boolean; entryDuration:number; entryStagger:number; maxStagger:number; maxConcurrent:number; dialogOpen:number; dialogClose:number; pageDuration:number; fast:string; standard:string; easing:string };
+  motion: { enabled:boolean; pageTransitions:boolean; entryDuration:number; entryStagger:number; maxStagger:number; maxConcurrent:number; dialogOpen:number; dialogClose:number; pageDuration:number; fast:string; standard:string; easing:string; playful:{enabled:boolean;hoverDuration:number;cardLift:number;cardTilt:number;cardScale:number;pressScale:number;arrowTravel:number;revealTravel:number;accentDuration:number} };
 }
