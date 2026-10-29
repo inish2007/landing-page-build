@@ -318,3 +318,9 @@ GoldenOutlineText.astro renders About, Press, Archived, Contact and THE PROCESS 
 New dark labels use theme.typography.sizes.labelStroke(default0.5px), the existing theme.colors.goldDark/goldMid/goldLight palette, and playful.labelGlowDuration(default1800ms), labelGlowLow(3px) and labelGlowHigh(6px). Their dark fill, font, size and weight stayunchanged. About retains its original1pxwhite/gold treatment and aboutGlowDuration. The existing playful.shineDuration1000ms controls edge sweeps for allfive.
 
 Allfiveglows now run only onscreen using the shared observer. Hover/focus replay remains independent and once-only entry/history tracking is preserved. Leaving a label or scrolling it offscreen cancels its sweep immediately. Reduced motion, inactive tabs, disabled switches, noJavaScript or missing APIs retain static outlined text. Decorative copies must remain hidden between sweeps and hidden from assistive technology.
+
+## Gold navigation, footer headings and page titles
+
+The same GoldenOutlineText component now covers desktop/mobile navigation, footer category headings, gallery titles, Contact and editorial portfolio titles (including collaboration detail pages). Legal and home-1 utility titles, body copy, artwork captions, form labels, and ordinary footer links remain excluded. No new typography or animation settings: the existing0.5px stroke,1800ms subtle glow and1000ms sweep apply. Navbar weight600 and current-page/hover underlines are unchanged and stayoutside the decorative layer.
+
+Navigation links replay on hover or keyboard focus. Structural headings remain plain headings without added tab stops; they receive entry/hover effects. Existing visibility/once-only/history/cancellation logic is reused. Accessible names use only the base text; the extra outline layer is aria-hidden and invisible between sweeps. Central content changes update both visual layers automatically.
