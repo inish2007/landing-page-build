@@ -4,6 +4,7 @@ export function createThemeCss(config:SiteConfiguration):string {
   const {colors,typography,spacing,layout,motion}=config.theme;
   const fonts=typography.fonts;
   const variables:Record<string,string|number>={
+    '--color-plaque':colors.plaque,'--color-plaque-text':colors.plaqueText,'--gold-dark':colors.goldDark,'--gold-mid':colors.goldMid,'--gold-light':colors.goldLight,'--jelly-duration':motion.playful.jellyDuration,'--shine-duration':motion.playful.shineDuration,'--jelly-wide':motion.playful.jellyWide,'--jelly-narrow':motion.playful.jellyNarrow,
     '--color-circle':colors.circle,'--color-canvas':colors.background,'--color-surface':colors.surface,'--color-text':colors.text,'--color-muted':colors.secondary,'--color-border':colors.border,'--color-accent':colors.primary,'--color-accent-text':colors.accentText,'--color-focus':colors.focus,
     '--color-subtle':colors.subtleBackground,'--color-on-media':colors.onMedia,'--color-shadow':colors.shadow,'--color-overlay':colors.overlay,'--color-modal-overlay':colors.modalOverlay,
     '--font-footer':JSON.stringify(fonts.footer.family)+', '+fonts.footer.fallback,
