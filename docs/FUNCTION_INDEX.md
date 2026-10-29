@@ -103,3 +103,5 @@ Index now maps pages.home.sections to four supported components. Footer now grou
 Changed verifyNavigation in tests/navigation.test.mjs: footer count now counts six internal route links separately from the two social links; interaction behavior/assertions preserved. Changed ResponsiveImage: optional sizes prop and metadata-driven srcset; asset dimensions and ratio stay independent. StatementSection/SelectedWorkSection/ContactCtaSection now pass presentation-specific image sizes. Index imports home-responsive.css. No functions removed/renamed.
 
 Image replacement after Stage 06: no functions/components added, changed, removed or renamed. All image selections updated through images.json; see changes/006a-image-replacement.md.
+
+Documentation-only animation planning update: no functions/components added, changed, removed or renamed. Shared animation behavior and future route coverage are planned in IMPLEMENTATION_PLAN.md; no new runtime module exists. See changes/006b-animation-plan.md.

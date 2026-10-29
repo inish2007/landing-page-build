@@ -58,3 +58,6 @@ User supplied artist content replaces the earlier Aura architecture plan. Stages
 User replaced the Aura architecture content plan with supplied local artist content. Stage 05 homepage is implemented; Stage 06 responsive verification follows. Only / exists. Provisional artist identity/copy and image rights are recorded honestly. No other agents running. See IMPLEMENTATION_PLAN.md.
 
 User image override: all 15 configured images now use the supplied dark PNG. Source assets retained; no Stage 07 work.
+
+## Animation planning clarification — documentation only
+User explicitly requested no new page build. Agent instructions and IMPLEMENTATION_PLAN now record saved-source fade timings, static circles, shared future route coverage, visibility/reduced-motion safeguards and future verification gates. No animation code or route was added; all dark image overrides remain.
