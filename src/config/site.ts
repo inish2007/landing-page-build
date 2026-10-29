@@ -40,6 +40,8 @@ export const site = {
     },
     typography: {
       fonts: {
+        // Footer reference uses a plain Arial-style face; system fonts need no download.
+        footer: {family:'Arial',fallback:'Helvetica, sans-serif',faces:[]},
         primary: {family:'Fraunces',fallback:'Georgia, Cambria, "Times New Roman", serif',faces:[
           {src:'/fonts/fraunces-opsz-wght.woff2',format:'woff2-variations',weight:'300 700',style:'normal'},
           {src:'/fonts/fraunces-italic-opsz-wght.woff2',format:'woff2-variations',weight:'300 700',style:'italic'},
@@ -51,9 +53,9 @@ export const site = {
           {src:'/fonts/caveat-brush-regular.ttf',format:'truetype',weight:'400',style:'normal'},
         ]},
       },
-      sizes: {processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1rem, 0.4vw + 0.9rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'0.875rem',root:'100%'},
+      sizes: {footer:'clamp(0.875rem, 2.25vw, 1.125rem)',processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1rem, 0.4vw + 0.9rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'0.875rem',root:'100%'},
       weights:{regular:'400',heading:'400',brand:'400',strong:'700'},
-      lineHeights:{body:'1.5',heading:'1.15',display:'1.05',brand:'.95'},
+      lineHeights:{footer:'1.25',body:'1.5',heading:'1.15',display:'1.05',brand:'.95'},
       tracking:{heading:'-.04em',editorial:'-.035em'},
     },
     spacing:{'1':'0.5rem','2':'1rem','3':'1.5rem','4':'2.5rem','5':'4rem','6':'6rem'},

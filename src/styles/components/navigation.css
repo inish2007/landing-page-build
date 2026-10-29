@@ -48,3 +48,7 @@ main { flex: 1; }
 
 /* Brand wordmarks stay undecorated in every link state; focus outlines remain accessible. */
 .brand, .footer-brand, .brand:is(:hover,:focus,:active,:visited), .footer-brand:is(:hover,:focus,:active,:visited) { text-decoration: none; }
+
+/* Reference footer typography only: retain the existing link decoration and spacing. */
+.footer-group h2, .footer-group nav { font-family: var(--font-footer); font-size: var(--text-footer); line-height: var(--line-footer); }
+.footer-group nav { font-weight: var(--font-weight-regular); text-transform: uppercase; }
