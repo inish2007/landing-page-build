@@ -310,3 +310,11 @@ Navigation labels use theme.typography.weights.navigation(default600); wordmark/
 Header/footer text wordmarks, collaboration heading and About outline use the existing1000ms playful.shineDuration. The shared observer starts entry effects once when visible; ordinary scroll, persisted history and reconstructed back/forward documents do not replay completed entry shine. Hover/focus replaces entry with one fresh owned effect. Overlapping local reveal effects settle before shine; there is no delayed queue. Decorative accent ownership is per target; the existing six-reveal limit remains for entry units. Touch scrolling does not start hover replay. Reduced motion, disabled settings, backgrounding and navigation leave settled visible content.
 
 About now also has the explicitly requested continuous gold glow. Change theme.motion.playful.aboutGlowDuration(default1800ms per gentle cycle). The existing1000ms edge sweep still runs on entry/hover. White fill, thin gold outline and transparent background remain. Reduced motion, disabled master/playful settings and inactive tabs stop the glow; withoutJavaScript/required APIs the outline staysstatic.
+
+## Shared homepage gold labels
+
+GoldenOutlineText.astro renders About, Press, Archived, Contact and THE PROCESS with one accessible text layer and an aria-hidden, absolutely positioned sweep layer. Press/Archived/Contact include their configured arrow; Process keeps its original separate black hand-drawn underline. No new backgrounds or padding.
+
+New dark labels use theme.typography.sizes.labelStroke(default0.5px), the existing theme.colors.goldDark/goldMid/goldLight palette, and playful.labelGlowDuration(default1800ms), labelGlowLow(3px) and labelGlowHigh(6px). Their dark fill, font, size and weight stayunchanged. About retains its original1pxwhite/gold treatment and aboutGlowDuration. The existing playful.shineDuration1000ms controls edge sweeps for allfive.
+
+Allfiveglows now run only onscreen using the shared observer. Hover/focus replay remains independent and once-only entry/history tracking is preserved. Leaving a label or scrolling it offscreen cancels its sweep immediately. Reduced motion, inactive tabs, disabled switches, noJavaScript or missing APIs retain static outlined text. Decorative copies must remain hidden between sweeps and hidden from assistive technology.
