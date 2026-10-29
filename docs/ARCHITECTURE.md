@@ -1,3 +1,7 @@
+# Central configuration update
+
+`src/config/site.ts` is the typed application configuration entry point. It composes six canonical content dictionaries with branding/icons/links and theme settings. Components consume it directly or through typed `src/utils/content.ts`; no component reads a content dictionary directly. `SiteTheme.astro` emits configured CSS variables/font faces and Tailwind aliases reuse those variables without preflight/default-font overrides. `SiteIcon.astro` renders text symbols or configured local assets. Validation/audit/production pruning read the same site configuration, including custom logo/icon selections. See CUSTOMIZATION.md for client editing. Earlier architecture details below remain applicable except where they name former token/font or content.js sources.
+
 # Architecture
 
 Astro produces 14 content pages plus two static redirect documents. `src/pages/index.astro` renders configured homepage sections. `src/pages/[...slug].astro` enumerates the remaining `pages.json` entries through `getStaticPaths`, then selects EditorialPage, Gallery or ContactForm. `/home/` redirects to `/`; `/process/` redirects to `/the-process/`.

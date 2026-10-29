@@ -1,3 +1,18 @@
+# Configuration follow-up — current state
+
+Updated 29 October 2026. The existing site is preserved; this follow-up centralizes client customization without redesign. Main entry: src/config/site.ts. Client instructions: CUSTOMIZATION.md.
+
+- Foundation commit: f2bb971. Integration commit: 9b1a274. Documentation follows as a separate commit; exact final hash is in exported commit-proof files.
+- The main entry composes six canonical content dictionaries with typed branding/icons/links/theme; content is not duplicated in components.
+- Fonts, sizes, weights, line heights, colors, spacing, widths and motion settings are in site.theme. SiteTheme generates CSS/font faces; Tailwind aliases share variables without resetting the design.
+- Header/footer logo, favicon and UI icons support local paths from config; default text branding/symbols are unchanged. Ordinary dark images and user-selected GIF remain the defaults.
+- All seven tests passed against isolated production preview on port 4330. Actual site.ts-only text/color/font/logo/icon/image/GIF edits passed and were restored byte-for-byte. All prior route/layout/motion/gallery/form/media checks passed.
+- Astro check: zero errors, warnings or hints. Build/audit passed. Ten desktop/mobile baseline cases showed identical typography/colors/dimensions/content and zero differing screenshot pixels.
+- Typed content.ts replaces content.js. Validation and asset packaging read the same site configuration, so legitimate media changes are no longer blocked by a hardcoded dark-image assertion.
+- No source asset, layout, animation or feature was removed. No push or publication. All prior handoff limits below remain applicable.
+
+---
+
 # Project handoff — completed
 
 Updated: 29 October 2026, Asia/Calcutta.

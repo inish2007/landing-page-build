@@ -26,3 +26,5 @@ Stage 13 documentation/handoff/evidence tooling is delivered in the current docu
 Stage 014 completed: typed-site-configuration. TypeScript noEmit passed; baseline metrics/captures recorded before theme integration. Main site module loads under Node 24.
 
 Stage 015 completed: integrate-central-customization. Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before/after page/viewport cases had identical metrics and zero differing screenshot pixels. Real site.ts-only edits to colors/fonts/body size/text/logo/icons/image/GIF verified across pages and restored exactly.
+
+Configuration maintenance completed: typed site.ts entry, all-component/theme/tooling integration, CUSTOMIZATION.md, explicit props, zero-difference baseline and seven passing tests. Local commits only.

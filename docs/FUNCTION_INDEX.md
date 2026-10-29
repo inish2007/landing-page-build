@@ -4,11 +4,11 @@ Updated at final handoff. Each function below includes source JSDoc; historical 
 
 | Symbol | File | Responsibility | Inputs / returns | Consumers | Side effects | Checks |
 |---|---|---|---|---|---|---|
-| getCopy | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (keyPath, fallback = ''); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getImage | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (imageKey); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getNavigation | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (area); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getPageConfig | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (pageId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getArtworks | src/utils/content.js | Pure centralized copy/image/navigation/page/gallery lookups | (artworkId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getCopy | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (keyPath, fallback = ''); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getImage | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (imageKey); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getNavigation | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (area); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getPageConfig | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (pageId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
+| getArtworks | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (artworkId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
 | initNavigation | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
 | openMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
 | closeMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
@@ -100,3 +100,17 @@ Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks moved from con
 Components: All Astro components consume site.ts directly or typed helpers; Header/Footer optional logo, favicon and SiteIcon support; no component imports a content dictionary directly. SiteLayout includes SiteTheme. Existing CSS selects generated variables; Tailwind aliases share them without preflight/default-font overrides.
 
 Checks: Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before/after page/viewport cases had identical metrics and zero differing screenshot pixels. Real site.ts-only edits to colors/fonts/body size/text/logo/icons/image/GIF verified across pages and restored exactly.
+
+## Configuration maintenance — current entry points
+
+| Symbol/component | File | Responsibility / inputs and returns | Consumers / effects | Checks |
+|---|---|---|---|---|
+| site / SiteConfiguration | src/config/site.ts | Typed canonical entry composing six JSON dictionaries, branding, icons, links and theme | Server-rendered components/build tools; no browser payload added | Astro/TypeScript check and customization browser test |
+| createThemeCss | src/config/theme.ts | SiteConfiguration → CSS string; serialize root tokens/local font faces | SiteTheme; pure and rejects unsafe token delimiters | check/build, baseline comparison |
+| SiteTheme | src/components/SiteTheme.astro | No props; emit configuration CSS in shared head | SiteLayout; all routes | all-route suite |
+| SiteIcon | src/components/SiteIcon.astro | name: keyof site.icons; text fallback or local decorative asset | Header/drawer/gallery/editorial/collage | customization/appearance checks |
+| buildConfiguredFixture | tests/configuration.test.mjs | No args; validates/builds/prunes/audits configured fixture | verifyCentralCustomization; writes dist | npm test |
+| verifyCentralCustomization | tests/configuration.test.mjs | No args; Promise<void>; real central edit/browser verification | node:test; temporary source/media files | npm test |
+| restoreConfiguration | tests/configuration.test.mjs | No args; restore saved bytes/delete owned fixtures | test finally/exit handlers; baseline rebuilt afterward | npm test |
+
+All Astro props are now explicit where accepted; content helpers are TypeScript with typed image/navigation/page/artwork outputs and inferred literal-copy paths. Former content.js imports were migrated. Earlier Stage 014/015 notes are historical change records; current functions live at the paths above.

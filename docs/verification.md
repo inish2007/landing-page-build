@@ -1,3 +1,13 @@
+# Configuration refactor verification — 29 October 2026
+
+- Astro check returned 0 errors, 0 warnings and 0 hints.
+- Full seven-test suite passed against production preview at port 4330, including the existing fourteen-route/six-viewport checks and a new real central configuration edit test.
+- Central edits changed primary color, primary/secondary font, body size, navigation/footer text, logo, favicon, menu icon, hero image and GIF/poster across pages. Configured assets survived production pruning; exact source bytes were restored and baseline output rebuilt.
+- Before/after baseline: five representative pages at 1440px and 390px; computed dimensions/content/typography/colors identical and screenshot differences 0 pixels across all ten cases. Captures and metrics remain ignored in evidence/config-baseline and evidence/config-after.
+- Existing build/audit passed; fourteen content pages and two redirect documents remain. No deployment/push.
+
+---
+
 # Verification record
 
 Verified 29 October 2026, Asia/Calcutta, on Windows with installed headless Microsoft Edge.

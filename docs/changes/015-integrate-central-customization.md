@@ -4,6 +4,7 @@
 All Astro components consume site.ts directly or typed helpers; Header/Footer optional logo, favicon and SiteIcon support; no component imports a content dictionary directly. SiteLayout includes SiteTheme. Existing CSS selects generated variables; Tailwind aliases share them without preflight/default-font overrides.
 
 ## 2. Functions added
+- buildConfiguredFixture(), verifyCentralCustomization(), restoreConfiguration() in tests/configuration.test.mjs: build/audit temporary site.ts-only edits, exercise multiple pages and custom assets, then restore exact source bytes and remove only owned fixtures.
 SiteIcon.astro renders configurable text symbols or local icon paths; typed Props. SiteTheme now emits configured tokens/font faces in SiteLayout.
 
 ## 3. Functions changed

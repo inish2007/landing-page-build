@@ -1,0 +1,202 @@
+# Customize your website
+
+Start with **`src/config/site.ts`**. This is the website’s main configuration entry point. You do not need to edit individual Astro components.
+
+The file groups `text`, `images`, `media`, `navigation`, `pages`, `artworks`, `branding`, `icons`, `links`, and `theme`. Large content dictionaries are imported from `src/content/` so each value has one canonical home rather than a duplicate in every component. Clicking an import in your editor opens the relevant content file.
+
+## 1. Open the project and preview changes
+
+1. Open `D:/projects/landing-page-build` in your editor.
+2. Open `src/config/site.ts`.
+3. Run `npm run dev` from the project folder.
+4. Open the local address printed in the terminal (normally `http://127.0.0.1:4321/`).
+5. Save a configuration/content edit and check the preview. For a production preview, run `npm run build` again after editing.
+
+Keep quotes, commas and brackets intact. In JSON use double quotes and no trailing commas. Use `npm run check` to find TypeScript mistakes and `npm run build` to validate content and media paths.
+
+## 2. Change words, headings and copyright
+
+In `site.ts`, `text` points to **`src/content/text.en.json`**. All visible copy and accessible control labels live there.
+
+| What to change | Key inside the text file |
+|---|---|
+| Brand name | `common.siteName` |
+| Navigation label | `nav.about`, `nav.work`, etc. |
+| Introduction | `home.statement.statementSegments` |
+| Collaboration heading | `home.collaborations.heading` |
+| Biography/process/press/detail page copy | `editorial` → route name → `title` / `blocks` |
+| Artwork title/caption | `artworks` → item ID → `title` / `caption` |
+| Contact labels and preview message | `contact` |
+| Play/pause labels | `media.play` / `media.pause` |
+| Footer text, credits and copyright | `footer` |
+
+Example: change `"siteName": "Lana Gomez"` to `"siteName": "Your Studio"`.
+
+Copyright is an independent editable sentence: update `footer.copyright` as well. Artist biography and footer credit do not silently change with the brand name. Update supplied reference wording intentionally and preserve credits you are required to retain.
+
+For formatted text, edit the existing segments rather than inserting HTML:
+
+```json
+[
+  { "text": "A space for " },
+  { "text": "ideas", "emphasis": "italic", "highlight": "circle" }
+]
+```
+
+Supported options are italic emphasis and circle/accent highlights. Plain editorial blocks use `"tag": "P"` or a heading tag plus `"text"`. They are rendered as text, not executable HTML.
+
+## 3. Replace an image
+
+1. Put the new file in `public/images/` with a descriptive name, for example `studio-portrait.webp`.
+2. Follow `images` in `site.ts` to **`src/content/images.json`**.
+3. Find the relevant slot (`homeHero`, `homeIntroSide`, `aboutPreview`, etc.).
+4. Update `src`, `alt`, `width`, and `height` with the actual source file details.
+5. Adjust `position.desktop` and `position.mobile` if the focal point needs to move.
+
+Example record:
+
+```json
+{
+  "src": "/images/studio-portrait.webp",
+  "alt": "Artist standing beside a canvas in the studio.",
+  "width": 1600,
+  "height": 2000,
+  "fit": "cover",
+  "position": { "desktop": "50% 40%", "mobile": "50% 30%" },
+  "credit": "Your actual asset credit"
+}
+```
+
+The URL starts at `/images/`, not `/public/images/`. Source dimensions describe the file; the component keeps its existing layout ratio and responsive frame. All current slots deliberately use the same dark PNG, but each slot can be replaced independently.
+
+If a record has `sources`, remove obsolete entries when replacing its file. Optionally run `node scripts/generate-responsive-images.mjs` to generate matching local width variants, then rebuild. Do not keep old responsive paths pointing to unrelated photographs.
+
+Original image files remain in the source folder. The production build keeps only configured image/logo/icon/favicon files in `dist/images`; it does not delete your source originals.
+
+## 4. Set a logo, favicon or icon
+
+These settings live directly in **`site.ts`**.
+
+`branding.logo` is currently `null` (a text wordmark). Replace the `null` value with metadata, keeping the existing type annotation if shown:
+
+```ts
+logo: {
+  src: '/images/client-logo.svg',
+  alt: 'Your Studio',
+  width: 240,
+  height: 100,
+},
+```
+
+The header and footer use the same configured logo. The header retains the editable brand name beside it; the footer uses the image in place of its text wordmark. Set the logo back to `null` to restore the default text-only branding.
+
+For a favicon, set `branding.favicon` to a local path such as `/icons/favicon.svg`; `null` means no favicon link is added.
+
+`icons` contains the menu, close, next, previous and external-link symbols. Each has `text` and optional `src`. For a custom icon, put a file in `public/icons/`, then replace that icon’s `src: null` with `src: '/icons/menu.svg'`. Leave it `null` to use the text symbol. Accessible button labels remain in the text dictionary.
+
+## 5. Replace the GIF/video-slot media
+
+Follow `media` in `site.ts` to **`src/content/media.json`**. The current `processVideo` entry is used by `/the-process/` and `/home-1/`.
+
+1. Put an animated GIF in `public/media/`.
+2. Put a static first-frame image alongside it.
+3. Update `src`, `poster`, `width`, `height`, `altKey`, and source/license notes.
+4. Edit the accessible description under `media.alt` in the text dictionary.
+5. Check pause/play and reduced-motion behavior.
+
+```json
+{
+  "src": "/media/studio-animation.gif",
+  "poster": "/media/studio-animation-poster.png",
+  "width": 1160,
+  "height": 653,
+  "altKey": "media.alt"
+}
+```
+
+The existing video-slot component supports **animated image/GIF playback**, not MP4/WebM. A GIF replacement needs no component edit. Adding a different video format is a separate feature, not a matter of renaming the extension. Without JavaScript or with reduced motion enabled, the static poster is displayed. The pause/play control remains functional.
+
+## 6. Change fonts and typography
+
+In **`site.ts`**, open `theme.typography`:
+
+- `fonts.primary`: editorial headings and serif text.
+- `fonts.secondary`: body text, navigation and controls.
+- `fonts.brand`: brand lettering only.
+- `sizes`: fluid heading/body/caption/brand sizes.
+- `weights`, `lineHeights`, `tracking`: shared typography settings.
+
+Each font definition contains its family, fallback stack and locally hosted normal/italic faces. To replace a font, add properly licensed files to `public/fonts/` and update the full definition, for example:
+
+```ts
+primary: {
+  family: 'My Display Font',
+  fallback: 'Georgia, serif',
+  faces: [
+    { src: '/fonts/my-display-regular.woff2', format: 'woff2', weight: '400', style: 'normal' },
+    { src: '/fonts/my-display-italic.woff2', format: 'woff2', weight: '400', style: 'italic' },
+  ],
+},
+```
+
+Use weights the actual font file supports. A static file normally has one weight; a variable font can have a range such as `'300 700'`. Changing the family name alone does not replace the underlying font file—update `faces` too.
+
+To enlarge body text, change `sizes.body`, for example to `'1.125rem'`. Keep existing `clamp(...)` values when you want fluid mobile-to-desktop sizing. A different font can naturally change text wrapping; verify the same six viewport widths after a client font change.
+
+Font CSS is generated automatically. Do **not** edit `fonts.css` or duplicate `@font-face` declarations in components. Retain the actual font license in the project and update `THIRD_PARTY_NOTICES.md` / `docs/asset-manifest.json`. The current brush font is Caveat Brush under SIL OFL 1.1.
+
+## 7. Change colors and design tokens
+
+Edit **`site.ts` → `theme.colors`**:
+
+| Setting | Used for |
+|---|---|
+| `primary` | Bright accent/buttons/highlights |
+| `secondary` | Muted supporting text |
+| `background` / `surface` | Main canvas / surface backgrounds |
+| `text` | Primary text |
+| `border` | Dividers and image placeholders |
+| `accentText` | Text on accent buttons |
+| `focus` | Keyboard focus outlines |
+| `subtleBackground` | Intro/footer background |
+| `onMedia`, `shadow`, `overlay`, `modalOverlay` | Text over imagery and dialog backdrops |
+
+Example: change `primary: '#e5ff00'` to `primary: '#d9e8ff'`. Check `accentText` contrast against your new accent. No component edit is needed.
+
+Shared `spacing`, `layout`, and `motion` settings are also in `theme`. Existing breakpoints and component geometry remain in authored CSS to preserve the approved layout. Motion’s `entryDuration` and `entryStagger` are numbers in milliseconds; fast/standard transition values include `ms`.
+
+The configuration generates the existing CSS variables. Tailwind uses aliases of those same variables (`bg-primary`, `text-foreground`, `font-primary`, `font-secondary`, `font-wordmark`, `text-hero`); there is no second color/font palette to synchronize. No Tailwind reset or default-font theme is added.
+
+## 8. Navigation, routes and artwork order
+
+- Follow `navigation` to `src/content/navigation.json`: destinations reference text keys rather than duplicating labels.
+- `links` in `site.ts`: shared home, colophon and privacy destinations.
+- Follow `pages` to `src/content/pages.json`: route/section configuration. Do not remove a destination without updating links that point to it.
+- Follow `artworks` to `src/content/artworks.json`: choose `collection`, `order`, and referenced copy/image keys. Change artwork wording in the text dictionary.
+
+The contact form is a local preview. Updating the email changes the mail link; update any address mentioned in `contact.body` as well. No configuration setting enables actual message delivery or checkout.
+
+## 9. Check and save your changes
+
+```powershell
+npm run check
+npm run build
+npm run audit
+```
+
+For the browser regression suite, start a production preview on an unused port:
+
+```powershell
+npm run preview -- --port 4330
+```
+
+In a second terminal:
+
+```powershell
+$env:SITE_TEST_URL='http://127.0.0.1:4330'
+npm test
+```
+
+Tests use installed Microsoft Edge and temporarily change configuration/content to prove editability, then restore it and rebuild the baseline. Do not edit the same files while these tests run.
+
+Save logical changes as separate local commits. Do not push or publish without the project owner’s permission. Supplied reference copy/GIF rights are not asserted as open-license; preserve required notices.

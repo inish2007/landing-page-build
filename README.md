@@ -2,6 +2,8 @@
 
 The site is built with Astro, authored CSS and vanilla JavaScript. Content is temporary supplied artist copy. Every ordinary image uses the selected dark placeholder; video slots use the locally stored GIF with pause and reduced-motion support.
 
+Use Node.js 24.19 or later (build tools load the typed configuration directly).
+
 Run from `D:/projects/landing-page-build`:
 
 ```powershell
@@ -25,6 +27,8 @@ npm test
 ```
 
 The tests use installed Microsoft Edge. Keep the production preview running during tests. The source-edit test temporarily changes content, then restores it and rebuilds baseline output; tests run sequentially for this reason.
+
+Customize from `src/config/site.ts`; see [CUSTOMIZATION.md](CUSTOMIZATION.md) for practical text/media/font/color examples. Run `npm run check` for TypeScript/Astro diagnostics.
 
 See [editing guide](docs/EDITING_GUIDE.md), [architecture](docs/ARCHITECTURE.md), [verification](docs/verification.md), and [handoff](PROJECT_HANDOFF.md).
 
