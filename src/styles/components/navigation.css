@@ -31,7 +31,7 @@ main { flex: 1; }
 @media (max-width: 47.999rem) { .site-footer { grid-template-columns: 1fr; } }
 /* Brand font is limited to the name; ordinary headings retain the serif. */
 .brand, .footer-brand, #drawer-title { font-family: var(--font-brand); font-size: var(--text-brand); font-weight: 400; text-transform: uppercase; line-height: .95; }
-.brand span, .footer-brand { max-width: 3.3em; overflow-wrap: normal; }
+.brand span, .footer-brand { max-width: 3.3em; overflow-wrap: anywhere; }
 .site-header { padding-block: var(--space-3); border: 0; }
 .desktop-nav { text-transform: uppercase; font-size: var(--text-caption); }
 .site-footer { grid-template-columns: 2fr 1fr 1fr 1fr; background: #fafafa; border: 0; }

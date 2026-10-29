@@ -147,3 +147,13 @@ Changed: getStaticPaths adds configured contact/legal/home-1 routes; EditorialPa
 Components: ContactForm and AnimatedMedia added; EditorialPage and dynamic route updated; home/process redirect aliases.
 
 Checks: npm run build passed; browser verification follows Stage 12.
+
+## Stage 011 — editing-gaps
+
+Added: buildFixture(), verifyContentSwap(), restoreContent() in tests/content-swap.test.mjs: validates real six-file dictionary backups, altered source text/image build, browser wrapping/ratio/fonts, byte-for-byte restoration and baseline rebuild in finally.
+
+Changed: verifyNavigation expects two new legal links. clearInquiryStatus JSDoc corrected; behavior unchanged.
+
+Components: Footer exposes legal routes; ContactForm uses method=dialog for no-JS safety; long brand wrapping corrected.
+
+Checks: Build passed; content-swap browser test passed with exact source restoration. Mobile all-route preliminary overflow check returned no issues. Process mobile capture reviewed.
