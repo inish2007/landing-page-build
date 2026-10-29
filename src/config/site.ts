@@ -27,6 +27,8 @@ export const site = {
   },
   // Optional icon assets use local paths; text symbols preserve today's appearance.
   icons: {
+    instagram:{text:'Instagram',src:'/icons/instagram.svg' as string|null},
+    facebook:{text:'Facebook',src:'/icons/facebook.svg' as string|null},
     menu:{text:'☰',src:null as string|null}, close:{text:'×',src:null as string|null},
     next:{text:'→',src:null as string|null}, previous:{text:'←',src:null as string|null}, external:{text:'↗',src:null as string|null},
   },
