@@ -114,3 +114,13 @@ Checks: Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before
 | restoreConfiguration | tests/configuration.test.mjs | No args; restore saved bytes/delete owned fixtures | test finally/exit handlers; baseline rebuilt afterward | npm test |
 
 All Astro props are now explicit where accepted; content helpers are TypeScript with typed image/navigation/page/artwork outputs and inferred literal-copy paths. Former content.js imports were migrated. Earlier Stage 014/015 notes are historical change records; current functions live at the paths above.
+
+## Stage 017 — gallery-json-security
+
+Added: serializeJsonForHtml(value) in src/utils/serialize.ts: pure escaped JSON for HTML script islands. verifyGallerySerialization(), serveFixture(request,response) in tests/security.test.mjs: isolated built hostile-content regression and bounded loopback fixture server.
+
+Changed: None
+
+Components: Gallery data island uses serializer; safe visible markup/keyboard behavior unchanged.
+
+Checks: Isolated hostile-title/caption/image-metadata browser test passed; Astro check passed. Normal/4x three-run performance and settled visual baselines captured before motion changes.

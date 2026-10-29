@@ -28,3 +28,5 @@ Stage 014 completed: typed-site-configuration. TypeScript noEmit passed; baselin
 Stage 015 completed: integrate-central-customization. Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before/after page/viewport cases had identical metrics and zero differing screenshot pixels. Real site.ts-only edits to colors/fonts/body size/text/logo/icons/image/GIF verified across pages and restored exactly.
 
 Configuration maintenance completed: typed site.ts entry, all-component/theme/tooling integration, CUSTOMIZATION.md, explicit props, zero-difference baseline and seven passing tests. Local commits only.
+
+Stage 017 completed: gallery-json-security. Isolated hostile-title/caption/image-metadata browser test passed; Astro check passed. Normal/4x three-run performance and settled visual baselines captured before motion changes.
