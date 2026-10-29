@@ -332,3 +332,9 @@ Only the five Press paragraphs with `highlight: "press-marker"` in `src/content/
 Edit `theme.pressMarker` in `src/config/site.ts`: color(default#fff230), opacity(0.55), thickness(24px), duration(900ms per stroke), stagger(1000ms between starts). Each paragraph receives a horizontal marker swipe. Inline box-decoration-break:clone repeats the background behind every wrapped line, without highlighting blank column space. Black text stays fully opaque. No SVG/diagonal strokes remain; fonts, spacing and wrapping are unchanged. The five paragraph swipes last900ms each and start1000ms apart, finishing after4900ms. thickness controls the horizontal band height.
 
 One shared observer starts the sequence once on first view. No hover/scroll/history replay. Disabled master/playful motion, reduced motion, noJavaScript/missing APIs, backgrounding or interrupted navigation leave full static marks. No media download or library is involved.
+
+## Soft hand-marker and Press underline trial
+
+Marker thickness now defaults28px with2px vertical overhang and2unit mildedgecurves. theme.pressMarker.overhang/edgeCurve control originalgeneratedSVGbackgroundedges; its softgradient retains the centralcolor/opacity. Inlinefragmentcloning and900ms/1000ms paragraph timing remain. No spacing/wrapping changes.
+
+Only Press articlelinks use theme.pressLinks.normalThickness1px,hoverThickness3px,duration160ms. Nativeunderlinesfollowwrappedtext; expandingpseudo underlineisdisabled hereonly. Fontweight/destinations/focusoutlines unchanged; reducedmotionuseseffectivelyimmediate globalfallback. Othernav/footer/Processunderlines unchanged. BrandfontremainsCaveatBrush; fontcomparisonwasQ&Aonly.
