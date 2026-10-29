@@ -1,3 +1,4 @@
+import {createPhotoReveals} from './photo-reveals.js';
 import {readMotionSettings} from './motion-settings.js';
 import {chooseSocialDropDirection} from './social-drop.js';
 let disposeCurrent;
@@ -9,10 +10,11 @@ export function initMotion(){
   const preference=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
   if(canReveal&&settings.playful)document.querySelector('.collage-about h2')?.setAttribute('data-about-glow','');
   const events=new AbortController(),seen=new WeakSet(),accentSeen=new WeakSet(),active=new Map();
+  const photos=createPhotoReveals(settings,preference,events.signal,protectedTarget);
   const strip=document.querySelector('[data-motion="social-drop"]');
   const socialEnabled=Boolean(strip&&canReveal&&settings.playful&&settings.socialDrop.enabled&&!preference.matches);
   if(socialEnabled&&socialDirection===undefined){try{socialDirection=settings.socialDrop.alternateOnLoad?chooseSocialDropDirection(window.localStorage,true,window.performance?.getEntriesByType?.('navigation')?.[0]?.type!=='back_forward'):'forward';}catch{socialDirection='forward';}}
-  const targets=canReveal?[...document.querySelectorAll('[data-motion="reveal"], [data-motion="press-marker"], .highlight-circle, [data-motion="social-drop"], [data-accent="shine"], [data-accent="outline"]')].filter(el=>el.matches('[data-motion="press-marker"]')||!el.closest('[data-motion="press-marker"]')).filter(el=>el.matches('[data-motion="press-marker"]')||el.matches('[data-accent="shine"],[data-accent="outline"]')||el.matches('[data-motion="social-drop"]')||(!el.closest('[data-motion="social-drop"]')&&(el.matches('.highlight-circle')?settings.playful:!el.parentElement?.closest('[data-motion="reveal"]')))):[];
+  const targets=canReveal?[...document.querySelectorAll('[data-motion="reveal"], [data-motion="press-marker"], .highlight-circle, [data-motion="social-drop"], [data-accent="shine"], [data-accent="outline"]')].filter(el=>!el.matches('.image-frame')&&!(el.matches('.gallery-card,.playful-card')&&el.querySelector('.image-frame')&&!el.hasAttribute('data-accent'))).filter(el=>el.matches('[data-motion="press-marker"]')||!el.closest('[data-motion="press-marker"]')).filter(el=>el.matches('[data-motion="press-marker"]')||el.matches('[data-accent="shine"],[data-accent="outline"]')||el.matches('[data-motion="social-drop"]')||(!el.closest('[data-motion="social-drop"]')&&(el.matches('.highlight-circle')?settings.playful:!el.parentElement?.closest('[data-motion="reveal"]')))):[];
   /** Resolve current anchor safely. @returns {Element|null} Reads DOM only. */
   function anchorTarget(){try{return document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return null;}}
   /** Protect focused/anchor content from entry fades. @param {Element} element Reveal unit. @returns {boolean} */
@@ -45,14 +47,14 @@ export function initMotion(){
   /** Exclude initial visible prose/images; circles may draw on their first viewport entry. @returns {void} */
   function observeTargets(){for(const element of targets){if(element.matches('[data-motion="press-marker"]')){if(!seen.has(element))observer?.observe(element);continue;}if(element.matches('[data-accent="shine"],[data-accent="outline"]')){if(element.dataset.accent==='outline'||!accentSeen.has(element))observer?.observe(element);continue;}if(seen.has(element))continue;if(element.matches('[data-motion="social-drop"]')){if(!socialEnabled||protectedTarget(element)||element.getBoundingClientRect().height>innerHeight){seen.add(element);continue;}observer?.observe(element);continue;}if(protectedTarget(element)||(!element.matches('.highlight-circle')&&element.getBoundingClientRect().top<innerHeight)){seen.add(element);continue;}observer?.observe(element);}}
   /** Settle SVG/WAAPI/CSS effects on reduced motion or backgrounding. @returns {void} */
-  function handleMotionState(){document.documentElement.dataset.motionInactive=String(document.hidden);if(preference.matches||document.hidden)cancelReveals();}
+  function handleMotionState(){document.documentElement.dataset.motionInactive=String(document.hidden);if(preference.matches||document.hidden){cancelReveals();photos.settleAll();}}
   /** Prevent focused/anchor content from staying faded. @returns {void} */
   function handleFocusOrHash(){for(const[element,animation]of active)if(protectedTarget(element)&&!element.matches('.gold-shine,.jelly-surface,.outline-sweep')){animation.cancel();active.delete(element);}}
   /** Prepare only interacted artwork for smooth transform return. @param {Event} event Delegated hover/focus. @returns {void} No layers, observer or timers. */
   function handleArtworkInteraction(event){
     if(!settings.playful||preference.matches||document.hidden)return;
     const card=event.target instanceof Element?event.target.closest('.playful-card'):null;
-    const image=card?.querySelector('img');if(!image||card.dataset.imageReady==='true')return;
+    const image=card?.querySelector('img');if(!image||card.dataset.imageReady==='true'||card.querySelector('[data-photo-state]'))return;
     image.classList.add('playful-image-transition');
     // Commit neutral image styles before enabling the hovered/focused target, once per image.
     void getComputedStyle(image).transform;
@@ -85,11 +87,11 @@ export function initMotion(){
   /** Settle immediately when hover/focus leaves the word. @param {Event} event Pointerout/focusout. @returns {void} */
   function finishCircleInteraction(event){const circle=event.target instanceof Element?event.target.closest('.highlight-circle'):null;if(!circle||(event.relatedTarget instanceof Node&&circle.contains(event.relatedTarget)))return;active.get(circle)?.cancel();active.delete(circle);}
   /** Cancel/disconnect for navigation/BFCache. @returns {void} */
-  function handlePageHide(){document.documentElement.dataset.motionInactive='true';cancelReveals();observer?.disconnect();}
+  function handlePageHide(){photos.settleAll();document.documentElement.dataset.motionInactive='true';cancelReveals();observer?.disconnect();}
   /** Restore unseen observation without replaying entered units. @returns {void} */
   function handlePageShow(){handleMotionState();observeTargets();}
   /** Release all owned handlers/observer/effects before reinitialization. @returns {void} */
-  function disposeMotion(){events.abort();observer?.disconnect();cancelReveals();}
+  function disposeMotion(){photos.dispose();events.abort();observer?.disconnect();cancelReveals();}
   for(const type of ['pointerover','focusin'])document.addEventListener(type,handleAccent,{signal:events.signal});
   for(const type of ['pointerout','focusout'])document.addEventListener(type,finishAccent,{signal:events.signal});
   document.addEventListener('pointerover',handleArtworkInteraction,{signal:events.signal});document.addEventListener('focusin',handleArtworkInteraction,{signal:events.signal});

@@ -26,3 +26,8 @@ html[data-motion-enabled="false"] .playful-link::before { transition: none !impo
   :is(.playful-button,.playful-arrow,.playful-card img,.playful-brand > span) { animation: none !important; transition: none !important; transform: none !important; }
   .playful-link::before { content: none !important; }
 }
+
+/* Only JS-prepared below-fold photos are hidden; reserved frame geometry never changes. */
+.image-frame[data-photo-state="pending"] { opacity: 0; }
+.image-frame[data-photo-state] img { transform: none !important; }
+@media (prefers-reduced-motion: reduce) { .image-frame[data-photo-state] { opacity: 1 !important; } }
