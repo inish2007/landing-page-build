@@ -1,0 +1,131 @@
+/**
+ * Global Stylesheet
+ * Aura Creative Studio
+ * Imports design tokens and local fonts, establishes CSS reset, default typography, and accessibility foundations.
+ */
+
+@import "./tokens.css";
+@import "./fonts.css";
+
+/* Modern Box Sizing & Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Document & Base Typography */
+html {
+  font-family: var(--font-sans);
+  font-size: 100%;
+  line-height: 1.5;
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+/* Editorial & Display Typography Utilities */
+.text-display {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  line-height: 1.05;
+}
+
+.text-statement {
+  font-family: var(--font-serif);
+  font-size: var(--text-statement);
+  line-height: 1.15;
+}
+
+/* Links & Focus Outline */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Media Defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form Controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Selection Styling */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+}
+
+/* Structured Highlights */
+.highlight-circle {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.2em;
+}
+
+.highlight-accent {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  padding: 0.1em 0.3em;
+}

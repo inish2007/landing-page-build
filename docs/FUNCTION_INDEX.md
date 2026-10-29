@@ -31,7 +31,11 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | Content helpers not yet authored | N/A | N/A | None | Registration starts Stage 03 |
+| `getCopy` | `src/utils/content.js` | Resolves dot-notation path into centralized text dictionary | Inputs: `(keyPath: string, fallback?: any)`, Output: string, segment array, or object | Astro components, section templates | None (pure lookup) | `node scripts/validate-content.mjs`, `npm run build` |
+| `getImage` | `src/utils/content.js` | Retrieves image metadata object from images.json | Inputs: `(imageKey: string)`, Output: object `{ src, alt, width, height, position, credit }` | `ResponsiveImage.astro`, page routes | Throws Error if key missing | `node scripts/validate-content.mjs`, `npm run build` |
+| `getNavigation` | `src/utils/content.js` | Retrieves navigation link hierarchy array for header, footer, or social | Inputs: `(area: 'header'\|'footer'\|'social')`, Output: `Array<object>` | `Header.astro`, `Footer.astro`, `MobileDrawer.astro` | None | `node scripts/validate-content.mjs`, `npm run build` |
+| `getPageConfig` | `src/utils/content.js` | Retrieves page layout composition and section sequence | Inputs: `(pageId: string)`, Output: `object\|undefined` | Page routes (`src/pages/*.astro`) | None | `node scripts/validate-content.mjs`, `npm run build` |
+| `getArtworks` | `src/utils/content.js` | Retrieves portfolio artworks array or single artwork record by ID | Inputs: `(artworkId?: string)`, Output: `Array<object>\|object\|undefined` | `work.astro`, `Gallery.astro`, `SelectedWorkSection.astro` | None | `node scripts/validate-content.mjs`, `npm run build` |
 
 ---
 
@@ -47,7 +51,12 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | Tracked tooling not yet authored | N/A | N/A | None | Registration starts Stage 03 |
+| `validateContent` | `scripts/validate-content.mjs` | Main content validation orchestrator verifying schemas, chrome keys, components, and assets | Inputs: `(rootDir?: string)`, Output: `boolean` | CLI execution, npm `prebuild` & `pretest` hooks | Logs diagnostics to stdout/stderr | `node scripts/validate-content.mjs`, `npm run build` |
+| `validateImageMetadata` | `scripts/validate-content.mjs` | Verifies image asset existence on disk, positive dimensions, and valid focal percentages | Inputs: `(imageData: object, rootDir?: string)`, Output: `Array<string>` | `validateContent()` | Reads filesystem (`public/images/`) | `node scripts/validate-content.mjs` |
+| `validateChromeKeys` | `scripts/validate-content.mjs` | Verifies required root chrome copy keys in text dictionary | Inputs: `(textData: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
+| `validateComponentWhitelist` | `scripts/validate-content.mjs` | Verifies section component names in pages.json against authorized whitelist | Inputs: `(pagesData: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
+| `validateCrossReferences` | `scripts/validate-content.mjs` | Verifies cross-referenced text and image keys across schemas | Inputs: `(schemas: object)`, Output: `Array<string>` | `validateContent()` | None | `node scripts/validate-content.mjs` |
+| `resolvePath` | `scripts/validate-content.mjs` | Resolves dot-notation string key in nested object structure | Inputs: `(obj: object, keyPath: string)`, Output: `any` | Validator helper functions | None | `node scripts/validate-content.mjs` |
 
 ---
 

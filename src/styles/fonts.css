@@ -1,0 +1,29 @@
+/**
+ * Local Typography Declarations
+ * Fraunces (Variable Display Serif) & Plus Jakarta Sans (Variable Sans-Serif)
+ * Served strictly from local public/fonts/ WOFF2 assets with font-display: swap
+ */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-opsz-wght.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-italic-opsz-wght.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/plus-jakarta-sans-wght.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}

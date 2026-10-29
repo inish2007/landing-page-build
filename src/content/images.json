@@ -1,0 +1,170 @@
+{
+  "homeHero": {
+    "src": "/images/home-hero.webp",
+    "alt": "Minimalist concrete pavilion courtyard with geometric light shadows at dawn",
+    "width": 2400,
+    "height": 1600,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 45%",
+      "mobile": "40% 50%"
+    },
+    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+  },
+  "homeIntroSide": {
+    "src": "/images/sculpture-detail.webp",
+    "alt": "Monolithic textured basalt stone sculpture in natural side-lighting",
+    "width": 1200,
+    "height": 1600,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+  },
+  "aboutPortrait": {
+    "src": "/images/about-portrait.webp",
+    "alt": "Julian Vance, founding architect and principal of Aura Creative Studio",
+    "width": 1200,
+    "height": 1500,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 30%",
+      "mobile": "50% 30%"
+    },
+    "credit": "Photograph by Julian Wan via Unsplash"
+  },
+  "processStudio": {
+    "src": "/images/process-studio.webp",
+    "alt": "Minimalist architectural studio desk with sketches, scale models, and drafting tools",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Aleks Dahlberg via Unsplash"
+  },
+  "processPhase1": {
+    "src": "/images/process-site.webp",
+    "alt": "Rugged natural landscape with stone formations and quiet morning fog",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Bailey Zindel via Unsplash"
+  },
+  "processPhase2": {
+    "src": "/images/process-materials.webp",
+    "alt": "Curated tactile material samples including raw concrete, darkened bronze, and weathered oak",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Science in HD via Unsplash"
+  },
+  "processPhase3": {
+    "src": "/images/process-tectonics.webp",
+    "alt": "Structural joinery and board-formed concrete facade detail",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Scott Blake via Unsplash"
+  },
+  "processPhase4": {
+    "src": "/images/studio-desk.webp",
+    "alt": "Handcrafted architectural model and refined material palette",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Studio Republic via Unsplash"
+  },
+  "pavilionKMain": {
+    "src": "/images/pavilion-k.webp",
+    "alt": "Pavilion K featuring board-formed concrete walls, cantilevered roof, and weathered cedar slats",
+    "width": 1800,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by R Architecture via Unsplash"
+  },
+  "monolithIIMain": {
+    "src": "/images/sculpture-detail.webp",
+    "alt": "Monolith Study II in basalt stone with hand-chiseled rhythmic striations",
+    "width": 1200,
+    "height": 1600,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+  },
+  "courtyardResidenceMain": {
+    "src": "/images/architectural-courtyard.webp",
+    "alt": "Courtyard Residence featuring limestone terrace, slender reflecting pool, and serene geometry",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by R Architecture via Unsplash"
+  },
+  "terraceSanctuaryMain": {
+    "src": "/images/stone-terrace.webp",
+    "alt": "Terrace Sanctuary with stepped granite platform overlooking forested valley",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Frames For Your Heart via Unsplash"
+  },
+  "basaltStudyMain": {
+    "src": "/images/basalt-study.webp",
+    "alt": "Vertical basalt sculpture study with natural cleft surface and blackened steel plinth",
+    "width": 1200,
+    "height": 1600,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Europeana via Unsplash, CC0"
+  },
+  "timberPavilionMain": {
+    "src": "/images/timber-pavilion.webp",
+    "alt": "Timber Meditation Pavilion with exposed hinoki cypress rafters and sliding shoji screens",
+    "width": 1600,
+    "height": 1200,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Photograph by Sora Sagano via Unsplash"
+  }
+}

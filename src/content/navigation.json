@@ -1,0 +1,21 @@
+{
+  "header": [
+    { "id": "home", "path": "/", "labelKey": "nav.home", "isExternal": false },
+    { "id": "about", "path": "/about/", "labelKey": "nav.about", "isExternal": false },
+    { "id": "process", "path": "/process/", "labelKey": "nav.process", "isExternal": false },
+    { "id": "work", "path": "/work/", "labelKey": "nav.work", "isExternal": false },
+    { "id": "contact", "path": "/contact/", "labelKey": "nav.contact", "isExternal": false }
+  ],
+  "footer": [
+    { "id": "about", "path": "/about/", "labelKey": "nav.about", "isExternal": false },
+    { "id": "process", "path": "/process/", "labelKey": "nav.process", "isExternal": false },
+    { "id": "work", "path": "/work/", "labelKey": "nav.work", "isExternal": false },
+    { "id": "contact", "path": "/contact/", "labelKey": "nav.contact", "isExternal": false },
+    { "id": "colophon", "path": "/colophon/", "labelKey": "footer.colophonLabel", "isExternal": false },
+    { "id": "privacy", "path": "/privacy/", "labelKey": "footer.privacyLabel", "isExternal": false }
+  ],
+  "social": [
+    { "id": "journal", "url": "#journal", "label": "Journal", "isExternal": false },
+    { "id": "index", "url": "#index", "label": "Monograph", "isExternal": false }
+  ]
+}

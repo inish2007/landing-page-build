@@ -1,0 +1,227 @@
+{
+  "common": {
+    "siteName": "Aura Creative Studio",
+    "skipToContent": "Skip to main content",
+    "menuOpenLabel": "Open navigation menu",
+    "menuCloseLabel": "Close navigation menu",
+    "scrollDown": "Scroll to explore",
+    "backToTop": "Return to top",
+    "statusIndicator": "Available for select architectural & visual commissions"
+  },
+  "nav": {
+    "home": "Overview",
+    "about": "Studio",
+    "process": "Method",
+    "work": "Archive",
+    "contact": "Inquire"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Architecture & Visual Arts",
+      "headlineSegments": [
+        { "text": "Form in " },
+        { "text": "silence", "emphasis": "italic", "highlight": "circle" },
+        { "text": ", space in light." }
+      ],
+      "subheadline": "A contemplative design practice creating architectural spaces and sculptural works that honor materials, proportion, and quiet permanence.",
+      "primaryCta": "Explore the Archive",
+      "secondaryCta": "Read our Method"
+    },
+    "statement": {
+      "eyebrow": "Design Philosophy",
+      "statementSegments": [
+        { "text": "We believe architecture and physical objects should feel inevitable—built with " },
+        { "text": "restraint", "emphasis": "italic" },
+        { "text": " to outlast the noise of momentary trends." }
+      ],
+      "author": "Julian Vance",
+      "authorTitle": "Founding Architect & Principal"
+    },
+    "features": {
+      "eyebrow": "Selected Projects",
+      "heading": "Recent Built & Sculptural Works",
+      "viewAllLabel": "View complete archive"
+    },
+    "cta": {
+      "heading": "Initiate a Conversation",
+      "body": "We accept a limited number of residential, cultural, and object commissions each calendar year.",
+      "buttonLabel": "Send an Inquiry"
+    }
+  },
+  "about": {
+    "header": {
+      "eyebrow": "About the Studio",
+      "titleSegments": [
+        { "text": "Designing at the intersection of " },
+        { "text": "earth", "emphasis": "italic" },
+        { "text": " and enclosure." }
+      ],
+      "subheadline": "Founded by Julian Vance in 2018, Aura is an architectural and spatial arts atelier committed to structural clarity and natural materials."
+    },
+    "story": {
+      "heading": "Philosophy of Quiet Permanence",
+      "bioSummary": "Aura Creative Studio is an architectural practice and sculpture atelier founded on principles of material honesty, reduction, and atmospheric stillness.",
+      "paragraphs": [
+        "Every structure begins with an extended listening to topography, ambient light, and historical geography. We reject excess ornamentation in favor of tectonic truth, tactile surfaces, and generous spatial proportions that evolve gracefully across seasons.",
+        "Our work spans contemplative residences, cultural pavilions, and carved stone objects. Each commission is treated as a bespoke monograph—developed with deep artisan collaboration and enduring structural integrity."
+      ]
+    },
+    "principles": {
+      "eyebrow": "Studio Tenets",
+      "heading": "Core Tenets of Our Practice",
+      "items": [
+        {
+          "number": "01",
+          "title": "Material Honesty",
+          "description": "We celebrate raw finishes—board-formed concrete, unlacquered bronze, cleft basalt, and native timber—allowing weathering to deepen character."
+        },
+        {
+          "number": "02",
+          "title": "Atmospheric Light",
+          "description": "Natural illumination is our primary building material. We sculpt openings to trace the sun's passage and cast contemplative shadows."
+        },
+        {
+          "number": "03",
+          "title": "Quiet Permanence",
+          "description": "We design structures and objects meant to stand for centuries, resisting the ephemeral cycles of commercial trends."
+        }
+      ]
+    }
+  },
+  "process": {
+    "header": {
+      "eyebrow": "Our Method",
+      "titleSegments": [
+        { "text": "A deliberate, " },
+        { "text": "four-phase", "emphasis": "italic", "highlight": "circle" },
+        { "text": " journey of discovery." }
+      ],
+      "subheadline": "From geological contemplation to the final artisan joinery, our process is rigorous, patient, and deeply collaborative."
+    },
+    "steps": [
+      {
+        "phase": "01",
+        "title": "Inquiry & Site Meditation",
+        "prose": "Before drafting a single line, we spend days observing the site: tracking diurnal light arcs, wind patterns, acoustic resonance, and native geological strata. This deep immersion defines the project's spatial orientation.",
+        "imageKey": "processPhase1"
+      },
+      {
+        "phase": "02",
+        "title": "Material Exploration",
+        "prose": "We assemble physical material trays—pairing quarry-sourced stone, timber cuts, and hand-cast metals. Light studies determine how tactile textures interact across changing weather conditions.",
+        "imageKey": "processPhase2"
+      },
+      {
+        "phase": "03",
+        "title": "Tectonic Definition",
+        "prose": "Through physical plaster models and measured orthographic drawings, structural cantilevers, courtyard alignments, and thermal mass envelopes are refined to mathematical precision.",
+        "imageKey": "processPhase3"
+      },
+      {
+        "phase": "04",
+        "title": "Craft & Permanence",
+        "prose": "Working alongside master stone masons, joiners, and metal artisans, the physical structure is realized with uncompromised craft standards and structural longevity.",
+        "imageKey": "processPhase4"
+      }
+    ]
+  },
+  "work": {
+    "header": {
+      "eyebrow": "Project Archive",
+      "titleSegments": [
+        { "text": "Built architecture & " },
+        { "text": "sculptural", "emphasis": "italic" },
+        { "text": " forms." }
+      ],
+      "subheadline": "A curated index of residential pavilions, contemplative spaces, and carved mineral objects produced between 2021 and 2026."
+    },
+    "filterAll": "All Works",
+    "filterArchitecture": "Architecture",
+    "filterSculpture": "Sculpture",
+    "filterObjects": "Objects",
+    "lightbox": {
+      "closeLabel": "Close project modal",
+      "previousLabel": "Previous project",
+      "nextLabel": "Next project",
+      "detailsHeading": "Project Details"
+    }
+  },
+  "contact": {
+    "header": {
+      "eyebrow": "Inquire",
+      "titleSegments": [
+        { "text": "Initiate a " },
+        { "text": "dialogue", "emphasis": "italic", "highlight": "circle" },
+        { "text": " with our studio." }
+      ],
+      "subheadline": "We welcome inquiries regarding residential commissions, public pavilions, and curated sculptural acquisitions."
+    },
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Julian Vance",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "julian@auracreativestudio.com",
+      "serviceLabel": "Commission Type",
+      "messageLabel": "Project Description & Location",
+      "messagePlaceholder": "Tell us about your project vision, timeline, and geographic site...",
+      "submitButton": "Transmit Inquiry",
+      "submittingButton": "Transmitting...",
+      "successMessage": "Thank you for reaching out. Your inquiry has been received by our studio atelier.",
+      "errorMessage": "Please complete all required fields with valid details before sending."
+    },
+    "info": {
+      "studioLabel": "Studio Atelier",
+      "addressLine1": "48 Mercer Street, Floor 4",
+      "addressLine2": "New York, NY 10013",
+      "commissionsLabel": "Commissions Availability",
+      "inquiriesNote": "Currently reviewing prospective residential and cultural commissions for the upcoming calendar year."
+    }
+  },
+  "colophon": {
+    "title": "Colophon & Legal Notices",
+    "typographyTitle": "Typography & Design System",
+    "typographyBody": "This publication is set in Fraunces, an expressive serif designed by Undercase Type, and Plus Jakarta Sans, a geometric grotesk by Tokotype. Both families are served locally as variable WOFF2 webfonts under the SIL Open Font License 1.1.",
+    "productionTitle": "Engineering & Static Generation",
+    "productionBody": "Built with pure static generation via Astro. No external analytics, trackers, or third-party runtime dependencies are loaded."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Aura Creative Studio values your privacy and practices data minimization.",
+    "analyticsTitle": "Zero Tracking Policy",
+    "analyticsBody": "We do not run tracking cookies, third-party analytics pixels, or external tracking scripts.",
+    "contactTitle": "Inquiry Data Handling",
+    "contactBody": "Any inquiry information entered into the contact form remains entirely local to your session during testing."
+  },
+  "artworks": {
+    "pavilionK": {
+      "title": "Pavilion K",
+      "caption": "A monolithic residential pavilion integrating board-formed concrete and weathered cedar with native pine topography."
+    },
+    "monolithII": {
+      "title": "Monolith Study II",
+      "caption": "Basalt stone monolith hand-finished with geometric rhythmic incisions, anchored to a blackened steel plinth."
+    },
+    "courtyardResidence": {
+      "title": "Courtyard Residence",
+      "caption": "A private sanctuary centered around a tranquil reflecting water pool, limestone paving, and soft raking daylight."
+    },
+    "terraceSanctuary": {
+      "title": "Terrace Sanctuary",
+      "caption": "Stepped granite terraces cascading along a forested ridge, designed for quiet contemplation."
+    },
+    "basaltStudy": {
+      "title": "Basalt Form Study",
+      "caption": "Exploration of mineral density, mass, and carved negative space in volcanic basalt."
+    },
+    "timberPavilion": {
+      "title": "Hinoki Timber Pavilion",
+      "caption": "Post-and-beam timber pavilion featuring exposed hinoki cypress rafters and sliding shoji screens."
+    }
+  },
+  "footer": {
+    "tagline": "Architecture, interiors, and sculptural objects rooted in structural clarity.",
+    "colophonLabel": "Colophon & Notices",
+    "privacyLabel": "Privacy Policy",
+    "copyright": "© 2026 Aura Creative Studio. All rights reserved."
+  }
+}

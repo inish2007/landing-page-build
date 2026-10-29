@@ -1,0 +1,62 @@
+{
+  "home": {
+    "titleKey": "common.siteName",
+    "metaDescriptionKey": "home.hero.subheadline",
+    "sections": [
+      { "id": "hero", "component": "HeroSection", "imageKey": "homeHero", "textNamespace": "home.hero" },
+      { "id": "intro", "component": "StatementSection", "imageKey": "homeIntroSide", "textNamespace": "home.statement" },
+      { "id": "features", "component": "SelectedWorkSection", "textNamespace": "home.features" },
+      { "id": "cta", "component": "ContactCtaSection", "textNamespace": "home.cta" }
+    ]
+  },
+  "about": {
+    "titleKey": "nav.about",
+    "metaDescriptionKey": "about.story.bioSummary",
+    "sections": [
+      { "id": "about-hero", "component": "EditorialHeader", "textNamespace": "about.header" },
+      { "id": "about-narrative", "component": "BiographySection", "imageKey": "aboutPortrait", "textNamespace": "about.story" },
+      { "id": "about-values", "component": "PhilosophyGrid", "textNamespace": "about.principles" }
+    ]
+  },
+  "process": {
+    "titleKey": "nav.process",
+    "metaDescriptionKey": "process.header.subheadline",
+    "sections": [
+      { "id": "process-hero", "component": "EditorialHeader", "textNamespace": "process.header" },
+      { "id": "process-step-1", "component": "ProcessStep", "imageKey": "processPhase1", "textNamespace": "process.steps.0" },
+      { "id": "process-step-2", "component": "ProcessStep", "imageKey": "processPhase2", "textNamespace": "process.steps.1" },
+      { "id": "process-step-3", "component": "ProcessStep", "imageKey": "processPhase3", "textNamespace": "process.steps.2" },
+      { "id": "process-step-4", "component": "ProcessStep", "imageKey": "processPhase4", "textNamespace": "process.steps.3" }
+    ]
+  },
+  "work": {
+    "titleKey": "nav.work",
+    "metaDescriptionKey": "work.header.subheadline",
+    "sections": [
+      { "id": "work-hero", "component": "EditorialHeader", "textNamespace": "work.header" },
+      { "id": "work-gallery", "component": "Gallery", "textNamespace": "work" }
+    ]
+  },
+  "contact": {
+    "titleKey": "nav.contact",
+    "metaDescriptionKey": "contact.header.subheadline",
+    "sections": [
+      { "id": "contact-hero", "component": "EditorialHeader", "textNamespace": "contact.header" },
+      { "id": "contact-form", "component": "ContactForm", "textNamespace": "contact" }
+    ]
+  },
+  "colophon": {
+    "titleKey": "footer.colophonLabel",
+    "metaDescriptionKey": "colophon.productionBody",
+    "sections": [
+      { "id": "colophon-header", "component": "EditorialHeader", "textNamespace": "colophon" }
+    ]
+  },
+  "privacy": {
+    "titleKey": "footer.privacyLabel",
+    "metaDescriptionKey": "privacy.intro",
+    "sections": [
+      { "id": "privacy-header", "component": "EditorialHeader", "textNamespace": "privacy" }
+    ]
+  }
+}

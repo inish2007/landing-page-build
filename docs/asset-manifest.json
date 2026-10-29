@@ -1,0 +1,179 @@
+{
+  "fonts": [
+    {
+      "name": "Fraunces",
+      "creator": "Phaedra Charles, Flavia Zimbardi (Undercase Type)",
+      "license": "SIL Open Font License 1.1",
+      "licenseUrl": "https://scripts.sil.org/OFL",
+      "localFiles": [
+        "/fonts/fraunces-opsz-wght.woff2",
+        "/fonts/fraunces-italic-opsz-wght.woff2"
+      ]
+    },
+    {
+      "name": "Plus Jakarta Sans",
+      "creator": "Gumpita Rahayu (Tokotype)",
+      "license": "SIL Open Font License 1.1",
+      "licenseUrl": "https://scripts.sil.org/OFL",
+      "localFiles": [
+        "/fonts/plus-jakarta-sans-wght.woff2"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "homeHero",
+      "localPath": "/images/home-hero.webp",
+      "sourcePlatform": "Studio Forma / CC0 Public Domain Dedication",
+      "creator": "Studio Forma",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": false,
+      "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    },
+    {
+      "id": "homeIntroSide",
+      "localPath": "/images/sculpture-detail.webp",
+      "sourcePlatform": "Studio Forma / CC0 Public Domain Dedication",
+      "creator": "Studio Forma",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": false,
+      "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    },
+    {
+      "id": "aboutPortrait",
+      "localPath": "/images/about-portrait.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Julian Wan",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Julian Wan via Unsplash"
+    },
+    {
+      "id": "processStudio",
+      "localPath": "/images/process-studio.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Aleks Dahlberg",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Aleks Dahlberg via Unsplash"
+    },
+    {
+      "id": "processPhase1",
+      "localPath": "/images/process-site.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Bailey Zindel",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Bailey Zindel via Unsplash"
+    },
+    {
+      "id": "processPhase2",
+      "localPath": "/images/process-materials.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Science in HD",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Science in HD via Unsplash"
+    },
+    {
+      "id": "processPhase3",
+      "localPath": "/images/process-tectonics.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Scott Blake",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Scott Blake via Unsplash"
+    },
+    {
+      "id": "processPhase4",
+      "localPath": "/images/studio-desk.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Studio Republic",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Studio Republic via Unsplash"
+    },
+    {
+      "id": "pavilionKMain",
+      "localPath": "/images/pavilion-k.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "R Architecture",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by R Architecture via Unsplash"
+    },
+    {
+      "id": "monolithIIMain",
+      "localPath": "/images/sculpture-detail.webp",
+      "sourcePlatform": "Studio Forma / CC0 Public Domain Dedication",
+      "creator": "Studio Forma",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": false,
+      "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    },
+    {
+      "id": "courtyardResidenceMain",
+      "localPath": "/images/architectural-courtyard.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "R Architecture",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by R Architecture via Unsplash"
+    },
+    {
+      "id": "terraceSanctuaryMain",
+      "localPath": "/images/stone-terrace.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Frames For Your Heart",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Frames For Your Heart via Unsplash"
+    },
+    {
+      "id": "basaltStudyMain",
+      "localPath": "/images/basalt-study.webp",
+      "sourcePlatform": "Unsplash / Europeana / CC0 Public Domain",
+      "creator": "Europeana",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": false,
+      "credit": "Photograph by Europeana via Unsplash, CC0"
+    },
+    {
+      "id": "timberPavilionMain",
+      "localPath": "/images/timber-pavilion.webp",
+      "sourcePlatform": "Unsplash / Permissive Open License",
+      "creator": "Sora Sagano",
+      "license": "Unsplash Open License",
+      "licenseUrl": "https://unsplash.com/license",
+      "retrievalDate": "2026-10-29",
+      "attributionRequired": true,
+      "credit": "Photograph by Sora Sagano via Unsplash"
+    }
+  ]
+}
