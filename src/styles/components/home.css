@@ -55,3 +55,11 @@ html:is([data-motion-enabled="false"],[data-motion-inactive="true"]) .pill-link:
 @media (prefers-reduced-motion: no-preference) {
  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .collage-about h2[data-about-glow] { animation: about-gold-glow var(--about-glow-duration) ease-in-out infinite; }
 }
+
+.outlined-label { position: relative; display: inline-block; color: var(--color-text); -webkit-text-stroke: var(--text-labelStroke) var(--gold-dark); paint-order: stroke fill; }
+.outlined-label-about { color: inherit; -webkit-text-stroke: inherit; }
+.outlined-label:not(.outlined-label-about) .outline-sweep { -webkit-text-stroke-width: var(--text-labelStroke); }
+@keyframes label-gold-glow { 0%,100% { text-shadow: 0 0 var(--label-glow-low) var(--gold-mid); } 50% { text-shadow: 0 0 var(--label-glow-high) var(--gold-mid); } }
+@media (prefers-reduced-motion: no-preference) {
+ html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) [data-accent="outline"][data-glow-visible="true"] .outlined-label:not(.outlined-label-about) { animation: label-gold-glow var(--label-glow-duration) ease-in-out infinite; }
+}

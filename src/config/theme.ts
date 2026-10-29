@@ -5,7 +5,8 @@ export function createThemeCss(config:SiteConfiguration):string {
   const fonts=typography.fonts;
   const variables:Record<string,string|number>={
     '--about-fill':colors.aboutFill,'--about-outline':colors.aboutOutline,'--about-shadow':colors.aboutShadow,'--font-weight-navigation':typography.weights.navigation,
-    '--color-plaque':colors.plaque,'--color-plaque-text':colors.plaqueText,'--gold-dark':colors.goldDark,'--gold-mid':colors.goldMid,'--gold-light':colors.goldLight,'--about-glow-duration':motion.playful.aboutGlowDuration+'ms','--jelly-duration':motion.playful.jellyDuration,'--shine-duration':motion.playful.shineDuration,'--jelly-wide':motion.playful.jellyWide,'--jelly-narrow':motion.playful.jellyNarrow,
+    '--color-plaque':colors.plaque,'--color-plaque-text':colors.plaqueText,'--gold-dark':colors.goldDark,'--gold-mid':colors.goldMid,'--gold-light':colors.goldLight,'--label-glow-duration':motion.playful.labelGlowDuration+'ms','--label-glow-low':motion.playful.labelGlowLow+'px','--label-glow-high':motion.playful.labelGlowHigh+'px',
+    '--about-glow-duration':motion.playful.aboutGlowDuration+'ms','--jelly-duration':motion.playful.jellyDuration,'--shine-duration':motion.playful.shineDuration,'--jelly-wide':motion.playful.jellyWide,'--jelly-narrow':motion.playful.jellyNarrow,
     '--color-circle':colors.circle,'--color-canvas':colors.background,'--color-surface':colors.surface,'--color-text':colors.text,'--color-muted':colors.secondary,'--color-border':colors.border,'--color-accent':colors.primary,'--color-accent-text':colors.accentText,'--color-focus':colors.focus,
     '--color-subtle':colors.subtleBackground,'--color-on-media':colors.onMedia,'--color-shadow':colors.shadow,'--color-overlay':colors.overlay,'--color-modal-overlay':colors.modalOverlay,
     '--font-footer':JSON.stringify(fonts.footer.family)+', '+fonts.footer.fallback,
