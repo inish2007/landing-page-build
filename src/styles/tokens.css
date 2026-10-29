@@ -25,7 +25,6 @@
 @utility playful-card {
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
-      img { transition: transform var(--playful-hover-duration) var(--motion-ease); }
       &:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))); }
       @media (hover: hover) and (pointer: fine) {
         &:hover:not(:focus-visible) img { transform: translateY(calc(-1 * var(--playful-card-lift))) rotate(var(--playful-card-tilt)) scale(var(--playful-card-scale)); }
@@ -37,7 +36,6 @@
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
       transition: transform var(--playful-hover-duration) var(--motion-ease);
-      &:focus-visible { transform: translateY(-2px); }
       &:active { transform: scale(var(--playful-press-scale)); }
       @media (hover: hover) and (pointer: fine) { &:hover:not(:active) { transform: translateY(-2px); } }
     }
@@ -74,3 +72,6 @@
   }
 }
 @keyframes playful-wobble { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(calc(-1 * var(--playful-card-tilt))); } 65% { transform: rotate(var(--playful-card-tilt)); } }
+
+/* Arm only artwork a visitor actually touches; inactive gallery images need no transition setup. */
+@utility playful-image-transition { --playful-image-duration: var(--playful-hover-duration); transition: transform var(--playful-hover-duration) var(--motion-ease); }

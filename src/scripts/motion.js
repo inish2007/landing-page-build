@@ -21,12 +21,14 @@ export function initMotion(){
   function handleMotionState(){document.documentElement.dataset.motionInactive=String(document.hidden);if(preference.matches||document.hidden)cancelReveals();}
   /** Ensure keyboard/anchor destinations never remain faded. @returns {void} Cancels excluded nodes only. */
   function handleFocusOrHash(){for(const[element,animation]of active)if(protectedTarget(element)){animation.cancel();active.delete(element);}}
+  /** Prepare smooth entry/return only for interacted artwork, avoiding transition setup across a large untouched gallery. @param {Event} event Delegated pointerover/focusin event. @returns {void} Adds a utility to the relevant image; no layers, observers or timers. */
+  function handleArtworkInteraction(event){if(!settings.playful||preference.matches||document.hidden)return;const card=event.target instanceof Element?event.target.closest('.playful-card'):null;card?.querySelector('img')?.classList.add('playful-image-transition');}
   /** Suspend owned work for navigation/BFCache. @returns {void} Cancels effects and disconnects observer. */
   function handlePageHide(){document.documentElement.dataset.motionInactive="true";cancelReveals();observer?.disconnect();}
   /** Restore observation after browser history restoration. @returns {void} Re-observes unseen below-fold units without replaying seen units. */
   function handlePageShow(){handleMotionState();observeTargets();}
   /** Release all controller resources before reinitializing. @returns {void} Aborts handlers and cancels/disconnects owned work. */
   function disposeMotion(){events.abort();observer?.disconnect();cancelReveals();}
-  preference.addEventListener('change',handleMotionState,{signal:events.signal});document.addEventListener('visibilitychange',handleMotionState,{signal:events.signal});document.addEventListener('focusin',handleFocusOrHash,{signal:events.signal});window.addEventListener('hashchange',handleFocusOrHash,{signal:events.signal});window.addEventListener('pagehide',handlePageHide,{signal:events.signal});window.addEventListener('pageshow',handlePageShow,{signal:events.signal});disposeCurrent=disposeMotion;handleMotionState();observeTargets();
+  document.addEventListener('pointerover',handleArtworkInteraction,{signal:events.signal});document.addEventListener('focusin',handleArtworkInteraction,{signal:events.signal});preference.addEventListener('change',handleMotionState,{signal:events.signal});document.addEventListener('visibilitychange',handleMotionState,{signal:events.signal});document.addEventListener('focusin',handleFocusOrHash,{signal:events.signal});window.addEventListener('hashchange',handleFocusOrHash,{signal:events.signal});window.addEventListener('pagehide',handlePageHide,{signal:events.signal});window.addEventListener('pageshow',handlePageShow,{signal:events.signal});disposeCurrent=disposeMotion;handleMotionState();observeTargets();
 }
 initMotion();

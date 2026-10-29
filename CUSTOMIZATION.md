@@ -222,3 +222,25 @@ Set `enabled: false` for immediate UI changes, no reveal/page effects and no aut
 Initial viewport content appears immediately. Below-fold units reveal only once. Keyboard focus, anchor destinations, reduced motion and hidden pages cancel temporary effects rather than leaving content transparent. Circles remain static. Menu/lightbox closure preserves native modal isolation until the closing effect ends, then restores focus and original scrolling/styles.
 
 The GIF uses its poster when offscreen, in a hidden tab, with reduced motion enabled, or after a load error. Manual pause survives scrolling and tab visibility changes. Explicit play can override the reduced-motion default; a later change to reduced motion stops it again. A failed GIF is retried only by a user play action. The selected GIF and poster are unchanged; no format conversion is required.
+
+## Playful artwork and 2D accents
+
+Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switch still disables all motion; setting only `playful.enabled: false` restores the earlier restrained treatment. Layout, fonts, copy and media stay the same.
+
+| Setting | Default | What it changes |
+|---|---:|---|
+| enabled | true | Artwork/brand/arrow/underline and circle enhancements |
+| hoverDuration | 220 | Hover/focus/press transition duration, milliseconds |
+| cardLift | 4 | Artwork lift, pixels; keep small |
+| cardTilt | 1 | Pointer-only artwork tilt, degrees |
+| cardScale | 1.015 | Pointer-only artwork image scale |
+| pressScale | 0.98 | Button scale while pressed |
+| arrowTravel | 4 | Arrow movement in its direction, pixels |
+| revealTravel | 8 | Upward entry distance for eligible image-only units, pixels |
+| accentDuration | 420 | One-shot brand wobble/circle settle duration, milliseconds |
+
+For gentler artwork movement, change `cardLift: 2`, `cardTilt: 0.5`, and `cardScale: 1.01`. For stationary branding and artwork, set `enabled: false` inside `playful`. Save, run `npm run check` and `npm run build`, then preview desktop and mobile.
+
+Buttons lift 2px and compress while held; keyboard artwork focus lifts without tilt. Hover movement requires a precise pointer. Circle accents settle once below the initial viewport; brand wobble plays once per deliberate hover/focus. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
+
+These are reusable Tailwind utilities backed by generated CSS variables. You do not need to edit component classes, keyframes or JavaScript to change the settings above.
