@@ -98,5 +98,45 @@
     "inquire": "Inquire",
     "instagram": "Instagram",
     "facebook": "Facebook"
+  },
+  "editorial": {
+    "about": {
+      "title": "About",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "Lana Gomez's artistic journey is a testament to the boundless spirit of a kind-hearted rebel. Following her studies in art at the University of Tennessee, Lana made her way to Los Angeles, where she embarked on a continual exploration of acrylics and a diverse range of materials. Her exceptional talent soon captured the attention of the renowned interior designer Kelly Wearstler, resulting in a series of successful collaborations. Notably, from 2008 to 2009, Lana served as the resident painter at Wearstler's esteemed design studio."
+        },
+        {
+          "tag": "P",
+          "text": "A significant milestone in Lana's career was the commission by Kelly Wearstler to create a mural-sized masterpiece, which found its place in Wearstler's celebrated book, \"Hue.\" Undeterred by convention, Lana Gomez has done things such as an extraordinary mural covering 2 walls of a children's play space, a custom Gibson Guitar auctioned off at the prestigious Naples Winter Wine Festival, collaborated with Ivan Preciado on a collaborative piece, as well as 10-foot guitar sculpture for the city of West Hollywood."
+        },
+        {
+          "tag": "P",
+          "text": "Lana Gomez's artistry has found a global stage, with her work showcased in galleries and exhibitions in New York, Miami, Washington, D.C., and Los Angeles. Her pieces adorn diverse spaces worldwide, leaving a lasting impression on the art scene. Her creative journey has garnered recognition in influential publications such as The New Yorker, InStyle, Lonny, Los Angeles Confidential, and House Beautiful."
+        },
+        {
+          "tag": "H2",
+          "text": "Lana continues to push the boundaries of her artistic expression, leaving a profound mark on the world of contemporary art and design."
+        }
+      ]
+    },
+    "the-process": {
+      "title": "The Process",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "As an artist, I believe in the unique and powerful language of creative expression, and my canvas is where I give voice to this belief. My artistic journey is guided by the spontaneity that flows through me, allowing my creativity to take center stage. Every stroke on my canvas pays homage to a cherished moment from my past, an ode to the experiences that have shaped my life."
+        },
+        {
+          "tag": "H2",
+          "text": "“Through my work, whether it's the vivid play of colors, the graceful dance of shapes, or the intricate interplay of forms, I offer a glimpse into the world as I see it.”"
+        },
+        {
+          "tag": "H2",
+          "text": "I create with the intention that when others gaze upon my art, they too will find themselves drawn into their own nostalgic memories while connecting with and drawing inspiration from my personal narrative."
+        }
+      ]
+    }
   }
 }

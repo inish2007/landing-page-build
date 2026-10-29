@@ -33,5 +33,33 @@
         "textNamespace": "home.cta"
       }
     ]
+  },
+  "about": {
+    "path": "/about/",
+    "titleKey": "editorial.about.title",
+    "kind": "editorial",
+    "textNamespace": "editorial.about",
+    "imageCount": 5,
+    "sections": [
+      {
+        "id": "about-story",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.about"
+      }
+    ]
+  },
+  "the-process": {
+    "path": "/the-process/",
+    "titleKey": "editorial.the-process.title",
+    "kind": "editorial",
+    "textNamespace": "editorial.the-process",
+    "imageCount": 6,
+    "sections": [
+      {
+        "id": "the-process-story",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.the-process"
+      }
+    ]
   }
 }

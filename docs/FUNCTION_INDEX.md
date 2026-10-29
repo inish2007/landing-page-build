@@ -107,3 +107,13 @@ Image replacement after Stage 06: no functions/components added, changed, remove
 Documentation-only animation planning update: no functions/components added, changed, removed or renamed. Shared animation behavior and future route coverage are planned in IMPLEMENTATION_PLAN.md; no new runtime module exists. See changes/006b-animation-plan.md.
 
 Master plan correction: docs/implementation-plan.md now contains the current scope and future animation policy as well as its labeled historical proposal. No function/component changes; see changes/006c-master-plan-update.md.
+
+## Stage 007 — about-process-motion
+
+Added: initMotion(), fadeElement(element,delay), handleEntries(entries), handleMotionPreference() in src/scripts/motion.js: shared opacity entry, observer and preference cleanup; SiteLayout consumer. getStaticPaths() in src/pages/[...slug].astro: pure route enumeration.
+
+Changed: None
+
+Components: EditorialPage(page) and static dynamic route added; about and the-process content added; SiteLayout imports shared pages styles and motion.
+
+Checks: npm run build passed: 3 routes. Browser checks follow in Stage 12.

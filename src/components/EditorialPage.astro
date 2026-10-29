@@ -1,0 +1,15 @@
+---
+/** Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. */
+import { getCopy } from '../utils/content.js';
+import ResponsiveImage from './ResponsiveImage.astro';
+const { page } = Astro.props;
+const copy = getCopy(page.textNamespace);
+---
+<article class="editorial-page page-shell">
+  <header class="page-heading"><h1>{copy.title}</h1></header>
+  <div class="editorial-grid">
+    <ResponsiveImage imageKey="homeHero" aspectRatio="4 / 5" eager />
+    <div class="editorial-prose">{copy.blocks.map(block => <div class="editorial-block">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
+  </div>
+  <div class="editorial-image-grid">{Array.from({length:Math.max(0,page.imageCount-1)}).map(() => <ResponsiveImage imageKey="homeIntroSide" aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
+</article>

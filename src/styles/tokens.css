@@ -44,6 +44,8 @@
   --page-gutter: clamp(1.25rem, 3vw, 3rem);
 
   /* Motion Tokens */
+  --motion-entry-duration: 1500; /* milliseconds; shared opacity entry */
+  --motion-entry-stagger: 11.1111; /* milliseconds */
   --motion-fast: 160ms;
   --motion-standard: 320ms;
   --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);

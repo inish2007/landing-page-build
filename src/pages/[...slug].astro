@@ -1,0 +1,13 @@
+---
+/** Static supporting routes from pages.json. Props: page; shared SiteLayout handles chrome and motion. */
+import SiteLayout from '../layouts/SiteLayout.astro';
+import EditorialPage from '../components/EditorialPage.astro';
+import pages from '../content/pages.json';
+import { getCopy } from '../utils/content.js';
+/** Enumerate configured non-home static pages. @returns {Array<object>} Astro route parameters/props; no side effects. */
+export function getStaticPaths() {
+  return Object.entries(pages).filter(([id,page]) => id !== 'home' && page.path).map(([id,page]) => ({params:{slug:page.path.replace(/^\/|\/$/g,'')},props:{page}}));
+}
+const { page } = Astro.props;
+---
+<SiteLayout title={getCopy(page.titleKey)}><EditorialPage page={page} /></SiteLayout>
