@@ -12,7 +12,7 @@ test('scoped text jelly replays independently of gold and background jelly witho
     assert.equal(await page.locator('.desktop-nav [data-text-jelly]').count(),6);assert.equal(await page.locator('.footer-group [data-text-jelly],main h1.jelly-text').count(),0);
     for(const selector of ['.desktop-nav a:first-child','.small-link','.collage-about','.collage-press','.collage-archive','.collage-contact','.pill-link']){
       const owner=page.locator(selector).first();await owner.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await page.mouse.move(0,0);
-      const box=await owner.evaluate(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight]);await owner.hover();
+      const box=await owner.evaluate(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight]);await (selector.startsWith('.collage-')?owner.locator('.outline-base'):owner).hover();
       await page.waitForFunction(selector=>[...document.querySelector(selector).querySelector('.jelly-text').getAnimations()].some(a=>a.effect.getTiming().duration===600),selector);
       const target=owner.locator('.jelly-text');let calls=await target.evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length);assert.equal(calls,1);
       assert.deepEqual(await owner.evaluate(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight]),box);
@@ -43,4 +43,11 @@ test('cold/warm loads keep configured styles; font errors leave readable content
     await session.send('Page.stopScreencast');assert.deepEqual(signatures[0],signatures[1]);fs.writeFileSync('evidence/font-loading/frames.json',JSON.stringify({frames,signatures},null,2));await context.close();
     for(const failure of [false,true]){const p=await browser.newPage({viewport:{width:390,height:844}});await p.route('**/fonts/*',async route=>{if(failure)return route.abort();await new Promise(resolve=>setTimeout(resolve,700));await route.continue();});await p.goto(URL);await p.evaluate(()=>document.fonts.ready);await p.waitForFunction(()=>!document.querySelector('.brand [data-shining]'));assert.equal(await p.locator('body').evaluate(e=>getComputedStyle(e).visibility),'visible');assert.equal(await p.locator('.wordmark-text').first().evaluate(e=>getComputedStyle(e).color),'rgb(23, 23, 23)');assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await p.screenshot({path:'evidence/font-loading/'+(failure?'failed':'delayed')+'-mobile.png'});await p.close();}
   }finally{await browser.close();}
+});
+
+/** Moving from a photograph onto its caption must start the effect, not consume it early. */
+test('caption hover and visibility belong to the lettering rather than its photograph',async()=>{
+ const browser=await launchBrowser();try{const page=await browser.newPage({viewport:{width:1440,height:900}});await page.goto(URL);const card=page.locator('.collage-about'),label=card.locator('.jelly-text');await card.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await page.waitForFunction(()=>!document.querySelector('.collage-about .outline-sweep[data-shining]'));await card.locator('img').hover();assert.equal(await label.evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length),0);await card.locator('.outline-base').hover();assert.equal(await label.evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length),1);await card.locator('img').hover();assert.equal(await label.evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length),0);
+ await label.evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight-100,behavior:'instant'}));await page.waitForFunction(()=>document.querySelector('.collage-about').dataset.glowVisible==='false');assert.equal(await label.evaluate(e=>getComputedStyle(e).animationName),'none');assert.equal(await card.locator('.outline-sweep').evaluate(e=>e.getAnimations().length),0);
+ }finally{await browser.close();}
 });
