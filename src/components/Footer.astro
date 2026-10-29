@@ -1,0 +1,9 @@
+---
+/** Shared footer; no props. Consumes common.siteName, footer.* and navigation.footer. */
+import { getCopy, getNavigation } from '../utils/content.js';
+---
+<footer class="site-footer">
+  <div class="footer-intro"><a class="footer-brand" href="/">{getCopy('common.siteName')}</a><p>{getCopy('footer.tagline')}</p></div>
+  <nav aria-label={getCopy('common.footerNavigation')}>{getNavigation('footer').map(link => <a href={link.path}>{getCopy(link.labelKey)}</a>)}</nav>
+  <div class="footer-bottom"><p>{getCopy('footer.copyright')}</p><a href="#top">{getCopy('common.backToTop')} <span aria-hidden="true">↑</span></a></div>
+</footer>

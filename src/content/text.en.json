@@ -1,6 +1,8 @@
 {
   "common": {
     "siteName": "Aura Creative Studio",
+    "primaryNavigation": "Primary navigation",
+    "footerNavigation": "Footer navigation",
     "skipToContent": "Skip to main content",
     "menuOpenLabel": "Open navigation menu",
     "menuCloseLabel": "Close navigation menu",

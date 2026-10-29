@@ -23,7 +23,7 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | UI components not yet scaffolded | N/A | N/A | None | Registration starts Stage 04/05 |
+| `Header`, `MobileDrawer`, `Footer` | `src/components/{Header,MobileDrawer,Footer}.astro` | Shared responsive chrome, native modal and footer | No props; common/nav/footer copy and navigation JSON; optional images.siteLogo | SiteLayout | Semantic navigation, current-page state, dialog markup | build, navigation browser test |
 
 ---
 
@@ -43,7 +43,9 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | Client modules not yet authored | N/A | N/A | None | Registration starts Stage 04 |
+| `initNavigation` | `src/scripts/site.js` | Initialize drawer once per document | No arguments; void | SiteLayout bundled script | Registers handlers and reveals mobile trigger | navigation browser test |
+| `openMenu`, `closeMenu`, `restoreMenuState` | `src/scripts/site.js` | Modal lifecycle with focus restoration and scroll locking | No arguments; void | Drawer event handlers | Dialog, body overflow, focus, expanded state | navigation browser test |
+| `handleMenuKeydown`, `handleMenuCancel`, `handleDrawerClick`, `handleViewportChange` | `src/scripts/site.js` | Tab wrapping, native Escape, backdrop/link dismissal, desktop resize cleanup | KeyboardEvent/Event/MouseEvent/no arguments respectively; void | DOM and matchMedia events | May prevent default, move focus and close drawer | navigation browser test |
 
 ---
 
@@ -64,7 +66,7 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | Test helpers not yet authored | N/A | N/A | None | Registration starts Stage 06 |
+| `verifyNavigation` | `tests/navigation.test.mjs` | Production chrome browser regression | No arguments; Promise<void> | node:test | Launches Edge, exercises DOM, writes ignored captures; preview required | npm test |
 
 ---
 
@@ -73,3 +75,5 @@ This document serves as the project's living registry of all active components, 
 - Every Astro component must include a frontmatter header comment describing its responsibility, accepted props, and content keys.
 - Do not use anonymous callbacks to conceal meaningful business logic; extract to named, documented functions.
 - Every commit updating this file must have a corresponding note in `docs/changes/NNN-*.md`.
+
+Stage 04 updates: SiteLayout now imports local shared styles/fonts, Header/Footer/MobileDrawer and navigation behavior; its title and skip link use common copy. Index remains a scaffold, now reading common.siteName/home.hero.eyebrow with shared font tokens. No function removals or renames.
