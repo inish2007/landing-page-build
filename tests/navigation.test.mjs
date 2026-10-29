@@ -56,4 +56,3 @@ async function verifyNavigation() {
   } finally { await browser.close(); }
 }
 test('shared navigation: viewports, focus, Escape, scroll lock, resize, reduced motion and no-JS fallback', verifyNavigation);
-
