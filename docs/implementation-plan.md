@@ -1,3 +1,71 @@
+# Master Implementation Plan — Current Revision
+
+**Updated:** 29 October 2026, Asia/Calcutta
+**Workspace:** D:/projects/landing-page-build
+**Current instruction:** Documentation updates only. Do not build new pages or animation code.
+**Implementation stop:** Stages 01–06 complete; Stage 07 onward awaits a new request.
+
+This revision supersedes conflicting branding, content, asset, route, animation and completion instructions in the historical proposal preserved below. The shorter companion summary is docs/IMPLEMENTATION_PLAN.md; this hyphenated master plan is also maintained explicitly.
+
+## 1. Current verified state
+- Homepage / is implemented. Supporting routes are not implemented; configured destinations can return 404.
+- Stage 05 desktop homepage: d7d5ccf. Stage 06 responsive homepage: f5b46ad.
+- Image replacement: 41b18b2. All 15 configured image records use /images/client-placeholder.png (474×266); old responsive srcset selections were removed. Preserve the supplied dark image in every slot, independent of layout aspect ratio.
+- Animation planning clarification: f71d22f. This documents future shared behavior; it did not implement the planned fades or new routes.
+- Earlier production build, responsive/navigation tests and six-viewport checks are recorded in their change notes. No new runtime verification is claimed by this documentation update.
+
+## 2. Content, branding and assets — superseding the Aura plan
+The user supplied D:/projects/landing page/lana-gomez-local as the temporary artist content source, replacing the Aura architecture content direction. Keep the current artist copy, section sequence and original footer credits editable in centralized JSON. Do not restore architecture biographies, project records or the Aura name from the historical examples below.
+
+The latest image instruction overrides reference photographs: every configured image must remain the supplied dark PNG. Prior assets are retained on disk; do not delete user files or restore their image selections without instruction.
+
+Caveat Brush is locally hosted under its verified SIL Open Font License 1.1. Keep --font-brand/--text-brand centralized and restrict brush lettering to the brand name and occasional short accents. Maintain serif and sans-serif fonts for headings/body copy. Do not copy proprietary source fonts or the source logo image.
+
+The source artist text/images are user-supplied temporary reference material. Do not describe them as verified CC0 or assert an open license. Preserve actual provenance and original ownership notices. Any future production audit must distinguish intentionally configured temporary artist names/credits from accidental private artifacts, tracking and unauthorized assets; the historical blanket banned-name scanner must not silently erase user-requested content. No publication or push is authorized.
+
+## 3. Animation evidence and planned behavior
+Evidence was inspected read-only in the supplied snapshot’s index.html, saved stylesheets and local.js. The original hosted runtime scripts are disabled in that snapshot, so captured settings are configuration evidence rather than proof of live execution.
+
+| Behavior | Captured setting | Requirement for future authorized implementation |
+|---|---|---|
+| Global/content entry | Fade style; opacity transition; 1.5s duration and ease curve | Shared once-per-element viewport fade; preserve settled appearance and document actual timing |
+| Header entry | Small delay increments of approximately 0.0111111s | Bounded, subtle stagger; keep navigation usable and avoid focus disruption |
+| Content groups | Inspected delays around 0.222222–0.266667s | Short group delays, not ever-increasing delays across the whole document |
+| Circle highlight | draw configuration, duration 0.5s, but isAnimationEnabled=false | Keep circles static unless later evidence or user instruction enables drawing |
+| Menu | Local visibility toggle; original runtime disabled | Preserve accessible drawer focus wrapping/restoration, Escape and scroll cleanup |
+
+Do not infer parallax, slide, scale, page transitions, looping animations or draw effects from unused stylesheet classes. Existing limited hover transforms are implemented separately; source fidelity has not been certified.
+
+## 4. Future shared animation architecture — not code written now
+1. Load a single original motion module and authored stylesheet through SiteLayout. Reuse it on the homepage and every subsequently authorized route; do not paste separate behavior into each page.
+2. Centralize fade duration, easing and bounded stagger settings in tokens.css. Use the existing content architecture and shared components.
+3. Select coherent entry units and avoid fading both a parent and its children. Trigger once on viewport entry; avoid animation that changes document geometry or repeatedly hides content.
+4. Content must be visible without JavaScript, with missing browser APIs or on initialization failure. Provide reliable visibility cleanup and no permanently hidden states.
+5. Honor prefers-reduced-motion at initialization and when it changes during a session. Cancel motion and restore visible content without interfering with focus, menu state or scrolling.
+6. Preserve the current image override, text, brand and font settings. Do not import hosted executable bundles, tracking, external runtime dependencies or private reference captures.
+7. Register actual functions and components in FUNCTION_INDEX and per-commit change notes only when implemented. This plan does not claim those symbols already exist.
+
+## 5. Coverage for later page work
+When separately authorized, apply the shared policy to About, The Process, Work/Available/Archived, Press, Collaborations and collaboration details, and Contact. Each route must use SiteLayout. These are future coverage targets, not existing routes or an instruction to build them during this request. Reconcile their paths with the current navigation dictionary rather than the obsolete architecture-route examples below.
+
+## 6. Verification gate for a future implementation
+- Check real opacity progression, easing/duration, bounded staggering and once-only viewport entry.
+- Check normal/reduced motion, preference changes during animation, no JavaScript and missing-observer fallback.
+- Confirm keyboard focus visibility, skip link, drawer dismissal/restoration and scrolling remain correct.
+- Test 1440×1000, 1280×800, 768×1024, 390×844 and overflow at 360/430px; inspect bounding boxes rather than relying on hidden overflow.
+- Decode configured images, verify local font loading, block external network requests and inspect console/local request failures.
+- Exercise every route actually implemented at that time. Keep captures private and report only checks actually run.
+- Full source content-swap, licensing, accessibility and unused-asset audits remain separate later deliverables.
+
+## 7. Current authorization
+Update agent instructions, handoff and planning records only. No page build, new animation code, image restoration, publishing or push. The original Stage 01 restart instruction at the end of the historical proposal is obsolete: preserve legitimate Git history and continue only from a newly authorized task.
+
+---
+
+# Historical Revision 2 proposal — retained for technical reference
+
+**Historical material:** The following proposal predates the user’s artist-content change, dark-image override, completed Stages 05–06 and documentation-only animation clarification. Its conflicting examples and instructions are superseded by the current revision above. Do not execute it as a fresh plan or treat its proposed checks as completed evidence.
+
 # Master Implementation Plan: Centralized, Editable Astro Portfolio Website
 
 **Document Status**: Proposal for Review (Planning Mode)<br>

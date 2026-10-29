@@ -105,3 +105,5 @@ Changed verifyNavigation in tests/navigation.test.mjs: footer count now counts s
 Image replacement after Stage 06: no functions/components added, changed, removed or renamed. All image selections updated through images.json; see changes/006a-image-replacement.md.
 
 Documentation-only animation planning update: no functions/components added, changed, removed or renamed. Shared animation behavior and future route coverage are planned in IMPLEMENTATION_PLAN.md; no new runtime module exists. See changes/006b-animation-plan.md.
+
+Master plan correction: docs/implementation-plan.md now contains the current scope and future animation policy as well as its labeled historical proposal. No function/component changes; see changes/006c-master-plan-update.md.
