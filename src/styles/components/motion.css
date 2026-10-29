@@ -31,3 +31,8 @@ html[data-motion-enabled="false"] .playful-link::before { transition: none !impo
 .image-frame[data-photo-state="pending"] { opacity: 0; }
 .image-frame[data-photo-state] img { transform: none !important; }
 @media (prefers-reduced-motion: reduce) { .image-frame[data-photo-state] { opacity: 1 !important; } }
+
+/* Only prepared, eligible strip cards hide; no-JS/unsupported/short-screen strips stay complete. */
+[data-social-drop-state="pending"] > [data-social-drop-item] { opacity: 0; }
+[data-social-drop-state] img { transform: none !important; }
+@media (prefers-reduced-motion: reduce) { [data-social-drop-state] > [data-social-drop-item] { opacity: 1 !important; } }
