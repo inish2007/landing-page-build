@@ -29,3 +29,5 @@ Copyright owner/wording: footer.copyright in text.en.json (through site.text). K
 Visible playful motion: image entry18px, image hover6px/1.5deg/scale1.03 and circles900ms. Edit the existing centralized motion/playful settings; no component edits needed.
 
 Slow smooth image settings are separate: playful.imageRevealDuration1000ms, imageHoverDuration700ms and imageEasing. Standalone text retains500ms; controls220ms. Client guide explains the image/caption grouping.
+
+Homepage footer-strip entry is configured only through site.theme.motion.playful.socialDrop: enabled, duration1100, stagger120, distance48, alternateOnLoad. See CUSTOMIZATION.md for storage/history/fallback details; do not add generic image reveals inside that marked strip or alter DOM order to reverse animation. Brand links intentionally suppress text-decoration in every state while retaining focus outlines.
