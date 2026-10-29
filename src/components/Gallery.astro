@@ -1,6 +1,9 @@
 ---
+import type { PageConfiguration } from '../config/types';
+interface Props {page:PageConfiguration}
 /** Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. */
-import { getCopy, getArtworks, getImage } from '../utils/content.js';
+import SiteIcon from './SiteIcon.astro';
+import { getCopy, getArtworks, getImage } from '../utils/content';
 import ResponsiveImage from './ResponsiveImage.astro';
 const { page } = Astro.props;
 const items = getArtworks().filter(item => item.collection === page.collection).sort((a,b) => a.order-b.order);
@@ -13,10 +16,10 @@ const items = getArtworks().filter(item => item.collection === page.collection).
   </figure>)}</div>
 </section>
 <dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title">
-  <button data-lightbox-close>{getCopy('gallery.close')} ×</button>
+  <button data-lightbox-close>{getCopy('gallery.close')} <SiteIcon name="close" /></button>
   <img data-lightbox-image alt="" />
   <h2 id="artwork-title"></h2><p data-lightbox-caption></p>
-  <div class="lightbox-controls"><button data-lightbox-prev>{getCopy('gallery.previous')} ←</button><button data-lightbox-next>{getCopy('gallery.next')} →</button></div>
+  <div class="lightbox-controls"><button data-lightbox-prev>{getCopy('gallery.previous')} <SiteIcon name="previous" /></button><button data-lightbox-next>{getCopy('gallery.next')} <SiteIcon name="next" /></button></div>
 </dialog>
 <script type="application/json" id="artworks-data" set:html={JSON.stringify(items.map(item => ({id:item.id,title:getCopy(item.titleKey),caption:getCopy(item.captionKey),image:getImage(item.imageKey)}))).replace(/</g,'\u003c')} />
 <script>import '../scripts/gallery.js';</script>

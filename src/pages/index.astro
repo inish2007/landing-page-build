@@ -5,12 +5,12 @@ import HeroSection from '../components/HeroSection.astro';
 import StatementSection from '../components/StatementSection.astro';
 import SelectedWorkSection from '../components/SelectedWorkSection.astro';
 import ContactCtaSection from '../components/ContactCtaSection.astro';
-import { getPageConfig, getCopy } from '../utils/content.js';
+import { getPageConfig, getCopy } from '../utils/content';
 import '../styles/components/home.css';
 import '../styles/components/home-responsive.css';
-const page = getPageConfig('home');
+const page = getPageConfig('home')!;
 const components = { HeroSection, StatementSection, SelectedWorkSection, ContactCtaSection };
 ---
 <SiteLayout title={getCopy(page.titleKey)}>
-  {page.sections.map(section => { const Section = components[section.component]; return <Section {...section} />; })}
+  {page.sections.map(section => { const Section = components[section.component as keyof typeof components]; return <Section {...section} />; })}
 </SiteLayout>

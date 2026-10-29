@@ -1,18 +1,21 @@
 ---
+import type { PageConfiguration, EditorialCopy } from '../config/types';
+interface Props {page:PageConfiguration}
 /** Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. */
-import { getCopy } from '../utils/content.js';
+import { getCopy } from '../utils/content';
 import ResponsiveImage from './ResponsiveImage.astro';
 import AnimatedMedia from './AnimatedMedia.astro';
+import SiteIcon from './SiteIcon.astro';
 const { page } = Astro.props;
-const copy = getCopy(page.textNamespace);
+const copy = getCopy<EditorialCopy>(page.textNamespace!);
 ---
 <article class="editorial-page page-shell">
   <header class="page-heading"><h1>{copy.title}</h1></header>
   <div class="editorial-grid">
-    {page.imageCount > 0 && <ResponsiveImage imageKey="homeHero" aspectRatio="4 / 5" eager />}
+    {(page.imageCount || 0) > 0 && <ResponsiveImage imageKey="homeHero" aspectRatio="4 / 5" eager />}
     <div class="editorial-prose">{copy.blocks.map(block => <div class="editorial-block">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
   </div>
   {page.mediaKey && <AnimatedMedia mediaKey={page.mediaKey} />}
-  {copy.links?.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a href={link.href}>{link.label}<span aria-hidden="true"> ↗</span></a>)}</nav>}
-  <div class="editorial-image-grid">{Array.from({length:Math.max(0,page.imageCount-1)}).map(() => <ResponsiveImage imageKey="homeIntroSide" aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
+  {copy.links && copy.links.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a href={link.href}>{link.label}<span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
+  <div class="editorial-image-grid">{Array.from({length:Math.max(0,(page.imageCount || 0)-1)}).map(() => <ResponsiveImage imageKey="homeIntroSide" aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
 </article>

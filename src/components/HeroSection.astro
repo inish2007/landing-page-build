@@ -1,6 +1,7 @@
 ---
+interface Props {id:string;textNamespace?:string;imageKey?:string}
 /** Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. */
-import { getCopy } from '../utils/content.js';
+import { getCopy } from '../utils/content';
 import ResponsiveImage from './ResponsiveImage.astro';
 const { id, textNamespace, imageKey } = Astro.props;
 ---

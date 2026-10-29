@@ -12,6 +12,8 @@
  * Exits with code 0 on success; exits with code 1 with actionable diagnostics on error.
  */
 
+import site from '../src/config/site.ts';
+import { createThemeCss } from '../src/config/theme.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -257,6 +259,9 @@ export function validateRoutesAndMedia(schemas, rootDir = PROJECT_ROOT) {
   for(const [key,item] of Object.entries(schemas.media)){for(const field of ['src','poster'])if(!item[field]?.startsWith('/')||!fs.existsSync(path.join(rootDir,'public',item[field])))errors.push('Missing media '+key+'.'+field);if(!(item.width>0&&item.height>0))errors.push('Invalid media dimensions '+key);if(resolvePath(schemas.text,item.altKey)===undefined)errors.push('Missing media alt '+key);}
   for(const page of Object.values(schemas.pages))if(page.mediaKey&&!schemas.media[page.mediaKey])errors.push('Unknown mediaKey '+page.mediaKey);
   for(const artwork of schemas.artworks)if(resolvePath(schemas.text,artwork.titleKey)===undefined)errors.push('Missing artwork title '+artwork.id);
+  for(const definition of Object.values(site.theme.typography.fonts))for(const face of definition.faces)if(!face.src.startsWith('/')||!fs.existsSync(path.join(rootDir,'public',face.src)))errors.push('Missing configured font '+face.src);
+  for(const asset of [site.branding.logo?.src,site.branding.favicon,...Object.values(site.icons).map(icon=>icon.src)].filter(Boolean))if(!asset.startsWith('/')||!fs.existsSync(path.join(rootDir,'public',asset)))errors.push('Missing branding/icon asset '+asset);
+  try{createThemeCss(site);}catch(error){errors.push(error.message);}
   const fonts=fs.readFileSync(path.join(rootDir,'src/styles/fonts.css'),'utf8');for(const match of fonts.matchAll(/url\("([^"\)]+)"\)/g))if(!fs.existsSync(path.join(rootDir,'public',match[1])))errors.push('Missing local font '+match[1]);
   return errors;
 }
@@ -304,14 +309,15 @@ export function validateContent(rootDir = PROJECT_ROOT) {
     return false;
   }
 
-  const { text: textData, images: imageData, navigation: navigationData, pages: pagesData, artworks: artworksData } = parsed;
+  const configured = rootDir === PROJECT_ROOT ? {text:site.text,images:site.images,navigation:site.navigation,pages:site.pages,artworks:site.artworks,media:site.media} : parsed;
+  const { text: textData, images: imageData, navigation: navigationData, pages: pagesData, artworks: artworksData } = configured;
 
   const chromeErrors = validateChromeKeys(textData);
   const componentErrors = validateComponentWhitelist(pagesData);
   const imageErrors = validateImageMetadata(imageData, rootDir);
   const crossRefErrors = validateCrossReferences({ textData, imageData, navigationData, pagesData, artworksData });
 
-  const routeMediaErrors = validateRoutesAndMedia(parsed, rootDir);
+  const routeMediaErrors = validateRoutesAndMedia(configured, rootDir);
   const allErrors = [...chromeErrors, ...componentErrors, ...imageErrors, ...crossRefErrors, ...routeMediaErrors];
 
   if (allErrors.length > 0) {

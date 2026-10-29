@@ -1,6 +1,7 @@
 ---
+interface Props {imageKey?:string;aspectRatio?:string;eager?:boolean;sizes?:string;class?:string}
 /** Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, sizes='100vw', class. Responsive sources come from images.json. Asset dimensions never dictate presentation ratio. */
-import { getImage } from '../utils/content.js';
+import { getImage } from '../utils/content';
 const { imageKey, aspectRatio = '3 / 2', eager = false, sizes = '100vw', class: className } = Astro.props;
 const image = getImage(imageKey);
 ---

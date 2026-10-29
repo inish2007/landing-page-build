@@ -1,10 +1,11 @@
 ---
 /** Native modal navigation drawer; no props. Uses common menu labels and navigation.header. */
-import { getCopy, getNavigation } from '../utils/content.js';
+import SiteIcon from './SiteIcon.astro';
+import { getCopy, getNavigation } from '../utils/content';
 const current = Astro.url.pathname;
 ---
 <dialog id="mobile-drawer" class="mobile-drawer" aria-labelledby="drawer-title">
-  <div class="drawer-top"><p id="drawer-title">{getCopy('common.siteName')}</p><button data-menu-close autofocus>{getCopy('common.menuCloseLabel')}<span aria-hidden="true"> ×</span></button></div>
+  <div class="drawer-top"><p id="drawer-title">{getCopy('common.siteName')}</p><button data-menu-close autofocus>{getCopy('common.menuCloseLabel')}<span aria-hidden="true"> <SiteIcon name="close" /></span></button></div>
   <nav aria-label={getCopy('common.primaryNavigation')}>
     {getNavigation('header').map(link => <a href={link.path} aria-current={current === link.path ? 'page' : undefined}>{getCopy(link.labelKey)}</a>)}
   </nav>

@@ -26,7 +26,10 @@ export const site = {
     favicon: null as string | null,
   },
   // Optional icon assets use local paths; text symbols preserve today's appearance.
-  icons: { menu:'☰', close:'×', next:'→', previous:'←', external:'↗' },
+  icons: {
+    menu:{text:'☰',src:null as string|null}, close:{text:'×',src:null as string|null},
+    next:{text:'→',src:null as string|null}, previous:{text:'←',src:null as string|null}, external:{text:'↗',src:null as string|null},
+  },
   links: { home:'/', colophon:'/colophon/', privacy:'/privacy/' },
   theme: {
     colors: {

@@ -1,0 +1,8 @@
+---
+/** Configured decorative UI symbol or local asset. Props: name, a key of site.icons. */
+import site from '../config/site';
+interface Props { name:keyof typeof site.icons }
+const { name }=Astro.props;
+const icon=site.icons[name];
+---
+{icon.src ? <img src={icon.src} alt="" aria-hidden="true" style="width:1em;height:1em;display:inline-block;vertical-align:middle" /> : icon.text}

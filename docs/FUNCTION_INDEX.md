@@ -90,3 +90,13 @@ Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks retain signatu
 Components: SiteTheme.astro added for later layout integration; current rendering unchanged.
 
 Checks: TypeScript noEmit passed; baseline metrics/captures recorded before theme integration. Main site module loads under Node 24.
+
+## Stage 015 — integrate-central-customization
+
+Added: SiteIcon.astro renders configurable text symbols or local icon paths; typed Props. SiteTheme now emits configured tokens/font faces in SiteLayout.
+
+Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks moved from content.js to content.ts with typed outputs/overloads; all imports migrated, no symbol rename. getStaticPaths and Astro component props typed. validateContent/validateRoutesAndMedia, pruneUnusedAssets and auditBuild consume site.ts, check configured fonts/logo/icons and retain selected assets instead of enforcing a hardcoded image. Browser behavior functions unchanged.
+
+Components: All Astro components consume site.ts directly or typed helpers; Header/Footer optional logo, favicon and SiteIcon support; no component imports a content dictionary directly. SiteLayout includes SiteTheme. Existing CSS selects generated variables; Tailwind aliases share them without preflight/default-font overrides.
+
+Checks: Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before/after page/viewport cases had identical metrics and zero differing screenshot pixels. Real site.ts-only edits to colors/fonts/body size/text/logo/icons/image/GIF verified across pages and restored exactly.

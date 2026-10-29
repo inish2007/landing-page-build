@@ -1,4 +1,6 @@
 ---
+import type { TextSegment } from '../config/types';
+interface Props {segments?:TextSegment[]}
 /** Safe structured inline text. Prop: segments; italic and circle/accent options only. */
 const { segments = [] } = Astro.props;
 ---

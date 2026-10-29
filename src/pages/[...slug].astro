@@ -4,11 +4,13 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import EditorialPage from '../components/EditorialPage.astro';
 import Gallery from '../components/Gallery.astro';
 import ContactForm from '../components/ContactForm.astro';
-import pages from '../content/pages.json';
-import { getCopy } from '../utils/content.js';
-/** Enumerate configured non-home static pages. @returns {Array<object>} Astro route parameters/props; no side effects. */
-export function getStaticPaths() {
-  return Object.entries(pages).filter(([id,page]) => id !== 'home' && page.path).map(([id,page]) => ({params:{slug:page.path.replace(/^\/|\/$/g,'')},props:{page}}));
+import site from '../config/site';
+import type { PageConfiguration } from '../config/types';
+interface Props {page:PageConfiguration}
+import { getCopy } from '../utils/content';
+/** Enumerate configured non-home static pages; returns Astro route parameters/props with no side effects. */
+export function getStaticPaths(): {params:{slug:string};props:{page:PageConfiguration}}[] {
+  return Object.entries(site.pages as Record<string,PageConfiguration>).filter(([id,page]) => id !== 'home' && page.path).map(([,page]) => ({params:{slug:page.path!.replace(/^\/|\/$/g,'')},props:{page}}));
 }
 const { page } = Astro.props;
 ---

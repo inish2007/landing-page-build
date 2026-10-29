@@ -1,6 +1,6 @@
 .page-shell { max-width: var(--content-max); padding: var(--space-5) var(--page-gutter) var(--space-6); margin-inline: auto; }
 .page-heading { margin-bottom: var(--space-5); }
-.page-heading h1 { font-size: var(--text-display); letter-spacing: -.04em; }
+.page-heading h1 { font-size: var(--text-display); letter-spacing: var(--tracking-heading); }
 .editorial-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--space-5); align-items: start; }
 .editorial-prose { max-width: 65ch; }
 .editorial-block + .editorial-block { margin-top: var(--space-3); }
@@ -13,7 +13,7 @@
 .gallery-card h2 { font-size: var(--text-h2); }
 .gallery-card p { font-size: var(--text-caption); }
 .artwork-dialog { width: min(90vw,60rem); max-height: 92dvh; margin: auto; border: 1px solid var(--color-border); background: var(--color-canvas); padding: var(--space-3); overflow-y: auto; }
-.artwork-dialog::backdrop { background: rgb(0 0 0 / .7); }
+.artwork-dialog::backdrop { background: var(--color-modal-overlay); }
 .artwork-dialog > img { max-height: 60dvh; width: 100%; object-fit: contain; margin-block: var(--space-2); }
 .lightbox-controls { display: flex; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-3); }
 .artwork-dialog button { min-height: 44px; }

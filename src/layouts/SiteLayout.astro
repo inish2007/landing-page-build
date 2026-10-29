@@ -1,9 +1,11 @@
 ---
 /** Document shell with shared chrome, local fonts/styles, skip link and menu behavior. Props: title?: string; main slot. Copy: common.*. */
 import Header from '../components/Header.astro';
+import SiteTheme from '../components/SiteTheme.astro';
+import site from '../config/site';
 import Footer from '../components/Footer.astro';
 import MobileDrawer from '../components/MobileDrawer.astro';
-import { getCopy } from '../utils/content.js';
+import { getCopy } from '../utils/content';
 import '../styles/global.css';
 import '../styles/components/home.css';
 import '../styles/components/pages.css';
@@ -17,6 +19,8 @@ const { title = getCopy('common.siteName') } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <SiteTheme />
+    {site.branding.favicon && <link rel="icon" href={site.branding.favicon} />}
   </head>
   <body>
     <a href="#main-content" class="skip-link">{getCopy('common.skipToContent')}</a>
