@@ -35,4 +35,10 @@
 .press-marker-group > .editorial-block { position: relative; z-index: 1; opacity: 1; }
 
 /* Inline fragments repeat the marker independently behind every wrapped text line. */
-.press-marker-ink { -webkit-box-decoration-break: clone; box-decoration-break: clone; background-image: linear-gradient(to bottom,transparent 8%,var(--press-marker-ink) 16%,var(--press-marker-ink) 82%,transparent 94%); background-repeat: no-repeat; background-position: left center; background-size: 100% var(--press-marker-thickness); }
+.press-marker-ink { -webkit-box-decoration-break: clone; box-decoration-break: clone; padding-block: var(--press-marker-overhang); background-image: var(--press-marker-image); background-repeat: no-repeat; background-position: left center; background-size: 100% var(--press-marker-thickness); }
+
+/* Press trial only: native line decoration follows each wrapped text fragment. */
+#main-content .editorial-links.press-article-links a { justify-self: start; max-width: 100%; text-decoration-line: underline; text-decoration-thickness: var(--press-link-line); text-underline-offset: .2em; transition: text-decoration-thickness var(--press-link-duration) ease; }
+#main-content .editorial-links.press-article-links a::before { content: none !important; }
+#main-content .editorial-links.press-article-links a:is(:hover,:focus-visible) { text-decoration-line: underline; text-decoration-thickness: var(--press-link-line-hover); text-underline-offset: .2em; }
+@media (prefers-reduced-motion: reduce) { #main-content .editorial-links.press-article-links a { transition: none; } }

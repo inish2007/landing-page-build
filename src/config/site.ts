@@ -34,7 +34,8 @@ export const site = {
   },
   links: { home:'/', colophon:'/colophon/', privacy:'/privacy/' },
   theme: {
-    pressMarker:{color:'#fff230',opacity:0.55,thickness:24,duration:900,stagger:1000},
+    pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
+    pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
       aboutFill:'#ffffff', aboutOutline:'#d4a72c', aboutShadow:'0 1px 2px #171717, 0 0 1px #171717', plaque:'#171717', plaqueText:'#ffffff', goldDark:'#8a5a00', goldMid:'#d4a72c', goldLight:'#fff0ad',
       primary:'#e5ff00', circle:'#c5d600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
