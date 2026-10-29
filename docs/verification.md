@@ -1,3 +1,9 @@
+# Current smooth-motion verification
+
+All 13 tests, typecheck, production build and audit passed. See [motion-verification.md](motion-verification.md) for before/after metrics, visual preservation, investigated regression and scope limits. Earlier seven-test/configuration delivery below is historical.
+
+---
+
 # Configuration refactor verification — 29 October 2026
 
 - Astro check returned 0 errors, 0 warnings and 0 hints.

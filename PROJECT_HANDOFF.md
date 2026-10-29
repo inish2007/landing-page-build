@@ -1,3 +1,18 @@
+# Smooth motion delivery — current handoff
+
+Updated 29 October 2026. Approved plan completed without redesign, media replacement, new animation library, router, deployment or push.
+
+- Gallery serialization fix: 29c2233. Shared motion/reveal settings: c874695. Dialog/page/GIF layer: ceb6cdb. Final verification/documentation and measured opening optimization are in the final commit; its actual hash is exported afterward.
+- All 13 tests passed, including malicious gallery-content regression, real configuration edits/restoration, all14 routes × six viewport sizes, bounded/focused/hidden reveals, interrupted native dialogs, exact original scroll/styles, GIF visibility/manual intent/errors, native navigation/history and fallbacks. Typecheck returned0 errors/warnings/hints; build/audit passed with 16 HTML documents and 30 output files.
+- Settings remain in src/config/site.ts. Default reveals360ms/stagger40/cap120/concurrency6; dialogs220/160; nativepage160; hover160. Master/page switches enabled. Initial viewport is immediate and circles stay static.
+- GIF/poster remains unchanged. Offscreen/hidden uses poster; manual pause persists; explicit play allowed; preference changes stop playback. No automatic retry loop.
+- Settled before/final screenshots: six cases, zero differing pixels. Lab frame intervals stayed about 17ms. Final 4× interaction medians: gallery30.5→33ms (+8.2%); GIF15→16.4ms (+9.3%). No sampled long tasks. Initial larger gallery regression was investigated and reduced. Existing cold-run MAIN layout movement remains documented; no zero-CLS/universal60fps claim.
+- See docs/motion-verification.md for exact samples, investigation, limits and private evidence paths. CUSTOMIZATION.md describes all switches. Both implementation-plan files are headed by this completed motion revision.
+- SECURITY_REPORT.md is a pre-existing untracked local report preserved unchanged; its SEC-01 predates the fix. Other security findings remain outside scope.
+- Owned production preview on 4333 is stopped at teardown. Pre-existing development sessions remain untouched. For tests start npm run preview -- --port 4333, set SITE_TEST_URL to http://127.0.0.1:4333 and run npm test sequentially.
+
+---
+
 # Configuration follow-up — current state
 
 Updated 29 October 2026. The existing site is preserved; this follow-up centralizes client customization without redesign. Main entry: src/config/site.ts. Client instructions: CUSTOMIZATION.md.

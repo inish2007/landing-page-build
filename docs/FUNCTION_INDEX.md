@@ -1,146 +1,122 @@
 # Current function and component index
 
-Updated at final handoff. Each function below includes source JSDoc; historical per-commit details remain in docs/changes. Inline mapping/assertion callbacks are owned by the named component/test.
+Current after smooth-motion delivery. Earlier removals/migrations remain in docs/changes. Small inline callbacks belong to their named owner; no private capture fixtures are shipped.
 
-| Symbol | File | Responsibility | Inputs / returns | Consumers | Side effects | Checks |
+| Symbol | File | Responsibility | Inputs/returns | Consumers | Side effects | Checks |
 |---|---|---|---|---|---|---|
-| getCopy | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (keyPath, fallback = ''); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getImage | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (imageKey); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getNavigation | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (area); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getPageConfig | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (pageId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| getArtworks | src/utils/content.ts | Pure centralized copy/image/navigation/page/gallery lookups | (artworkId); see JSDoc return | Astro components | No writes; invalid image keys throw | build / audit / relevant browser suite |
-| initNavigation | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| openMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| closeMenu | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| restoreMenuState | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| handleMenuKeydown | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| handleMenuCancel | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| handleDrawerClick | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (event); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| handleViewportChange | src/scripts/site.js | Accessible responsive drawer lifecycle and keyboard handling | (); see JSDoc return | SiteLayout DOM handlers | Dialog/focus/body overflow | build / audit / relevant browser suite |
-| initMotion | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
-| fadeElement | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (element, delay = 0); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
-| handleEntries | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (entries); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
-| handleMotionPreference | src/scripts/motion.js | Shared once-only entry fades and preference fallback | (); see JSDoc return | SiteLayout, IntersectionObserver | Temporary Web Animations; no persistent hiding | build / audit / relevant browser suite |
-| initGallery | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| renderArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| openArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (event); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| closeArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| restoreGallery | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| previousArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| nextArtwork | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| handleGalleryKeydown | src/scripts/gallery.js | Artwork modal, arrows, rendering and state restoration | (event); see JSDoc return | Gallery DOM handlers | Dialog/text/image/focus/body overflow | build / audit / relevant browser suite |
-| initContactForm | src/scripts/contact.js | Local inquiry validation/status | (); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
-| handleInquirySubmit | src/scripts/contact.js | Local inquiry validation/status | (event); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
-| clearInquiryStatus | src/scripts/contact.js | Local inquiry validation/status | (); see JSDoc return | ContactForm DOM handlers | Local DOM only; no network/storage | build / audit / relevant browser suite |
-| initAnimatedMedia | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
-| setPlayback | src/scripts/media.js | Local GIF/poster control and preference response | (value); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
-| togglePlayback | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
-| handleMediaPreference | src/scripts/media.js | Local GIF/poster control and preference response | (); see JSDoc return | AnimatedMedia DOM handlers | Image source, label and aria-pressed | build / audit / relevant browser suite |
-| resolvePath | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (obj, keyPath); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateChromeKeys | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (textData); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateComponentWhitelist | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (pagesData); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateImageMetadata | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (imageData, rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateCrossReferences | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | ({ textData, imageData, navigationData, pagesData, artworksData }); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateRoutesAndMedia | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (schemas, rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| validateContent | scripts/validate-content.mjs | Six-schema validation, route/media/font/copy references | (rootDir = PROJECT_ROOT); see JSDoc return | npm prebuild/pretest and CLI | Reads local files; logs/errors | build / audit / relevant browser suite |
-| generateResponsiveImages | scripts/generate-responsive-images.mjs | Generate configured local image width variants | (); see JSDoc return | Manual CLI | Writes variants and image metadata | build / audit / relevant browser suite |
-| pruneUnusedAssets | scripts/prune-unused-assets.mjs | Prune inactive production image copies with path containment | (); see JSDoc return | npm postbuild; source-swap test | Deletes only dist/images files; source preserved | build / audit / relevant browser suite |
-| visitImages | scripts/prune-unused-assets.mjs | Prune inactive production image copies with path containment | (directory); see JSDoc return | npm postbuild; source-swap test | Deletes only dist/images files; source preserved | build / audit / relevant browser suite |
-| auditBuild | scripts/audit-build.mjs | Production local-link/media/private/runtime audit | (); see JSDoc return | npm audit | Reads dist; throws on diagnostics | build / audit / relevant browser suite |
-| walk | scripts/audit-build.mjs | Production local-link/media/private/runtime audit | (dir); see JSDoc return | npm audit | Reads dist; throws on diagnostics | build / audit / relevant browser suite |
-| exportCommitProof | scripts/export-commit-proof.mjs | Read genuine ordered Git history/files/timestamps | (); see JSDoc return | Manual final CLI | Writes ignored proof files | build / audit / relevant browser suite |
-| getStaticPaths | src/pages/[...slug].astro | Static supporting route enumeration | (); see JSDoc return | Astro build | No writes beyond Astro generation | build / audit / relevant browser suite |
-| buildFixture | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyContentSwap | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| restoreContent | tests/content-swap.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyNavigation | tests/navigation.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyResponsiveHome | tests/responsive.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyAllRoutes | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyInteractions | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| verifyMotionFallbacks | tests/site.test.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| launchBrowser | tests/test-helper.mjs | Browser/source-edit regression owned by test entry | (); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
-| decodeImages | tests/test-helper.mjs | Browser/source-edit regression owned by test entry | (page); see JSDoc return | node:test / test consumers | Browser lifecycle, captures; source-swap restores files/build | build / audit / relevant browser suite |
+| getCopy | src/utils/content.ts | Canonical typed content lookups | (keyPath:string,fallback:unknown=''); see typed signatures/JSDoc | Astro components | Pure lookups; unknown image throws | typecheck/build/relevant test |
+| getImage | src/utils/content.ts | Canonical typed content lookups | (imageKey:string|undefined); see typed signatures/JSDoc | Astro components | Pure lookups; unknown image throws | typecheck/build/relevant test |
+| getNavigation | src/utils/content.ts | Canonical typed content lookups | (area:string); see typed signatures/JSDoc | Astro components | Pure lookups; unknown image throws | typecheck/build/relevant test |
+| getPageConfig | src/utils/content.ts | Canonical typed content lookups | (pageId:string); see typed signatures/JSDoc | Astro components | Pure lookups; unknown image throws | typecheck/build/relevant test |
+| getArtworks | src/utils/content.ts | Canonical typed content lookups | (); see typed signatures/JSDoc | Astro components | Pure lookups; unknown image throws | typecheck/build/relevant test |
+| serializeJsonForHtml | src/utils/serialize.ts | Safe JSON for HTML data islands | (value:unknown); see typed signatures/JSDoc | Gallery | Pure; escapes HTML-significant text | typecheck/build/relevant test |
+| createThemeCss | src/config/theme.ts | Serialize shared theme/font/transition opt-in | (config:SiteConfiguration); see typed signatures/JSDoc | SiteTheme | Pure CSS generation | typecheck/build/relevant test |
+| readMotionSettings | src/scripts/motion-settings.js | Read normalized central motion tokens | (); see typed signatures/JSDoc | Reveal/dialog/media controllers | Computed root CSS read | typecheck/build/relevant test |
+| initMotion | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| anchorTarget | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| protectedTarget | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (element); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| cancelReveals | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| handleEntries | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (entries); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| observeTargets | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| handleMotionState | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| handleFocusOrHash | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| handlePageHide | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| handlePageShow | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| disposeMotion | src/scripts/motion.js | Explicit once-only bounded reveals and lifecycle | (); see typed signatures/JSDoc | SiteLayout | One observer, abortable events and temporary opacity effects | typecheck/build/relevant test |
+| lockScroll | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (dialog); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| unlockScroll | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (dialog); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| createDialogController | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (dialog,options={}); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| cancelEffect | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| finishClose | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| transition | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (opening); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| complete | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| open | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (trigger); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| close | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| handleCancel | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (event); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| handleNativeClose | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| handleStateChange | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| destroy | src/scripts/dialog.js | Shared cancellable modal/scroll/focus ownership | (); see typed signatures/JSDoc | Navigation and Gallery | Native modal, WAAPI, body style/scroll restoration | typecheck/build/relevant test |
+| initNavigation | src/scripts/site.js | Accessible responsive navigation | (); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| openMenu | src/scripts/site.js | Accessible responsive navigation | (); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| closeMenu | src/scripts/site.js | Accessible responsive navigation | (); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| handleMenuKeydown | src/scripts/site.js | Accessible responsive navigation | (event); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| handleDrawerClick | src/scripts/site.js | Accessible responsive navigation | (event); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| handleViewportChange | src/scripts/site.js | Accessible responsive navigation | (); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| dispose | src/scripts/site.js | Accessible responsive navigation | (); see typed signatures/JSDoc | Header/drawer | Delegates transitions and owns abortable controls | typecheck/build/relevant test |
+| initGallery | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| renderArtwork | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| openArtwork | src/scripts/gallery.js | Local artwork rendering/navigation | (event); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| closeArtwork | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| previousArtwork | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| nextArtwork | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| handleGalleryKeydown | src/scripts/gallery.js | Local artwork rendering/navigation | (event); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| dispose | src/scripts/gallery.js | Local artwork rendering/navigation | (); see typed signatures/JSDoc | Gallery | Safe textContent and shared modal controls | typecheck/build/relevant test |
+| initAnimatedMedia | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| updatePlayback | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| togglePlayback | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| handleMediaPreference | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| handleMediaEntries | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (entries); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| handleMediaError | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| suspendMedia | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| resumeMedia | src/scripts/media.js | Derived GIF playback intent/visibility/error handling | (); see typed signatures/JSDoc | AnimatedMedia | Local GIF/poster source and abortable observers/events | typecheck/build/relevant test |
+| initContactForm | src/scripts/contact.js | Local-only validation/status | (); see typed signatures/JSDoc | ContactForm | DOM only; no network/storage | typecheck/build/relevant test |
+| handleInquirySubmit | src/scripts/contact.js | Local-only validation/status | (event); see typed signatures/JSDoc | ContactForm | DOM only; no network/storage | typecheck/build/relevant test |
+| clearInquiryStatus | src/scripts/contact.js | Local-only validation/status | (); see typed signatures/JSDoc | ContactForm | DOM only; no network/storage | typecheck/build/relevant test |
+| resolvePath | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (obj, keyPath); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateChromeKeys | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (textData); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateComponentWhitelist | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (pagesData); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateImageMetadata | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (imageData, rootDir = PROJECT_ROOT); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateCrossReferences | scripts/validate-content.mjs | Canonical config/schema/route/media validation | ({ textData, imageData, navigationData, pagesData, artworksData }); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateRoutesAndMedia | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (schemas, rootDir = PROJECT_ROOT); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| validateContent | scripts/validate-content.mjs | Canonical config/schema/route/media validation | (rootDir = PROJECT_ROOT); see typed signatures/JSDoc | npm hooks | Filesystem reads and diagnostics | typecheck/build/relevant test |
+| pruneUnusedAssets | scripts/prune-unused-assets.mjs | Bounded active-output image retention | (); see typed signatures/JSDoc | postbuild | Only removes unused dist/images copies | typecheck/build/relevant test |
+| visitImages | scripts/prune-unused-assets.mjs | Bounded active-output image retention | (directory); see typed signatures/JSDoc | postbuild | Only removes unused dist/images copies | typecheck/build/relevant test |
+| auditBuild | scripts/audit-build.mjs | Built route/private/runtime/media audit | (); see typed signatures/JSDoc | npm audit | Reads output and throws diagnostics | typecheck/build/relevant test |
+| walk | scripts/audit-build.mjs | Built route/private/runtime/media audit | (dir); see typed signatures/JSDoc | npm audit | Reads output and throws diagnostics | typecheck/build/relevant test |
+| generateResponsiveImages | scripts/generate-responsive-images.mjs | Generate local width variants | (); see typed signatures/JSDoc | Manual CLI | Writes variants/metadata; sources preserved | typecheck/build/relevant test |
+| exportCommitProof | scripts/export-commit-proof.mjs | Genuine ordered Git evidence | (); see typed signatures/JSDoc | Final CLI | Writes ignored proof files | typecheck/build/relevant test |
+| getStaticPaths | src/pages/[...slug].astro | Static route enumeration | (); see typed signatures/JSDoc | Astro build | Pure route parameters | typecheck/build/relevant test |
+| buildConfiguredFixture | tests/configuration.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyCentralCustomization | tests/configuration.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| restoreConfiguration | tests/configuration.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| buildFixture | tests/content-swap.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyContentSwap | tests/content-swap.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| restoreContent | tests/content-swap.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyRevealLifecycle | tests/motion.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyDialogLifecycle | tests/motion.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyMediaLifecycle | tests/motion.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyPageTransitions | tests/motion.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyMotionSwitches | tests/motion.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyNavigation | tests/navigation.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyResponsiveHome | tests/responsive.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyGallerySerialization | tests/security.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| serveFixture | tests/security.test.mjs | Regression test/helper; see per-function JSDoc | (request,response); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyAllRoutes | tests/site.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyInteractions | tests/site.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| verifyMotionFallbacks | tests/site.test.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| launchBrowser | tests/test-helper.mjs | Regression test/helper; see per-function JSDoc | (); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
+| decodeImages | tests/test-helper.mjs | Regression test/helper; see per-function JSDoc | (page); see typed signatures/JSDoc | node:test/test consumers | Owned browser/captures; fixture tests restore source or use ignored clones | typecheck/build/relevant test |
 
-## Components and routes
+## Components
 
-| Component | File | Props / content | Responsibility / consumers | Checks |
-|---|---|---|---|---|
-| SiteLayout | src/layouts/SiteLayout.astro | Document shell with shared chrome, local fonts/styles, skip link and menu behavior. Props: title?: string; main slot. Copy: common.*. | Shared page/component composition; see source imports | build and browser suite |
-| index | src/pages/index.astro | Home route: ordered page configuration maps to shared section components. No props. | Shared page/component composition; see source imports | build and browser suite |
-| AnimatedMedia | src/components/AnimatedMedia.astro | GIF video-slot replacement. Props: mediaKey. Static poster is default/no-JS/reduced-motion fallback; controls use centralized copy. | Shared page/component composition; see source imports | build and browser suite |
-| ContactCtaSection | src/components/ContactCtaSection.astro | Full-width studio image and static social strip. Props: id, textNamespace, imageKey. No online embeds or submission. | Shared page/component composition; see source imports | build and browser suite |
-| ContactForm | src/components/ContactForm.astro | Local-only inquiry preview. No props. Labels/messages from contact.*; no network or storage. | Shared page/component composition; see source imports | build and browser suite |
-| EditorialPage | src/components/EditorialPage.astro | Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. | Shared page/component composition; see source imports | build and browser suite |
-| Footer | src/components/Footer.astro | Footer using temporary reference copy and configured navigation/social labels. No props. | Shared page/component composition; see source imports | build and browser suite |
-| FormattedText | src/components/FormattedText.astro | Safe structured inline text. Prop: segments; italic and circle/accent options only. | Shared page/component composition; see source imports | build and browser suite |
-| Gallery | src/components/Gallery.astro | Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. | Shared page/component composition; see source imports | build and browser suite |
-| Header | src/components/Header.astro | Shared brand and responsive navigation. No props; consumes common.*, nav.*, images.siteLogo and navigation.header. | Shared page/component composition; see source imports | build and browser suite |
-| HeroSection | src/components/HeroSection.astro | Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. | Shared page/component composition; see source imports | build and browser suite |
-| MobileDrawer | src/components/MobileDrawer.astro | Native modal navigation drawer; no props. Uses common menu labels and navigation.header. | Shared page/component composition; see source imports | build and browser suite |
-| ResponsiveImage | src/components/ResponsiveImage.astro | Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, sizes='100vw', class. Responsive sources come from images.json. Asset dimensions never dictate presentation ratio. | Shared page/component composition; see source imports | build and browser suite |
-| SelectedWorkSection | src/components/SelectedWorkSection.astro | Collaboration banner or editorial collage, chosen by textNamespace. Props: id, textNamespace, imageKey?. Centralized text and image keys. | Shared page/component composition; see source imports | build and browser suite |
-| StatementSection | src/components/StatementSection.astro | Artist introduction. Props: id, textNamespace, imageKey. Copy from home.statement. | Shared page/component composition; see source imports | build and browser suite |
+| Component | File | Props and responsibility | Checks |
+|---|---|---|---|
+| SiteLayout | src/layouts/SiteLayout.astro | Document shell with shared chrome, local fonts/styles, skip link and menu behavior. Props: title?: string; main slot. Copy: common.*. | build/browser suite |
+| index | src/pages/index.astro | Home route: ordered page configuration maps to shared section components. No props. | build/browser suite |
+| AnimatedMedia | src/components/AnimatedMedia.astro | GIF video-slot replacement. Props: mediaKey. Static poster is default/no-JS/reduced-motion fallback; controls use centralized copy. | build/browser suite |
+| ContactCtaSection | src/components/ContactCtaSection.astro | Full-width studio image and static social strip. Props: id, textNamespace, imageKey. No online embeds or submission. | build/browser suite |
+| ContactForm | src/components/ContactForm.astro | Local-only inquiry preview. No props. Labels/messages from contact.*; no network or storage. | build/browser suite |
+| EditorialPage | src/components/EditorialPage.astro | Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. | build/browser suite |
+| Footer | src/components/Footer.astro | Footer using temporary reference copy and configured navigation/social labels. No props. | build/browser suite |
+| FormattedText | src/components/FormattedText.astro | Safe structured inline text. Prop: segments; italic and circle/accent options only. | build/browser suite |
+| Gallery | src/components/Gallery.astro | Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. | build/browser suite |
+| Header | src/components/Header.astro | Shared brand and responsive navigation. No props; consumes common.*, nav.*, images.siteLogo and navigation.header. | build/browser suite |
+| HeroSection | src/components/HeroSection.astro | Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. | build/browser suite |
+| MobileDrawer | src/components/MobileDrawer.astro | Native modal navigation drawer; no props. Uses common menu labels and navigation.header. | build/browser suite |
+| ResponsiveImage | src/components/ResponsiveImage.astro | Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, sizes='100vw', class. Responsive sources come from images.json. Asset dimensions never dictate presentation ratio. | build/browser suite |
+| SelectedWorkSection | src/components/SelectedWorkSection.astro | Collaboration banner or editorial collage, chosen by textNamespace. Props: id, textNamespace, imageKey?. Centralized text and image keys. | build/browser suite |
+| SiteIcon | src/components/SiteIcon.astro | Configured decorative UI symbol or local asset. Props: name, a key of site.icons. | build/browser suite |
+| SiteTheme | src/components/SiteTheme.astro | Emits the configured CSS variables/font faces once per shared layout; no props. | build/browser suite |
+| StatementSection | src/components/StatementSection.astro | Artist introduction. Props: id, textNamespace, imageKey. Copy from home.statement. | build/browser suite |
 
-## Stage 014 — typed-site-configuration
-
-Added: createThemeCss(config) in src/config/theme.ts: pure CSS token/local-font serialization; rejects unsafe token delimiters. Typed SiteTheme/ImageAsset/MediaAsset/NavigationLink/PageConfiguration/Artwork contracts added in types.ts.
-
-Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks retain signatures and outputs; their canonical data now comes through site.ts rather than separate JSON imports.
-
-Components: SiteTheme.astro added for later layout integration; current rendering unchanged.
-
-Checks: TypeScript noEmit passed; baseline metrics/captures recorded before theme integration. Main site module loads under Node 24.
-
-## Stage 015 — integrate-central-customization
-
-Added: SiteIcon.astro renders configurable text symbols or local icon paths; typed Props. SiteTheme now emits configured tokens/font faces in SiteLayout.
-
-Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks moved from content.js to content.ts with typed outputs/overloads; all imports migrated, no symbol rename. getStaticPaths and Astro component props typed. validateContent/validateRoutesAndMedia, pruneUnusedAssets and auditBuild consume site.ts, check configured fonts/logo/icons and retain selected assets instead of enforcing a hardcoded image. Browser behavior functions unchanged.
-
-Components: All Astro components consume site.ts directly or typed helpers; Header/Footer optional logo, favicon and SiteIcon support; no component imports a content dictionary directly. SiteLayout includes SiteTheme. Existing CSS selects generated variables; Tailwind aliases share them without preflight/default-font overrides.
-
-Checks: Astro check: 0 errors/warnings/hints. Build and audit passed. Ten before/after page/viewport cases had identical metrics and zero differing screenshot pixels. Real site.ts-only edits to colors/fonts/body size/text/logo/icons/image/GIF verified across pages and restored exactly.
-
-## Configuration maintenance — current entry points
-
-| Symbol/component | File | Responsibility / inputs and returns | Consumers / effects | Checks |
-|---|---|---|---|---|
-| site / SiteConfiguration | src/config/site.ts | Typed canonical entry composing six JSON dictionaries, branding, icons, links and theme | Server-rendered components/build tools; no browser payload added | Astro/TypeScript check and customization browser test |
-| createThemeCss | src/config/theme.ts | SiteConfiguration → CSS string; serialize root tokens/local font faces | SiteTheme; pure and rejects unsafe token delimiters | check/build, baseline comparison |
-| SiteTheme | src/components/SiteTheme.astro | No props; emit configuration CSS in shared head | SiteLayout; all routes | all-route suite |
-| SiteIcon | src/components/SiteIcon.astro | name: keyof site.icons; text fallback or local decorative asset | Header/drawer/gallery/editorial/collage | customization/appearance checks |
-| buildConfiguredFixture | tests/configuration.test.mjs | No args; validates/builds/prunes/audits configured fixture | verifyCentralCustomization; writes dist | npm test |
-| verifyCentralCustomization | tests/configuration.test.mjs | No args; Promise<void>; real central edit/browser verification | node:test; temporary source/media files | npm test |
-| restoreConfiguration | tests/configuration.test.mjs | No args; restore saved bytes/delete owned fixtures | test finally/exit handlers; baseline rebuilt afterward | npm test |
-
-All Astro props are now explicit where accepted; content helpers are TypeScript with typed image/navigation/page/artwork outputs and inferred literal-copy paths. Former content.js imports were migrated. Earlier Stage 014/015 notes are historical change records; current functions live at the paths above.
-
-## Stage 017 — gallery-json-security
-
-Added: serializeJsonForHtml(value) in src/utils/serialize.ts: pure escaped JSON for HTML script islands. verifyGallerySerialization(), serveFixture(request,response) in tests/security.test.mjs: isolated built hostile-content regression and bounded loopback fixture server.
-
-Changed: None
-
-Components: Gallery data island uses serializer; safe visible markup/keyboard behavior unchanged.
-
-Checks: Isolated hostile-title/caption/image-metadata browser test passed; Astro check passed. Normal/4x three-run performance and settled visual baselines captured before motion changes.
-
-## Stage 018 — shared-motion
-
-Added: readMotionSettings() in motion-settings.js: normalized generated settings. initMotion owns explicit units, observer and abortable events; nested anchorTarget(), protectedTarget(element), cancelReveals(), handleEntries(entries), observeTargets(), handleMotionState(), handleFocusOrHash(), handlePageHide(), handlePageShow(), disposeMotion(). verifyRevealLifecycle() in tests/motion.test.mjs.
-
-Changed: initMotion replaces broad selector/header entry behavior; initial/past viewport units visible immediately; below-fold once-only opacity 360ms, 40ms stagger capped120ms and six concurrent effects; excess shown without queue. createThemeCss adds typed switch/timing/budget variables. verifyMotionFallbacks recognizes revised duration; dedicated lifecycle test measures actual effects.
-
-Components: Explicit data-motion/data-motion-group attributes added to image/intro/collage/editorial/gallery/form units; nested units excluded.
-
-Checks: Astro check/build passed. Reveal lifecycle browser test passed: initial visibility, actual360ms, concurrency/stagger, focused node, reduced-motion cancellation, no replay.
-
-## Stage 019 — transitions-and-media
-
-Added: dialog.js: lockScroll(dialog), unlockScroll(dialog), createDialogController(dialog,options), cancelEffect(), finishClose(), transition(opening), complete(), open(trigger), close(), handleCancel(event), handleNativeClose(), handleStateChange(), destroy(); shared owner handles native modal/focus/style priorities/scroll and temporary panel/backdrop effects. Navigation/gallery add dispose() owners. media.js adds updatePlayback(), handleMediaEntries(entries), handleMediaError(), suspendMedia(), resumeMedia(). Tests add verifyDialogLifecycle(), verifyMediaLifecycle(), verifyPageTransitions().
-
-Changed: initNavigation/openMenu/closeMenu/keyboard/click/viewport handlers and initGallery/render/open/close/arrow handlers delegate to shared cancellable controller. initAnimatedMedia/togglePlayback/handleMediaPreference use viewport/tab/manual/error intent. createThemeCss conditionally opts into native same-origin crossfades. Navigation/site/configuration tests follow asynchronous lifecycle and switches.
-
-Components: SiteLayout adds generated master-motion state and shared motion CSS; native page links/history retained. No SPA router or new library.
-
-Checks: Full suite passed sequentially:12 tests including malicious-content gallery, central config/master switches, fourteen-route viewport matrix, rapid reversal, exact important inline-style/scroll restoration, focus containment, GIF/error/background-state logic, native crossfade/history and missing APIs. Build/typecheck passed. Initial test fixture concurrency/preference-event assumptions corrected; explicit GIF clicks now read current visibility before observer callback.
+createDialogController exposes open(trigger), close(), finishClose(), destroy() and read-only state; its getter is part of that documented controller API. Temporary cleanup callbacks remain owned by initMotion/initAnimatedMedia. Typed SiteTheme.motion now includes enabled/pageTransitions, entry duration/stagger/cap/concurrency, dialog open/close, page duration and hover transition settings.

@@ -200,3 +200,25 @@ npm test
 Tests use installed Microsoft Edge and temporarily change configuration/content to prove editability, then restore it and rebuild the baseline. Do not edit the same files while these tests run.
 
 Save logical changes as separate local commits. Do not push or publish without the project owner’s permission. Supplied reference copy/GIF rights are not asserted as open-license; preserve required notices.
+
+## Smooth motion controls
+
+`site.theme.motion` now includes these typed, shared settings:
+
+| Setting | Default | Effect |
+|---|---:|---|
+| `enabled` | `true` | Master switch for automatic UI effects and GIF autoplay |
+| `pageTransitions` | `true` | Native same-origin page crossfades where supported |
+| `entryDuration` | `360` | Below-fold opacity reveal duration, milliseconds |
+| `entryStagger` | `40` | Delay between units in a revealed group, milliseconds |
+| `maxStagger` | `120` | Maximum reveal-group delay, milliseconds |
+| `maxConcurrent` | `6` | Concurrent reveal budget; excess content appears immediately |
+| `dialogOpen` / `dialogClose` | `220` / `160` | Drawer/lightbox transition durations, milliseconds |
+| `pageDuration` | `160` | Native page crossfade duration, milliseconds |
+| `fast` / `standard` | `'160ms'` | Hover transitions; include the `ms` unit |
+
+Set `enabled: false` for immediate UI changes, no reveal/page effects and no automatic GIF playback. Explicit GIF play remains available because it is a deliberate user request. Set only `pageTransitions: false` to disable page crossfades while keeping other motion. Unsupported browsers retain normal page navigation; no SPA router is used.
+
+Initial viewport content appears immediately. Below-fold units reveal only once. Keyboard focus, anchor destinations, reduced motion and hidden pages cancel temporary effects rather than leaving content transparent. Circles remain static. Menu/lightbox closure preserves native modal isolation until the closing effect ends, then restores focus and original scrolling/styles.
+
+The GIF uses its poster when offscreen, in a hidden tab, with reduced motion enabled, or after a load error. Manual pause survives scrolling and tab visibility changes. Explicit play can override the reduced-motion default; a later change to reduced motion stops it again. A failed GIF is retried only by a user play action. The selected GIF and poster are unchanged; no format conversion is required.

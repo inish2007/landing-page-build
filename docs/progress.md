@@ -34,3 +34,5 @@ Stage 017 completed: gallery-json-security. Isolated hostile-title/caption/image
 Stage 018 completed: shared-motion. Astro check/build passed. Reveal lifecycle browser test passed: initial visibility, actual360ms, concurrency/stagger, focused node, reduced-motion cancellation, no replay.
 
 Stage 019 completed: transitions-and-media. Full suite passed sequentially:12 tests including malicious-content gallery, central config/master switches, fourteen-route viewport matrix, rapid reversal, exact important inline-style/scroll restoration, focus containment, GIF/error/background-state logic, native crossfade/history and missing APIs. Build/typecheck passed. Initial test fixture concurrency/preference-event assumptions corrected; explicit GIF clicks now read current visibility before observer callback.
+
+Smooth motion plan completed: security serializer fix, bounded reveals, shared cancellable dialogs, native page crossfades, GIF lifecycle,13 passing tests, measured regression investigation and zero-difference settled captures. No push.

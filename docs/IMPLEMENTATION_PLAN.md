@@ -1,3 +1,9 @@
+# Smooth motion implementation — current revision
+
+The approved motion plan has been implemented: focused gallery JSON security fix; typed configurable short reveals; shared cancellable native dialogs with exact scroll/focus restoration; native page crossfades; and visibility-aware selected GIF playback. No router/library/redesign/media conversion or push. Defaults are reveal360/stagger40/cap120/budget6, dialogs220/160, page160, hover160 milliseconds. Initial viewport remains immediate and reduced-motion/no-JS/API-failure behavior remains functional. See CUSTOMIZATION.md, current verification and PROJECT_HANDOFF.md for evidence and limitations. Earlier motion1.5s/documentation-only/Stage06 text below is historical.
+
+---
+
 # Completed implementation plan
 
 Updated 29 October 2026. The user’s request to finish all stages supersedes earlier Stage 06/documentation-only stops.
