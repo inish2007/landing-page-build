@@ -37,7 +37,7 @@ export function initMotion(){
   /** Settle SVG/WAAPI/CSS effects on reduced motion or backgrounding. @returns {void} */
   function handleMotionState(){document.documentElement.dataset.motionInactive=String(document.hidden);if(preference.matches||document.hidden)cancelReveals();}
   /** Prevent focused/anchor content from staying faded. @returns {void} */
-  function handleFocusOrHash(){for(const[element,animation]of active)if(protectedTarget(element)){animation.cancel();active.delete(element);}}
+  function handleFocusOrHash(){for(const[element,animation]of active)if(protectedTarget(element)&&!element.matches('.gold-shine,.jelly-surface')){animation.cancel();active.delete(element);}}
   /** Prepare only interacted artwork for smooth transform return. @param {Event} event Delegated hover/focus. @returns {void} No layers, observer or timers. */
   function handleArtworkInteraction(event){
     if(!settings.playful||preference.matches||document.hidden)return;
@@ -48,6 +48,22 @@ export function initMotion(){
     void getComputedStyle(image).transform;
     card.dataset.imageReady='true';
   }
+  /** Run one owned, cancellable decorative accent; text and hit boxes never move. @param {Event} event Pointer/focus entry. @returns {void} */
+  function handleAccent(event){
+    const owner=event.target instanceof Element?event.target.closest('[data-accent]'):null;
+    if(!owner||!settings.playful||preference.matches||document.hidden||!canReveal||document.documentElement.dataset.motionEnabled==='false'||document.documentElement.dataset.playfulEnabled==='false')return;
+    if(event.type==='pointerover'&&(!finePointer.matches||event.pointerType==='touch'))return;
+    if(event.relatedTarget instanceof Node&&owner.contains(event.relatedTarget))return;
+    const target=owner.dataset.accent==='jelly'?owner.querySelector('.jelly-surface'):(owner.matches('.gold-shine')?owner:owner.querySelector('.gold-shine'));
+    if(!target)return;active.get(target)?.cancel();active.delete(target);if(active.size>=settings.maxConcurrent)return;
+    const css=getComputedStyle(document.documentElement),number=(key,fallback)=>Number(css.getPropertyValue(key).trim())||fallback;let animation;
+    try{if(owner.dataset.accent==='jelly'){const wide=number('--jelly-wide',1.04),narrow=number('--jelly-narrow',.96);animation=target.animate([{transform:'scale(1)'},{transform:'scale('+wide+','+narrow+')',offset:.25},{transform:'scale(.98,1.02)',offset:.5},{transform:'scale(1.01,.99)',offset:.75},{transform:'scale(1)'}],{duration:number('--jelly-duration',600),easing:'ease-in-out'});}
+    else{if(!CSS.supports('background-clip','text')&&!CSS.supports('-webkit-background-clip','text'))return;target.setAttribute('data-shining','');animation=target.animate([{backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%'}],{duration:number('--shine-duration',1000),easing:'linear'});const release=()=>{if(active.get(target)===animation||!active.has(target))target.removeAttribute('data-shining');};animation.finished.then(release,release);}
+    trackEffect(target,animation);
+    }catch{target.removeAttribute('data-shining');}
+  }
+  /** Finish an accent on exit; base letters and button surface remain visible. @param {Event} event Pointer/focus exit. @returns {void} */
+  function finishAccent(event){const owner=event.target instanceof Element?event.target.closest('[data-accent]'):null;if(!owner||(event.relatedTarget instanceof Node&&owner.contains(event.relatedTarget)))return;for(const target of [owner,...owner.querySelectorAll('.gold-shine,.jelly-surface')]){active.get(target)?.cancel();active.delete(target);target.removeAttribute('data-shining');}}
   /** Replay only on external precise-pointer entry or actual word focus; avoid child-to-parent restarts. @param {Event} event Pointerover/focusin. @returns {void} */
   function handleCircleInteraction(event){const circle=event.target instanceof Element?event.target.closest('.highlight-circle'):null;if(!circle)return;if(event.type==='pointerover'&&(!finePointer.matches||event.pointerType==='touch'))return;if(event.relatedTarget instanceof Node&&circle.contains(event.relatedTarget))return;seen.add(circle);observer?.unobserve(circle);drawCircle(circle);}
   /** Settle immediately when hover/focus leaves the word. @param {Event} event Pointerout/focusout. @returns {void} */
@@ -58,6 +74,8 @@ export function initMotion(){
   function handlePageShow(){handleMotionState();observeTargets();}
   /** Release all owned handlers/observer/effects before reinitialization. @returns {void} */
   function disposeMotion(){events.abort();observer?.disconnect();cancelReveals();}
+  for(const type of ['pointerover','focusin'])document.addEventListener(type,handleAccent,{signal:events.signal});
+  for(const type of ['pointerout','focusout'])document.addEventListener(type,finishAccent,{signal:events.signal});
   document.addEventListener('pointerover',handleArtworkInteraction,{signal:events.signal});document.addEventListener('focusin',handleArtworkInteraction,{signal:events.signal});
   document.addEventListener('focusin',handleFocusOrHash,{signal:events.signal});
   for(const type of ['pointerover','focusin'])document.addEventListener(type,handleCircleInteraction,{signal:events.signal});

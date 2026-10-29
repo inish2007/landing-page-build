@@ -33,3 +33,16 @@
 /* Contrast is confined to the label, leaving the picture untouched. */
 .collage-about h2 { color: var(--color-plaque-text); background: var(--color-plaque); padding: var(--text-plaquePadding); border-radius: .2em; max-width: 80%; margin-top: 0; }
 .pill-link:is(:hover,:focus,:active,:visited) { text-decoration: none; }
+
+.pill-link { position: relative; isolation: isolate; background: transparent; }
+.jelly-surface { position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-accent); pointer-events: none; }
+.pill-link:active { transform: scale(var(--playful-press-scale)); }
+.collaboration-copy .gold-shine { --shine-base: var(--color-on-media); }
+.gold-shine { --shine-base: var(--color-text); }
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .gold-shine[data-shining] { background-image: linear-gradient(110deg,var(--shine-base) 0%,var(--shine-base) 35%,var(--gold-dark) 43%,var(--gold-mid) 48%,var(--gold-light) 50%,var(--gold-mid) 52%,var(--gold-dark) 57%,var(--shine-base) 65%,var(--shine-base) 100%); background-size: 300% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) { .pill-link:active { transform: none; } }
+html:is([data-motion-enabled="false"],[data-motion-inactive="true"]) .pill-link:active,html[data-playful-enabled="false"] .pill-link:active { transform: none; }
+
+.collaboration-copy h2:focus-visible { outline-color: var(--color-on-media); box-shadow: 0 0 0 5px var(--color-plaque); }
