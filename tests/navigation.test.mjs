@@ -2,6 +2,7 @@ const BASE_URL = process.env.SITE_TEST_URL || 'http://127.0.0.1:4321';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';
+import site from '../src/config/site.ts';
 
 /** Verify shared chrome in production preview. @returns {Promise<void>} Launches/closes Edge, reads DOM, exercises keyboard/pointer and writes ignored screenshots. Requires preview on port 4321. */
 async function verifyNavigation() {
@@ -15,7 +16,8 @@ async function verifyNavigation() {
       await page.goto(BASE_URL + '/');
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('header').count(), 1);
-      assert.equal(await page.locator('footer nav a[href^="/"]').count(), 8);
+      assert.equal(await page.locator('footer nav a[href^="/"]').count(), site.navigation.footer.length);
+      assert.equal(await page.locator('.footer-bottom').count(),0);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       const opener = page.locator('[data-menu-open]');
       assert.equal(await opener.isVisible(), width < 1024);

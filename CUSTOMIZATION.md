@@ -209,17 +209,17 @@ Save logical changes as separate local commits. Do not push or publish without t
 |---|---:|---|
 | `enabled` | `true` | Master switch for automatic UI effects and GIF autoplay |
 | `pageTransitions` | `true` | Native same-origin page crossfades where supported |
-| `entryDuration` | `360` | Below-fold opacity reveal duration, milliseconds |
-| `entryStagger` | `40` | Delay between units in a revealed group, milliseconds |
-| `maxStagger` | `120` | Maximum reveal-group delay, milliseconds |
+| `entryDuration` | `500` | Below-fold opacity reveal duration, milliseconds |
+| `entryStagger` | `70` | Delay between units in a revealed group, milliseconds |
+| `maxStagger` | `210` | Maximum reveal-group delay, milliseconds |
 | `maxConcurrent` | `6` | Concurrent reveal budget; excess content appears immediately |
-| `dialogOpen` / `dialogClose` | `220` / `160` | Drawer/lightbox transition durations, milliseconds |
-| `pageDuration` | `160` | Native page crossfade duration, milliseconds |
+| `dialogOpen` / `dialogClose` | `300` / `160` | Drawer/lightbox transition durations, milliseconds |
+| `pageDuration` | `240` | Native page crossfade duration, milliseconds |
 | `fast` / `standard` | `'160ms'` | Hover transitions; include the `ms` unit |
 
 Set `enabled: false` for immediate UI changes, no reveal/page effects and no automatic GIF playback. Explicit GIF play remains available because it is a deliberate user request. Set only `pageTransitions: false` to disable page crossfades while keeping other motion. Unsupported browsers retain normal page navigation; no SPA router is used.
 
-Initial viewport content appears immediately. Below-fold units reveal only once. Keyboard focus, anchor destinations, reduced motion and hidden pages cancel temporary effects rather than leaving content transparent. Circles remain static. Menu/lightbox closure preserves native modal isolation until the closing effect ends, then restores focus and original scrolling/styles.
+Initial viewport content appears immediately. Below-fold units reveal only once. Keyboard focus, anchor destinations, reduced motion and hidden pages cancel temporary effects rather than leaving content transparent. Circles draw on first visible entry and replay on precise-pointer hover or keyboard focus when playful motion is enabled. Menu/lightbox closure preserves native modal isolation until the closing effect ends, then restores focus and original scrolling/styles.
 
 The GIF uses its poster when offscreen, in a hidden tab, with reduced motion enabled, or after a load error. Manual pause survives scrolling and tab visibility changes. Explicit play can override the reduced-motion default; a later change to reduced motion stops it again. A failed GIF is retried only by a user play action. The selected GIF and poster are unchanged; no format conversion is required.
 
@@ -231,14 +231,14 @@ Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switc
 |---|---:|---|
 | enabled | true | Artwork/brand/arrow/underline and circle enhancements |
 | hoverDuration | 220 | Hover/focus/press transition duration, milliseconds |
-| cardLift | 4 | Artwork lift, pixels; keep small |
-| cardTilt | 1 | Pointer-only artwork tilt, degrees |
-| cardScale | 1.015 | Pointer-only artwork image scale |
+| cardLift | 6 | Artwork lift, pixels; keep small |
+| cardTilt | 1.5 | Pointer-only artwork tilt, degrees |
+| cardScale | 1.03 | Pointer-only artwork image scale |
 | pressScale | 0.98 | Button scale while pressed |
 | arrowTravel | 4 | Arrow movement in its direction, pixels |
-| revealTravel | 8 | Upward entry distance for eligible image-only units, pixels |
+| revealTravel | 18 | Upward entry distance for eligible image-only units, pixels |
 | accentDuration | 420 | One-shot brand wobble duration, milliseconds |
-| circleDrawDuration | 650 | Circle stroke draw/replay duration, milliseconds |
+| circleDrawDuration | 900 | Circle stroke draw/replay duration, milliseconds |
 
 For gentler artwork movement, change `cardLift: 2`, `cardTilt: 0.5`, and `cardScale: 1.01`. For stationary branding and artwork, set `enabled: false` inside `playful`. Save, run `npm run check` and `npm run build`, then preview desktop and mobile.
 
@@ -250,7 +250,7 @@ The homepage “THE PROCESS” link uses the locally hosted secondary sans-serif
 
 ## Hand-drawn circle and Process accents
 
-Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #c5d600). theme.colors.primary remains #e5ff00 for the other yellow accents. Change theme.motion.playful.circleDrawDuration (default 650ms) to adjust stroke drawing. For example, set it to 800 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
+Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #c5d600). theme.colors.primary remains #e5ff00 for the other yellow accents. Change theme.motion.playful.circleDrawDuration (default 900ms) to adjust stroke drawing. For example, set it to 1100 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
 
 THE PROCESS retains its local regular sans-serif font and permanent dark hand-drawn SVG underline. Its link destination and typography controls are unchanged. The decorative circles/underline contain no downloadable media and require no new font or library.
 
