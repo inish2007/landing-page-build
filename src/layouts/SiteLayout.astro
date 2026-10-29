@@ -29,6 +29,12 @@ const { title = getCopy('common.siteName') } = Astro.props;
     <main id="main-content" tabindex="-1"><slot /></main>
     <Footer />
     <MobileDrawer />
-    <script>import '../scripts/site.js'; import '../scripts/motion.js';</script>
+    <script>
+      import '../scripts/site.js';
+      import '../scripts/motion.js';
+      import {updateCopyrightYear} from '../scripts/copyright.js';
+      updateCopyrightYear();
+      window.addEventListener('pageshow',updateCopyrightYear);
+    </script>
   </body>
 </html>
