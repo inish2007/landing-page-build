@@ -138,5 +138,263 @@
         }
       ]
     }
+  },
+  "gallery": {
+    "title": "Available Pieces",
+    "archiveTitle": "Archived",
+    "open": "View fullsize",
+    "close": "Close artwork",
+    "previous": "Previous artwork",
+    "next": "Next artwork"
+  },
+  "artworks": {
+    "available-1": {
+      "title": "Highlights",
+      "caption": "Acrylic, Mixed Media - 109″ x 132″"
+    },
+    "available-2": {
+      "title": "Don't Get Yourself In A Pinch",
+      "caption": "Acrylic, Mixed Media - 72\" x 96\""
+    },
+    "available-3": {
+      "title": "Slash Pine Cove",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-4": {
+      "title": "Do Your Thing On The Runway",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-5": {
+      "title": "Make Time to Shine",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-6": {
+      "title": "What's Under Your World?",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-7": {
+      "title": "What Makes You Tick?",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-8": {
+      "title": "Salena",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "available-9": {
+      "title": "Don't Go Chasin Waterfalls",
+      "caption": "Acrylic, Mixed Media on Canvas - 60″ x 72″"
+    },
+    "available-10": {
+      "title": "I Can Show You The World",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-11": {
+      "title": "Grape Ape",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-12": {
+      "title": "Different Worlds",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "available-13": {
+      "title": "Wild World",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-14": {
+      "title": "Frankenstein",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-15": {
+      "title": "Ya Don't Know, Now Ya Know",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-16": {
+      "title": "Puff The Magic Dragon",
+      "caption": "Acrylic, Mixed Media - 48″ x 72″"
+    },
+    "available-17": {
+      "title": "Here Comes The Sun",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "available-18": {
+      "title": "Trick Candles",
+      "caption": "Acrylic, Mixed Media - 50″ x 60″"
+    },
+    "available-19": {
+      "title": "All You Have To Do Is Dream",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "available-20": {
+      "title": "Circles of Friends",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "available-21": {
+      "title": "You're My Baby Boo",
+      "caption": "Acrylic, Mixed Media with Canvas - 48″ x 60″"
+    },
+    "available-22": {
+      "title": "Wind Beneath My Wings",
+      "caption": "Acrylic, Mixed Media on Canvas - 48″ x 60″"
+    },
+    "available-23": {
+      "title": "Don't Lose Control",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "available-24": {
+      "title": "God Bless The Broken Road",
+      "caption": "Acrylic, Mixed Media on Canvas - 54″ x 54″"
+    },
+    "available-25": {
+      "title": "You're My Firework",
+      "caption": "Acrylic, Mixed Media on Canvas - 48″ x 48″"
+    },
+    "available-26": {
+      "title": "Don't Go Down The Rabbit Hole",
+      "caption": "Acrylic, Mixed Media - 48\" x 48\""
+    },
+    "available-27": {
+      "title": "Moment In Time",
+      "caption": "Acrylic, Mixed Media on Canvas - 48″ x 50″"
+    },
+    "available-28": {
+      "title": "If Only I Had A Brain",
+      "caption": "Acrylic, Mixed Media - 48″ x 48″"
+    },
+    "available-29": {
+      "title": "Powmia",
+      "caption": "Acrylic, Mixed Media - 36″ x 48″"
+    },
+    "available-30": {
+      "title": "The Present",
+      "caption": "Acrylic, Mixed Media - 40″ x 40″"
+    },
+    "available-31": {
+      "title": "Do You Have Skeletons In Your Closet",
+      "caption": "Acrylic, Mixed Media - 36″ x 36″"
+    },
+    "available-32": {
+      "title": "Where Did You Go?",
+      "caption": "Acrylic, Mixed Media - 36″ x 36″"
+    },
+    "available-33": {
+      "title": "Street Series Unnamed",
+      "caption": "Acrylic, Mixed Media - 30″ x 40″"
+    },
+    "available-34": {
+      "title": "Finding Your Way",
+      "caption": "Acrylic, Mixed Media on Canvas - 30″ x 40″"
+    },
+    "available-35": {
+      "title": "Street Series Unnamed 2",
+      "caption": "Acrylic, Mixed Media - 30″ x 40″"
+    },
+    "available-36": {
+      "title": "Loch Ness Monster",
+      "caption": "Acrylic, Mixed Media - 30″ x 36″"
+    },
+    "available-37": {
+      "title": "She's A Lucky Lady",
+      "caption": "Acrylic, Mixed Media on Canvas - 48″ x 48″"
+    },
+    "available-38": {
+      "title": "You're A Sky Full Of Stars",
+      "caption": "Acrylic, Mixed Media with Canvas - 36″ x 48″"
+    },
+    "available-39": {
+      "title": "Toucan Sam",
+      "caption": "Acrylic, Mixed Media - 36″ x 48″"
+    },
+    "available-40": {
+      "title": "Cleanse Your People Palette",
+      "caption": "Acrylic, Mixed Media on Canvas - 30″ x 30″"
+    },
+    "archived-1": {
+      "title": "Exploring Minds - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "archived-2": {
+      "title": "It Don't Matter - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 72″"
+    },
+    "archived-3": {
+      "title": "Max Tinfoil - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "archived-4": {
+      "title": "Saggy Minten Foam - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "archived-5": {
+      "title": "Perspective is Everything - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "archived-6": {
+      "title": "Shirley Early Earla Billow - SOLD",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "archived-7": {
+      "title": "Saggy Minten Foam - SOLD ",
+      "caption": "Acrylic, Mixed Media - 60″ x 60″"
+    },
+    "archived-8": {
+      "title": "Bubble Bobble - SOLD ",
+      "caption": "Acrylic, Mixed Media - 48″ x 62″"
+    },
+    "archived-9": {
+      "title": "Eye Of The Tiger - SOLD ",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "archived-10": {
+      "title": "Because Of You",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "archived-11": {
+      "title": "New Level Of Love",
+      "caption": "Acrylic, Mixed Media - 48\"  x 60\""
+    },
+    "archived-12": {
+      "title": "Are Unicorns Real? - SOLD ",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "archived-13": {
+      "title": "Dangerous Minds - SOLD",
+      "caption": "Acrylic, Mixed Media - 48″ x 48″"
+    },
+    "archived-14": {
+      "title": "He's My Cherry Pie - SOLD ",
+      "caption": "Acrylic, Mixed Media - 40″ x 50″"
+    },
+    "archived-15": {
+      "title": "Good Ol Rocky Top Rocky Top Tennesse - SOLD",
+      "caption": "Acrylic, Mixed Media - 36″ x 48″"
+    },
+    "archived-16": {
+      "title": "The Magic Touch - SOLD",
+      "caption": "Acrylic, Mixed Media - 36″ x 48″"
+    },
+    "archived-17": {
+      "title": "Chooca Chu Chu - SOLD",
+      "caption": "Acrylic, Mixed Media on Canvas- 30″ x 40″"
+    },
+    "archived-18": {
+      "title": "Pink Panther - SOLD",
+      "caption": "Acrylic, Mixed Media - 30″ x 30″"
+    },
+    "archived-19": {
+      "title": "What Are You Wearing - SOLD",
+      "caption": "Acrylic, Mixed Media - 24″ x 30″"
+    },
+    "archived-20": {
+      "title": "Cheers To The Freakin Weekend - SOLD",
+      "caption": "Acrylic, Mixed Media - 6 x 8"
+    },
+    "archived-21": {
+      "title": "Appolonia - SOLD",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "archived-22": {
+      "title": "Fly Me To The Moon - SOLD ",
+      "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    }
   }
 }

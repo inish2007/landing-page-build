@@ -117,3 +117,13 @@ Changed: None
 Components: EditorialPage(page) and static dynamic route added; about and the-process content added; SiteLayout imports shared pages styles and motion.
 
 Checks: npm run build passed: 3 routes. Browser checks follow in Stage 12.
+
+## Stage 008 — galleries
+
+Added: initGallery(), renderArtwork(), openArtwork(event), closeArtwork(), restoreGallery(), previousArtwork(), nextArtwork(), handleGalleryKeydown(event) in gallery.js; native dialog, local data, keyboard navigation and focus/scroll restoration; Gallery consumer.
+
+Changed: getStaticPaths now enumerates added gallery configurations; unchanged signature.
+
+Components: Gallery(page) renders available/archived/work routes, ordered cards and native lightbox.
+
+Checks: npm run build passed: 6 routes; browser verification scheduled Stage 12.

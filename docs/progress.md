@@ -63,3 +63,5 @@ User image override: all 15 configured images now use the supplied dark PNG. Sou
 User explicitly requested no new page build. Agent instructions and IMPLEMENTATION_PLAN now record saved-source fade timings, static circles, shared future route coverage, visibility/reduced-motion safeguards and future verification gates. No animation code or route was added; all dark image overrides remain.
 
 Stage 007 completed: about-process-motion. npm run build passed: 3 routes. Browser checks follow in Stage 12.
+
+Stage 008 completed: galleries. npm run build passed: 6 routes; browser verification scheduled Stage 12.

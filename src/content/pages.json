@@ -61,5 +61,41 @@
         "textNamespace": "editorial.the-process"
       }
     ]
+  },
+  "available-art": {
+    "path": "/available-art/",
+    "kind": "gallery",
+    "collection": "available",
+    "titleKey": "gallery.title",
+    "sections": [
+      {
+        "id": "available-art-gallery",
+        "component": "Gallery"
+      }
+    ]
+  },
+  "archived": {
+    "path": "/archived/",
+    "kind": "gallery",
+    "collection": "archived",
+    "titleKey": "gallery.archiveTitle",
+    "sections": [
+      {
+        "id": "archived-gallery",
+        "component": "Gallery"
+      }
+    ]
+  },
+  "work": {
+    "path": "/work/",
+    "kind": "gallery",
+    "collection": "available",
+    "titleKey": "gallery.title",
+    "sections": [
+      {
+        "id": "work-gallery",
+        "component": "Gallery"
+      }
+    ]
   }
 }
