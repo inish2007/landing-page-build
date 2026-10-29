@@ -37,8 +37,23 @@ commit-proof.json
 commit-proof.txt
 test-results/
 
-# Asset licenses, application assets, and function change logs stay tracked.
-# Do not ignore public/images, THIRD_PARTY_NOTICES.md, or docs/changes.
+# Asset licenses, application assets, and client customization guides stay tracked.
+# Do not ignore public/images, THIRD_PARTY_NOTICES.md, or docs/asset-manifest.json.
 
 # Local lowercase agent execution guide
 agent.md
+
+# Local agent planning, handoff, execution and verification records
+PROJECT_HANDOFF.md
+*HANDOFF*.md
+**/*HANDOFF*.md
+SECURITY_REPORT.md
+prd.md
+design.md
+docs/FUNCTION_INDEX.md
+docs/IMPLEMENTATION_PLAN.md
+docs/implementation-plan.md
+docs/changes/
+docs/progress.md
+docs/verification.md
+docs/motion-verification.md

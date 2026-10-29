@@ -30,6 +30,6 @@ The tests use installed Microsoft Edge. Keep the production preview running duri
 
 Customize from `src/config/site.ts`; see [CUSTOMIZATION.md](CUSTOMIZATION.md) for practical text/media/font/color examples. Run `npm run check` for TypeScript/Astro diagnostics.
 
-See [editing guide](docs/EDITING_GUIDE.md), [architecture](docs/ARCHITECTURE.md), [verification](docs/verification.md), and [handoff](PROJECT_HANDOFF.md).
+See the [editing guide](docs/EDITING_GUIDE.md) and [architecture](docs/ARCHITECTURE.md). Internal agent plans, handoffs, verification records and reference captures stay local and Git-ignored.
 
-No analytics, email delivery, shopping cart or checkout backend is implemented. The form clearly identifies itself as a local preview. External source links remain external. Source copy/GIF rights are not represented as open-license; font notices are retained. Nothing is published or pushed.
+No analytics, email delivery, shopping cart or checkout backend is implemented. The form clearly identifies itself as a local preview. External source links remain external. Source copy/GIF rights are not represented as open-license; font notices are retained.
