@@ -45,3 +45,6 @@ main { flex: 1; }
   .footer-group { min-width: 0; }
   .footer-group a { overflow-wrap: anywhere; }
 }
+
+/* Brand wordmarks stay undecorated in every link state; focus outlines remain accessible. */
+.brand, .footer-brand, .brand:is(:hover,:focus,:active,:visited), .footer-brand:is(:hover,:focus,:active,:visited) { text-decoration: none; }
