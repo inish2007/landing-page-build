@@ -14,7 +14,8 @@ This document serves as the project's living registry of all active components, 
 
 | Symbol/component | File | Responsibility | Inputs/outputs | Callers or consumers | Side effects | Relevant checks |
 |---|---|---|---|---|---|---|
-| *(None registered in Stage 01 baseline)* | N/A | Application pages not yet scaffolded | N/A | N/A | None | Registration starts Stage 02 |
+| `SiteLayout` | `src/layouts/SiteLayout.astro` | Semantic HTML5 document shell, viewport metadata, skip link, and default title | Props: `{ title?: string }`, Slot: main content | Page routes (`src/pages/*.astro`) | Renders document shell, sets `<title>`, defines `#main-content` landmark | `npm run build`, `npx astro check` |
+| `Index` (Home) | `src/pages/index.astro` | Homepage entry route rendering initial studio welcome container within `SiteLayout` | Props: none (page route), Output: static HTML document | Browser requests to `/` | Serves root HTML document | `npm run build`, `npx astro check` |
 
 ---
 

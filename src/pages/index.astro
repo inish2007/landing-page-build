@@ -1,0 +1,41 @@
+---
+/**
+ * Route: / (Index)
+ * Responsibility: Initial homepage route rendering the semantic welcome container and layout shell.
+ * Accepted Props: None (Page route)
+ * Content Keys: Neutral placeholder copy prior to Stage 03/05 centralized content integration.
+ */
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout title="Aura Creative Studio">
+  <section class="welcome-container" aria-label="Studio Introduction">
+    <h1>Aura Creative Studio</h1>
+    <p>Fine Art & Creative Direction</p>
+  </section>
+</SiteLayout>
+
+<style>
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .welcome-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .welcome-container p {
+    font-size: 1.25rem;
+    color: #555555;
+    margin: 0;
+  }
+</style>

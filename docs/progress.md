@@ -12,7 +12,7 @@
 | Stage | Milestone Name | Commit Subject | Status | Scope Summary |
 |:-----:|:---------------|:---------------|:------:|:--------------|
 | 01 | Baseline Tracking | `docs: freeze reference scope and editing contract` | Complete | Git baseline, scope freeze, FUNCTION_INDEX.md, progress.md, change note 001 |
-| 02 | Astro Scaffolding | `chore: scaffold Astro HTML CSS and JavaScript project` | Planned | astro.config.mjs, SiteLayout.astro, minimal index.astro, dev/build verify |
+| 02 | Astro Scaffolding | `chore: scaffold Astro HTML CSS and JavaScript project` | Complete | astro.config.mjs, SiteLayout.astro, minimal index.astro, dev/build verify |
 | 03 | Content & Design Tokens | `feat: add editable content assets and design tokens` | Planned | 5 JSON schemas, tokens.css, fonts.css, global.css, local assets, validator |
 | 04 | Shared Navigation | `feat: reproduce shared header footer and navigation` | Planned | Header, MobileDrawer, Footer, site.js navigation & focus trap |
 | 05 | Desktop Homepage | `feat: reproduce homepage desktop sections` | Planned | Hero, Statement, SelectedWork, ContactCta, ResponsiveImage |
@@ -35,8 +35,9 @@
 ## Commit Ledger
 | Commit # | Hash | Subject | Change Note | Date |
 |:--------:|:----:|:--------|:------------|:-----|
-| 01 | [pending] | `docs: freeze reference scope and editing contract` | `docs/changes/001-baseline-tracking.md` | 2026-10-29 |
+| 01 | `85b5cd8` | `docs: freeze reference scope and editing contract` | `docs/changes/001-baseline-tracking.md` | 2026-10-29 |
+| 02 | [pending] | `chore: scaffold Astro HTML CSS and JavaScript project` | `docs/changes/002-astro-scaffolding.md` | 2026-10-29 |
 
 ## Current Active Focus
-- **Current Milestone**: Stage 01 (Project Baseline & Tracking Setup)
-- **Next Milestone**: Stage 02 (Minimal Astro Project Scaffolding)
+- **Current Milestone**: Stage 02 (Minimal Astro Project Scaffolding)
+- **Next Milestone**: Stage 03 (Centralized Content Schemas, Design Tokens & Local Assets)
