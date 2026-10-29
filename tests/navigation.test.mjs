@@ -1,3 +1,4 @@
+const BASE_URL = process.env.SITE_TEST_URL || 'http://127.0.0.1:4321';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';
@@ -11,7 +12,7 @@ async function verifyNavigation() {
     page.on('pageerror', error => errors.push(error.message));
     for (const width of [1440, 1280, 768, 390, 360, 430]) {
       await page.setViewportSize({width, height: width === 1440 ? 1000 : width === 1280 ? 800 : width === 768 ? 1024 : 844});
-      await page.goto('http://127.0.0.1:4321/');
+      await page.goto(BASE_URL + '/');
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('header').count(), 1);
       assert.equal(await page.locator('footer nav a[href^="/"]').count(), 8);
@@ -49,7 +50,7 @@ async function verifyNavigation() {
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     assert.deepEqual(errors, []);
     const noJs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
-    const fallback = await noJs.newPage(); await fallback.goto('http://127.0.0.1:4321/');
+    const fallback = await noJs.newPage(); await fallback.goto(BASE_URL + '/');
     assert.equal(await fallback.locator('.desktop-nav').isVisible(),true);
     assert.equal(await fallback.locator('[data-menu-open]').isVisible(),false);
     await noJs.close();

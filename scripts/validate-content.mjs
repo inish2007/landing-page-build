@@ -246,6 +246,21 @@ export function validateCrossReferences({ textData, imageData, navigationData, p
   return errors;
 }
 
+/** Validate configured local routes, media files and gallery title references.
+ * @param {object} schemas Parsed six content dictionaries.
+ * @param {string} rootDir Project root.
+ * @returns {string[]} Diagnostics; reads local media/font files without writing.
+ */
+export function validateRoutesAndMedia(schemas, rootDir = PROJECT_ROOT) {
+  const errors=[];const routes=new Set(['/', '/home/', '/process/', ...Object.values(schemas.pages).map(p=>p.path).filter(Boolean)]);
+  for(const [area,links] of Object.entries(schemas.navigation))for(const link of links){if(link.labelKey&&resolvePath(schemas.text,link.labelKey)===undefined)errors.push('Missing navigation label '+area+':'+link.labelKey);const destination=link.path||link.url;if(destination?.startsWith('/')){const pathname=destination.split('#')[0];if(!routes.has(pathname))errors.push('Unknown route '+destination);}}
+  for(const [key,item] of Object.entries(schemas.media)){for(const field of ['src','poster'])if(!item[field]?.startsWith('/')||!fs.existsSync(path.join(rootDir,'public',item[field])))errors.push('Missing media '+key+'.'+field);if(!(item.width>0&&item.height>0))errors.push('Invalid media dimensions '+key);if(resolvePath(schemas.text,item.altKey)===undefined)errors.push('Missing media alt '+key);}
+  for(const page of Object.values(schemas.pages))if(page.mediaKey&&!schemas.media[page.mediaKey])errors.push('Unknown mediaKey '+page.mediaKey);
+  for(const artwork of schemas.artworks)if(resolvePath(schemas.text,artwork.titleKey)===undefined)errors.push('Missing artwork title '+artwork.id);
+  const fonts=fs.readFileSync(path.join(rootDir,'src/styles/fonts.css'),'utf8');for(const match of fonts.matchAll(/url\("([^"\)]+)"\)/g))if(!fs.existsSync(path.join(rootDir,'public',match[1])))errors.push('Missing local font '+match[1]);
+  return errors;
+}
+
 /**
  * Main content validation orchestrator.
  * Loads all schemas, runs validation suites, and logs results.
@@ -261,6 +276,7 @@ export function validateContent(rootDir = PROJECT_ROOT) {
     navigation: 'navigation.json',
     pages: 'pages.json',
     artworks: 'artworks.json',
+    media: 'media.json',
   };
 
   const parsed = {};
@@ -295,7 +311,8 @@ export function validateContent(rootDir = PROJECT_ROOT) {
   const imageErrors = validateImageMetadata(imageData, rootDir);
   const crossRefErrors = validateCrossReferences({ textData, imageData, navigationData, pagesData, artworksData });
 
-  const allErrors = [...chromeErrors, ...componentErrors, ...imageErrors, ...crossRefErrors];
+  const routeMediaErrors = validateRoutesAndMedia(parsed, rootDir);
+  const allErrors = [...chromeErrors, ...componentErrors, ...imageErrors, ...crossRefErrors, ...routeMediaErrors];
 
   if (allErrors.length > 0) {
     console.error(`\n❌ Content validation failed with ${allErrors.length} error(s):`);
@@ -306,7 +323,7 @@ export function validateContent(rootDir = PROJECT_ROOT) {
   }
 
   console.log('✅ Content validation passed:');
-  console.log(`  - 5 content schemas parsed cleanly`);
+  console.log(`  - 6 content schemas parsed cleanly`);
   console.log(`  - ${REQUIRED_CHROME_KEYS.length} required chrome keys verified`);
   console.log(`  - Section components verified against whitelist [${COMPONENT_WHITELIST.join(', ')}]`);
   console.log(`  - ${Object.keys(imageData).length} image assets verified on disk with positive dimensions`);

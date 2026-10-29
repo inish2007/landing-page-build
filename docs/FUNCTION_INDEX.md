@@ -157,3 +157,13 @@ Changed: verifyNavigation expects two new legal links. clearInquiryStatus JSDoc 
 Components: Footer exposes legal routes; ContactForm uses method=dialog for no-JS safety; long brand wrapping corrected.
 
 Checks: Build passed; content-swap browser test passed with exact source restoration. Mobile all-route preliminary overflow check returned no issues. Process mobile capture reviewed.
+
+## Stage 012 — verification
+
+Added: pruneUnusedAssets(), visitImages(directory) in prune-unused-assets.mjs: remove only inactive dist/images copies, preserve source. auditBuild(), walk(dir) in audit-build.mjs: static route/link/private/tracking/media audit. validateRoutesAndMedia(schemas,rootDir) in validate-content.mjs: six-schema route/media/font/title checks. verifyAllRoutes(), verifyInteractions(), verifyMotionFallbacks() in tests/site.test.mjs: isolated browser matrices and interactions.
+
+Changed: validateContent loads media.json and invokes route/media validation. buildFixture runs output pruning. Existing browser tests accept SITE_TEST_URL. npm tests run sequentially to isolate source edits.
+
+Components: Shared mobile footer corrected on every page; source assets preserved but inactive image copies excluded from output.
+
+Checks: Production build/audit passed: 16 HTML documents and 25 output files. All six tests passed against isolated production preview on port 4322: 14 routes × six viewports, internal links, labels/IDs, gallery, contact, GIF, fade timing, reduced motion, no-JS/API fallbacks, real source edits restored. Initial development-toolbar false failure isolated and corrected by configurable production URL. Screenshot captures reviewed.

@@ -1,3 +1,4 @@
+const BASE_URL = process.env.SITE_TEST_URL || 'http://127.0.0.1:4321';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { launchBrowser, decodeImages } from './test-helper.mjs';
@@ -11,7 +12,7 @@ async function verifyResponsiveHome() {
     page.on('response', response => { if(response.status() >= 400) badResponses.push(response.url()); });
     await page.route('**/*', route => { const url = new URL(route.request().url()); if(url.hostname !== '127.0.0.1') { external.push(url.href); return route.abort(); } return route.continue(); });
     for (const [width,height] of [[1440,1000],[1280,800],[768,1024],[390,844],[360,844],[430,844]]) {
-      await page.setViewportSize({width,height}); await page.goto('http://127.0.0.1:4321/');
+      await page.setViewportSize({width,height}); await page.goto(BASE_URL + '/');
       await page.evaluate(() => document.fonts.ready); await decodeImages(page);
       assert.equal(await page.locator('main h1').count(),1);
       assert.equal(await page.locator('main > section').count(),5);

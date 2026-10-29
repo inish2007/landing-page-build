@@ -39,3 +39,10 @@ main { flex: 1; }
 .footer-group h2 { font-family: var(--font-sans); font-size: var(--text-caption); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-2); }
 .footer-intro .footer-brand { display: block; }
 .footer-intro p { margin-top: var(--space-4); }
+@media (max-width: 47.999rem) {
+  .site-footer { grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-3); }
+  .footer-intro { grid-column: 1 / -1; }
+  .footer-intro p { max-width: 40ch; }
+  .footer-group { min-width: 0; }
+  .footer-group a { overflow-wrap: anywhere; }
+}
