@@ -7,12 +7,12 @@ const logo = site.branding.logo;
 const current = Astro.url.pathname;
 ---
 <header class="site-header" id="top">
-  <a class="brand" href={site.links.home} aria-label={getCopy('common.siteName')}>
+  <a class="brand playful-brand" href={site.links.home} aria-label={getCopy('common.siteName')}>
     {logo?.src && <img src={logo.src} alt="" width={logo.width} height={logo.height} />}
     <span>{getCopy('common.siteName')}</span>
   </a>
   <nav class="desktop-nav" aria-label={getCopy('common.primaryNavigation')}>
-    {getNavigation('header').map(link => <a href={link.path} aria-current={current === link.path ? 'page' : undefined}>{getCopy(link.labelKey)}</a>)}
+    {getNavigation('header').map(link => <a class="playful-link" href={link.path} aria-current={current === link.path ? 'page' : undefined}>{getCopy(link.labelKey)}</a>)}
   </nav>
-  <button class="menu-toggle" data-menu-open aria-controls="mobile-drawer" aria-expanded="false" hidden>{getCopy('common.menuOpenLabel')}<span aria-hidden="true"> <SiteIcon name="menu" /></span></button>
+  <button class="menu-toggle playful-button" data-menu-open aria-controls="mobile-drawer" aria-expanded="false" hidden>{getCopy('common.menuOpenLabel')}<span aria-hidden="true"> <SiteIcon name="menu" /></span></button>
 </header>

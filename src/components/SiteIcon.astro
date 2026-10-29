@@ -5,4 +5,5 @@ interface Props { name:keyof typeof site.icons }
 const { name }=Astro.props;
 const icon=site.icons[name];
 ---
-{icon.src ? <img src={icon.src} alt="" aria-hidden="true" style="width:1em;height:1em;display:inline-block;vertical-align:middle" /> : icon.text}
+<span class:list={[(['next','previous','external'].includes(name)) && 'playful-arrow']} data-direction={name} aria-hidden="true">{icon.src ? <img src={icon.src} alt="" aria-hidden="true" style="width:1em;height:1em;display:inline-block;vertical-align:middle" /> : icon.text}
+</span>

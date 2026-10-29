@@ -16,6 +16,6 @@ const copy = getCopy<EditorialCopy>(page.textNamespace!);
     <div class="editorial-prose" data-motion-group>{copy.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
   </div>
   {page.mediaKey && <AnimatedMedia mediaKey={page.mediaKey} />}
-  {copy.links && copy.links.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a href={link.href}>{link.label}<span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
+  {copy.links && copy.links.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a class="playful-link" href={link.href}>{link.label}<span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
   <div class="editorial-image-grid">{Array.from({length:Math.max(0,(page.imageCount || 0)-1)}).map(() => <ResponsiveImage imageKey="homeIntroSide" aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
 </article>

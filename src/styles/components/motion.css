@@ -13,3 +13,16 @@
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root), ::view-transition-new(root), ::view-transition-group(root) { animation: none !important; }
 }
+
+/* Unlayered cancellation also overrides existing authored hover CSS. */
+html[data-motion-inactive="true"] :is(.playful-button,.playful-arrow,.playful-card img,.playful-brand > span),
+html[data-motion-enabled="false"] :is(.playful-button,.playful-arrow,.playful-card img,.playful-brand > span) { animation: none !important; transition: none !important; transform: none !important; }
+html[data-motion-inactive="true"] .playful-link::before,
+html[data-motion-enabled="false"] .playful-link::before { transition: none !important; transform: scaleX(0) !important; }
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) a.playful-link:hover:not([aria-current="page"]) { text-decoration: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.playful-button,.playful-arrow,.playful-card img,.playful-brand > span) { animation: none !important; transition: none !important; transform: none !important; }
+  .playful-link::before { content: none !important; }
+}

@@ -12,15 +12,15 @@ const items = getArtworks().filter(item => item.collection === page.collection).
 <section class="gallery-page page-shell">
   <header class="page-heading"><h1>{getCopy(page.titleKey)}</h1></header>
   <div class="gallery-grid" data-motion-group>{items.map(item => <figure class="gallery-card" data-motion="reveal">
-    <button class="gallery-open" data-artwork={item.id} aria-label={getCopy('gallery.open') + ': ' + getCopy(item.titleKey)}><ResponsiveImage imageKey={item.imageKey} aspectRatio="4 / 5" sizes="(max-width: 48rem) 100vw, 33vw" /></button>
+    <button class="gallery-open playful-card" data-artwork={item.id} aria-label={getCopy('gallery.open') + ': ' + getCopy(item.titleKey)}><ResponsiveImage imageKey={item.imageKey} aspectRatio="4 / 5" sizes="(max-width: 48rem) 100vw, 33vw" /></button>
     <figcaption><h2>{getCopy(item.titleKey)}</h2><p>{getCopy(item.captionKey)}</p></figcaption>
   </figure>)}</div>
 </section>
 <dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title">
-  <button data-lightbox-close>{getCopy('gallery.close')} <SiteIcon name="close" /></button>
+  <button class="playful-button" data-lightbox-close>{getCopy('gallery.close')} <SiteIcon name="close" /></button>
   <img data-lightbox-image alt="" />
   <h2 id="artwork-title"></h2><p data-lightbox-caption></p>
-  <div class="lightbox-controls"><button data-lightbox-prev>{getCopy('gallery.previous')} <SiteIcon name="previous" /></button><button data-lightbox-next>{getCopy('gallery.next')} <SiteIcon name="next" /></button></div>
+  <div class="lightbox-controls"><button class="playful-button" data-lightbox-prev>{getCopy('gallery.previous')} <SiteIcon name="previous" /></button><button class="playful-button" data-lightbox-next>{getCopy('gallery.next')} <SiteIcon name="next" /></button></div>
 </dialog>
 <script type="application/json" id="artworks-data" set:html={serializeJsonForHtml(items.map(item => ({id:item.id,title:getCopy(item.titleKey),caption:getCopy(item.captionKey),image:getImage(item.imageKey)})))} />
 <script>import '../scripts/gallery.js';</script>
