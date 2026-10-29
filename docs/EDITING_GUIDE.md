@@ -23,3 +23,5 @@ Motion timing and switches are now in `site.theme.motion`: reveal360ms, stagger4
 Playful artwork/brand accents: site.theme.motion.playful in src/config/site.ts. See CUSTOMIZATION.md for defaults and examples; disable this group to restore restrained effects.
 
 Circle-only yellow: theme.colors.circle. Draw/replay timing: theme.motion.playful.circleDrawDuration. Process underline is decorative SVG; link font/destination controls are unchanged.
+
+Copyright owner/wording: footer.copyright in text.en.json (through site.text). Keep exactly one {year} marker. Build-local year is static fallback; browser uses visitor-local year on load/pageshow. Leave the separate designCredit field intact unless intentionally editing required attribution.

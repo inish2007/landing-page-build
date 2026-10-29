@@ -32,7 +32,7 @@ In `site.ts`, `text` points to **`src/content/text.en.json`**. All visible copy 
 
 Example: change `"siteName": "Lana Gomez"` to `"siteName": "Your Studio"`.
 
-Copyright is an independent editable sentence: update `footer.copyright` as well. Artist biography and footer credit do not silently change with the brand name. Update supplied reference wording intentionally and preserve credits you are required to retain.
+Copyright is an independent editable sentence: update `footer.copyright` as well, keeping exactly one `{year}` placeholder. Artist biography and footer credit do not silently change with the brand name. Update supplied reference wording intentionally and preserve credits you are required to retain.
 
 For formatted text, edit the existing segments rather than inserting HTML:
 
@@ -253,3 +253,17 @@ The homepage “THE PROCESS” link uses the locally hosted secondary sans-serif
 Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #c5d600). theme.colors.primary remains #e5ff00 for the other yellow accents. Change theme.motion.playful.circleDrawDuration (default 650ms) to adjust stroke drawing. For example, set it to 800 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
 
 THE PROCESS retains its local regular sans-serif font and permanent dark hand-drawn SVG underline. Its link destination and typography controls are unchanged. The decorative circles/underline contain no downloadable media and require no new font or library.
+
+## Automatic copyright year
+
+Edit the owner and wording in `src/content/text.en.json`, exposed through `site.text.footer.copyright` in `src/config/site.ts`. Keep exactly one `{year}` marker:
+
+```json
+"copyright": "© {year} Your Studio. All Rights Reserved."
+```
+
+Do not type a fixed year. Astro inserts the build machine's local year into every shared footer. On page load and browser-history restoration, the small `updateCopyrightYear()` helper replaces only the year with the visitor's current local year. The owner's name, rights wording and separate design credit remain unchanged.
+
+Without JavaScript, visitors see the year from the last build. A page left open across New Year updates on its next load or history restoration; there is no background timer, external request or need to rebuild for JavaScript-enabled visitors. The visitor's device clock determines the browser year.
+
+Validation rejects missing or duplicate `{year}` markers. After editing, run `npm run check` and `npm run build`; preview with and without JavaScript to check the footer. Existing motion settings are unrelated to copyright and remain unchanged.
