@@ -244,3 +244,5 @@ For gentler artwork movement, change `cardLift: 2`, `cardTilt: 0.5`, and `cardSc
 Buttons lift 2px and compress while held; keyboard artwork focus lifts without tilt. Hover movement requires a precise pointer. Circle accents settle once below the initial viewport; brand wobble plays once per deliberate hover/focus. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
 
 These are reusable Tailwind utilities backed by generated CSS variables. You do not need to edit component classes, keyframes or JavaScript to change the settings above.
+
+The homepage “THE PROCESS” link uses the locally hosted secondary sans-serif font, typography.sizes.processLink (18–24px fluid size) and typography.weights.regular in site.ts. These settings do not change the surrounding serif statement.

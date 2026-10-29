@@ -6,7 +6,7 @@
 .home-hero .image-frame { max-height: 65rem; }
 .home-intro { padding-block: var(--space-6); display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-5); align-items: center; background: var(--color-subtle); }
 .intro-copy h2 { font-size: var(--text-h1); letter-spacing: var(--tracking-editorial); }
-.small-link { display: block; width: fit-content; margin: var(--space-4) auto 0; font-size: var(--text-caption); text-transform: uppercase; padding: var(--space-2); }
+.small-link { display: block; width: fit-content; margin: var(--space-4) auto 0; font-family: var(--font-sans); font-size: var(--text-processLink); font-weight: var(--font-weight-regular); font-style: normal; letter-spacing: normal; text-transform: uppercase; padding: var(--space-2); }
 .home-collaborations { position: relative; }
 .home-collaborations .image-frame { max-height: 44rem; }
 .collaboration-copy { position: absolute; inset: auto var(--page-gutter) var(--space-6) auto; max-width: calc(100% - 2 * var(--page-gutter)); text-align: center; color: var(--color-on-media); }
