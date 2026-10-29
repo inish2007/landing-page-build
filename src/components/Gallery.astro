@@ -1,5 +1,6 @@
 ---
 import type { PageConfiguration } from '../config/types';
+import GoldenOutlineText from './GoldenOutlineText.astro';
 interface Props {page:PageConfiguration}
 /** Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. */
 import SiteIcon from './SiteIcon.astro';
@@ -10,7 +11,7 @@ const { page } = Astro.props;
 const items = getArtworks().filter(item => item.collection === page.collection).sort((a,b) => a.order-b.order);
 ---
 <section class="gallery-page page-shell">
-  <header class="page-heading"><h1>{getCopy(page.titleKey)}</h1></header>
+  <header class="page-heading"><h1 data-accent="outline"><GoldenOutlineText text={getCopy(page.titleKey)} /></h1></header>
   <div class="gallery-grid" data-motion-group>{items.map(item => <figure class="gallery-card" data-motion="reveal">
     <button class="gallery-open playful-card" data-artwork={item.id} aria-label={getCopy('gallery.open') + ': ' + getCopy(item.titleKey)}><ResponsiveImage imageKey={item.imageKey} aspectRatio="4 / 5" sizes="(max-width: 48rem) 100vw, 33vw" /></button>
     <figcaption><h2>{getCopy(item.titleKey)}</h2><p>{getCopy(item.captionKey)}</p></figcaption>

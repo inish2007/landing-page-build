@@ -1,9 +1,10 @@
 ---
 /** Local-only inquiry preview. No props. Labels/messages from contact.*; no network or storage. */
 import { getCopy } from '../utils/content';
+import GoldenOutlineText from './GoldenOutlineText.astro';
 ---
 <section class="contact-page page-shell">
-  <header class="page-heading"><h1>{getCopy('contact.title')}</h1></header>
+  <header class="page-heading"><h1 data-accent="outline"><GoldenOutlineText text={getCopy('contact.title')} /></h1></header>
   <p class="contact-intro">{getCopy('contact.body')}</p><a class="text-link" href={'mailto:' + getCopy('contact.email')}>{getCopy('contact.emailLabel')}</a>
   <form method="dialog" class="contact-form" data-motion="reveal" data-contact-form>
     <p>{getCopy('contact.localNotice')}</p>

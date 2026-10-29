@@ -1,5 +1,6 @@
 ---
 import type { PageConfiguration, EditorialCopy } from '../config/types';
+import GoldenOutlineText from './GoldenOutlineText.astro';
 interface Props {page:PageConfiguration}
 /** Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. */
 import { getCopy } from '../utils/content';
@@ -8,10 +9,11 @@ import AnimatedMedia from './AnimatedMedia.astro';
 import SiteIcon from './SiteIcon.astro';
 const { page } = Astro.props;
 const copy = getCopy<EditorialCopy>(page.textNamespace!);
+const goldTitle = page.textNamespace?.startsWith('editorial.') && page.textNamespace !== 'editorial.home-1';
 const imageKeys = page.imageKeys || [];
 ---
 <article class="editorial-page page-shell">
-  <header class="page-heading" data-motion="reveal"><h1>{copy.title}</h1></header>
+  <header class="page-heading" data-motion="reveal"><h1 data-accent={goldTitle ? "outline" : undefined}>{goldTitle ? <GoldenOutlineText text={copy.title} /> : copy.title}</h1></header>
   <div class="editorial-grid">
     {(page.imageCount || 0) > 0 && <ResponsiveImage imageKey={imageKeys[0] || "homeHero"} aspectRatio="4 / 5" eager />}
     <div class="editorial-prose" data-motion-group>{copy.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
