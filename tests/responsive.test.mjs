@@ -31,7 +31,7 @@ async function verifyResponsiveHome() {
     await page.setViewportSize({width:390,height:844});
     const originalRatio=await page.locator('#hero .image-frame').evaluate(e=>getComputedStyle(e).aspectRatio);
     await page.locator('#intro h2').evaluate(e=>e.textContent += ' A longer replacement passage should wrap naturally and keep the same fonts and comfortable spacing.');
-    await page.locator('.brand span').evaluate(e=>e.textContent='A Longer Client Brand');
+    await page.locator('.brand .wordmark-text').evaluate(e=>e.textContent='A Longer Client Brand');
     assert.equal(await page.locator('#hero .image-frame').evaluate(e=>getComputedStyle(e).aspectRatio),originalRatio);
     assert.ok(await page.locator('#intro').evaluate(e=>e.scrollWidth<=e.clientWidth));
     await page.emulateMedia({reducedMotion:'reduce'});

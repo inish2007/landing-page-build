@@ -49,7 +49,7 @@ async function verifyNavigation() {
     await page.emulateMedia({reducedMotion:'reduce'});
     assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
     await page.setViewportSize({width:360,height:844});
-    await page.locator('.brand span').evaluate(el => { el.textContent = 'A much longer creative studio name for client editing'; });
+    await page.locator('.brand .wordmark-text').evaluate(el => { el.textContent = 'A much longer creative studio name for client editing'; });
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     assert.deepEqual(errors, []);
     const noJs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});

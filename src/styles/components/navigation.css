@@ -83,3 +83,5 @@ html[data-motion-enabled] .small-link:is(:hover,:focus-visible) { text-decoratio
 .wordmark-text { overflow-wrap: anywhere; }
 
 html[data-motion-enabled="false"] a,html[data-motion-enabled="false"] .process-underline path { transition: none; }
+
+:is(#top,#mobile-drawer) a[aria-current="page"] { text-underline-offset: .4em; }
