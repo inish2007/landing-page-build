@@ -297,8 +297,14 @@ The museum pictures are temporary CC0 demos, not the client’s own artwork. The
 
 ## Readable labels, gold shine and jelly buttons
 
-About uses a compact opaque charcoal plaque so text stays readable without dimming its picture. Edit theme.colors.plaque/plaqueText and theme.typography.sizes.plaquePadding in src/config/site.ts. Footer underlines fit their text; active navbar links use one steady underline. Yellow collaboration buttons never underline.
+About uses white lettering with a thin gold edge and dark edge shadow, with no background or padding. Edit theme.colors.aboutFill/aboutOutline/aboutShadow and theme.typography.sizes.aboutStroke in src/config/site.ts. Footer underlines fit their text; active navbar links use one steady underline. Yellow collaboration buttons never underline.
 
-Text wordmarks in header/footer and the collaboration heading play one gold sweep on precise-pointer hover or keyboard focus. Image logos do not shine. Gold colors are theme.colors.goldDark/goldMid/goldLight; duration is theme.motion.playful.shineDuration(default1000ms). The heading remains a heading and gains a focus outline.
+Text wordmarks in header/footer and the collaboration heading play one gold sweep on first visible entry per document, then replay on precise-pointer hover or keyboard focus. Image logos do not shine. Gold colors are theme.colors.goldDark/goldMid/goldLight; duration is theme.motion.playful.shineDuration(default1000ms). The heading remains a heading and gains a focus outline.
 
 Collaboration pills animate only their decorative yellow background; lettering and click targets stay steady. playful.jellyDuration(default600ms), jellyWide(1.04) and jellyNarrow(0.96) control the principal squash/stretch. The secondary settling frames are0.98/1.02 and1.01/0.99, endingat1. No looping. Shared master/playful switches, reduced motion and inactive/navigation cancellation restore settled visuals. Missing animation/text-clipping APIs or JavaScript keep readable ordinary text and solid buttons. No library or media downloads are required.
+
+## Entry shine and outlined About
+
+Navigation labels use theme.typography.weights.navigation(default600); wordmark/heading font weights are unchanged and navbar labels do not shine. About keeps its existing position with no box, padding or image dimming. Its original text and arrow stay white with a1px static gold stroke and subtle dark shadow. A decorative aria-hidden copy supplies only the moving brighter edge; it is not a duplicate accessible heading. Unsupported masks keep only the static outline.
+
+Header/footer text wordmarks, collaboration heading and About outline use the existing1000ms playful.shineDuration. The shared observer starts entry effects once when visible; ordinary scroll, persisted history and reconstructed back/forward documents do not replay completed entry shine. Hover/focus replaces entry with one fresh owned effect. Overlapping local reveal effects settle before shine; there is no delayed queue. Decorative accent ownership is per target; the existing six-reveal limit remains for entry units. Touch scrolling does not start hover replay. Reduced motion, disabled settings, backgrounding and navigation leave settled visible content.
