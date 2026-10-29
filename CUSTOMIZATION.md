@@ -324,3 +324,11 @@ Allfiveglows now run only onscreen using the shared observer. Hover/focus replay
 The same GoldenOutlineText component now covers desktop/mobile navigation, footer category headings, gallery titles, Contact and editorial portfolio titles (including collaboration detail pages). Legal and home-1 utility titles, body copy, artwork captions, form labels, and ordinary footer links remain excluded. No new typography or animation settings: the existing0.5px stroke,1800ms subtle glow and1000ms sweep apply. Navbar weight600 and current-page/hover underlines are unchanged and stayoutside the decorative layer.
 
 Navigation links replay on hover or keyboard focus. Structural headings remain plain headings without added tab stops; they receive entry/hover effects. Existing visibility/once-only/history/cancellation logic is reused. Accessible names use only the base text; the extra outline layer is aria-hidden and invisible between sweeps. Central content changes update both visual layers automatically.
+
+## Diagonal press highlighter
+
+Only the five Press paragraphs with `highlight: "press-marker"` in `src/content/text.en.json` receive marker strokes. Headings and the separate publication links are unchanged. Keep those five paragraphs contiguous to share one decorative composition.
+
+Edit `theme.pressMarker` in `src/config/site.ts`: color(default#fff230), opacity(0.55), thickness(24px), duration(900ms per stroke), stagger(1000ms between starts). Three diagonal strokes rise from lower-left to upper-right, with rounded ends and no arrowheads. The SVG scales to the paragraph group while the text remains opaque above it; font/spacing/wrapping are unaffected. With default timings the final stroke finishes after2900ms.
+
+One shared observer starts the sequence once on first view. No hover/scroll/history replay. Disabled master/playful motion, reduced motion, noJavaScript/missing APIs, backgrounding or interrupted navigation leave full static marks. No media download or library is involved.
