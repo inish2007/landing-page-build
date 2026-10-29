@@ -11,9 +11,10 @@ async function verifyResponsiveHome() {
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => { if(response.status() >= 400) badResponses.push(response.url()); });
     await page.route('**/*', route => { const url = new URL(route.request().url()); if(url.hostname !== '127.0.0.1') { external.push(url.href); return route.abort(); } return route.continue(); });
-    for (const [width,height] of [[1440,1000],[1280,800],[768,1024],[390,844],[360,844],[430,844]]) {
+    for (const [width,height] of [[2560,1440],[1920,1080],[1440,1000],[1280,800],[768,1024],[390,844],[360,844],[430,844]]) {
       await page.setViewportSize({width,height}); await page.goto(BASE_URL + '/');
       await page.evaluate(() => document.fonts.ready); await decodeImages(page);
+      assert.equal(await page.locator('.home-collaborations').evaluate(section=>{const image=section.querySelector('.image-frame').getBoundingClientRect(),bounds=section.getBoundingClientRect();return Math.abs(image.left-bounds.left)<1&&Math.abs(image.right-bounds.right)<1;}),true,'collaboration image must fill section at '+width);
       assert.equal(await page.locator('main h1').count(),1);
       assert.equal(await page.locator('main > section').count(),5);
       assert.equal(await page.locator('main img').count(),15);
@@ -40,4 +41,4 @@ async function verifyResponsiveHome() {
     assert.deepEqual(errors,[]);assert.deepEqual(badResponses,[]);assert.deepEqual(external,[]);
   } finally { await browser.close(); }
 }
-test('responsive homepage: six widths, local assets, brush scope, content wrapping and reduced motion',verifyResponsiveHome);
+test('responsive homepage: eight widths, local assets, brush scope, content wrapping and reduced motion',verifyResponsiveHome);
