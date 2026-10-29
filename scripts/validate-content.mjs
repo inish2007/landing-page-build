@@ -96,6 +96,10 @@ export function validateChromeKeys(textData) {
       errors.push(`Missing or empty required chrome copy key: "${key}"`);
     }
   }
+  const copyright = resolvePath(textData, 'footer.copyright');
+  if (typeof copyright !== 'string' || (copyright.match(/\{year\}/g) || []).length !== 1) {
+    errors.push('footer.copyright must contain exactly one {year} placeholder, e.g. © {year} Your Studio.');
+  }
   return errors;
 }
 

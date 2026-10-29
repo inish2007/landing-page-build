@@ -3,9 +3,12 @@
 import site from '../config/site';
 import { getCopy, getNavigation } from '../utils/content';
 const links = getNavigation('footer');
+const copyright = getCopy('footer.copyright').split('{year}');
+if (copyright.length !== 2) throw new Error('footer.copyright must contain exactly one {year} placeholder.');
+const buildYear = new Date().getFullYear();
 ---
 <footer class="site-footer">
-  <div class="footer-intro"><a class="footer-brand" href={site.links.home} aria-label={getCopy('common.siteName')}>{site.branding.logo ? <img src={site.branding.logo.src} alt="" width={site.branding.logo.width} height={site.branding.logo.height} /> : getCopy('common.siteName')}</a><p>{getCopy('footer.copyright')}<br />{getCopy('footer.designCredit')}</p></div>
+  <div class="footer-intro"><a class="footer-brand" href={site.links.home} aria-label={getCopy('common.siteName')}>{site.branding.logo ? <img src={site.branding.logo.src} alt="" width={site.branding.logo.width} height={site.branding.logo.height} /> : getCopy('common.siteName')}</a><p>{copyright[0]}<span data-copyright-year>{buildYear}</span>{copyright[1]}<br />{getCopy('footer.designCredit')}</p></div>
   <div class="footer-group"><h2>{getCopy('footer.connect')}</h2><nav aria-label={getCopy('footer.connect')}>{getNavigation('social').map(link => <a class="playful-link" href={link.url}>{getCopy(link.labelKey)}</a>)}</nav></div>
   <div class="footer-group"><h2>{getCopy('footer.explore')}</h2><nav aria-label={getCopy('common.footerNavigation')}>{links.slice(3).map(link => <a class="playful-link" href={link.path}>{getCopy(link.labelKey)}</a>)}</nav></div>
   <div class="footer-group"><h2>{getCopy('footer.inquire')}</h2><nav aria-label={getCopy('footer.inquire')}>{links.slice(0,3).map(link => <a class="playful-link" href={link.path}>{getCopy(link.labelKey)}</a>)}</nav></div>
