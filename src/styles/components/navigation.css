@@ -62,3 +62,5 @@ main { flex: 1; }
 .site-footer nav:not(.footer-social) a { align-self: flex-start; max-width: 100%; }
 .desktop-nav a[aria-current="page"]::before { content: none !important; }
 .desktop-nav a[aria-current="page"]:hover { text-underline-offset: .4em; }
+
+.desktop-nav, .mobile-drawer nav { font-weight: var(--font-weight-navigation); }

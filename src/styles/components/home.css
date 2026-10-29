@@ -31,7 +31,7 @@
 .small-link:hover { text-decoration: none; }
 
 /* Contrast is confined to the label, leaving the picture untouched. */
-.collage-about h2 { color: var(--color-plaque-text); background: var(--color-plaque); padding: var(--text-plaquePadding); border-radius: .2em; max-width: 80%; margin-top: 0; }
+.collage-about h2 { color: var(--about-fill); background: transparent; padding: 0; border-radius: 0; -webkit-text-stroke: var(--text-aboutStroke) var(--about-outline); paint-order: stroke fill; text-shadow: var(--about-shadow); max-width: 80%; margin-top: 0; }
 .pill-link:is(:hover,:focus,:active,:visited) { text-decoration: none; }
 
 .pill-link { position: relative; isolation: isolate; background: transparent; }
