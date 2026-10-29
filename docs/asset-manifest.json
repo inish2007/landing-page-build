@@ -513,5 +513,31 @@
         }
       ]
     }
-  ]
+  ],
+  "activeImageOverride": {
+    "localPath": "/images/client-placeholder.png",
+    "source": "User attachment supplied 2026-10-29",
+    "width": 474,
+    "height": 266,
+    "license": "User-supplied; no third-party license asserted",
+    "modifications": "None; original PNG copied byte-for-byte",
+    "appliesTo": [
+      "homeHero",
+      "homeIntroSide",
+      "collaborationBackdrop",
+      "aboutPreview",
+      "pressPreview",
+      "archivePreview",
+      "artworkDetail",
+      "contactPreview",
+      "studioWide",
+      "social1",
+      "social2",
+      "social3",
+      "social4",
+      "social5",
+      "social6"
+    ],
+    "note": "All configured image selections replaced; previous source assets retained on disk."
+  }
 }

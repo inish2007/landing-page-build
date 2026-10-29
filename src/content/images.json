@@ -1,384 +1,182 @@
 {
   "homeHero": {
-    "src": "/images/artist-content/home-hero.webp",
-    "alt": "Lana Gomez seated in front of a colorful abstract painting.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 45%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/home-hero-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/home-hero-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/home-hero-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "homeIntroSide": {
-    "src": "/images/artist-content/home-intro-side.jpg",
-    "alt": "Paints, brushes and abstract canvases on the studio floor.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/home-intro-side-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/home-intro-side-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/home-intro-side-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "collaborationBackdrop": {
-    "src": "/images/artist-content/collaboration-backdrop.jpg",
-    "alt": "Lana Gomez in a pink dress holding an art-patterned bag.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "42% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/collaboration-backdrop-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/collaboration-backdrop-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/collaboration-backdrop-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "aboutPreview": {
-    "src": "/images/artist-content/about-preview.jpg",
-    "alt": "Lana Gomez in a green patterned suit beneath a matching painting.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/about-preview-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/about-preview-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/about-preview-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "pressPreview": {
-    "src": "/images/artist-content/press-preview.jpg",
-    "alt": "A green patterned suit beside a flowing abstract painting.",
-    "width": 2500,
-    "height": 3750,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/press-preview-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/press-preview-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/press-preview-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "archivePreview": {
-    "src": "/images/artist-content/archive-preview.png",
-    "alt": "Black and white portrait of Lana Gomez looking over her shoulder.",
-    "width": 896,
-    "height": 1286,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/archive-preview-480.webp",
-        "width": 480
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "artworkDetail": {
-    "src": "/images/artist-content/artwork-detail.png",
-    "alt": "Abstract painting with pink, lavender, green and yellow flowing forms.",
-    "width": 1600,
-    "height": 1599,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/artwork-detail-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/artwork-detail-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/artwork-detail-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "contactPreview": {
-    "src": "/images/artist-content/contact-preview.jpg",
-    "alt": "Lana Gomez reclining in a green striped suit in her studio.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/contact-preview-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/contact-preview-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/contact-preview-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "studioWide": {
-    "src": "/images/artist-content/studio-wide.jpg",
-    "alt": "Lana Gomez painting a large outdoor canvas surrounded by paint bottles.",
-    "width": 2500,
-    "height": 1705,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/studio-wide-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/studio-wide-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/studio-wide-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social1": {
-    "src": "/images/artist-content/social1.jpg",
-    "alt": "An art-patterned handbag held beside a blue outfit.",
-    "width": 2500,
-    "height": 3750,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social1-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social1-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social1-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social2": {
-    "src": "/images/artist-content/social2.jpg",
-    "alt": "Instant photographs of colorful abstract artwork.",
-    "width": 2500,
-    "height": 3567,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social2-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social2-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social2-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social3": {
-    "src": "/images/artist-content/social3.jpg",
-    "alt": "Black and white view of the artist leaning across a canvas.",
-    "width": 2500,
-    "height": 1667,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social3-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social3-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social3-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social4": {
-    "src": "/images/artist-content/social4.jpg",
-    "alt": "Close detail of pastel pink, blue and black abstract paint.",
-    "width": 2401,
-    "height": 3600,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social4-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social4-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social4-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social5": {
-    "src": "/images/artist-content/social5.jpg",
-    "alt": "Paint-splattered clothing among colorful studio canvases.",
-    "width": 2350,
-    "height": 3600,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social5-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social5-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social5-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   },
   "social6": {
-    "src": "/images/artist-content/social6.jpg",
-    "alt": "Black and white studio view of paint containers and a canvas.",
-    "width": 2500,
-    "height": 1690,
+    "src": "/images/client-placeholder.png",
+    "alt": "Dark textured background.",
+    "width": 474,
+    "height": 266,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Supplied local reference; rights remain with original owners. No open license asserted.",
-    "sources": [
-      {
-        "src": "/images/artist-content/social6-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/artist-content/social6-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/artist-content/social6-1600.webp",
-        "width": 1600
-      }
-    ]
+    "credit": "User-supplied image."
   }
 }

@@ -56,3 +56,5 @@ User supplied artist content replaces the earlier Aura architecture plan. Stages
 
 ## Superseding Stage 05 direction
 User replaced the Aura architecture content plan with supplied local artist content. Stage 05 homepage is implemented; Stage 06 responsive verification follows. Only / exists. Provisional artist identity/copy and image rights are recorded honestly. No other agents running. See IMPLEMENTATION_PLAN.md.
+
+User image override: all 15 configured images now use the supplied dark PNG. Source assets retained; no Stage 07 work.
