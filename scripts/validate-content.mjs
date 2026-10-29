@@ -1,6 +1,6 @@
 /**
  * Automated Content & Asset Validator
- * Aura Creative Studio
+ * Local artist portfolio
  *
  * Validates the 5 centralized JSON content schemas:
  * - JSON syntax & structural integrity
@@ -52,13 +52,9 @@ export const REQUIRED_CHROME_KEYS = [
   'nav.process',
   'nav.work',
   'nav.contact',
-  'footer.tagline',
   'footer.colophonLabel',
   'footer.privacyLabel',
   'footer.copyright',
-  'contact.header',
-  'contact.form',
-  'contact.info',
 ];
 
 /**

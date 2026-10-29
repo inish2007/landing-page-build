@@ -1,0 +1,9 @@
+---
+/** Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, class. Asset dimensions never dictate presentation ratio. */
+import { getImage } from '../utils/content.js';
+const { imageKey, aspectRatio = '3 / 2', eager = false, class: className } = Astro.props;
+const image = getImage(imageKey);
+---
+<div class:list={['image-frame', className]} style={`--image-ratio: ${aspectRatio}; --image-fit: ${image.fit || 'cover'}; --image-position: ${image.position?.desktop || '50% 50%'}; --image-position-mobile: ${image.position?.mobile || image.position?.desktop || '50% 50%'}`}>
+  <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
+</div>

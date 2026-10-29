@@ -1,0 +1,12 @@
+---
+/** Full-width studio image and static social strip. Props: id, textNamespace, imageKey. No online embeds or submission. */
+import { getCopy } from '../utils/content.js';
+import navigation from '../content/navigation.json';
+import ResponsiveImage from './ResponsiveImage.astro';
+const { id, textNamespace, imageKey } = Astro.props;
+const social = navigation.social.find(link => link.id === 'instagram');
+---
+<section id={id} aria-label={getCopy(textNamespace + '.heading')}>
+  <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" />
+  <div class="social-strip">{[1,2,3,4,5,6].map(index => <a href={social.url} aria-label={getCopy(social.labelKey)}><ResponsiveImage imageKey={'social' + index} aspectRatio="1 / 1" /></a>)}</div>
+</section>

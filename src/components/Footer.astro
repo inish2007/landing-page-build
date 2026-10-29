@@ -1,9 +1,11 @@
 ---
-/** Shared footer; no props. Consumes common.siteName, footer.* and navigation.footer. */
+/** Footer using temporary reference copy and configured navigation/social labels. No props. */
 import { getCopy, getNavigation } from '../utils/content.js';
+const links = getNavigation('footer');
 ---
 <footer class="site-footer">
-  <div class="footer-intro"><a class="footer-brand" href="/">{getCopy('common.siteName')}</a><p>{getCopy('footer.tagline')}</p></div>
-  <nav aria-label={getCopy('common.footerNavigation')}>{getNavigation('footer').map(link => <a href={link.path}>{getCopy(link.labelKey)}</a>)}</nav>
-  <div class="footer-bottom"><p>{getCopy('footer.copyright')}</p><a href="#top">{getCopy('common.backToTop')} <span aria-hidden="true">↑</span></a></div>
+  <div class="footer-intro"><a class="footer-brand" href="/">{getCopy('common.siteName')}</a><p>{getCopy('footer.copyright')}<br />{getCopy('footer.designCredit')}</p></div>
+  <div class="footer-group"><h2>{getCopy('footer.connect')}</h2><nav aria-label={getCopy('footer.connect')}>{getNavigation('social').map(link => <a href={link.url}>{getCopy(link.labelKey)}</a>)}</nav></div>
+  <div class="footer-group"><h2>{getCopy('footer.explore')}</h2><nav aria-label={getCopy('common.footerNavigation')}>{links.slice(3).map(link => <a href={link.path}>{getCopy(link.labelKey)}</a>)}</nav></div>
+  <div class="footer-group"><h2>{getCopy('footer.inquire')}</h2><nav aria-label={getCopy('footer.inquire')}>{links.slice(0,3).map(link => <a href={link.path}>{getCopy(link.labelKey)}</a>)}</nav></div>
 </footer>

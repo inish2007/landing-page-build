@@ -1,0 +1,5 @@
+---
+/** Safe structured inline text. Prop: segments; italic and circle/accent options only. */
+const { segments = [] } = Astro.props;
+---
+{segments.map(segment => <span class:list={[segment.highlight === 'circle' && 'highlight-circle', segment.highlight === 'accent' && 'highlight-accent']}>{segment.emphasis === 'italic' ? <em>{segment.text}</em> : segment.text}</span>)}

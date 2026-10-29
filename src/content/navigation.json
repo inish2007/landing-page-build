@@ -1,21 +1,104 @@
 {
   "header": [
-    { "id": "home", "path": "/", "labelKey": "nav.home", "isExternal": false },
-    { "id": "about", "path": "/about/", "labelKey": "nav.about", "isExternal": false },
-    { "id": "process", "path": "/process/", "labelKey": "nav.process", "isExternal": false },
-    { "id": "work", "path": "/work/", "labelKey": "nav.work", "isExternal": false },
-    { "id": "contact", "path": "/contact/", "labelKey": "nav.contact", "isExternal": false }
+    {
+      "id": "work",
+      "path": "/available-art/",
+      "labelKey": "nav.work",
+      "isExternal": false
+    },
+    {
+      "id": "about",
+      "path": "/about/",
+      "labelKey": "nav.about",
+      "isExternal": false
+    },
+    {
+      "id": "process",
+      "path": "/the-process/",
+      "labelKey": "nav.process",
+      "isExternal": false
+    },
+    {
+      "id": "press",
+      "path": "/press/",
+      "labelKey": "nav.press",
+      "isExternal": false
+    },
+    {
+      "id": "collaborations",
+      "path": "/#collaborations",
+      "labelKey": "nav.collaborations",
+      "isExternal": false
+    },
+    {
+      "id": "contact",
+      "path": "/contact/",
+      "labelKey": "nav.contact",
+      "isExternal": false
+    }
   ],
   "footer": [
-    { "id": "about", "path": "/about/", "labelKey": "nav.about", "isExternal": false },
-    { "id": "process", "path": "/process/", "labelKey": "nav.process", "isExternal": false },
-    { "id": "work", "path": "/work/", "labelKey": "nav.work", "isExternal": false },
-    { "id": "contact", "path": "/contact/", "labelKey": "nav.contact", "isExternal": false },
-    { "id": "colophon", "path": "/colophon/", "labelKey": "footer.colophonLabel", "isExternal": false },
-    { "id": "privacy", "path": "/privacy/", "labelKey": "footer.privacyLabel", "isExternal": false }
+    {
+      "id": "available",
+      "path": "/available-art/",
+      "labelKey": "nav.available",
+      "isExternal": false
+    },
+    {
+      "id": "archived",
+      "path": "/archived/",
+      "labelKey": "nav.archived",
+      "isExternal": false
+    },
+    {
+      "id": "contact",
+      "path": "/contact/",
+      "labelKey": "nav.contact",
+      "isExternal": false
+    },
+    {
+      "id": "about",
+      "path": "/about/",
+      "labelKey": "nav.about",
+      "isExternal": false
+    },
+    {
+      "id": "press",
+      "path": "/press/",
+      "labelKey": "nav.press",
+      "isExternal": false
+    },
+    {
+      "id": "process",
+      "path": "/the-process/",
+      "labelKey": "nav.process",
+      "isExternal": false
+    }
   ],
   "social": [
-    { "id": "journal", "url": "#journal", "label": "Journal", "isExternal": false },
-    { "id": "index", "url": "#index", "label": "Monograph", "isExternal": false }
+    {
+      "id": "instagram",
+      "url": "https://www.instagram.com/lanagomez/",
+      "labelKey": "footer.instagram",
+      "isExternal": true
+    },
+    {
+      "id": "facebook",
+      "url": "https://www.facebook.com/LanaGomezArt/",
+      "labelKey": "footer.facebook",
+      "isExternal": true
+    }
+  ],
+  "collaborations": [
+    {
+      "id": "pagerie",
+      "path": "/pagerie-lana-gomez-luxury-bags/",
+      "labelKey": "home.collaborations.pagerieLabel"
+    },
+    {
+      "id": "shay",
+      "path": "/shay-lanagomez-luxury-jewelry-collection/",
+      "labelKey": "home.collaborations.shayLabel"
+    }
   ]
 }

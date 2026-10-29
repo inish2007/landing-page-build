@@ -27,3 +27,6 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Impallari Type; SIL OFL 1.1; full license alongside this local font. */
+@font-face { font-family: "Caveat Brush"; src: url("/fonts/caveat-brush-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }

@@ -29,3 +29,13 @@ main { flex: 1; }
 @media (min-width: 64rem) { .menu-toggle { display: none; } }
 @media (max-width: 63.999rem) { .site-header:has(.menu-toggle:not([hidden])) .desktop-nav { display: none; } .site-header { flex-wrap: wrap; } .brand { flex: 1; } }
 @media (max-width: 47.999rem) { .site-footer { grid-template-columns: 1fr; } }
+/* Brand font is limited to the name; ordinary headings retain the serif. */
+.brand, .footer-brand, #drawer-title { font-family: var(--font-brand); font-size: var(--text-brand); font-weight: 400; text-transform: uppercase; line-height: .95; }
+.brand span, .footer-brand { max-width: 3.3em; overflow-wrap: normal; }
+.site-header { padding-block: var(--space-3); border: 0; }
+.desktop-nav { text-transform: uppercase; font-size: var(--text-caption); }
+.site-footer { grid-template-columns: 2fr 1fr 1fr 1fr; background: #fafafa; border: 0; }
+.site-footer nav { display: flex; flex-direction: column; gap: 0; font-size: var(--text-caption); }
+.footer-group h2 { font-family: var(--font-sans); font-size: var(--text-caption); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-2); }
+.footer-intro .footer-brand { display: block; }
+.footer-intro p { margin-top: var(--space-4); }

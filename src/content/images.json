@@ -1,170 +1,182 @@
 {
   "homeHero": {
-    "src": "/images/home-hero.webp",
-    "alt": "Minimalist concrete pavilion courtyard with geometric light shadows at dawn",
-    "width": 2400,
-    "height": 1600,
+    "src": "/images/artist-content/home-hero.webp",
+    "alt": "Lana Gomez seated in front of a colorful abstract painting.",
+    "width": 2500,
+    "height": 1667,
     "fit": "cover",
     "position": {
-      "desktop": "50% 45%",
-      "mobile": "40% 50%"
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
     },
-    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
   "homeIntroSide": {
-    "src": "/images/sculpture-detail.webp",
-    "alt": "Monolithic textured basalt stone sculpture in natural side-lighting",
-    "width": 1200,
-    "height": 1600,
+    "src": "/images/artist-content/home-intro-side.jpg",
+    "alt": "Paints, brushes and abstract canvases on the studio floor.",
+    "width": 2500,
+    "height": 1667,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "aboutPortrait": {
-    "src": "/images/about-portrait.webp",
-    "alt": "Julian Vance, founding architect and principal of Aura Creative Studio",
-    "width": 1200,
-    "height": 1500,
+  "collaborationBackdrop": {
+    "src": "/images/artist-content/collaboration-backdrop.jpg",
+    "alt": "Lana Gomez in a pink dress holding an art-patterned bag.",
+    "width": 2500,
+    "height": 1667,
     "fit": "cover",
     "position": {
-      "desktop": "50% 30%",
-      "mobile": "50% 30%"
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
     },
-    "credit": "Photograph by Julian Wan via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "processStudio": {
-    "src": "/images/process-studio.webp",
-    "alt": "Minimalist architectural studio desk with sketches, scale models, and drafting tools",
+  "aboutPreview": {
+    "src": "/images/artist-content/about-preview.jpg",
+    "alt": "Lana Gomez in a green patterned suit beneath a matching painting.",
+    "width": 2500,
+    "height": 1667,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+  },
+  "pressPreview": {
+    "src": "/images/artist-content/press-preview.jpg",
+    "alt": "A green patterned suit beside a flowing abstract painting.",
+    "width": 2500,
+    "height": 3750,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+  },
+  "archivePreview": {
+    "src": "/images/artist-content/archive-preview.png",
+    "alt": "Black and white portrait of Lana Gomez looking over her shoulder.",
+    "width": 896,
+    "height": 1286,
+    "fit": "cover",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
+  },
+  "artworkDetail": {
+    "src": "/images/artist-content/artwork-detail.png",
+    "alt": "Abstract painting with pink, lavender, green and yellow flowing forms.",
     "width": 1600,
-    "height": 1200,
+    "height": 1599,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Aleks Dahlberg via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "processPhase1": {
-    "src": "/images/process-site.webp",
-    "alt": "Rugged natural landscape with stone formations and quiet morning fog",
-    "width": 1600,
-    "height": 1200,
+  "contactPreview": {
+    "src": "/images/artist-content/contact-preview.jpg",
+    "alt": "Lana Gomez reclining in a green striped suit in her studio.",
+    "width": 2500,
+    "height": 1667,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Bailey Zindel via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "processPhase2": {
-    "src": "/images/process-materials.webp",
-    "alt": "Curated tactile material samples including raw concrete, darkened bronze, and weathered oak",
-    "width": 1600,
-    "height": 1200,
+  "studioWide": {
+    "src": "/images/artist-content/studio-wide.jpg",
+    "alt": "Lana Gomez painting a large outdoor canvas surrounded by paint bottles.",
+    "width": 2500,
+    "height": 1705,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Science in HD via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "processPhase3": {
-    "src": "/images/process-tectonics.webp",
-    "alt": "Structural joinery and board-formed concrete facade detail",
-    "width": 1600,
-    "height": 1200,
+  "social1": {
+    "src": "/images/artist-content/social1.jpg",
+    "alt": "An art-patterned handbag held beside a blue outfit.",
+    "width": 2500,
+    "height": 3750,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Scott Blake via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "processPhase4": {
-    "src": "/images/studio-desk.webp",
-    "alt": "Handcrafted architectural model and refined material palette",
-    "width": 1600,
-    "height": 1200,
+  "social2": {
+    "src": "/images/artist-content/social2.jpg",
+    "alt": "Instant photographs of colorful abstract artwork.",
+    "width": 2500,
+    "height": 3567,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Studio Republic via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "pavilionKMain": {
-    "src": "/images/pavilion-k.webp",
-    "alt": "Pavilion K featuring board-formed concrete walls, cantilevered roof, and weathered cedar slats",
-    "width": 1800,
-    "height": 1200,
+  "social3": {
+    "src": "/images/artist-content/social3.jpg",
+    "alt": "Black and white view of the artist leaning across a canvas.",
+    "width": 2500,
+    "height": 1667,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by R Architecture via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "monolithIIMain": {
-    "src": "/images/sculpture-detail.webp",
-    "alt": "Monolith Study II in basalt stone with hand-chiseled rhythmic striations",
-    "width": 1200,
-    "height": 1600,
+  "social4": {
+    "src": "/images/artist-content/social4.jpg",
+    "alt": "Close detail of pastel pink, blue and black abstract paint.",
+    "width": 2401,
+    "height": 3600,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Studio Forma, CC0 Public Domain"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "courtyardResidenceMain": {
-    "src": "/images/architectural-courtyard.webp",
-    "alt": "Courtyard Residence featuring limestone terrace, slender reflecting pool, and serene geometry",
-    "width": 1600,
-    "height": 1200,
+  "social5": {
+    "src": "/images/artist-content/social5.jpg",
+    "alt": "Paint-splattered clothing among colorful studio canvases.",
+    "width": 2350,
+    "height": 3600,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by R Architecture via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   },
-  "terraceSanctuaryMain": {
-    "src": "/images/stone-terrace.webp",
-    "alt": "Terrace Sanctuary with stepped granite platform overlooking forested valley",
-    "width": 1600,
-    "height": 1200,
+  "social6": {
+    "src": "/images/artist-content/social6.jpg",
+    "alt": "Black and white studio view of paint containers and a canvas.",
+    "width": 2500,
+    "height": 1690,
     "fit": "cover",
     "position": {
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Photograph by Frames For Your Heart via Unsplash"
-  },
-  "basaltStudyMain": {
-    "src": "/images/basalt-study.webp",
-    "alt": "Vertical basalt sculpture study with natural cleft surface and blackened steel plinth",
-    "width": 1200,
-    "height": 1600,
-    "fit": "cover",
-    "position": {
-      "desktop": "50% 50%",
-      "mobile": "50% 50%"
-    },
-    "credit": "Photograph by Europeana via Unsplash, CC0"
-  },
-  "timberPavilionMain": {
-    "src": "/images/timber-pavilion.webp",
-    "alt": "Timber Meditation Pavilion with exposed hinoki cypress rafters and sliding shoji screens",
-    "width": 1600,
-    "height": 1200,
-    "fit": "cover",
-    "position": {
-      "desktop": "50% 50%",
-      "mobile": "50% 50%"
-    },
-    "credit": "Photograph by Sora Sagano via Unsplash"
+    "credit": "Supplied local reference; rights remain with original owners. No open license asserted."
   }
 }

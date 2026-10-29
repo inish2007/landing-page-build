@@ -77,3 +77,16 @@ This document serves as the project's living registry of all active components, 
 - Every commit updating this file must have a corresponding note in `docs/changes/NNN-*.md`.
 
 Stage 04 updates: SiteLayout now imports local shared styles/fonts, Header/Footer/MobileDrawer and navigation behavior; its title and skip link use common copy. Index remains a scaffold, now reading common.siteName/home.hero.eyebrow with shared font tokens. No function removals or renames.
+
+## Stage 05 homepage registry
+
+| Component | File | Inputs / responsibility | Consumers / effects | Checks |
+|---|---|---|---|---|
+| HeroSection | src/components/HeroSection.astro | id, textNamespace, imageKey; image opening with accessible h1 | Index; renders static local image | build, desktop review |
+| StatementSection | src/components/StatementSection.astro | id, textNamespace, imageKey; artist intro and process link | Index; structured text | build, desktop review |
+| SelectedWorkSection | src/components/SelectedWorkSection.astro | id, textNamespace, imageKey?; collaboration banner or editorial collage | Index; static links/images | build, desktop review |
+| ContactCtaSection | src/components/ContactCtaSection.astro | id, textNamespace, imageKey; studio image/social strip | Index; external social links only | build |
+| FormattedText | src/components/FormattedText.astro | segments; safe escaped text with approved formatting | Homepage sections; no raw HTML | build |
+| ResponsiveImage | src/components/ResponsiveImage.astro | imageKey, aspectRatio, eager, class; local image with independent crop/ratio | Homepage sections; eager hero/lazy others | build |
+
+Index now maps pages.home.sections to four supported components. Footer now groups centralized reference navigation and preserves original credit. validateChromeKeys retains its signature; required key list now covers existing chrome, dropping unused future contact requirements. Other validator functions unchanged. No runtime functions added or removed in Stage 05.

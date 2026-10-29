@@ -100,3 +100,9 @@ The following media assets are licensed under the Unsplash Open License:
 ```text
 Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use photos from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile photos from Unsplash to replicate a similar or competing service.
 ```
+
+## Caveat Brush
+Designed by Impallari Type. Copyright 2015 Google Inc. All Rights Reserved. SIL Open Font License 1.1 permits embedding and redistribution with notices. Full original license: public/fonts/caveat-brush-OFL.txt. Source: https://github.com/google/fonts/tree/main/ofl/caveatbrush . Retrieved 2026-10-29; original TTF, unmodified.
+
+## Temporary reference content
+At the user’s request, this local build uses text and images from their supplied saved artist website. Copyright remains with the original owners; no open license or redistribution permission for these images/copy is asserted. Original footer design credit is retained. This is local reference content, not a completed client identity or published website. The brush lettering is a separate licensed font, not the source logo image.

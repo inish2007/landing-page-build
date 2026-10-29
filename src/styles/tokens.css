@@ -6,15 +6,17 @@
 
 :root {
   /* Color Palette */
-  --color-canvas: #faf9f6;
+  --color-canvas: #ffffff;
   --color-surface: #ffffff;
   --color-text: #171717;
   --color-muted: #545454;
   --color-border: #e6e4df;
-  --color-accent: #dded39;
+  --color-accent: #e5ff00;
   --color-accent-text: #171717;
   --color-focus: #171717;
 
+  --font-brand: "Caveat Brush", cursive;
+  --text-brand: clamp(1.7rem, 2.5vw, 2.6rem);
   /* Typography Stacks */
   --font-serif: "Fraunces", Georgia, Cambria, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

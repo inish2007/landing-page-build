@@ -1,0 +1,10 @@
+---
+/** Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. */
+import { getCopy } from '../utils/content.js';
+import ResponsiveImage from './ResponsiveImage.astro';
+const { id, textNamespace, imageKey } = Astro.props;
+---
+<section id={id} class="home-hero" aria-labelledby="home-title">
+  <h1 id="home-title" class="visually-hidden">{getCopy(textNamespace + '.eyebrow')}</h1>
+  <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" eager />
+</section>

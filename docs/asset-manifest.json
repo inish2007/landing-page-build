@@ -18,6 +18,20 @@
       "localFiles": [
         "/fonts/plus-jakarta-sans-wght.woff2"
       ]
+    },
+    {
+      "name": "Caveat Brush",
+      "creator": "Impallari Type",
+      "copyright": "Copyright 2015 Google Inc. All Rights Reserved.",
+      "license": "SIL Open Font License 1.1",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/caveatbrush/OFL.txt",
+      "sourceUrl": "https://github.com/google/fonts/tree/main/ofl/caveatbrush",
+      "retrievalDate": "2026-10-29",
+      "localFiles": [
+        "/fonts/caveat-brush-regular.ttf"
+      ],
+      "localLicense": "/fonts/caveat-brush-OFL.txt",
+      "modifications": "None"
     }
   ],
   "images": [
@@ -174,6 +188,144 @@
       "retrievalDate": "2026-10-29",
       "attributionRequired": true,
       "credit": "Photograph by Sora Sagano via Unsplash"
+    }
+  ],
+  "referenceAssets": [
+    {
+      "id": "brandLogo",
+      "localPath": "/images/artist-content/brand-logo.png",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "homeHero",
+      "localPath": "/images/artist-content/home-hero.webp",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "homeIntroSide",
+      "localPath": "/images/artist-content/home-intro-side.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "collaborationBackdrop",
+      "localPath": "/images/artist-content/collaboration-backdrop.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "aboutPreview",
+      "localPath": "/images/artist-content/about-preview.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "pressPreview",
+      "localPath": "/images/artist-content/press-preview.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "archivePreview",
+      "localPath": "/images/artist-content/archive-preview.png",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "artworkDetail",
+      "localPath": "/images/artist-content/artwork-detail.png",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "contactPreview",
+      "localPath": "/images/artist-content/contact-preview.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "studioWide",
+      "localPath": "/images/artist-content/studio-wide.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social1",
+      "localPath": "/images/artist-content/social1.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social2",
+      "localPath": "/images/artist-content/social2.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social3",
+      "localPath": "/images/artist-content/social3.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social4",
+      "localPath": "/images/artist-content/social4.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social5",
+      "localPath": "/images/artist-content/social5.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "social6",
+      "localPath": "/images/artist-content/social6.jpg",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
+    },
+    {
+      "id": "footerLogo",
+      "localPath": "/images/artist-content/footer-logo.png",
+      "source": "User-supplied local snapshot",
+      "license": "Not verified; original owners retain rights",
+      "usage": "Temporary local content per user instruction on 2026-10-29",
+      "modifications": "Renamed only"
     }
   ]
 }

@@ -1,7 +1,15 @@
 ---
-/** Scaffold home route. No props; common.siteName and home.hero.eyebrow. Full sections follow in Stage 05. */
+/** Home route: ordered page configuration maps to shared section components. No props. */
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { getCopy } from '../utils/content.js';
+import HeroSection from '../components/HeroSection.astro';
+import StatementSection from '../components/StatementSection.astro';
+import SelectedWorkSection from '../components/SelectedWorkSection.astro';
+import ContactCtaSection from '../components/ContactCtaSection.astro';
+import { getPageConfig, getCopy } from '../utils/content.js';
+import '../styles/components/home.css';
+const page = getPageConfig('home');
+const components = { HeroSection, StatementSection, SelectedWorkSection, ContactCtaSection };
 ---
-<SiteLayout><section class="welcome-container"><h1>{getCopy('common.siteName')}</h1><p>{getCopy('home.hero.eyebrow')}</p></section></SiteLayout>
-<style>.welcome-container { min-height: 60vh; display: grid; align-content: center; justify-items: center; gap: var(--space-2); padding: var(--space-5) var(--page-gutter); text-align: center; }</style>
+<SiteLayout title={getCopy(page.titleKey)}>
+  {page.sections.map(section => { const Section = components[section.component]; return <Section {...section} />; })}
+</SiteLayout>

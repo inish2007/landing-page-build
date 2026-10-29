@@ -1,0 +1,13 @@
+---
+/** Artist introduction. Props: id, textNamespace, imageKey. Copy from home.statement. */
+import { getCopy, getNavigation } from '../utils/content.js';
+import FormattedText from './FormattedText.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+const { id, textNamespace, imageKey } = Astro.props;
+const copy = getCopy(textNamespace);
+const method = getNavigation('header').find(link => link.id === 'process');
+---
+<section id={id} class="home-intro section-shell" aria-labelledby={id + '-title'}>
+  <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" />
+  <div class="intro-copy"><h2 id={id + '-title'}><FormattedText segments={copy.statementSegments} /></h2><a class="small-link" href={method.path}>{copy.buttonLabel}</a></div>
+</section>

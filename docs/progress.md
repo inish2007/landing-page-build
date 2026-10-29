@@ -49,3 +49,6 @@
 - Only `/` is implemented. Configured supporting destinations are deliberately pending their later stages. No new routes, gallery, or form were added.
 - Navigation checks: `npm test` against production preview on port 4321; six viewport widths, focus wrapping/restoration, Escape, close button, resize, scroll lock, reduced motion, longer branding, no-JS fallback.
 - Visual review: desktop and mobile open drawer screenshots in ignored `evidence/local/navigation-*.png`. No reference-comparison fidelity claim.
+
+## Superseding Stage 05 direction
+User replaced the Aura architecture content plan with supplied local artist content. Stage 05 homepage is implemented; Stage 06 responsive verification follows. Only / exists. Provisional artist identity/copy and image rights are recorded honestly. No other agents running. See IMPLEMENTATION_PLAN.md.
