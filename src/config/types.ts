@@ -1,0 +1,19 @@
+/** Shared configuration contracts. Content stays in canonical JSON dictionaries imported by site.ts. */
+export interface ImageAsset { src: string; alt: string; width: number; height: number; fit?: string; position?: { desktop?: string; mobile?: string }; credit?: string; sources?: {src:string;width:number}[] }
+export interface MediaAsset { src:string; poster:string; width:number; height:number; altKey:string; source?:string; license?:string }
+export interface NavigationLink { id:string; path?:string; url?:string; labelKey:string; isExternal?:boolean }
+export interface FontFace { src:string; format:string; weight:string; style:'normal'|'italic' }
+export interface FontDefinition { family:string; fallback:string; faces:FontFace[] }
+export interface TextSegment { text:string; emphasis?:string; highlight?:string }
+export interface EditorialBlock { tag:string; text:string }
+export interface EditorialCopy { title:string; blocks:EditorialBlock[]; links?:{label:string;href:string}[] }
+export interface PageSection { id:string; component:string; imageKey?:string; textNamespace?:string }
+export interface PageConfiguration { path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
+export interface Artwork { id:string; collection:string; titleKey:string; captionKey:string; imageKey:string; order:number }
+export interface SiteTheme {
+  colors: Record<'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;
+  typography: { fonts:Record<'primary'|'secondary'|'brand',FontDefinition>; sizes:Record<'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'heading'|'brand'|'strong',string>; lineHeights:Record<'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
+  spacing:Record<'1'|'2'|'3'|'4'|'5'|'6',string>;
+  layout: { maxWidth:string; narrowWidth:string; pageGutter:string };
+  motion: { entryDuration:number; entryStagger:number; fast:string; standard:string; easing:string };
+}

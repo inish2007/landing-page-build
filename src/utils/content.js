@@ -4,11 +4,8 @@
  * Centralized helpers to safely retrieve copy, image metadata, navigation structures, and page compositions.
  */
 
-import textData from '../content/text.en.json' with { type: 'json' };
-import imageData from '../content/images.json' with { type: 'json' };
-import navigationData from '../content/navigation.json' with { type: 'json' };
-import pagesData from '../content/pages.json' with { type: 'json' };
-import artworksData from '../content/artworks.json' with { type: 'json' };
+import site from '../config/site.ts';
+const { text:textData, images:imageData, navigation:navigationData, pages:pagesData, artworks:artworksData } = site;
 
 /**
  * Resolves a dot-notation path into the centralized text dictionary.

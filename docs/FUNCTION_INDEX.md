@@ -80,3 +80,13 @@ Updated at final handoff. Each function below includes source JSDoc; historical 
 | ResponsiveImage | src/components/ResponsiveImage.astro | Local image and editable crop. Props: imageKey, aspectRatio='3 / 2', eager=false, sizes='100vw', class. Responsive sources come from images.json. Asset dimensions never dictate presentation ratio. | Shared page/component composition; see source imports | build and browser suite |
 | SelectedWorkSection | src/components/SelectedWorkSection.astro | Collaboration banner or editorial collage, chosen by textNamespace. Props: id, textNamespace, imageKey?. Centralized text and image keys. | Shared page/component composition; see source imports | build and browser suite |
 | StatementSection | src/components/StatementSection.astro | Artist introduction. Props: id, textNamespace, imageKey. Copy from home.statement. | Shared page/component composition; see source imports | build and browser suite |
+
+## Stage 014 — typed-site-configuration
+
+Added: createThemeCss(config) in src/config/theme.ts: pure CSS token/local-font serialization; rejects unsafe token delimiters. Typed SiteTheme/ImageAsset/MediaAsset/NavigationLink/PageConfiguration/Artwork contracts added in types.ts.
+
+Changed: getCopy/getImage/getNavigation/getPageConfig/getArtworks retain signatures and outputs; their canonical data now comes through site.ts rather than separate JSON imports.
+
+Components: SiteTheme.astro added for later layout integration; current rendering unchanged.
+
+Checks: TypeScript noEmit passed; baseline metrics/captures recorded before theme integration. Main site module loads under Node 24.

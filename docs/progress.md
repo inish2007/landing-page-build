@@ -22,3 +22,5 @@ Stages 01–13 completed on 29 October 2026. This final status supersedes histor
 - c79ad3c — test: verify interactions content editing and offline assets
 
 Stage 13 documentation/handoff/evidence tooling is delivered in the current documentation commit. Its final hash is exported afterward, never fabricated or recursively embedded.
+
+Stage 014 completed: typed-site-configuration. TypeScript noEmit passed; baseline metrics/captures recorded before theme integration. Main site module loads under Node 24.

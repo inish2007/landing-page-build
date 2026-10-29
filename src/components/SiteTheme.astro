@@ -1,0 +1,6 @@
+---
+/** Emits the configured CSS variables/font faces once per shared layout; no props. */
+import site from '../config/site';
+import { createThemeCss } from '../config/theme';
+---
+<style is:inline set:html={createThemeCss(site)} />
