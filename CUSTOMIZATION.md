@@ -288,3 +288,9 @@ Change `common.siteName` in `src/content/text.en.json` once. Shared `getBrandNam
 Footer group headings and links use `theme.typography.fonts.footer` (Arial, with Helvetica/sans-serif fallback), `sizes.footer` (responsive14–18px) and `lineHeights.footer` (1.25). Headings stay bold; labels use regular uppercase text. These system fonts require no download; their exact rendering depends on the installed font. Body, brand, copyright typography and existing link underline behavior stay unchanged.
 
 Footer social links use local icons from site.icons.instagram and site.icons.facebook in src/config/site.ts. Replace their src paths to customize the symbols. Destinations remain in navigation.social, and accessible link names/tooltips remain in the content dictionary. Icon artwork lives in public/icons/; the shared SiteIcon component also supports a configured text fallback.
+
+## Individually replaceable demo pictures
+
+The110 image slots now have separate local WebP files under public/images/demo/, organized by homepage, editorial page, available and archived. See IMAGE_REPLACEMENT_GUIDE.md for every filename, image key and displayed ratio. Replace a file using the same path, then update its actual dimensions, alt text, crop position and credit in src/content/images.json. Editorial pages select their imageKeys array in src/content/pages.json; artworks select their imageKey in src/content/artworks.json. Work reuses the Available collection. All settings remain exposed through site.ts; component edits are unnecessary.
+
+The museum pictures are temporary CC0 demos, not the client’s own artwork. Their license/source records live in docs/demo-image-sources.json. Replacing a picture with a different third-party image requires recording that image’s actual rights/source. The existing logo/icons and GIF/poster remain separate.
