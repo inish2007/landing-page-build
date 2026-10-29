@@ -31,6 +31,7 @@ async function verifyNavigation() {
         assert.equal(await page.locator('[data-menu-close]').evaluate(el => el === document.activeElement), true);
         await page.screenshot({path: 'evidence/local/navigation-' + width + '-open.png', fullPage:true});
         await page.keyboard.press('Escape');
+        await page.waitForFunction(() => !document.querySelector('#mobile-drawer').open);
         assert.equal(await page.locator('dialog').evaluate(el => el.open), false);
         assert.equal(await opener.evaluate(el => el === document.activeElement), true);
         assert.equal(await page.locator('body').evaluate(el => el.style.overflow), '');

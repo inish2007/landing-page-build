@@ -18,5 +18,6 @@ export function createThemeCss(config:SiteConfiguration):string {
   for(const value of Object.values(variables))if(/[{};<>]/.test(String(value)))throw new Error('Invalid CSS token in site.ts');
   const root=':root{'+Object.entries(variables).map(([key,value])=>key+':'+value).join(';')+'}';
   const faces=Object.values(fonts).flatMap(font=>font.faces.map(face=>'@font-face{font-family:'+JSON.stringify(font.family)+';src:url('+JSON.stringify(face.src)+') format('+JSON.stringify(face.format)+');font-weight:'+face.weight+';font-style:'+face.style+';font-display:swap}')).join('');
-  return (root+faces).replace(/</g,'\\3c ');
+  const navigation = motion.enabled && motion.pageTransitions ? '@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}' : '';
+  return (root+faces+navigation).replace(/</g,'\\3c ');
 }

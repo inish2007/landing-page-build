@@ -1,0 +1,15 @@
+/* Native same-origin page snapshots are progressive enhancement; navigation stays browser-native. */
+@keyframes motion-page-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes motion-page-in { from { opacity: 0; } to { opacity: 1; } }
+::view-transition-old(root) { animation: motion-page-out var(--motion-page-duration) ease both; mix-blend-mode: normal; }
+::view-transition-new(root) { animation: motion-page-in var(--motion-page-duration) ease both; mix-blend-mode: normal; }
+::view-transition-group(root) { animation-duration: var(--motion-page-duration); }
+@keyframes motion-backdrop-in { from { opacity: var(--dialog-backdrop-from, 0); } to { opacity: 1; } }
+@keyframes motion-backdrop-out { from { opacity: var(--dialog-backdrop-from, 1); } to { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion-enabled="true"] dialog[data-motion-state="opening"]::backdrop { animation: motion-backdrop-in calc(var(--motion-dialog-open) * 1ms) ease both; }
+  html[data-motion-enabled="true"] dialog[data-motion-state="closing"]::backdrop { animation: motion-backdrop-out calc(var(--motion-dialog-close) * 1ms) ease both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root), ::view-transition-group(root) { animation: none !important; }
+}

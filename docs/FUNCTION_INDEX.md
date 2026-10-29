@@ -134,3 +134,13 @@ Changed: initMotion replaces broad selector/header entry behavior; initial/past 
 Components: Explicit data-motion/data-motion-group attributes added to image/intro/collage/editorial/gallery/form units; nested units excluded.
 
 Checks: Astro check/build passed. Reveal lifecycle browser test passed: initial visibility, actual360ms, concurrency/stagger, focused node, reduced-motion cancellation, no replay.
+
+## Stage 019 — transitions-and-media
+
+Added: dialog.js: lockScroll(dialog), unlockScroll(dialog), createDialogController(dialog,options), cancelEffect(), finishClose(), transition(opening), complete(), open(trigger), close(), handleCancel(event), handleNativeClose(), handleStateChange(), destroy(); shared owner handles native modal/focus/style priorities/scroll and temporary panel/backdrop effects. Navigation/gallery add dispose() owners. media.js adds updatePlayback(), handleMediaEntries(entries), handleMediaError(), suspendMedia(), resumeMedia(). Tests add verifyDialogLifecycle(), verifyMediaLifecycle(), verifyPageTransitions().
+
+Changed: initNavigation/openMenu/closeMenu/keyboard/click/viewport handlers and initGallery/render/open/close/arrow handlers delegate to shared cancellable controller. initAnimatedMedia/togglePlayback/handleMediaPreference use viewport/tab/manual/error intent. createThemeCss conditionally opts into native same-origin crossfades. Navigation/site/configuration tests follow asynchronous lifecycle and switches.
+
+Components: SiteLayout adds generated master-motion state and shared motion CSS; native page links/history retained. No SPA router or new library.
+
+Checks: Full suite passed sequentially:12 tests including malicious-content gallery, central config/master switches, fourteen-route viewport matrix, rapid reversal, exact important inline-style/scroll restoration, focus containment, GIF/error/background-state logic, native crossfade/history and missing APIs. Build/typecheck passed. Initial test fixture concurrency/preference-event assumptions corrected; explicit GIF clicks now read current visibility before observer callback.

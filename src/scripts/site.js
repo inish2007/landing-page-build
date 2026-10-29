@@ -1,58 +1,19 @@
-/** Initialize the single shared drawer. @returns {void} Registers DOM handlers and reveals the enhanced menu control. */
-export function initNavigation() {
-  const drawer = document.querySelector('#mobile-drawer');
-  const opener = document.querySelector('[data-menu-open]');
-  if (!(drawer instanceof HTMLDialogElement) || !(opener instanceof HTMLButtonElement)) return;
-  const closer = drawer.querySelector('[data-menu-close]');
-  const desktop = window.matchMedia('(min-width: 64rem)');
-  let previousOverflow = '';
-  let returnFocus = null;
-  /** Open modal and lock background scrolling. @returns {void} Changes focus, body overflow and expanded state. */
-  function openMenu() {
-    if (drawer.open) return;
-    returnFocus = document.activeElement;
-    previousOverflow = document.body.style.overflow;
-    drawer.showModal();
-    document.body.style.overflow = 'hidden';
-    opener.setAttribute('aria-expanded', 'true');
-  }
-  /** Close the dialog; the close event restores page state. @returns {void} Closes modal. */
-  function closeMenu() { if (drawer.open) drawer.close(); }
-  /** Restore scroll and focus after every close path. @returns {void} Updates DOM focus and expanded state. */
-  function restoreMenuState() {
-    document.body.style.overflow = previousOverflow;
-    opener.setAttribute('aria-expanded', 'false');
-    if (returnFocus instanceof HTMLElement && returnFocus.getClientRects().length) returnFocus.focus();
-    else document.querySelector('.brand')?.focus();
-  }
-  /** Keep Tab inside drawer, including reverse wrapping. @param {KeyboardEvent} event Keyboard input. @returns {void} May move focus and cancel default Tab behavior. */
-  function handleMenuKeydown(event) {
-    if (event.key !== 'Tab') return;
-    const controls = [...drawer.querySelectorAll('a[href], button:not([disabled])')];
-    const first = controls[0];
-    const last = controls.at(-1);
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
-    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
-  }
-  /** Dismiss on native Escape. @param {Event} event Dialog cancel event. @returns {void} Cancels native default and closes consistently. */
-  function handleMenuCancel(event) { event.preventDefault(); closeMenu(); }
-  /** Dismiss a backdrop click or selected link. @param {MouseEvent} event Click event. @returns {void} May close dialog. */
-  function handleDrawerClick(event) {
-    if (event.target instanceof Element && event.target.closest('a[href]')) closeMenu();
-    if (event.target === drawer) {
-      const bounds = drawer.getBoundingClientRect();
-      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeMenu();
-    }
-  }
-  /** Release modal when switching to desktop layout. @returns {void} May close drawer. */
-  function handleViewportChange() { if (desktop.matches) closeMenu(); }
-  opener.hidden = false;
-  opener.addEventListener('click', openMenu);
-  closer?.addEventListener('click', closeMenu);
-  drawer.addEventListener('close', restoreMenuState);
-  drawer.addEventListener('cancel', handleMenuCancel);
-  drawer.addEventListener('keydown', handleMenuKeydown);
-  drawer.addEventListener('click', handleDrawerClick);
-  desktop.addEventListener('change', handleViewportChange);
+import {createDialogController} from './dialog.js';
+let disposeNavigation;
+/** Initialize accessible responsive navigation. @returns {void} Owns abortable input handlers and shared cancellable dialog transitions. */
+export function initNavigation(){disposeNavigation?.();const drawer=document.querySelector('#mobile-drawer');const opener=document.querySelector('[data-menu-open]');if(!(drawer instanceof HTMLDialogElement)||!(opener instanceof HTMLButtonElement))return;const events=new AbortController();const desktop=matchMedia('(min-width: 64rem)');const controller=createDialogController(drawer,{axis:'x',distance:16,onOpen:()=>opener.setAttribute('aria-expanded','true'),onClosed:()=>opener.setAttribute('aria-expanded','false')});
+  /** Open/reopen drawer. @returns {void} Delegates lifecycle and preserves trigger focus. */
+  function openMenu(){controller.open(opener);}
+  /** Request cancellable close. @returns {void} Delegates native-modal cleanup. */
+  function closeMenu(){controller.close();}
+  /** Keep Tab inside controls throughout opening/closing. @param {KeyboardEvent} event Input. @returns {void} May move focus. */
+  function handleMenuKeydown(event){if(event.key!=='Tab')return;const controls=[...drawer.querySelectorAll('a[href],button:not([disabled])')];if(event.shiftKey&&document.activeElement===controls[0]){event.preventDefault();controls.at(-1)?.focus();}else if(!event.shiftKey&&document.activeElement===controls.at(-1)){event.preventDefault();controls[0]?.focus();}}
+  /** Dismiss selected links/backdrop without intercepting navigation. @param {MouseEvent} event Input. @returns {void} May request close. */
+  function handleDrawerClick(event){if(event.target instanceof Element&&event.target.closest('a[href]'))closeMenu();if(event.target===drawer){const r=drawer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeMenu();}}
+  /** Release drawer immediately at desktop breakpoint. @returns {void} Preserves focus/scroll cleanup. */
+  function handleViewportChange(){if(desktop.matches)controller.finishClose();}
+  /** Release previous initialization. @returns {void} Closes controller and aborts listeners. */
+  function dispose(){events.abort();controller.destroy();}
+  opener.hidden=false;opener.addEventListener('click',openMenu,{signal:events.signal});drawer.querySelector('[data-menu-close]')?.addEventListener('click',closeMenu,{signal:events.signal});drawer.addEventListener('keydown',handleMenuKeydown,{signal:events.signal});drawer.addEventListener('click',handleDrawerClick,{signal:events.signal});desktop.addEventListener('change',handleViewportChange,{signal:events.signal});disposeNavigation=dispose;
 }
 initNavigation();
