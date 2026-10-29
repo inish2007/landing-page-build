@@ -11,7 +11,7 @@ export function createThemeCss(config:SiteConfiguration):string {
     '--line-body':typography.lineHeights.body,'--line-heading':typography.lineHeights.heading,'--line-display':typography.lineHeights.display,'--line-brand':typography.lineHeights.brand,
     '--tracking-heading':typography.tracking.heading,'--tracking-editorial':typography.tracking.editorial,
     '--content-max':layout.maxWidth,'--content-narrow':layout.narrowWidth,'--page-gutter':layout.pageGutter,
-    '--motion-entry-duration':motion.entryDuration,'--motion-entry-stagger':motion.entryStagger,'--motion-fast':motion.fast,'--motion-standard':motion.standard,'--motion-ease':motion.easing,
+    '--motion-enabled':motion.enabled?1:0,'--motion-max-stagger':motion.maxStagger,'--motion-max-concurrent':motion.maxConcurrent,'--motion-dialog-open':motion.dialogOpen,'--motion-dialog-close':motion.dialogClose,'--motion-page-duration':motion.pageDuration+'ms','--motion-entry-duration':motion.entryDuration,'--motion-entry-stagger':motion.entryStagger,'--motion-fast':motion.fast,'--motion-standard':motion.standard,'--motion-ease':motion.easing,
   };
   for(const [name,value]of Object.entries(typography.sizes))variables['--text-'+name]=value;
   for(const [name,value]of Object.entries(spacing))variables['--space-'+name]=value;

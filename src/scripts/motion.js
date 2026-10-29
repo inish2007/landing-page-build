@@ -1,31 +1,32 @@
-/** Shared once-only opacity entry; visible defaults protect no-JS and API failure cases. @returns {void} Registers observer/preference listeners and temporary Web Animations. */
-export function initMotion() {
-  const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
-  const settings = getComputedStyle(document.documentElement);
-  const duration = parseFloat(settings.getPropertyValue('--motion-entry-duration')) || 1500;
-  const step = parseFloat(settings.getPropertyValue('--motion-entry-stagger')) || 11.1111;
-  const active = new Set();
-  const seen = new WeakSet();
-  /** Fade a visible, unfocused entry unit once. @param {Element} element Entry unit. @param {number} delay Milliseconds. @returns {void} Starts temporary opacity animation with no persistent hidden style. */
-  function fadeElement(element, delay = 0) {
-    if (preference.matches || seen.has(element)) return;
-    seen.add(element);
-    if (element.contains(document.activeElement)) return;
-    const animation = element.animate([{opacity:0},{opacity:1}], {duration,delay,easing:'ease',fill:'none'});
-    active.add(animation);
-    animation.finished.then(() => active.delete(animation), () => active.delete(animation));
-  }
-  /** Animate entry units and release observation after entry. @param {IntersectionObserverEntry[]} entries Visibility records. @returns {void} Starts fades and unobserves visible nodes. */
-  function handleEntries(entries) {
-    let index = 0;
-    for (const entry of entries) if (entry.isIntersecting) { fadeElement(entry.target,Math.min(index++ * step,100)); observer.unobserve(entry.target); }
-  }
-  const observer = new IntersectionObserver(handleEntries,{threshold:0.05});
-  /** Release running animation immediately for reduced motion. @returns {void} Cancels active effects, leaving base content visible. */
-  function handleMotionPreference() { if (preference.matches) { for (const animation of active) animation.cancel(); active.clear(); } }
-  preference.addEventListener('change',handleMotionPreference);
-  document.querySelectorAll('.site-header .brand, .desktop-nav > a').forEach((element,index) => fadeElement(element,index * step));
-  document.querySelectorAll('main > section > .image-frame, .intro-copy, .collaboration-copy, .home-collage > *, .page-heading, .editorial-block, .editorial-grid > .image-frame, .editorial-image-grid > .image-frame, .gallery-card, .feature-card, .contact-form').forEach(element => observer.observe(element));
+import {readMotionSettings} from './motion-settings.js';
+let disposeCurrent;
+/** Initialize explicit once-only below-fold reveals. @returns {void} Owns one observer, temporary animations and abortable lifecycle handlers; default DOM remains visible. */
+export function initMotion(){
+  disposeCurrent?.();const settings=readMotionSettings();
+  if(!settings.enabled||!('IntersectionObserver' in window)||!Element.prototype.animate)return;
+  const preference=matchMedia('(prefers-reduced-motion: reduce)');const events=new AbortController();const seen=new WeakSet();const active=new Map();
+  const targets=[...document.querySelectorAll('[data-motion="reveal"]')].filter(el=>!el.parentElement?.closest('[data-motion="reveal"]'));
+  /** Resolve current anchor without letting malformed hashes break rendering. @returns {Element|null} No writes. */
+  function anchorTarget(){try{return document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return null;}}
+  /** Check focus/anchor exclusions. @param {Element} element Reveal unit. @returns {boolean} Reads current DOM only. */
+  function protectedTarget(element){const anchor=anchorTarget();return element.contains(document.activeElement)||Boolean(anchor&&(anchor.contains(element)||element.contains(anchor)));}
+  /** Cancel temporary effects, restoring base visible content. @returns {void} Cancels only owned animations. */
+  function cancelReveals(){for(const animation of active.values())animation.cancel();active.clear();}
+  /** Start bounded entry effects and release entered nodes. @param {IntersectionObserverEntry[]} entries Visible candidates. @returns {void} Starts temporary opacity effects, never queues overflow. */
+  function handleEntries(entries){const groups=new Map();for(const entry of entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)){const element=entry.target;observer.unobserve(element);if(seen.has(element))continue;seen.add(element);if(preference.matches||document.hidden||protectedTarget(element)||active.size>=settings.maxConcurrent)continue;const group=element.closest('[data-motion-group]')||element.parentElement;const index=groups.get(group)||0;groups.set(group,index+1);try{const animation=element.animate([{opacity:0},{opacity:1}],{duration:settings.entryDuration,delay:Math.min(index*settings.entryStagger,settings.maxStagger),easing:settings.easing,fill:'backwards'});active.set(element,animation);const finish=()=>{if(active.get(element)===animation)active.delete(element);};animation.finished.then(finish,finish);}catch{/* Unsupported effects leave base styles visible. */}}}
+  const observer=new IntersectionObserver(handleEntries,{threshold:0.01});
+  /** Observe unseen units after excluding initial viewport/past content. @returns {void} Reads layout in one startup pass and registers observation. */
+  function observeTargets(){for(const element of targets){if(seen.has(element))continue;if(element.getBoundingClientRect().top<innerHeight||protectedTarget(element)){seen.add(element);continue;}observer.observe(element);}}
+  /** Release effects immediately on reduced motion or backgrounding. @returns {void} May cancel active effects. */
+  function handleMotionState(){if(preference.matches||document.hidden)cancelReveals();}
+  /** Ensure keyboard/anchor destinations never remain faded. @returns {void} Cancels excluded nodes only. */
+  function handleFocusOrHash(){for(const[element,animation]of active)if(protectedTarget(element)){animation.cancel();active.delete(element);}}
+  /** Suspend owned work for navigation/BFCache. @returns {void} Cancels effects and disconnects observer. */
+  function handlePageHide(){cancelReveals();observer.disconnect();}
+  /** Restore observation after browser history restoration. @returns {void} Re-observes unseen below-fold units without replaying seen units. */
+  function handlePageShow(){observeTargets();}
+  /** Release all controller resources before reinitializing. @returns {void} Aborts handlers and cancels/disconnects owned work. */
+  function disposeMotion(){events.abort();observer.disconnect();cancelReveals();}
+  preference.addEventListener('change',handleMotionState,{signal:events.signal});document.addEventListener('visibilitychange',handleMotionState,{signal:events.signal});document.addEventListener('focusin',handleFocusOrHash,{signal:events.signal});window.addEventListener('hashchange',handleFocusOrHash,{signal:events.signal});window.addEventListener('pagehide',handlePageHide,{signal:events.signal});window.addEventListener('pageshow',handlePageShow,{signal:events.signal});disposeCurrent=disposeMotion;observeTargets();
 }
 initMotion();

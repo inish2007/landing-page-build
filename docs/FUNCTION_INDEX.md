@@ -124,3 +124,13 @@ Changed: None
 Components: Gallery data island uses serializer; safe visible markup/keyboard behavior unchanged.
 
 Checks: Isolated hostile-title/caption/image-metadata browser test passed; Astro check passed. Normal/4x three-run performance and settled visual baselines captured before motion changes.
+
+## Stage 018 — shared-motion
+
+Added: readMotionSettings() in motion-settings.js: normalized generated settings. initMotion owns explicit units, observer and abortable events; nested anchorTarget(), protectedTarget(element), cancelReveals(), handleEntries(entries), observeTargets(), handleMotionState(), handleFocusOrHash(), handlePageHide(), handlePageShow(), disposeMotion(). verifyRevealLifecycle() in tests/motion.test.mjs.
+
+Changed: initMotion replaces broad selector/header entry behavior; initial/past viewport units visible immediately; below-fold once-only opacity 360ms, 40ms stagger capped120ms and six concurrent effects; excess shown without queue. createThemeCss adds typed switch/timing/budget variables. verifyMotionFallbacks recognizes revised duration; dedicated lifecycle test measures actual effects.
+
+Components: Explicit data-motion/data-motion-group attributes added to image/intro/collage/editorial/gallery/form units; nested units excluded.
+
+Checks: Astro check/build passed. Reveal lifecycle browser test passed: initial visibility, actual360ms, concurrency/stagger, focused node, reduced-motion cancellation, no replay.

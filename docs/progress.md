@@ -30,3 +30,5 @@ Stage 015 completed: integrate-central-customization. Astro check: 0 errors/warn
 Configuration maintenance completed: typed site.ts entry, all-component/theme/tooling integration, CUSTOMIZATION.md, explicit props, zero-difference baseline and seven passing tests. Local commits only.
 
 Stage 017 completed: gallery-json-security. Isolated hostile-title/caption/image-metadata browser test passed; Astro check passed. Normal/4x three-run performance and settled visual baselines captured before motion changes.
+
+Stage 018 completed: shared-motion. Astro check/build passed. Reveal lifecycle browser test passed: initial visibility, actual360ms, concurrency/stagger, focused node, reduced-motion cancellation, no replay.
