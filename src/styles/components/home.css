@@ -53,7 +53,7 @@ html:is([data-motion-enabled="false"],[data-motion-inactive="true"]) .pill-link:
 /* Requested persistent gold glow; static outline remains when motion is unavailable. */
 @keyframes about-gold-glow { 0%,100% { text-shadow: var(--about-shadow),0 0 3px var(--gold-mid); } 50% { text-shadow: var(--about-shadow),0 0 8px var(--gold-light),0 0 12px var(--gold-mid); } }
 @media (prefers-reduced-motion: no-preference) {
- html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .collage-about h2[data-about-glow] { animation: about-gold-glow var(--about-glow-duration) ease-in-out infinite; }
+ html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .collage-about[data-glow-visible="true"] h2[data-about-glow] { animation: about-gold-glow var(--about-glow-duration) ease-in-out infinite; }
 }
 
 .outlined-label { position: relative; display: inline-block; color: var(--color-text); -webkit-text-stroke: var(--text-labelStroke) var(--gold-dark); paint-order: stroke fill; }
