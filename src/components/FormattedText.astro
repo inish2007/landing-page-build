@@ -1,7 +1,7 @@
 ---
 import type { TextSegment } from '../config/types';
 interface Props {segments?:TextSegment[]}
-/** Safe structured inline text. Prop: segments; italic and circle/accent options only. */
+/** Safe structured inline text. Prop: segments; italic/accent plus focusable circle words with decorative SVG strokes. */
 const { segments = [] } = Astro.props;
 ---
-{segments.map(segment => <span class:list={[segment.highlight === 'circle' && 'highlight-circle', segment.highlight === 'accent' && 'highlight-accent']}>{segment.emphasis === 'italic' ? <em>{segment.text}</em> : segment.text}</span>)}
+{segments.map(segment => <span class:list={[segment.highlight === 'circle' && 'highlight-circle', segment.highlight === 'accent' && 'highlight-accent']} tabindex={segment.highlight === 'circle' ? 0 : undefined}>{segment.emphasis === 'italic' ? <em>{segment.text}</em> : segment.text}{segment.highlight === 'circle' && <svg class="circle-stroke" viewBox="0 0 120 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path data-circle-stroke pathLength="1" d="M 87 74 C 56 79 15 70 7 45 C -1 20 21 5 55 5 C 89 2 116 16 114 40 C 113 65 84 77 49 73 C 27 70 14 61 10 51" /></svg>}</span>)}

@@ -237,12 +237,19 @@ Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switc
 | pressScale | 0.98 | Button scale while pressed |
 | arrowTravel | 4 | Arrow movement in its direction, pixels |
 | revealTravel | 8 | Upward entry distance for eligible image-only units, pixels |
-| accentDuration | 420 | One-shot brand wobble/circle settle duration, milliseconds |
+| accentDuration | 420 | One-shot brand wobble duration, milliseconds |
+| circleDrawDuration | 650 | Circle stroke draw/replay duration, milliseconds |
 
 For gentler artwork movement, change `cardLift: 2`, `cardTilt: 0.5`, and `cardScale: 1.01`. For stationary branding and artwork, set `enabled: false` inside `playful`. Save, run `npm run check` and `npm run build`, then preview desktop and mobile.
 
-Buttons lift 2px and compress while held; keyboard artwork focus lifts without tilt. Hover movement requires a precise pointer. Circle accents settle once below the initial viewport; brand wobble plays once per deliberate hover/focus. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
+Buttons lift 2px and compress while held; keyboard artwork focus lifts without tilt. Hover movement requires a precise pointer. Circle strokes draw once when first visible and replay on precise-pointer hover or keyboard focus; brand wobble plays once per deliberate hover/focus. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
 
 These are reusable Tailwind utilities backed by generated CSS variables. You do not need to edit component classes, keyframes or JavaScript to change the settings above.
 
 The homepage “THE PROCESS” link uses the locally hosted secondary sans-serif font, typography.sizes.processLink (18–24px fluid size) and typography.weights.regular in site.ts. These settings do not change the surrounding serif statement.
+
+## Hand-drawn circle and Process accents
+
+Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #c5d600). theme.colors.primary remains #e5ff00 for the other yellow accents. Change theme.motion.playful.circleDrawDuration (default 650ms) to adjust stroke drawing. For example, set it to 800 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
+
+THE PROCESS retains its local regular sans-serif font and permanent dark hand-drawn SVG underline. Its link destination and typography controls are unchanged. The decorative circles/underline contain no downloadable media and require no new font or library.

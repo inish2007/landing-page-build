@@ -11,9 +11,9 @@ export interface PageSection { id:string; component:string; imageKey?:string; te
 export interface PageConfiguration { path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
 export interface Artwork { id:string; collection:string; titleKey:string; captionKey:string; imageKey:string; order:number }
 export interface SiteTheme {
-  colors: Record<'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;
+  colors: Record<'circle'|'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;
   typography: { fonts:Record<'primary'|'secondary'|'brand',FontDefinition>; sizes:Record<'processLink'|'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'regular'|'heading'|'brand'|'strong',string>; lineHeights:Record<'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
   spacing:Record<'1'|'2'|'3'|'4'|'5'|'6',string>;
   layout: { maxWidth:string; narrowWidth:string; pageGutter:string };
-  motion: { enabled:boolean; pageTransitions:boolean; entryDuration:number; entryStagger:number; maxStagger:number; maxConcurrent:number; dialogOpen:number; dialogClose:number; pageDuration:number; fast:string; standard:string; easing:string; playful:{enabled:boolean;hoverDuration:number;cardLift:number;cardTilt:number;cardScale:number;pressScale:number;arrowTravel:number;revealTravel:number;accentDuration:number} };
+  motion: { enabled:boolean; pageTransitions:boolean; entryDuration:number; entryStagger:number; maxStagger:number; maxConcurrent:number; dialogOpen:number; dialogClose:number; pageDuration:number; fast:string; standard:string; easing:string; playful:{enabled:boolean;circleDrawDuration:number;hoverDuration:number;cardLift:number;cardTilt:number;cardScale:number;pressScale:number;arrowTravel:number;revealTravel:number;accentDuration:number} };
 }

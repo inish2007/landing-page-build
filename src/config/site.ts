@@ -33,7 +33,7 @@ export const site = {
   links: { home:'/', colophon:'/colophon/', privacy:'/privacy/' },
   theme: {
     colors: {
-      primary:'#e5ff00', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
+      primary:'#e5ff00', circle:'#c5d600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
       text:'#171717', border:'#e6e4df', accentText:'#171717', focus:'#171717',
       subtleBackground:'#fafafa', onMedia:'white', shadow:'#000',
       overlay:'rgb(23 23 23 / .45)', modalOverlay:'rgb(0 0 0 / .7)',
@@ -60,7 +60,7 @@ export const site = {
     layout:{maxWidth:'90rem',narrowWidth:'56rem',pageGutter:'clamp(1.25rem, 3vw, 3rem)'},
     motion:{enabled:true as boolean,pageTransitions:true as boolean,entryDuration:360,entryStagger:40,maxStagger:120,maxConcurrent:6,dialogOpen:220,dialogClose:160,pageDuration:160,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
       // Playful interactions: distances in px, tilt in degrees, durations in ms.
-      playful:{enabled:true as boolean,hoverDuration:220,cardLift:4,cardTilt:1,cardScale:1.015,pressScale:0.98,arrowTravel:4,revealTravel:8,accentDuration:420}},
+      playful:{enabled:true as boolean,circleDrawDuration:650,hoverDuration:220,cardLift:4,cardTilt:1,cardScale:1.015,pressScale:0.98,arrowTravel:4,revealTravel:8,accentDuration:420}},
   } satisfies SiteTheme,
 };
 export type SiteConfiguration = typeof site;
