@@ -7,6 +7,7 @@ export function initMotion(){
   disposeCurrent?.();const settings=readMotionSettings();if(!settings.enabled)return;
   const canReveal=('IntersectionObserver' in window)&&Boolean(Element.prototype.animate);
   const preference=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
+  if(canReveal&&settings.playful)document.querySelector('.collage-about h2')?.setAttribute('data-about-glow','');
   const events=new AbortController(),seen=new WeakSet(),accentSeen=new WeakSet(),active=new Map();
   const strip=document.querySelector('[data-motion="social-drop"]');
   const socialEnabled=Boolean(strip&&canReveal&&settings.playful&&settings.socialDrop.enabled&&!preference.matches);
