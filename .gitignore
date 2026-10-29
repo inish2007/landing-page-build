@@ -1,0 +1,44 @@
+node_modules/
+dist/
+.astro/
+.cache/
+__pycache__/
+*.log
+.env
+.env.*
+!.env.example
+
+# Private agent instructions and local design references
+.agents/
+.codex/
+AGENTS.md
+AGENT*.md
+*AGENT_INSTRUCTIONS*.md
+**/AGENTS.md
+**/AGENT*.md
+ref.md
+ref/
+refs/
+reference/
+references/
+**/ref.md
+**/ref/
+**/refs/
+**/reference/
+**/references/
+evidence/
+screenshots/
+design-reference/
+scripts/*reference*.py
+scripts/*reference*.mjs
+docs/design-measurements.md
+docs/route-inventory.md
+commit-proof.json
+commit-proof.txt
+test-results/
+
+# Asset licenses, application assets, and function change logs stay tracked.
+# Do not ignore public/images, THIRD_PARTY_NOTICES.md, or docs/changes.
+
+# Local lowercase agent execution guide
+agent.md

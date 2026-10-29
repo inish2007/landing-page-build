@@ -1,0 +1,25 @@
+{
+  "name": "landing-page-build",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0"
+  },
+  "overrides": {
+    "@types/estree": "1.0.8"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.4",
+    "tailwindcss": "^4.3.3"
+  }
+}
