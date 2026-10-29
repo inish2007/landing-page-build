@@ -25,9 +25,9 @@
 @utility playful-card {
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
-      &:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))); }
+      &[data-image-ready="true"]:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))); }
       @media (hover: hover) and (pointer: fine) {
-        &:hover:not(:focus-visible) img { transform: translateY(calc(-1 * var(--playful-card-lift))) rotate(var(--playful-card-tilt)) scale(var(--playful-card-scale)); }
+        &[data-image-ready="true"]:hover:not(:focus-visible) img { transform: translateY(calc(-1 * var(--playful-card-lift))) rotate(var(--playful-card-tilt)) scale(var(--playful-card-scale)); }
       }
     }
   }
@@ -74,4 +74,4 @@
 @keyframes playful-wobble { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(calc(-1 * var(--playful-card-tilt))); } 65% { transform: rotate(var(--playful-card-tilt)); } }
 
 /* Arm only artwork a visitor actually touches; inactive gallery images need no transition setup. */
-@utility playful-image-transition { --playful-image-duration: var(--playful-hover-duration); transition: transform var(--playful-hover-duration) var(--motion-ease); }
+@utility playful-image-transition { --playful-image-duration: var(--playful-image-hover-duration); --playful-image-ease: var(--playful-image-easing); transition: transform var(--playful-image-duration) var(--playful-image-ease); }

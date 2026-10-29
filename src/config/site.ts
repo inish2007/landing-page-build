@@ -60,7 +60,7 @@ export const site = {
     layout:{maxWidth:'90rem',narrowWidth:'56rem',pageGutter:'clamp(1.25rem, 3vw, 3rem)'},
     motion:{enabled:true as boolean,pageTransitions:true as boolean,entryDuration:500,entryStagger:70,maxStagger:210,maxConcurrent:6,dialogOpen:300,dialogClose:160,pageDuration:240,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
       // Playful interactions: distances in px, tilt in degrees, durations in ms.
-      playful:{enabled:true as boolean,circleDrawDuration:900,hoverDuration:220,cardLift:6,cardTilt:1.5,cardScale:1.03,pressScale:0.98,arrowTravel:4,revealTravel:18,accentDuration:420}},
+      playful:{enabled:true as boolean,imageRevealDuration:1000,imageHoverDuration:700,imageEasing:'cubic-bezier(0.45, 0, 0.55, 1)',circleDrawDuration:900,hoverDuration:220,cardLift:6,cardTilt:1.5,cardScale:1.03,pressScale:0.98,arrowTravel:4,revealTravel:18,accentDuration:420}},
   } satisfies SiteTheme,
 };
 export type SiteConfiguration = typeof site;

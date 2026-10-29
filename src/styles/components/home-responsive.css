@@ -1,5 +1,5 @@
 /* Content-fit breakpoints: 64rem navigation, 48rem collage/footer, 30rem narrow controls. */
-.image-frame img { transition: transform var(--playful-image-duration,var(--motion-standard)) var(--motion-ease); }
+.image-frame img { transition: transform var(--playful-image-duration,var(--motion-standard)) var(--playful-image-ease,var(--motion-ease)); }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   html[data-motion-enabled="true"][data-playful-enabled="false"]:not([data-motion-inactive="true"]) .home-collage a:hover img, html[data-motion-enabled="true"][data-playful-enabled="false"]:not([data-motion-inactive="true"]) .social-strip a:hover img { transform: scale(1.025); }
   .pill-link { transition: transform var(--motion-fast) var(--motion-ease); }

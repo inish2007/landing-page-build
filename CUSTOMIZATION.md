@@ -209,7 +209,7 @@ Save logical changes as separate local commits. Do not push or publish without t
 |---|---:|---|
 | `enabled` | `true` | Master switch for automatic UI effects and GIF autoplay |
 | `pageTransitions` | `true` | Native same-origin page crossfades where supported |
-| `entryDuration` | `500` | Below-fold opacity reveal duration, milliseconds |
+| `entryDuration` | `500` | Text-only reveal duration, milliseconds; images use imageRevealDuration |
 | `entryStagger` | `70` | Delay between units in a revealed group, milliseconds |
 | `maxStagger` | `210` | Maximum reveal-group delay, milliseconds |
 | `maxConcurrent` | `6` | Concurrent reveal budget; excess content appears immediately |
@@ -230,7 +230,10 @@ Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switc
 | Setting | Default | What it changes |
 |---|---:|---|
 | enabled | true | Artwork/brand/arrow/underline and circle enhancements |
-| hoverDuration | 220 | Hover/focus/press transition duration, milliseconds |
+| hoverDuration | 220 | Button/link/arrow transition duration, milliseconds |
+| imageRevealDuration | 1000 | Image/card reveal duration, milliseconds |
+| imageHoverDuration | 700 | Image hover and return duration, milliseconds |
+| imageEasing | cubic-bezier(0.45, 0, 0.55, 1) | Gradual image ease-in/ease-out |
 | cardLift | 6 | Artwork lift, pixels; keep small |
 | cardTilt | 1.5 | Pointer-only artwork tilt, degrees |
 | cardScale | 1.03 | Pointer-only artwork image scale |
@@ -267,3 +270,5 @@ Do not type a fixed year. Astro inserts the build machine's local year into ever
 Without JavaScript, visitors see the year from the last build. A page left open across New Year updates on its next load or history restoration; there is no background timer, external request or need to rebuild for JavaScript-enabled visitors. The visitor's device clock determines the browser year.
 
 Validation rejects missing or duplicate `{year}` markers. After editing, run `npm run check` and `npm run build`; preview with and without JavaScript to check the footer. Existing motion settings are unrelated to copyright and remain unchanged.
+
+Images now use separate slow settings in theme.motion.playful. imageRevealDuration controls image frames and image-bearing cards/links (including their captions); standalone text keeps entryDuration500ms. imageHoverDuration applies both entering and leaving hover, with imageEasing for a gentle start/stop. For even slower images, try imageRevealDuration:1200 and imageHoverDuration:900. Movement distances, layout and control timing stay unchanged. Reduced-motion and other fallbacks still settle immediately.

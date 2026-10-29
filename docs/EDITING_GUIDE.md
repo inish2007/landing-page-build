@@ -27,3 +27,5 @@ Circle-only yellow: theme.colors.circle. Draw/replay timing: theme.motion.playfu
 Copyright owner/wording: footer.copyright in text.en.json (through site.text). Keep exactly one {year} marker. Build-local year is static fallback; browser uses visitor-local year on load/pageshow. Leave the separate designCredit field intact unless intentionally editing required attribution.
 
 Visible playful motion: image entry18px, image hover6px/1.5deg/scale1.03 and circles900ms. Edit the existing centralized motion/playful settings; no component edits needed.
+
+Slow smooth image settings are separate: playful.imageRevealDuration1000ms, imageHoverDuration700ms and imageEasing. Standalone text retains500ms; controls220ms. Client guide explains the image/caption grouping.
