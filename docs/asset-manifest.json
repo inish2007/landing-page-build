@@ -539,5 +539,20 @@
       "social6"
     ],
     "note": "All configured image selections replaced; previous source assets retained on disk."
+  },
+  "videoOverride": {
+    "src": "/media/video-placeholder.gif",
+    "poster": "/media/video-placeholder-poster.png",
+    "width": 1160,
+    "height": 653,
+    "altKey": "media.alt",
+    "source": "https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif",
+    "license": "User-selected asset; no open-license claim",
+    "retrievalDate": "2026-10-29",
+    "modifications": "Original GIF unchanged; first-frame PNG poster generated using sharp.",
+    "slots": [
+      "/the-process/",
+      "/home-1/"
+    ]
   }
 }

@@ -321,6 +321,15 @@
           "href": "https://shayjewelry.com/collections/lanas-edit"
         }
       ]
+    },
+    "home-1": {
+      "title": "Lana Gomez Art",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "Lana Gomez’s artistic journey is a testament to the boundless spirit of a kind-hearted rebel."
+        }
+      ]
     }
   },
   "gallery": {
@@ -579,6 +588,51 @@
     "archived-22": {
       "title": "Fly Me To The Moon - SOLD ",
       "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    }
+  },
+  "media": {
+    "alt": "Animated wallpaper selected as the video placeholder.",
+    "play": "Play animation",
+    "pause": "Pause animation"
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "For pricing, commissions, brand partnerships and media inquiries please contact Lanagomezart@gmail.com.",
+    "emailLabel": "Email the studio",
+    "email": "Lanagomezart@gmail.com",
+    "localNotice": "Local form preview only. No message is sent or stored.",
+    "nameLabel": "Name",
+    "emailField": "Email",
+    "messageLabel": "Message",
+    "submit": "Preview inquiry",
+    "success": "Your inquiry is valid. This local preview has not sent or stored it."
+  },
+  "legal": {
+    "colophon": {
+      "title": "Colophon & Notices",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "This local portfolio uses editable Astro components and locally hosted Fraunces, Plus Jakarta Sans and Caveat Brush fonts. Font notices are retained with the project."
+        },
+        {
+          "tag": "P",
+          "text": "The artist copy was supplied as temporary reference content. Original ownership and design credit remain acknowledged. All ordinary imagery currently uses the user-supplied dark placeholder; the user-selected wallpaper GIF replaces video slots. No open license is asserted for supplied copy or media."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "This local build includes no analytics or tracking scripts. The inquiry preview validates fields in your browser and does not send or store messages."
+        },
+        {
+          "tag": "P",
+          "text": "Email, social, press and shop links open independent services if you choose to follow them. Their privacy practices apply there."
+        }
+      ]
     }
   }
 }

@@ -60,7 +60,8 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.the-process"
       }
-    ]
+    ],
+    "mediaKey": "processVideo"
   },
   "available-art": {
     "path": "/available-art/",
@@ -151,6 +152,60 @@
         "id": "shay-lanagomez-luxury-jewelry-collection-content",
         "component": "EditorialHeader",
         "textNamespace": "editorial.shay-lanagomez-luxury-jewelry-collection"
+      }
+    ]
+  },
+  "contact": {
+    "path": "/contact/",
+    "kind": "contact",
+    "titleKey": "contact.title",
+    "sections": [
+      {
+        "id": "contact-form",
+        "component": "ContactForm"
+      }
+    ]
+  },
+  "colophon": {
+    "path": "/colophon/",
+    "kind": "editorial",
+    "titleKey": "legal.colophon.title",
+    "textNamespace": "legal.colophon",
+    "imageCount": 0,
+    "sections": [
+      {
+        "id": "colophon",
+        "component": "EditorialHeader",
+        "textNamespace": "legal.colophon"
+      }
+    ]
+  },
+  "privacy": {
+    "path": "/privacy/",
+    "kind": "editorial",
+    "titleKey": "legal.privacy.title",
+    "textNamespace": "legal.privacy",
+    "imageCount": 0,
+    "sections": [
+      {
+        "id": "privacy",
+        "component": "EditorialHeader",
+        "textNamespace": "legal.privacy"
+      }
+    ]
+  },
+  "home-1": {
+    "path": "/home-1/",
+    "kind": "editorial",
+    "titleKey": "editorial.home-1.title",
+    "textNamespace": "editorial.home-1",
+    "imageCount": 0,
+    "mediaKey": "processVideo",
+    "sections": [
+      {
+        "id": "home-video",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.home-1"
       }
     ]
   }

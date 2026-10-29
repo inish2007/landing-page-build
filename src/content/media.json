@@ -1,0 +1,11 @@
+{
+  "processVideo": {
+    "src": "/media/video-placeholder.gif",
+    "poster": "/media/video-placeholder-poster.png",
+    "width": 1160,
+    "height": 653,
+    "altKey": "media.alt",
+    "source": "https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif",
+    "license": "User-selected asset; no open-license claim"
+  }
+}

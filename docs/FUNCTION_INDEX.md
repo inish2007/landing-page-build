@@ -137,3 +137,13 @@ Changed: getStaticPaths enumerates four added route configurations; no signature
 Components: EditorialPage now renders configured source article/shop links; Press, Collaborations, Pagerie and SHAY detail routes added.
 
 Checks: npm run build passed: 10 routes.
+
+## Stage 010 — contact-media-secondary
+
+Added: initContactForm(), handleInquirySubmit(event), clearInquiryStatus() in contact.js: local validation/status only. initAnimatedMedia(), setPlayback(value), togglePlayback(), handleMediaPreference() in media.js: GIF/poster pause and reduced motion.
+
+Changed: getStaticPaths adds configured contact/legal/home-1 routes; EditorialPage supports optional media.
+
+Components: ContactForm and AnimatedMedia added; EditorialPage and dynamic route updated; home/process redirect aliases.
+
+Checks: npm run build passed; browser verification follows Stage 12.
