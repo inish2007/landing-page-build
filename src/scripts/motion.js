@@ -1,12 +1,17 @@
 import {readMotionSettings} from './motion-settings.js';
+import {chooseSocialDropDirection} from './social-drop.js';
 let disposeCurrent;
+let socialDirection;
 /** Own one reveal observer, replayable SVG strokes and abortable lifecycle handlers. Base DOM is complete and visible. @returns {void} */
 export function initMotion(){
   disposeCurrent?.();const settings=readMotionSettings();if(!settings.enabled)return;
   const canReveal=('IntersectionObserver' in window)&&Boolean(Element.prototype.animate);
   const preference=matchMedia('(prefers-reduced-motion: reduce)'),finePointer=matchMedia('(hover: hover) and (pointer: fine)');
   const events=new AbortController(),seen=new WeakSet(),active=new Map();
-  const targets=canReveal?[...document.querySelectorAll('[data-motion="reveal"], .highlight-circle')].filter(el=>el.matches('.highlight-circle')?settings.playful:!el.parentElement?.closest('[data-motion="reveal"]')):[];
+  const strip=document.querySelector('[data-motion="social-drop"]');
+  const socialEnabled=Boolean(strip&&canReveal&&settings.playful&&settings.socialDrop.enabled&&!preference.matches);
+  if(socialEnabled&&socialDirection===undefined){try{socialDirection=settings.socialDrop.alternateOnLoad?chooseSocialDropDirection(window.localStorage,true,window.performance?.getEntriesByType?.('navigation')?.[0]?.type!=='back_forward'):'forward';}catch{socialDirection='forward';}}
+  const targets=canReveal?[...document.querySelectorAll('[data-motion="reveal"], .highlight-circle, [data-motion="social-drop"]')].filter(el=>el.matches('[data-motion="social-drop"]')||(!el.closest('[data-motion="social-drop"]')&&(el.matches('.highlight-circle')?settings.playful:!el.parentElement?.closest('[data-motion="reveal"]')))):[];
   /** Resolve current anchor safely. @returns {Element|null} Reads DOM only. */
   function anchorTarget(){try{return document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return null;}}
   /** Protect focused/anchor content from entry fades. @param {Element} element Reveal unit. @returns {boolean} */
@@ -17,11 +22,18 @@ export function initMotion(){
   function cancelReveals(){for(const animation of active.values())animation.cancel();active.clear();}
   /** Start one fresh, bounded SVG draw; prior effect is cancelled before checking capacity. @param {Element} circle Word wrapper. @param {number} delay Group delay in ms. @returns {void} Paint is limited to two small SVG paths. */
   function drawCircle(circle,delay=0){active.get(circle)?.cancel();active.delete(circle);if(!canReveal||!settings.playful||preference.matches||document.hidden||active.size>=settings.maxConcurrent)return;const path=circle.querySelector('[data-circle-stroke]');if(!path)return;try{trackEffect(circle,path.animate([{strokeDashoffset:'1'},{strokeDashoffset:'0'}],{duration:settings.circleDrawDuration,delay,easing:'linear',fill:'backwards'}));}catch{/* Unsupported effects keep the complete base stroke. */}}
+  /** Drop six outer cards in the stored order while retaining independent inner-image hover. @param {Element} group Social strip. @returns {void} Settles other owned reveals before reserving six slots; all failure paths leave base cards visible. */
+  function playSocialDrop(group){
+    const items=[...group.querySelectorAll(':scope > [data-social-drop-item]')];
+    if(!socialEnabled||preference.matches||document.hidden||protectedTarget(group)||group.getBoundingClientRect().height>innerHeight||items.length!==6||settings.maxConcurrent<items.length)return;
+    cancelReveals();const ordered=socialDirection==='reverse'?[...items].reverse():items;
+    try{for(const [index,item]of ordered.entries())trackEffect(item,item.animate([{opacity:0,transform:`translateY(${-settings.socialDrop.distance}px)`},{opacity:1,transform:'translateY(0px)'}],{duration:settings.socialDrop.duration,delay:index*settings.socialDrop.stagger,easing:settings.imageEasing,fill:'backwards'}));}catch{for(const item of items){active.get(item)?.cancel();active.delete(item);}}
+  }
   /** Observe entered units once, sharing the same budget/delay cap with stroke draws. @param {IntersectionObserverEntry[]} entries Visible candidates. @returns {void} */
-  function handleEntries(entries){const groups=new Map();for(const entry of entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)){const element=entry.target;observer?.unobserve(element);if(seen.has(element))continue;seen.add(element);if(preference.matches||document.hidden||protectedTarget(element)||active.size>=settings.maxConcurrent)continue;const group=element.closest('[data-motion-group]')||element.parentElement,index=groups.get(group)||0;groups.set(group,index+1);const delay=Math.min(index*settings.entryStagger,settings.maxStagger);if(element.matches('.highlight-circle')){drawCircle(element,delay);continue;}const image=settings.playful&&element.matches('.image-frame');const imageUnit=settings.playful&&element.matches('.image-frame,.gallery-card,.playful-card');try{trackEffect(element,element.animate(image?[{opacity:0,transform:`translateY(${settings.revealTravel}px)`},{opacity:1,transform:'translateY(0px)'}]:[{opacity:0},{opacity:1}],{duration:imageUnit?settings.imageRevealDuration:settings.entryDuration,delay,easing:imageUnit?settings.imageEasing:settings.easing,fill:'backwards'}));}catch{/* Base content stays visible. */}}}
-  const observer=canReveal?new IntersectionObserver(handleEntries,{threshold:0.01}):null;
+  function handleEntries(entries){const groups=new Map();for(const entry of entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)){const element=entry.target;if(element.matches('[data-motion="social-drop"]')){if(seen.has(element))continue;if(entry.intersectionRatio<0.75)continue;seen.add(element);observer?.unobserve(element);playSocialDrop(element);continue;}observer?.unobserve(element);if(seen.has(element))continue;seen.add(element);if(preference.matches||document.hidden||protectedTarget(element)||active.size>=settings.maxConcurrent)continue;const group=element.closest('[data-motion-group]')||element.parentElement,index=groups.get(group)||0;groups.set(group,index+1);const delay=Math.min(index*settings.entryStagger,settings.maxStagger);if(element.matches('.highlight-circle')){drawCircle(element,delay);continue;}const image=settings.playful&&element.matches('.image-frame');const imageUnit=settings.playful&&element.matches('.image-frame,.gallery-card,.playful-card');try{trackEffect(element,element.animate(image?[{opacity:0,transform:`translateY(${settings.revealTravel}px)`},{opacity:1,transform:'translateY(0px)'}]:[{opacity:0},{opacity:1}],{duration:imageUnit?settings.imageRevealDuration:settings.entryDuration,delay,easing:imageUnit?settings.imageEasing:settings.easing,fill:'backwards'}));}catch{/* Base content stays visible. */}}}
+  const observer=canReveal?new IntersectionObserver(handleEntries,{threshold:[0.01,0.75]}):null;
   /** Exclude initial visible prose/images; circles may draw on their first viewport entry. @returns {void} */
-  function observeTargets(){for(const element of targets){if(seen.has(element))continue;if(protectedTarget(element)||(!element.matches('.highlight-circle')&&element.getBoundingClientRect().top<innerHeight)){seen.add(element);continue;}observer?.observe(element);}}
+  function observeTargets(){for(const element of targets){if(seen.has(element))continue;if(element.matches('[data-motion="social-drop"]')){if(!socialEnabled||protectedTarget(element)||element.getBoundingClientRect().height>innerHeight){seen.add(element);continue;}observer?.observe(element);continue;}if(protectedTarget(element)||(!element.matches('.highlight-circle')&&element.getBoundingClientRect().top<innerHeight)){seen.add(element);continue;}observer?.observe(element);}}
   /** Settle SVG/WAAPI/CSS effects on reduced motion or backgrounding. @returns {void} */
   function handleMotionState(){document.documentElement.dataset.motionInactive=String(document.hidden);if(preference.matches||document.hidden)cancelReveals();}
   /** Prevent focused/anchor content from staying faded. @returns {void} */
