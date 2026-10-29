@@ -127,3 +127,13 @@ Changed: getStaticPaths now enumerates added gallery configurations; unchanged s
 Components: Gallery(page) renders available/archived/work routes, ordered cards and native lightbox.
 
 Checks: npm run build passed: 6 routes; browser verification scheduled Stage 12.
+
+## Stage 009 — press-collaborations
+
+Added: None
+
+Changed: getStaticPaths enumerates four added route configurations; no signature change.
+
+Components: EditorialPage now renders configured source article/shop links; Press, Collaborations, Pagerie and SHAY detail routes added.
+
+Checks: npm run build passed: 10 routes.

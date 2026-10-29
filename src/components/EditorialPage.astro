@@ -11,5 +11,6 @@ const copy = getCopy(page.textNamespace);
     <ResponsiveImage imageKey="homeHero" aspectRatio="4 / 5" eager />
     <div class="editorial-prose">{copy.blocks.map(block => <div class="editorial-block">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>)}</div>
   </div>
+  {copy.links?.length > 0 && <nav class="editorial-links" aria-label={copy.title}>{copy.links.map(link => <a href={link.href}>{link.label}<span aria-hidden="true"> ↗</span></a>)}</nav>}
   <div class="editorial-image-grid">{Array.from({length:Math.max(0,page.imageCount-1)}).map(() => <ResponsiveImage imageKey="homeIntroSide" aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
 </article>

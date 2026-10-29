@@ -97,5 +97,61 @@
         "component": "Gallery"
       }
     ]
+  },
+  "press": {
+    "path": "/press/",
+    "kind": "editorial",
+    "titleKey": "editorial.press.title",
+    "textNamespace": "editorial.press",
+    "imageCount": 2,
+    "sections": [
+      {
+        "id": "press-content",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.press"
+      }
+    ]
+  },
+  "collaborations": {
+    "path": "/collaborations/",
+    "kind": "editorial",
+    "titleKey": "editorial.collaborations.title",
+    "textNamespace": "editorial.collaborations",
+    "imageCount": 6,
+    "sections": [
+      {
+        "id": "collaborations-content",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.collaborations"
+      }
+    ]
+  },
+  "pagerie-lana-gomez-luxury-bags": {
+    "path": "/pagerie-lana-gomez-luxury-bags/",
+    "kind": "editorial",
+    "titleKey": "editorial.pagerie-lana-gomez-luxury-bags.title",
+    "textNamespace": "editorial.pagerie-lana-gomez-luxury-bags",
+    "imageCount": 6,
+    "sections": [
+      {
+        "id": "pagerie-lana-gomez-luxury-bags-content",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.pagerie-lana-gomez-luxury-bags"
+      }
+    ]
+  },
+  "shay-lanagomez-luxury-jewelry-collection": {
+    "path": "/shay-lanagomez-luxury-jewelry-collection/",
+    "kind": "editorial",
+    "titleKey": "editorial.shay-lanagomez-luxury-jewelry-collection.title",
+    "textNamespace": "editorial.shay-lanagomez-luxury-jewelry-collection",
+    "imageCount": 8,
+    "sections": [
+      {
+        "id": "shay-lanagomez-luxury-jewelry-collection-content",
+        "component": "EditorialHeader",
+        "textNamespace": "editorial.shay-lanagomez-luxury-jewelry-collection"
+      }
+    ]
   }
 }

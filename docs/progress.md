@@ -65,3 +65,5 @@ User explicitly requested no new page build. Agent instructions and IMPLEMENTATI
 Stage 007 completed: about-process-motion. npm run build passed: 3 routes. Browser checks follow in Stage 12.
 
 Stage 008 completed: galleries. npm run build passed: 6 routes; browser verification scheduled Stage 12.
+
+Stage 009 completed: press-collaborations. npm run build passed: 10 routes.

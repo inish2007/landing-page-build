@@ -19,3 +19,5 @@
 .artwork-dialog button { min-height: 44px; }
 @media (max-width: 63.999rem) { .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 47.999rem) { .gallery-grid { grid-template-columns: 1fr; } }
+.editorial-links { display: grid; gap: var(--space-3); margin-block: var(--space-5); max-width: 65ch; }
+.editorial-links a { text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }

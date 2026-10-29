@@ -137,6 +137,190 @@
           "text": "I create with the intention that when others gaze upon my art, they too will find themselves drawn into their own nostalgic memories while connecting with and drawing inspiration from my personal narrative."
         }
       ]
+    },
+    "press": {
+      "title": "Featured In",
+      "blocks": [
+        {
+          "tag": "H2",
+          "text": "Featured In:"
+        },
+        {
+          "tag": "H2",
+          "text": "Highlights"
+        },
+        {
+          "tag": "P",
+          "text": "HOME IS WHERE THE ART ISW MAGAZINE"
+        },
+        {
+          "tag": "P",
+          "text": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECTARCHITECTURAL DIGEST"
+        },
+        {
+          "tag": "P",
+          "text": "FOUR QUESTIONS FOR LANA GOMEZGULFSHORE LIFE"
+        },
+        {
+          "tag": "P",
+          "text": "ARTIST LANA GOMEZ USES LIFE AS HER CANVASJEWISH JOURNAL"
+        },
+        {
+          "tag": "P",
+          "text": "ART BASEL MIAMI RECAPHUFF POST STYLE"
+        }
+      ],
+      "links": [
+        {
+          "label": "HOME IS WHERE THE ART IS\nW MAGAZINE",
+          "href": "https://www.wmagazine.com/life/esther-kim-joseph-varet-various-small-fires-home"
+        },
+        {
+          "label": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECT\nARCHITECTURAL DIGEST",
+          "href": "https://www.architecturaldigest.com/story/feast-your-eyes-on-kelly-wearstlers-latest-project"
+        },
+        {
+          "label": "FOUR QUESTIONS FOR LANA GOMEZ\nGULFSHORE LIFE",
+          "href": "https://www.gulfshorelife.com/2014/04/09/four-questions-for-lana-gomez/"
+        },
+        {
+          "label": "ARTIST LANA GOMEZ USES LIFE AS HER CANVAS\nJEWISH JOURNAL",
+          "href": "https://jewishjournal.com/culture/arts/305596/artist-lana-gomez-uses-life-as-her-canvas/"
+        },
+        {
+          "label": "ART BASEL MIAMI RECAP\nHUFF POST STYLE",
+          "href": "https://www.huffpost.com/entry/art-basel-miami-mansion-h_b_6300476"
+        }
+      ]
+    },
+    "collaborations": {
+      "title": "Lana’s Collaborations",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "A HANDBAG COLLABORATION CREATED BY LANA GOMEZ IN PARTNERSHIP WITH PAGERIE"
+        },
+        {
+          "tag": "P",
+          "text": "An ode to the Modern Renaissance Woman: multifaceted, creative, strong, tender all at once. This is more than an accessory. It’s a collector’s item. A story. A fragment of art you can carry with you. All bags are handcrafted from one painting – no two bags are alike."
+        },
+        {
+          "tag": "P",
+          "text": "SHOP THE COLLECTION"
+        },
+        {
+          "tag": "H3",
+          "text": "About the collaboration"
+        },
+        {
+          "tag": "P",
+          "text": "50 BAGS. 50 STORIES. 50 UNIQUE PIECESOF ART."
+        },
+        {
+          "tag": "P",
+          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist Lana Gomez, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by Lana herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
+        },
+        {
+          "tag": "P",
+          "text": "Handcrafted from Pagerie’s signature grain leather and finished with custom surgical-grade stainless steel hardware, The Lana Bag blends timeless artistry with purposeful design. Lightweight and effortless to carry, it was created for the multifaceted woman who values rarity, craftsmanship, and functionality in equal measure."
+        }
+      ],
+      "links": [
+        {
+          "label": "PAGERIE X LANA GOMEZ",
+          "href": "/pagerie-lana-gomez-luxury-bags/"
+        },
+        {
+          "label": "SHAY X LANA GOMEZ",
+          "href": "/shay-lanagomez-luxury-jewelry-collection/"
+        },
+        {
+          "label": "SHOP THE COLLECTION",
+          "href": "https://www.pagerie.com"
+        }
+      ]
+    },
+    "pagerie-lana-gomez-luxury-bags": {
+      "title": "The Lana Bag",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "A HANDBAG COLLABORATION CREATED BY LANA GOMEZ IN PARTNERSHIP WITH PAGERIE"
+        },
+        {
+          "tag": "P",
+          "text": "An ode to the Modern Renaissance Woman: multifaceted, creative, strong, tender all at once. This is more than an accessory. It’s a collector’s item. A story. A fragment of art you can carry with you. All bags are handcrafted from one painting – no two bags are alike."
+        },
+        {
+          "tag": "P",
+          "text": "SHOP THE COLLECTION"
+        },
+        {
+          "tag": "H3",
+          "text": "About the collaboration"
+        },
+        {
+          "tag": "P",
+          "text": "50 BAGS. 50 STORIES. 50 UNIQUE PIECESOF ART."
+        },
+        {
+          "tag": "P",
+          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist Lana Gomez, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by Lana herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
+        },
+        {
+          "tag": "P",
+          "text": "Handcrafted from Pagerie’s signature grain leather and finished with custom surgical-grade stainless steel hardware, The Lana Bag blends timeless artistry with purposeful design. Lightweight and effortless to carry, it was created for the multifaceted woman who values rarity, craftsmanship, and functionality in equal measure."
+        }
+      ],
+      "links": [
+        {
+          "label": "SHOP THE COLLECTION",
+          "href": "https://www.pagerie.com"
+        }
+      ]
+    },
+    "shay-lanagomez-luxury-jewelry-collection": {
+      "title": "SHAY x LANA GOMEZ",
+      "blocks": [
+        {
+          "tag": "P",
+          "text": "A JEWELRY COLLABORATION BY SHAY IN PARTNERSHIP WITH LANA GOMEZ"
+        },
+        {
+          "tag": "P",
+          "text": "Modern heirlooms to celebrate feminine strength, individuality, and creative power. Made by women, designed by women."
+        },
+        {
+          "tag": "P",
+          "text": "SHOP THE COLLECTION"
+        },
+        {
+          "tag": "H3",
+          "text": "About the collaboration"
+        },
+        {
+          "tag": "P",
+          "text": "When Tanaz and Ladan joined long time SHAY enthusiast Lana Gomez, the collaboration felt inevitable. United by friendship, artistry, and family drive values, they’ve created a capsule that transforms Lana’s signature cultural forms into 18k gold, diamond, and emerald jewels."
+        },
+        {
+          "tag": "P",
+          "text": "The result: modern heirlooms that celebrate feminine strength, individuality, and creative power, made by women, designed for women, and destined to be collected."
+        },
+        {
+          "tag": "P",
+          "text": "THREE WOMEN. THREE CREATIVE FORCES. ONE VISION."
+        }
+      ],
+      "links": [
+        {
+          "label": "SHOP THE",
+          "href": "https://shayjewelry.com/collections/shay-x-lana-gomez?srsltid=AfmBOorBznmoQ0kGPm84vB8exLbVjnQHvdhHx7mUgOYq-PqOLH0QJDX_"
+        },
+        {
+          "label": "COLLECTION",
+          "href": "https://shayjewelry.com/collections/lanas-edit"
+        }
+      ]
     }
   },
   "gallery": {
