@@ -11,7 +11,7 @@ import GoldenOutlineText from './GoldenOutlineText.astro';
     <label for="inquiry-name">{getCopy('contact.nameLabel')}</label><input id="inquiry-name" name="name" autocomplete="name" required maxlength="150" />
     <label for="inquiry-email">{getCopy('contact.emailField')}</label><input id="inquiry-email" name="email" type="email" autocomplete="email" required maxlength="254" />
     <label for="inquiry-message">{getCopy('contact.messageLabel')}</label><textarea id="inquiry-message" name="message" rows="6" required maxlength="5000"></textarea>
-    <button class="playful-button" type="submit" hidden data-contact-submit>{getCopy('contact.submit')}</button>
+    <button class="playful-button" type="submit" hidden data-contact-submit><span class="button-face">{getCopy('contact.submit')}</span></button>
     <p data-contact-status role="status" data-valid-message={getCopy('contact.success')}></p>
   </form>
 </section>

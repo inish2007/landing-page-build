@@ -18,10 +18,10 @@ const items = getArtworks().filter(item => item.collection === page.collection).
   </figure>)}</div>
 </section>
 <dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title">
-  <button class="playful-button" data-lightbox-close>{getCopy('gallery.close')} <SiteIcon name="close" /></button>
+  <button class="playful-button" data-lightbox-close><span class="button-face">{getCopy('gallery.close')} <SiteIcon name="close" /></span></button>
   <img data-lightbox-image alt="" />
   <h2 id="artwork-title"></h2><p data-lightbox-caption></p>
-  <div class="lightbox-controls"><button class="playful-button" data-lightbox-prev>{getCopy('gallery.previous')} <SiteIcon name="previous" /></button><button class="playful-button" data-lightbox-next>{getCopy('gallery.next')} <SiteIcon name="next" /></button></div>
+  <div class="lightbox-controls"><button class="playful-button" data-lightbox-prev><span class="button-face">{getCopy('gallery.previous')} <SiteIcon name="previous" /></span></button><button class="playful-button" data-lightbox-next><span class="button-face">{getCopy('gallery.next')} <SiteIcon name="next" /></span></button></div>
 </dialog>
 <script type="application/json" id="artworks-data" set:html={serializeJsonForHtml(items.map(item => ({id:item.id,title:getCopy(item.titleKey),caption:getCopy(item.captionKey),image:getImage(item.imageKey)})))} />
 <script>import '../scripts/gallery.js';</script>

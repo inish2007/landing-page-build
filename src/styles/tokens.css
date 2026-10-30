@@ -32,7 +32,7 @@
     }
   }
 }
-@utility playful-button { transition: opacity var(--button-feedback-duration) ease; }
+@utility playful-button { position: relative; }
 @utility playful-link {
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
