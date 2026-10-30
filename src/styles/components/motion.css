@@ -36,3 +36,13 @@ html[data-motion-enabled="false"] .playful-link::before { transition: none !impo
 [data-social-drop-state="pending"] > [data-social-drop-item] { opacity: 0; }
 [data-social-drop-state] img { transform: none !important; }
 @media (prefers-reduced-motion: reduce) { [data-social-drop-state] > [data-social-drop-item] { opacity: 1 !important; } }
+
+/* Client baseline: only restrained opacity feedback on controls; image-card hover is separate. */
+:is(button:not(.gallery-open),.pill-link) { transition: opacity var(--button-feedback-duration) ease; }
+:is(button:not(.gallery-open),.pill-link):is(:active,:focus-visible) { opacity: var(--button-feedback-opacity); }
+@media (hover: hover) and (pointer: fine) { :is(button:not(.gallery-open),.pill-link):hover { opacity: var(--button-feedback-opacity); } }
+@media (prefers-reduced-motion: reduce) { :is(button:not(.gallery-open),.pill-link) { transition: none !important; } }
+html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) :is(button:not(.gallery-open),.pill-link) { transition: none; }
+html[data-shine-enabled="false"] :is(.outline-sweep,.gold-shine[data-shining]) { animation: none; }
+html[data-shine-enabled="false"] .outline-sweep { visibility: hidden !important; }
+html[data-shine-enabled="false"] .gold-shine { background-image: none; color: var(--shine-base); -webkit-text-fill-color: var(--shine-base); }

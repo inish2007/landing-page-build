@@ -34,7 +34,7 @@
 
 .pill-link { position: relative; isolation: isolate; background: transparent; }
 .jelly-surface { position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-accent); pointer-events: none; }
-.pill-link:active { transform: scale(var(--playful-press-scale)); }
+.pill-link:active { transform: none; }
 .collaboration-copy .gold-shine { --shine-base: var(--color-on-media); }
 .gold-shine { --shine-base: var(--color-text); }
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {

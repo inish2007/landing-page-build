@@ -32,15 +32,7 @@
     }
   }
 }
-@utility playful-button {
-  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
-    @media (prefers-reduced-motion: no-preference) {
-      transition: transform var(--playful-hover-duration) var(--motion-ease);
-      &:active { transform: scale(var(--playful-press-scale)); }
-      @media (hover: hover) and (pointer: fine) { &:hover:not(:active) { transform: translateY(-2px); } }
-    }
-  }
-}
+@utility playful-button { transition: opacity var(--button-feedback-duration) ease; }
 @utility playful-link {
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
