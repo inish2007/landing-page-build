@@ -35,7 +35,7 @@ export const site = {
   },
   links: { home:'/', colophon:'/colophon/', privacy:'/privacy/' },
   theme: {
-    scrollbar:{enabled:true as boolean,width:32,background:'#171717',tickColor:'#444444',markerColor:'#ffffff',tickGap:12,majorTickGap:60,tickLength:8,majorTickLength:14,tickThickness:2,markerWidth:26,markerThickness:2,minThumbHeight:44},
+    scrollbar:{enabled:true as boolean,width:32,background:'var(--color-canvas)',tickColor:'#b8b8b8',markerColor:'#171717',tickGap:12,majorTickGap:60,tickLength:8,majorTickLength:14,tickThickness:2,markerWidth:26,markerThickness:2,minThumbHeight:44},
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
     pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
