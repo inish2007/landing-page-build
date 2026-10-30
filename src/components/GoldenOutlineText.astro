@@ -1,7 +1,7 @@
 ---
 /** Shared accessible text with a decorative gold-edge sweep. */
 import SiteIcon from './SiteIcon.astro';
-interface Props { text:string; arrow?:boolean; about?:boolean; jelly?:boolean }
-const {text,arrow=false,about=false,jelly=false}=Astro.props;
+interface Props { text:string; arrow?:boolean; about?:boolean; jelly?:boolean; reserveWeight?:boolean }
+const {text,arrow=false,about=false,jelly=false,reserveWeight=false}=Astro.props;
 ---
-<span class:list={['outlined-label',about && 'outlined-label-about', jelly && 'jelly-text']}><span class="outline-base">{text}{arrow && <span aria-hidden="true"> <SiteIcon name="next" /></span>}</span><span class="outline-sweep" aria-hidden="true">{text}{arrow && <span> <SiteIcon name="next" /></span>}</span></span>
+<span class:list={['outlined-label',about && 'outlined-label-about', jelly && 'jelly-text', reserveWeight && 'menu-control-label']}>{reserveWeight && <span class="label-width-reserve" aria-hidden="true">{text}</span>}<span class="outline-base">{text}{arrow && <span aria-hidden="true"> <SiteIcon name="next" /></span>}</span><span class="outline-sweep" aria-hidden="true">{text}{arrow && <span> <SiteIcon name="next" /></span>}</span></span>

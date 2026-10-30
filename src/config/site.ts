@@ -39,7 +39,7 @@ export const site = {
     pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
       aboutFill:'#ffffff', aboutOutline:'#d4a72c', aboutShadow:'0 1px 2px #171717, 0 0 1px #171717', plaque:'#171717', plaqueText:'#ffffff', goldDark:'#8a5a00', goldMid:'#d4a72c', goldLight:'#fff0ad',
-      primary:'#e5ff00', circle:'#c5d600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
+      primary:'#ffe600', circle:'#ffe600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
       text:'#171717', border:'#e6e4df', accentText:'#171717', focus:'#171717',
       subtleBackground:'#fafafa', onMedia:'white', shadow:'#000',
       overlay:'rgb(23 23 23 / .45)', modalOverlay:'rgb(0 0 0 / .7)',
@@ -60,8 +60,8 @@ export const site = {
           {src:'/fonts/caveat-brush-regular.ttf',format:'truetype',weight:'400',style:'normal'},
         ]},
       },
-      sizes: {labelStroke:'0.5px',aboutStroke:'1px',plaquePadding:'.18em .38em',footer:'clamp(0.875rem, 2.25vw, 1.125rem)',processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1rem, 0.4vw + 0.9rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'0.875rem',root:'100%'},
-      weights:{navigation:'600',regular:'400',heading:'400',brand:'400',strong:'700'},
+      sizes: {menuControl:'1rem',labelStroke:'0.5px',aboutStroke:'1px',plaquePadding:'.18em .38em',footer:'clamp(0.875rem, 2.25vw, 1.125rem)',processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1rem, 0.4vw + 0.9rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'0.875rem',root:'100%'},
+      weights:{menuControl:'600',menuControlActive:'700',navigation:'600',regular:'400',heading:'400',brand:'400',strong:'700'},
       lineHeights:{footer:'1.25',body:'1.5',heading:'1.15',display:'1.05',brand:'.95'},
       tracking:{heading:'-.04em',editorial:'-.035em'},
     },
@@ -69,7 +69,7 @@ export const site = {
     layout:{maxWidth:'90rem',narrowWidth:'56rem',pageGutter:'clamp(1.25rem, 3vw, 3rem)'},
     motion:{enabled:true as boolean,pageTransitions:true as boolean,entryDuration:500,entryStagger:70,maxStagger:210,maxConcurrent:6,dialogOpen:300,dialogClose:160,pageDuration:240,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
       // Playful interactions: distances in px, tilt in degrees, durations in ms.
-      playful:{enabled:true as boolean,labelGlowDuration:1800,labelGlowLow:3,labelGlowHigh:6,aboutGlowDuration:1800,jellyDuration:600,shineDuration:1000,jellyWide:1.04,jellyNarrow:0.96,socialDrop:{enabled:true as boolean,duration:1100,stagger:120,distance:48,alternateOnLoad:true as boolean},imageRevealDuration:1400,imageNearDistance:100,imageDecodeTimeout:4000,imageHoverDuration:700,imageEasing:'cubic-bezier(0.45, 0, 0.55, 1)',circleDrawDuration:900,hoverDuration:220,cardLift:6,cardTilt:1.5,cardScale:1.03,pressScale:0.98,arrowTravel:4,revealTravel:18,accentDuration:420}},
+      playful:{enabled:true as boolean,menuJiggleDuration:500,menuJiggleTravel:1.5,menuJiggleTilt:2,drawerBrandGlowDuration:1800,labelGlowDuration:1800,labelGlowLow:3,labelGlowHigh:6,aboutGlowDuration:1800,jellyDuration:600,shineDuration:1000,jellyWide:1.04,jellyNarrow:0.96,socialDrop:{enabled:true as boolean,duration:1100,stagger:120,distance:48,alternateOnLoad:true as boolean},imageRevealDuration:1400,imageNearDistance:100,imageDecodeTimeout:4000,imageHoverDuration:700,imageEasing:'cubic-bezier(0.45, 0, 0.55, 1)',circleDrawDuration:900,hoverDuration:220,cardLift:6,cardTilt:1.5,cardScale:1.03,pressScale:0.98,arrowTravel:4,revealTravel:18,accentDuration:420}},
   } satisfies SiteTheme,
 };
 export type SiteConfiguration = typeof site;

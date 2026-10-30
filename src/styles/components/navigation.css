@@ -85,3 +85,15 @@ html[data-motion-enabled] .small-link:is(:hover,:focus-visible) { text-decoratio
 html[data-motion-enabled="false"] a,html[data-motion-enabled="false"] .process-underline path { transition: none; }
 
 :is(#top,#mobile-drawer) a[aria-current="page"] { text-underline-offset: .4em; }
+
+/* Reserve the active label width so font-weight and jiggle never move the hitbox. */
+.menu-control { display: inline-flex; align-items: center; justify-content: center; gap: .2em; font-size: var(--text-menuControl); font-weight: var(--menu-control-weight); min-height: 44px; min-width: 44px; text-decoration: none; }
+.menu-control-label { display: inline-grid; vertical-align: middle; }
+.menu-control-label > .outline-base,.menu-control-label > .label-width-reserve { grid-area: 1 / 1; }
+.menu-control-label > .label-width-reserve { visibility: hidden; pointer-events: none; font-weight: var(--menu-control-active-weight); }
+.menu-control:is(:focus-visible,:active) { font-weight: var(--menu-control-active-weight); }
+@media (hover: hover) and (pointer: fine) { .menu-control:hover { font-weight: var(--menu-control-active-weight); } }
+#drawer-title .wordmark-text { color: var(--color-text); -webkit-text-stroke: var(--text-labelStroke) var(--gold-dark); paint-order: stroke fill; text-shadow: 0 0 var(--label-glow-low) var(--gold-mid); }
+@media (prefers-reduced-motion: no-preference) {
+ html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) #mobile-drawer[open][data-drawer-glow] #drawer-title .wordmark-text { animation: label-gold-glow var(--drawer-brand-glow-duration) ease-in-out infinite; }
+}

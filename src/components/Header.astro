@@ -16,5 +16,5 @@ const current = Astro.url.pathname;
   <nav class="desktop-nav" aria-label={getCopy('common.primaryNavigation')}>
     {getNavigation('header').map(link => <a data-accent="outline" data-text-jelly class="playful-link" href={link.path} aria-current={current === link.path ? 'page' : undefined}><GoldenOutlineText text={getCopy(link.labelKey)} jelly /></a>)}
   </nav>
-  <button class="menu-toggle playful-button" data-menu-open aria-controls="mobile-drawer" aria-expanded="false" hidden>{getCopy('common.menuOpenLabel')}<span aria-hidden="true"> <SiteIcon name="menu" /></span></button>
+  <button class="menu-toggle menu-control" data-accent="outline" data-text-jelly data-menu-jiggle data-menu-open aria-controls="mobile-drawer" aria-expanded="false" hidden><GoldenOutlineText text={getCopy('common.menuOpenLabel')} jelly reserveWeight /><span aria-hidden="true"> <SiteIcon name="menu" /></span></button>
 </header>
