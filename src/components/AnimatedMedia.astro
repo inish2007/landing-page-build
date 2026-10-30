@@ -8,6 +8,6 @@ const item = site.media[mediaKey as keyof typeof site.media];
 ---
 <div class="animated-media" data-animated-media data-animation-src={item.src} data-poster-src={item.poster}>
   <img src={item.poster} width={item.width} height={item.height} alt={getCopy(item.altKey)} />
-  <button class="playful-button" data-media-toggle data-play-label={getCopy('media.play')} data-pause-label={getCopy('media.pause')} aria-pressed="false" hidden>{getCopy('media.play')}</button>
+  <button class="playful-button filled-button" data-media-toggle data-play-label={getCopy('media.play')} data-pause-label={getCopy('media.pause')} aria-pressed="false" hidden><span class="button-surface" aria-hidden="true"></span><span class="button-face" data-button-label>{getCopy('media.play')}</span></button>
 </div>
 <script>import '../scripts/media.js';</script>

@@ -15,3 +15,30 @@
  .page-heading { margin-bottom: var(--refinement-headingGapMobile); }
  .site-footer { --footer-bottom: var(--space-4); }
 }
+
+/* Clean text, retaining the dark readability shadow on the white banner heading. */
+html[data-glow-enabled="false"] :is(.outlined-label,.wordmark-text) { animation: none !important; text-shadow: none !important; }
+html[data-brand-wobble-enabled="false"] .playful-brand > span { animation: none !important; }
+
+/* Filled faces move inside stationary, accessible click targets. */
+.filled-button { position: relative; isolation: isolate; }
+:is(.contact-form,.animated-media) .filled-button { background: transparent; }
+.button-surface { position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-accent); pointer-events: none; }
+html[data-motion-enabled] .filled-button > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transition: transform var(--button-hover-duration) var(--motion-ease); }
+.filled-button :is(.button-surface,.jelly-surface)::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: var(--button-hover-shadow); opacity: 0; transition: opacity var(--button-hover-duration) ease; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+ html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:focus-visible:not(:disabled,[aria-disabled="true"]) { --button-face-transform: translateY(calc(-1 * var(--button-hover-lift))); --button-shadow-opacity: 1; }
+ @media (hover: hover) and (pointer: fine) {
+  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:hover:not(:disabled,[aria-disabled="true"]) { --button-face-transform: translateY(calc(-1 * var(--button-hover-lift))); --button-shadow-opacity: 1; }
+ }
+ html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:is(:active,[data-button-pressed]):not(:disabled,[aria-disabled="true"]) { --button-face-transform: translateY(var(--button-press-distance)); --button-shadow-opacity: 0; }
+ .filled-button > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transform: var(--button-face-transform,none); }
+ .filled-button :is(.button-surface,.jelly-surface)::after { opacity: var(--button-shadow-opacity,0); }
+ html[data-motion-enabled] .filled-button:is(:active,[data-button-pressed]) > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transition-duration: var(--button-feedback-duration); }
+}
+@media (prefers-reduced-motion: reduce) {
+ .filled-button > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transform: none !important; transition: none !important; }
+ .filled-button :is(.button-surface,.jelly-surface)::after { opacity: 0; transition: none !important; }
+}
+html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) .filled-button > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transform: none !important; transition: none !important; }
+html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) .filled-button :is(.button-surface,.jelly-surface)::after { opacity: 0; transition: none; }

@@ -21,7 +21,7 @@ interface Props { title?: string; }
 const { title = getCopy('common.siteName') } = Astro.props;
 ---
 <!doctype html>
-<html lang="en" data-motion-enabled={String(site.theme.motion.enabled)} data-playful-enabled={String(site.theme.motion.playful.enabled)} data-shine-enabled={String(site.theme.motion.playful.shineEnabled)}>
+<html lang="en" data-motion-enabled={String(site.theme.motion.enabled)} data-playful-enabled={String(site.theme.motion.playful.enabled)} data-shine-enabled={String(site.theme.motion.playful.shineEnabled)} data-glow-enabled={String(site.theme.motion.playful.glowEnabled)} data-brand-wobble-enabled={String(site.theme.motion.playful.brandWobbleEnabled)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

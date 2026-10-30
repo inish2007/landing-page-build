@@ -25,7 +25,7 @@
 @utility playful-card {
   :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
-      &[data-image-ready="true"]:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))); }
+      &[data-image-ready="true"]:focus-visible img { transform: translateY(calc(-1 * var(--playful-card-lift))) scale(var(--playful-card-scale)); }
       @media (hover: hover) and (pointer: fine) {
         &[data-image-ready="true"]:hover:not(:focus-visible) img { transform: translateY(calc(-1 * var(--playful-card-lift))) rotate(var(--playful-card-tilt)) scale(var(--playful-card-scale)); }
       }
@@ -56,7 +56,7 @@
   &[data-direction="external"] { --arrow-y: calc(-1 * var(--playful-arrow-travel)); }
 }
 @utility playful-brand {
-  :where(html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"])) & {
+  :where(html[data-motion-enabled="true"][data-playful-enabled="true"][data-brand-wobble-enabled="true"]:not([data-motion-inactive="true"])) & {
     @media (prefers-reduced-motion: no-preference) {
       &:focus-visible > span { animation: playful-wobble calc(var(--playful-accent-duration) * 1ms) var(--motion-ease); }
       @media (hover: hover) and (pointer: fine) { &:hover > span { animation: playful-wobble calc(var(--playful-accent-duration) * 1ms) var(--motion-ease); } }
