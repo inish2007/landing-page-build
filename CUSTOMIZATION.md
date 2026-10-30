@@ -238,7 +238,7 @@ Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switc
 | cardTilt | 1.5 | Pointer-only artwork tilt, degrees |
 | cardScale | 1.03 | Pointer-only artwork image scale |
 | pressScale | 0.98 | Button scale while pressed |
-| arrowTravel | 4 | Arrow movement in its direction, pixels |
+| arrowTravel | 4 | Legacy/gallery-control arrow travel; ordinary links use `theme.textLinks.arrowDistance` |
 | revealTravel | 18 | Upward entry distance for eligible image-only units, pixels |
 | accentDuration | 420 | One-shot brand wobble duration, milliseconds |
 | circleDrawDuration | 900 | Circle stroke draw/replay duration, milliseconds |
@@ -301,7 +301,7 @@ About is a normal-flow caption beneath its unchanged picture, using the same dar
 
 Moving light sweeps are disabled in the client baseline: `theme.motion.playful.shineEnabled: false`. Existing glow is separate and remains enabled. Setting `shineEnabled` to `true` explicitly restores the retained non-button shine capability; `shineDuration` remains 1000ms for compatibility. Image logos do not shine. This optional setting is not enabled in this candidate.
 
-Collaboration pills and normal buttons use a soft press: `theme.motion.playful.buttonPressDistance: 1` (px) and `buttonDuration: 160` (ms). Only their visual face moves down while pressed, returning smoothly on release. The interactive target stays stationary; there is no hover movement, fade, scaling, jelly or bounce. Reduced/disabled/inactive motion keeps the face static. Image-card buttons retain their separate artwork hover. `buttonOpacity` remains at 1 and old jelly/menu-jiggle settings retain their names for compatibility; they no longer animate buttons.
+Collaboration pills and normal buttons use a soft press: `theme.motion.playful.buttonPressDistance: 1` (px) and `buttonDuration: 160` (ms). Only their visual face moves down while pressed, returning smoothly on release. The interactive target stays stationary; there is no hover movement, fade, scaling, jelly or bounce. Reduced/disabled/inactive motion keeps the face static. Image-card buttons retain their separate artwork hover. No hover lift or fade is configured for yellow buttons. Native touch pressed-state timing varies: installed Edge can activate it only on release, making the 1px effect brief. The immediate touch-state helper described below is scoped to ordinary text links, not filled buttons. `buttonOpacity` remains at 1 and old jelly/menu-jiggle settings retain their names for compatibility; they no longer animate buttons.
 
 ## Entry shine and About caption
 
@@ -321,7 +321,7 @@ Allfiveglows now run only onscreen using the shared observer. Hover/focus replay
 
 ## Gold navigation, footer headings and page titles
 
-The same GoldenOutlineText component now covers desktop/mobile navigation, footer category headings, gallery titles, Contact and editorial portfolio titles (including collaboration detail pages). Legal and home-1 utility titles, body copy, artwork captions, form labels, and ordinary footer links remain excluded. No new typography or animation settings: zero-width text strokes,1800ms subtle glow and optional 1000ms masked fill sweep apply (shine disabled by default). Navbar weight600 and current-page/hover underlines are unchanged and stayoutside the decorative layer.
+The same GoldenOutlineText component now covers desktop/mobile navigation, footer category headings, gallery titles, Contact and editorial portfolio titles (including collaboration detail pages). Legal and home-1 utility titles, body copy, artwork captions, form labels, and ordinary footer links remain excluded. No new typography or animation settings: zero-width text strokes,1800ms subtle glow and optional 1000ms masked fill sweep apply (shine disabled by default). Navbar weight600 is preserved. Native link underlines follow their inline text layers; decorative sweep copies remain hidden by the default shine switch.
 
 Navigation links replay on hover or keyboard focus. Structural headings remain plain headings without added tab stops; they receive entry/hover effects. Existing visibility/once-only/history/cancellation logic is reused. Accessible names use only the base text; the extra sweep layer is aria-hidden and invisible between sweeps. Central content changes update both visual layers automatically.
 
@@ -337,7 +337,7 @@ One shared observer starts the sequence once on first view. No hover/scroll/hist
 
 Marker thickness now defaults28px with2px vertical overhang and2unit mildedgecurves. theme.pressMarker.overhang/edgeCurve control originalgeneratedSVGbackgroundedges; its softgradient retains the centralcolor/opacity. Inlinefragmentcloning and900ms/1000ms paragraph timing remain. No spacing/wrapping changes.
 
-Only Press articlelinks use theme.pressLinks.normalThickness1px,hoverThickness3px,duration160ms. Nativeunderlinesfollowwrappedtext; expandingpseudo underlineisdisabled hereonly. Fontweight/destinations/focusoutlines unchanged; reducedmotionuseseffectivelyimmediate globalfallback. Othernav/footer/Processunderlines unchanged. BrandfontremainsCaveatBrush; fontcomparisonwasQ&Aonly.
+Press article links now use the professional text-link settings described below. Their native 1px lines stay visible on every wrapped text fragment; hovering never thickens them. The older `theme.pressLinks` names remain for compatibility and the separate Process SVG. Brand font remains Caveat Brush.
 
 ## Prepared photo reveals, shared underlines and enlarged branding
 
@@ -345,7 +345,7 @@ Ordinary below-fold photographs now have one dedicated photo-frame entry owner. 
 
 Initial viewport photographs are immediately visible. Supported JavaScript prepares only below-fold frames as pending/transparent, then starts decoding when they approach the viewport. A decoded picture fades in once; six concurrent photo entries are allowed, with excess pictures shown immediately rather than queued. Decode errors/timeouts restore visible base frames. During entry, inner-image hover movement is suppressed; after settlement normal smooth hover is rearmed. Focus/anchors, history restoration, reduced motion, disabled motion, inactive tabs, navigation, missing APIs and initialization failures leave no hidden photos. Logos/icons and animated-media GIF/poster are excluded. WithoutJavaScript allpictures remainvisible.
 
-The existing theme.pressLinks settings now control ordinary native text-link underlines throughout navigation, editorial content and the footer:1pxrest,3pxhover/focus,160mstransition. Existingpermanent/current-page lines staypermanent; hover-only lines stayabsentatrest. Expandingpseudo-lines aredisabled. Process retainsitsoriginal2pxSVGline andshape, thickeningto the sharedhoverwidth. Brandnames, socialicons, yellowbuttons andimagecardlabels stayundecorated. Reduced/disabledmotionmakesfeedbackimmediate.
+Ordinary native underlines are controlled by `theme.textLinks`: 1px throughout, with a 180ms color fade on precise-pointer hover. Permanent editorial and active-page lines stay visible. Process retains its original separate 2px SVG line and existing 3px hover/focus response through the legacy `theme.pressLinks` settings. Brand names, social icons, yellow buttons and homepage captions stay undecorated. Reduced/disabled motion makes feedback immediate.
 
 Change branding.wordmarkScale.width(default1.3) and height(default1.55) toresize textbrands. BrandWordmark reserves widthandmultilineheight while anindependentinnertextlayer keepsgoldshine andCaveatBrush. The header/footer/drawer sharegetBrandName andthe samecomponent. Usepositive scales; largerorlongernames canincreaseheader/footerheight. Image-logo proportions arenotchanged.
 
@@ -356,7 +356,7 @@ In `src/config/site.ts`, `theme.typography.loading.preload` defaults to `true`. 
 
 `theme.typography.loading.display` defaults to `block`: the browser briefly waits for the chosen font before using readable fallback text. The browser controls this bounded block period (commonly up to about three seconds); images and the page are never hidden. Slow or failed fonts can still require fallback metrics. Other supported values are `swap`, `fallback` and `optional`. There is no font-ready JavaScript overlay or timer.
 
-Homepage About/Press/Archived/Contact/Process labels, desktop/mobile navigation labels squash and settle once on precise-pointer hover or keyboard focus. They reuse `theme.motion.playful.jellyDuration` (600ms), `jellyWide` (1.04) and `jellyNarrow` (0.96). Buttons now use the separate soft-press settings. Click targets, pictures, layout and the separate Process underline remain stationary. Rapid re-entry replaces the effect. Touch scrolling does not start it; reduced/disabled motion, offscreen labels and inactive tabs settle it. Body text, footer links and unrelated page titles do not receive text jelly.
+Homepage captions, Process and desktop/mobile navigation now use the professional link response instead of text squash. Existing `jellyDuration`, `jellyWide`, `jellyNarrow` settings and class names remain compatible for custom components. These standard links never run the old jelly animation. Filled buttons retain their independent 1px soft press.
 
 Customization tests now build temporary private copies and use separate local servers. They never change the working source or visible preview output. This prevents temporary test fonts, names and colors appearing when you reload the preview during tests.
 
@@ -387,3 +387,24 @@ Gold glow remains; shine is now disabled by default: decorative `.outline-sweep`
 The candidate baseline disables moving light swipes and uses visual-only soft-press button feedback. It retains zero-width text outlines, gold glow, true yellow accents, original native scrollbars, existing image reveals/hover, six-card alternation, dialogs, GIF controls and centralized editing. Creative redesign work must start from a separate development copy/branch after the baseline is tagged and backed up. The user requires explicit approval before creating the freeze tag or local backup. Neither has been created yet. After approval, record the exact tag/commit, source/build checksums and restore instructions; never edit the frozen copy.
 
 Mobile refinements load after the shared base styles through the common layout. This preserves the existing intended narrow-screen single-column sections and three-column/two-row social strip consistently in development and production.
+
+
+## Professional ordinary text links
+
+Edit `theme.textLinks` in `src/config/site.ts`. These settings apply to desktop/mobile navigation, footer text links, editorial links and the contact email. Existing arrows in homepage captions use the same travel settings without adding underlines to captions.
+
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| `underlineThickness` | `1` | Native line thickness in pixels; never grows on hover |
+| `underlineDuration` | `180` | Hover underline fade, milliseconds |
+| `arrowDistance` | `3` | Existing link arrows move right, pixels |
+| `arrowDuration` | `220` | Arrow movement/return, milliseconds |
+| `pressOpacity` | `0.82` | Pressed lettering opacity; images stay unchanged |
+| `pressDuration` | `90` | Press feedback, milliseconds |
+| `releaseDuration` | `160` | Return to normal opacity, milliseconds |
+
+For example, change `arrowDistance: 3` to `arrowDistance: 2` for a smaller response. No component editing is necessary. Wrapping, fonts, weights, destinations and clickable dimensions stay unchanged. Keyboard focus shows its underline and existing focus outline immediately. Permanent editorial/current-page lines stay visible. Hover-only lines fade back to transparent on exit.
+
+Transitions use CSS. A small delegated touch/pen handler marks a press immediately and clears it on release, movement, cancellation, backgrounding or history restoration. It never captures input, prevents defaults or delays navigation. Without JavaScript, links retain native press behavior and usable CSS hover/focus styling. Reduced motion or disabled master/playful motion removes movement and transitions while keeping immediate feedback. Gallery controls keep their separate arrow movement. Filled buttons, brand names, menu controls, social icons, image cards, Process's hand-drawn line, glow and image motion retain their existing behavior.
+
+This update is a local candidate only. Freeze tag/backup still require explicit user approval; no publication is part of this change.
