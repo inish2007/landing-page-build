@@ -14,6 +14,7 @@
 
 import site from '../src/config/site.ts';
 import { createThemeCss } from '../src/config/theme.ts';
+import { validateSiteUrls } from '../src/utils/urls.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -327,7 +328,8 @@ export function validateContent(rootDir = PROJECT_ROOT) {
   const crossRefErrors = validateCrossReferences({ textData, imageData, navigationData, pagesData, artworksData });
 
   const routeMediaErrors = validateRoutesAndMedia(configured, rootDir);
-  const allErrors = [...chromeErrors, ...componentErrors, ...imageErrors, ...crossRefErrors, ...routeMediaErrors];
+  const urlErrors=validateSiteUrls({...site,...configured});
+  const allErrors = [...chromeErrors, ...componentErrors, ...imageErrors, ...crossRefErrors, ...routeMediaErrors, ...urlErrors];
 
   if (allErrors.length > 0) {
     console.error(`\n❌ Content validation failed with ${allErrors.length} error(s):`);
