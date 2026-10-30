@@ -1,3 +1,5 @@
+/** Every integration test targets this worktree's explicit preview, never the frozen server. */
+export const SITE_TEST_URL=(process.env.SITE_TEST_URL||'http://127.0.0.1:4335').replace(/\/$/,'');
 import { chromium } from '@playwright/test';
 /** Launch installed Edge for local production checks. @returns {Promise<import('@playwright/test').Browser>} Creates a headless browser; caller must close it. */
 export async function launchBrowser() { return chromium.launch({channel:'msedge',headless:true}); }

@@ -1,7 +1,8 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import {launchBrowser} from './test-helper.mjs';
 fs.mkdirSync('evidence/motion',{recursive:true});
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Verify native preparation, a delayed decode gate and unchanged reserved geometry. */
 test('strip is prepared invisible before entry, waits for decoding and settles without moving slots',async()=>{
   const browser=await launchBrowser();try{const page=await browser.newPage({viewport:{width:1440,height:900}});

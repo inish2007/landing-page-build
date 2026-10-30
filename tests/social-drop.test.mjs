@@ -1,5 +1,6 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from '@playwright/test';import {launchBrowser} from './test-helper.mjs';import {chooseSocialDropDirection as choose,SOCIAL_DROP_STORAGE_KEY as KEY} from '../src/scripts/social-drop.js';
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Record real native outer-card effects without replacing animation or observer behavior. @param {import('@playwright/test').Page} p Isolated page. @returns {Promise<void>} Installs instrumentation before navigation. */
 async function instrument(p){await p.addInitScript(()=>{window.dropCalls=[];const original=Element.prototype.animate;Element.prototype.animate=function(frames,options){if(this.matches('[data-social-drop-item]'))window.dropCalls.push({item:Number(this.dataset.socialDropItem),frames,options});return original.call(this,frames,options);};});}
 /** Scroll the strip into view and await the native observer's six calls. @param {import('@playwright/test').Page} p Page. @returns {Promise<object[]>} Recorded effect metadata. */

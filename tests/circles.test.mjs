@@ -1,5 +1,6 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import {launchBrowser} from './test-helper.mjs';import site from '../src/config/site.ts';import {createThemeCss} from '../src/config/theme.ts';
-const BASE_URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const BASE_URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Prove circle settings change independently of global yellow. @returns {void} Pure config clone. */
 function verifyCircleConfiguration(){const config=structuredClone(site);assert.equal(config.theme.colors.circle,'#ffe600');assert.equal(config.theme.colors.primary,'#ffe600');assert.equal(config.theme.motion.playful.circleDrawDuration,900);config.theme.colors.circle='#aabb00';config.theme.motion.playful.circleDrawDuration=800;const css=createThemeCss(config);assert.match(css,/--color-circle:#aabb00/);assert.match(css,/--color-accent:#ffe600/);assert.match(css,/--circle-draw-duration:800/);}
 /** Exercise independent drawing, interruption, keyboard/pointer and static line semantics. @returns {Promise<void>} Creates/closes browser resources. */

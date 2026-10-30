@@ -1,6 +1,7 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';import assert from 'node:assert/strict';import {test} from 'node:test';
 import site from '../src/config/site.ts';import {createThemeCss} from '../src/config/theme.ts';import {launchBrowser,enableShineForTest} from './test-helper.mjs';
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 fs.mkdirSync('evidence/no-text-outlines',{recursive:true});
 const targets='.outlined-label,.outline-base,.outline-sweep,.wordmark-text';
 

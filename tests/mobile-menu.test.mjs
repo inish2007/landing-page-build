@@ -1,10 +1,11 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {launchBrowser} from './test-helper.mjs';
 import site from '../src/config/site.ts';
 import {createThemeCss} from '../src/config/theme.ts';
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 const open='[data-menu-open]',close='[data-menu-close]',drawer='#mobile-drawer';
 const jiggles=e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===500).length;
 const box=e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight];

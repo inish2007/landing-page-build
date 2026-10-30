@@ -1,4 +1,5 @@
-const BASE_URL = process.env.SITE_TEST_URL || 'http://127.0.0.1:4321';
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
+const BASE_URL = process.env.SITE_TEST_URL || TEST_URL;
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';

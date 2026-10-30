@@ -1,6 +1,7 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';import {execFile} from 'node:child_process';import {test} from 'node:test';import assert from 'node:assert/strict';import {createFixture} from './fixture-helper.mjs';import {launchBrowser} from './test-helper.mjs';
 fs.mkdirSync('evidence/font-loading',{recursive:true});
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Reload the real preview while an intentionally different private theme builds. */
 test('live preview remains unchanged while a private customization fixture builds',async()=>{
   const fixture=createFixture('preview-stability');let browser;

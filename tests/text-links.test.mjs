@@ -1,5 +1,6 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {launchBrowser} from './test-helper.mjs';import site from '../src/config/site.ts';import {createThemeCss} from '../src/config/theme.ts';
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 const settled=async p=>p.waitForFunction(()=>document.getAnimations().every(a=>'animationName' in a||a.playState!=='running'));
 const decorated=async (p,selector,visible)=>p.waitForFunction(({selector,visible})=>{const s=getComputedStyle(document.querySelector(selector));return visible?s.textDecorationColor===s.color:s.textDecorationColor==='rgba(0, 0, 0, 0)'},{selector,visible});
 const opacity=async(p,selector,value)=>p.waitForFunction(({selector,value})=>getComputedStyle(document.querySelector(selector)).opacity===value,{selector,value});

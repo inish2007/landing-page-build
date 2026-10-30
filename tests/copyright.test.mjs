@@ -1,5 +1,6 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import site from '../src/config/site.ts';import {validateChromeKeys} from '../scripts/validate-content.mjs';import {updateCopyrightYear} from '../src/scripts/copyright.js';import {launchBrowser} from './test-helper.mjs';
-const BASE_URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const BASE_URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Reject missing/duplicate/nonstring placeholders while keeping owner text editable. @returns {void} Pure cloned content assertions. */
 function verifyCopyrightTemplate(){const data=structuredClone(site.text);for(const value of ['© Owner','© {year} {year} Owner','© {Year} Owner',null,42]){data.footer.copyright=value;assert.ok(validateChromeKeys(data).some(e=>e.includes('exactly one {year}')));}data.footer.copyright='© {year} Client Studio. All Rights Reserved.';assert.equal(validateChromeKeys(data).length,0);}
 /** Check no-op/current/missing element handling without browser registration. @returns {void} Temporarily installs/restores a minimal document stub, including owned accessors and querySelectorAll fixture method. */

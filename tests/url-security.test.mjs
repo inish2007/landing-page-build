@@ -1,7 +1,8 @@
+import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';import {test} from 'node:test';import assert from 'node:assert/strict';
 import site from '../src/config/site.ts';import {assertSafeLinkUrl,assertLocalAssetPath,validateSiteUrls} from '../src/utils/urls.ts';
 import {createFixture} from './fixture-helper.mjs';import {launchBrowser} from './test-helper.mjs';
-const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const URL=process.env.SITE_TEST_URL||TEST_URL;
 
 test('configured links allow expected destinations and reject executable or ambiguous schemes',()=>{
  for(const value of ['/', '/about/','#top','/about/?source=nav#intro','https://example.com/art','http://localhost:4321/','mailto:studio@example.com'])assert.equal(assertSafeLinkUrl(value),value);
