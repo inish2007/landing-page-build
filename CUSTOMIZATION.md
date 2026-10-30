@@ -371,3 +371,7 @@ Both labels reuse the shared gold outline/glow and 1000ms sweep. Hover or keyboa
 The brand inside the open drawer glows until native closing completes. `theme.motion.playful.drawerBrandGlowDuration: 1800` sets its pulse period; it reuses the existing gold colors and glow strengths. Header/footer brands keep their current effects. Background tabs, reduced/disabled motion and missing animation/observer APIs use readable static gold styling. Closing, Escape, navigation and resizing to desktop release the glow, focus and scroll state through the existing dialog lifecycle.
 
 Primary yellow and highlighted-word circles now default to `#ffe600` across desktop and mobile. Phone display profiles or night-color settings can still affect perceived color. Gold and Press-marker colors are separate settings.
+
+## Safe links and media paths
+
+Configured links accept `/site-path/`, `#fragment`, full `https://` or `http://` URLs, and plain `mailto:studio@example.com` addresses. Keep `contact.email` as a plain address. Executable schemes (`javascript:`, `data:`), `//host` links, embedded credentials, control characters and mail-header query parameters are rejected with a setting-specific error. Use local `/images/...`, `/fonts/...`, `/icons/...` and `/media/...` asset paths without traversal, query or fragment. These checks run during validation and direct Astro builds; they do not rewrite your content or change existing destinations. See [Security deployment notes](SECURITY.md) before public hosting.
