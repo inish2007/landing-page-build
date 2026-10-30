@@ -8,9 +8,9 @@ import GoldenOutlineText from './GoldenOutlineText.astro';
   <p class="contact-intro">{getCopy('contact.body')}</p><a data-link-feedback="text" class="text-link" href={'mailto:' + getCopy('contact.email')}><span class="link-label">{getCopy('contact.emailLabel')}</span></a>
   <form method="dialog" class="contact-form" data-motion="reveal" data-contact-form>
     <p>{getCopy('contact.localNotice')}</p>
-    <label for="inquiry-name">{getCopy('contact.nameLabel')}</label><input id="inquiry-name" name="name" autocomplete="name" required maxlength="150" />
-    <label for="inquiry-email">{getCopy('contact.emailField')}</label><input id="inquiry-email" name="email" type="email" autocomplete="email" required maxlength="254" />
-    <label for="inquiry-message">{getCopy('contact.messageLabel')}</label><textarea id="inquiry-message" name="message" rows="6" required maxlength="5000"></textarea>
+    <div class="form-field"><label for="inquiry-name">{getCopy('contact.nameLabel')}</label><input id="inquiry-name" name="name" autocomplete="name" required maxlength="150" /></div>
+    <div class="form-field"><label for="inquiry-email">{getCopy('contact.emailField')}</label><input id="inquiry-email" name="email" type="email" autocomplete="email" required maxlength="254" /></div>
+    <div class="form-field"><label for="inquiry-message">{getCopy('contact.messageLabel')}</label><textarea id="inquiry-message" name="message" rows="6" required maxlength="5000"></textarea></div>
     <button class="playful-button" type="submit" hidden data-contact-submit><span class="button-face">{getCopy('contact.submit')}</span></button>
     <p data-contact-status role="status" data-valid-message={getCopy('contact.success')}></p>
   </form>

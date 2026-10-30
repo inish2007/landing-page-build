@@ -36,6 +36,7 @@ export const site = {
   links: { home:'/', colophon:'/colophon/', privacy:'/privacy/' },
   theme: {
     // Ordinary text links: distances/thickness in px, durations in ms. Legacy pressLinks still controls the Process SVG.
+    refinement:{proseMaxWidth:'60ch',proseLineHeight:'1.6',headingGapDesktop:'56px',headingGapMobile:'40px',captionGap:'16px',galleryCaptionGap:'12px',galleryMetadataGap:'4px',fieldGap:'8px',fieldGroupGap:'24px'},
     textLinks:{underlineThickness:1,underlineDuration:180,arrowDistance:3,arrowDuration:220,pressOpacity:0.82,pressDuration:90,releaseDuration:160},
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
     pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},

@@ -1,0 +1,17 @@
+/* Small token-driven refinements within the original page formats. */
+.editorial-prose { max-width: var(--refinement-proseMaxWidth); }
+.editorial-prose p { line-height: var(--refinement-proseLineHeight); }
+.page-heading { margin-bottom: var(--refinement-headingGapDesktop); }
+.home-collage h2 { margin-top: var(--refinement-captionGap); }
+.gallery-card figcaption { margin-top: var(--refinement-galleryCaptionGap); }
+.gallery-card figcaption p { margin-top: var(--refinement-galleryMetadataGap); }
+.contact-form { gap: var(--refinement-fieldGroupGap); }
+.form-field { display: grid; gap: var(--refinement-fieldGap); }
+/* Preserve normal geometry while clearing device notches and gesture areas. */
+.site-header { padding-top: max(var(--space-3),env(safe-area-inset-top)); }
+.mobile-drawer { padding-top: max(var(--space-3),env(safe-area-inset-top)); padding-bottom: max(var(--space-3),env(safe-area-inset-bottom)); }
+.site-footer { --footer-bottom: var(--space-3); padding-bottom: max(var(--footer-bottom),env(safe-area-inset-bottom)); }
+@media (max-width: 47.999rem) {
+ .page-heading { margin-bottom: var(--refinement-headingGapMobile); }
+ .site-footer { --footer-bottom: var(--space-4); }
+}

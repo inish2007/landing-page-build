@@ -13,6 +13,7 @@ export interface Artwork { id:string; collection:string; titleKey:string; captio
 export interface SiteTheme {
   colors: Record<'aboutFill'|'aboutOutline'|'aboutShadow'|'plaque'|'plaqueText'|'goldDark'|'goldMid'|'goldLight'|'circle'|'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;
   typography: { loading:{preload:boolean;display:'block'|'swap'|'fallback'|'optional'}; fonts:Record<'primary'|'secondary'|'brand'|'footer',FontDefinition>; sizes:Record<'menuControl'|'labelStroke'|'aboutStroke'|'plaquePadding'|'footer'|'processLink'|'brand'|'display'|'statement'|'h1'|'h2'|'body'|'caption'|'nav'|'root',string>; weights:Record<'menuControl'|'menuControlActive'|'navigation'|'regular'|'heading'|'brand'|'strong',string>; lineHeights:Record<'footer'|'body'|'heading'|'display'|'brand',string>; tracking:Record<'heading'|'editorial',string> };
+  refinement:Record<'proseMaxWidth'|'proseLineHeight'|'headingGapDesktop'|'headingGapMobile'|'captionGap'|'galleryCaptionGap'|'galleryMetadataGap'|'fieldGap'|'fieldGroupGap',string>;
   textLinks:{underlineThickness:number;underlineDuration:number;arrowDistance:number;arrowDuration:number;pressOpacity:number;pressDuration:number;releaseDuration:number};
   pressLinks:{normalThickness:number;hoverThickness:number;duration:number};
   pressMarker:{color:string;opacity:number;thickness:number;overhang:number;edgeCurve:number;duration:number;stagger:number};
