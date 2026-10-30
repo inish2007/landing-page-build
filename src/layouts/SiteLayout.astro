@@ -13,13 +13,12 @@ import '../styles/global.css';
 import '../styles/components/home.css';
 import '../styles/components/pages.css';
 import '../styles/components/navigation.css';
-import '../styles/components/scrollbar.css';
 import '../styles/components/motion.css';
 interface Props { title?: string; }
 const { title = getCopy('common.siteName') } = Astro.props;
 ---
 <!doctype html>
-<html lang="en" data-scrollbar-style={site.theme.scrollbar.enabled ? 'ruler' : undefined} data-motion-enabled={String(site.theme.motion.enabled)} data-playful-enabled={String(site.theme.motion.playful.enabled)}>
+<html lang="en" data-motion-enabled={String(site.theme.motion.enabled)} data-playful-enabled={String(site.theme.motion.playful.enabled)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

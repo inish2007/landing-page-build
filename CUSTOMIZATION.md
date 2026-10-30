@@ -375,13 +375,3 @@ Primary yellow and highlighted-word circles now default to `#ffe600` across desk
 ## Safe links and media paths
 
 Configured links accept `/site-path/`, `#fragment`, full `https://` or `http://` URLs, and plain `mailto:studio@example.com` addresses. Keep `contact.email` as a plain address. Executable schemes (`javascript:`, `data:`), `//host` links, embedded credentials, control characters and mail-header query parameters are rejected with a setting-specific error. Use local `/images/...`, `/fonts/...`, `/icons/...` and `/media/...` asset paths without traversal, query or fragment. These checks run during validation and direct Astro builds; they do not rewrite your content or change existing destinations. See [Security deployment notes](SECURITY.md) before public hosting.
-
-## Desktop ruler scrollbar
-
-`theme.scrollbar` in `src/config/site.ts` controls the document scrollbar on screens at least 1024px wide with a precise pointer and hover support. Set `enabled: false` to restore the browser default. Phones, coarse-pointer devices, forced-color mode and internal dialog/drawer scrollbars keep native styling.
-
-The track and corner use `background: 'transparent'`, clearing their background paint. The native scrollbar still occupies its own gutter, which may look white over the page's white canvas; this does not create an overlay through which artwork shows. Default ticks are `tickColor: '#b8b8b8'`; the position marker is `markerColor: '#171717'`. Gold and yellow accents are unrelated. To override only the track, use a CSS color such as `background: '#f5f5f5'`.
-
-Geometry settings are pixels: `width: 32`, `tickGap: 12`, `majorTickGap: 60`, `tickLength: 8`, `majorTickLength: 14`, `tickThickness: 2`, `markerWidth: 26`, `markerThickness: 2`, and `minThumbHeight: 44`. The thin visible marker is centered inside the browser's full proportional draggable thumb; its hit area remains larger than the painted line. Browsers reserve the scrollbar gutter so it does not cover artwork or controls.
-
-Chromium/Edge use the full ruler styling. Browsers without detailed WebKit scrollbar selectors use a simpler native thumb/track color treatment where supported, otherwise their defaults. Firefox/Safari were not runtime-tested for this delivery. Native dragging, track clicks, wheel/trackpad and keyboard input remain browser-owned. The marker follows the page directly; no JavaScript scroll interception, delayed marker tween, new tab stop or library is added. Existing smooth navigation and reduced-motion behavior remain in force. Styling also works without JavaScript. Dialog scroll locking continues to measure and compensate for the actual scrollbar gutter.
