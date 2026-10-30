@@ -7,3 +7,6 @@ export async function decodeImages(page) {
   await page.evaluate(() => { document.activeElement?.blur(); scrollTo({top:0,behavior:"instant"}); });
   await page.waitForFunction(() => scrollY === 0);
 }
+
+/** Exercise the retained opt-in shine capability without changing the client baseline default. */
+export async function enableShineForTest(page){await page.route('**/*',async route=>{if(route.request().resourceType()!=='document')return route.continue();const response=await route.fetch();await route.fulfill({response,body:(await response.text()).replace('--shine-enabled:0','--shine-enabled:1').replace('data-shine-enabled="false"','data-shine-enabled="true"')});});}
