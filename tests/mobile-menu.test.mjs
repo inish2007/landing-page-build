@@ -1,0 +1,51 @@
+import fs from 'node:fs';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {launchBrowser} from './test-helper.mjs';
+import site from '../src/config/site.ts';
+import {createThemeCss} from '../src/config/theme.ts';
+const URL=process.env.SITE_TEST_URL||'http://127.0.0.1:4333';
+const open='[data-menu-open]',close='[data-menu-close]',drawer='#mobile-drawer';
+const jiggles=e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===500).length;
+const box=e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight];
+fs.mkdirSync('evidence/mobile-menu',{recursive:true});
+
+test('menu typography, motion controls and true yellow are centralized',()=>{
+ assert.equal(site.theme.typography.sizes.menuControl,'1rem');
+ assert.equal(site.theme.typography.weights.menuControl,'600');
+ assert.equal(site.theme.typography.weights.menuControlActive,'700');
+ assert.equal(site.theme.colors.primary,'#ffe600');assert.equal(site.theme.colors.circle,'#ffe600');
+ const config=structuredClone(site);config.theme.typography.sizes.menuControl='1.125rem';config.theme.motion.playful.menuJiggleDuration=650;
+ const css=createThemeCss(config);assert.match(css,/--text-menuControl:1.125rem/);assert.match(css,/--menu-jiggle-duration:650/);
+});
+
+test('mobile controls have stable 16px bold labels, gold and independently cancellable jiggle; laptop has full nav',async()=>{
+ const b=await launchBrowser();try{const p=await b.newPage({viewport:{width:390,height:844}});await p.goto(URL);await p.evaluate(()=>document.fonts.ready);
+ for(const width of [1024,1280,1440]){await p.setViewportSize({width,height:900});assert.equal(await p.locator(open).isVisible(),false);assert.equal(await p.locator('.desktop-nav').isVisible(),true)}
+ for(const width of [320,360,390,430,768]){await p.setViewportSize({width,height:844});await p.mouse.move(0,0);await p.locator('main').focus();assert.equal(await p.locator(open).isVisible(),true);assert.equal(await p.locator(open).evaluate(e=>getComputedStyle(e).fontSize),'16px');assert.equal(await p.locator(open).evaluate(e=>getComputedStyle(e).fontWeight),'600');assert.ok((await p.locator(open).boundingBox()).height>=44);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))}
+ await p.setViewportSize({width:390,height:844});const before=await p.locator(open).evaluate(box);await p.locator(open).hover();await p.waitForFunction(()=>document.querySelector('[data-menu-open] .jelly-text').getAnimations().some(a=>a.effect.getTiming().duration===500));assert.equal(await p.locator(open).evaluate(e=>getComputedStyle(e).fontWeight),'700');assert.deepEqual(await p.locator(open).evaluate(box),before);assert.equal(await p.locator(open).evaluate(e=>getComputedStyle(e).textDecorationLine),'none');
+ await p.mouse.move(0,0);await p.locator(open).hover();assert.equal(await p.locator(open+' .jelly-text').evaluate(jiggles),1);await p.mouse.move(0,0);assert.equal(await p.locator(open+' .jelly-text').evaluate(jiggles),0);await p.locator(open).focus();assert.equal(await p.locator(open).evaluate(e=>getComputedStyle(e).fontWeight),'700');assert.equal(await p.locator(open+' .jelly-text').evaluate(jiggles),1);
+ await p.locator(open).click();await p.waitForFunction(()=>document.querySelector('#mobile-drawer').dataset.motionState==='open');assert.equal(await p.getByRole('button',{name:'Close Menu',exact:true}).count(),1);
+ await p.locator('#mobile-drawer nav a').first().focus();await p.mouse.move(0,0);assert.equal(await p.locator(close).evaluate(e=>getComputedStyle(e).fontSize),'16px');assert.equal(await p.locator(close).evaluate(e=>getComputedStyle(e).fontWeight),'600');const closeBox=await p.locator(close).evaluate(box);await p.locator(close).hover();await p.waitForFunction(()=>document.querySelector('[data-menu-close] .jelly-text').getAnimations().some(a=>a.effect.getTiming().duration===500));assert.equal(await p.locator(close).evaluate(e=>getComputedStyle(e).fontWeight),'700');assert.deepEqual(await p.locator(close).evaluate(box),closeBox);assert.equal(await p.locator(close).evaluate(e=>getComputedStyle(e).textDecorationLine),'none');
+ assert.equal(await p.locator('#drawer-title .wordmark-text').evaluate(e=>getComputedStyle(e).animationName),'label-gold-glow');assert.equal(await p.locator('#drawer-title .wordmark-text').evaluate(e=>getComputedStyle(e).animationDuration),'1.8s');await p.mouse.move(0,0);await p.locator('#mobile-drawer nav a').first().focus();await p.screenshot({path:'evidence/mobile-menu/mobile-open.png'});await p.locator('#drawer-title .wordmark-text').evaluate(e=>{e.textContent='A much longer creative studio name'});assert.ok(await p.evaluate(()=>document.querySelector('#mobile-drawer').scrollWidth<=document.querySelector('#mobile-drawer').clientWidth+1));
+ await p.keyboard.press('Escape');await p.waitForFunction(()=>!document.querySelector('#mobile-drawer').open);assert.equal(await p.locator(drawer).getAttribute('data-drawer-glow'),null);assert.equal(await p.locator(open).evaluate(e=>e===document.activeElement),true);
+ await p.evaluate(()=>{document.activeElement?.blur();scrollTo({top:0,behavior:'instant'})});await p.screenshot({path:'evidence/mobile-menu/mobile-closed.png'});await p.setViewportSize({width:1280,height:900});await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.screenshot({path:'evidence/mobile-menu/laptop.png'});
+ assert.equal(await p.locator('.circle-stroke path').first().evaluate(e=>getComputedStyle(e).stroke),'rgb(255, 230, 0)');assert.equal(await p.locator('.jelly-surface').first().evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(255, 230, 0)');
+ }finally{await b.close()}
+});
+
+test('drawer glow follows rapid intent, visibility, reduced motion, navigation and desktop closure',async()=>{
+ const b=await launchBrowser();try{const p=await b.newPage({viewport:{width:390,height:844}});await p.goto(URL);await p.evaluate(()=>{document.body.style.overflow='auto';document.body.style.paddingRight='7px';for(let i=0;i<6;i++){document.querySelector('[data-menu-open]').click();document.querySelector('[data-menu-close]').click()}document.querySelector('[data-menu-open]').click()});await p.waitForFunction(()=>document.querySelector('#mobile-drawer').dataset.motionState==='open');
+ const brand=p.locator('#drawer-title .wordmark-text');assert.equal(await brand.evaluate(e=>getComputedStyle(e).animationName),'label-gold-glow');await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'))});assert.equal(await brand.evaluate(e=>getComputedStyle(e).animationName),'none');await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'))});assert.equal(await brand.evaluate(e=>getComputedStyle(e).animationName),'label-gold-glow');
+ await p.emulateMedia({reducedMotion:'reduce'});await p.waitForFunction(()=>getComputedStyle(document.querySelector('#drawer-title .wordmark-text')).animationName==='none');await p.emulateMedia({reducedMotion:'no-preference'});await p.waitForFunction(()=>getComputedStyle(document.querySelector('#drawer-title .wordmark-text')).animationName==='label-gold-glow');
+ await p.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pagehide')));assert.equal(await p.locator(drawer).evaluate(e=>e.open),false);assert.equal(await p.locator(drawer).getAttribute('data-drawer-glow'),null);assert.deepEqual(await p.locator('body').evaluate(e=>[e.style.overflow,e.style.paddingRight]),['auto','7px']);
+ await p.reload();await p.locator(open).click();await p.setViewportSize({width:1280,height:900});await p.waitForFunction(()=>!document.querySelector('#mobile-drawer').open);assert.equal(await p.locator(drawer).getAttribute('data-drawer-glow'),null);assert.equal(await p.locator(open).isVisible(),false);
+ }finally{await b.close()}
+});
+
+test('touch has no hover jiggle; static fallbacks retain readable controls and usable navigation',async()=>{
+ const b=await launchBrowser();try{
+ const touch=await b.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await touch.goto(URL);await touch.locator(open).dispatchEvent('pointerover',{pointerType:'touch'});assert.equal(await touch.locator(open+' .jelly-text').evaluate(jiggles),0);await touch.locator(open).tap();await touch.waitForFunction(()=>document.querySelector('#mobile-drawer').dataset.motionState==='open');await touch.locator('#mobile-drawer nav a').first().focus();await touch.locator(close).dispatchEvent('pointerover',{pointerType:'touch'});assert.equal(await touch.locator(close+' .jelly-text').evaluate(jiggles),0);await touch.locator(close).tap();await touch.waitForFunction(()=>!document.querySelector('#mobile-drawer').open);
+ for(const mode of ['api','observer','disabled','reduced','nojs']){const p=await b.newPage({viewport:{width:390,height:844},javaScriptEnabled:mode!=='nojs'});if(mode==='api')await p.addInitScript(()=>{Element.prototype.animate=undefined});if(mode==='observer')await p.addInitScript(()=>{window.IntersectionObserver=undefined});if(mode==='disabled')await p.route('**/*',async route=>{if(route.request().resourceType()!=='document')return route.continue();const response=await route.fetch();await route.fulfill({response,body:(await response.text()).replace('--motion-enabled:1','--motion-enabled:0').replace('data-motion-enabled="true"','data-motion-enabled="false"')})});if(mode==='reduced')await p.emulateMedia({reducedMotion:'reduce'});await p.goto(URL);if(mode==='nojs'){assert.equal(await p.locator('.desktop-nav').isVisible(),true);assert.equal(await p.locator(open).isVisible(),false)}else{await p.locator(open).click();await p.waitForFunction(()=>document.querySelector('#mobile-drawer').dataset.motionState==='open');assert.equal(await p.locator('#drawer-title .wordmark-text').evaluate(e=>getComputedStyle(e).animationName),'none',mode);assert.equal(await p.locator(close).evaluate(e=>getComputedStyle(e).fontSize),'16px');assert.equal(await p.locator(close+' .jelly-text').evaluate(jiggles),0,mode);await p.locator(close).click();await p.waitForFunction(()=>!document.querySelector('#mobile-drawer').open)}await p.close()}
+ }finally{await b.close()}
+});

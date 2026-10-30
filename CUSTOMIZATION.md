@@ -161,7 +161,7 @@ Edit **`site.ts` → `theme.colors`**:
 | `subtleBackground` | Intro/footer background |
 | `onMedia`, `shadow`, `overlay`, `modalOverlay` | Text over imagery and dialog backdrops |
 
-Example: change `primary: '#e5ff00'` to `primary: '#d9e8ff'`. Check `accentText` contrast against your new accent. No component edit is needed.
+Example: change `primary: '#ffe600'` to `primary: '#d9e8ff'`. Check `accentText` contrast against your new accent. No component edit is needed.
 
 Shared `spacing`, `layout`, and `motion` settings are also in `theme`. Existing breakpoints and component geometry remain in authored CSS to preserve the approved layout. Motion’s `entryDuration` and `entryStagger` are numbers in milliseconds; fast/standard transition values include `ms`.
 
@@ -253,7 +253,7 @@ The homepage “THE PROCESS” link uses the locally hosted secondary sans-serif
 
 ## Hand-drawn circle and Process accents
 
-Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #c5d600). theme.colors.primary remains #e5ff00 for the other yellow accents. Change theme.motion.playful.circleDrawDuration (default 900ms) to adjust stroke drawing. For example, set it to 1100 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
+Change theme.colors.circle in src/config/site.ts to recolor only the word circles (default #ffe600). theme.colors.primary also defaults to #ffe600 for collaboration buttons and other primary accents; the two settings remain independently editable. Change theme.motion.playful.circleDrawDuration (default 900ms) to adjust stroke drawing. For example, set it to 1100 for a slower pen stroke. The circles replay on hover/focus, finish completely when interrupted, and remain fully visible with reduced motion, disabled switches or no JavaScript. Highlighted words are keyboard-focusable text with visible focus outlines.
 
 THE PROCESS retains its local regular sans-serif font and permanent dark hand-drawn SVG underline. Its link destination and typography controls are unchanged. The decorative circles/underline contain no downloadable media and require no new font or library.
 
@@ -361,3 +361,13 @@ Homepage About/Press/Archived/Contact/Process labels, desktop/mobile navigation 
 Customization tests now build temporary private copies and use separate local servers. They never change the working source or visible preview output. This prevents temporary test fonts, names and colors appearing when you reload the preview during tests.
 
 Keyboard focus can replay a text accent during the browser's normal focus scrolling. Continuous decorative glows stop offscreen; reduced-motion, background and navigation cancellation still settle effects immediately.
+
+## Mobile Open/Close controls
+
+The full navigation appears at 1024px and wider. Below that breakpoint, Open Menu and Close Menu use the existing Plus Jakarta Sans font at 16px (`theme.typography.sizes.menuControl: '1rem'`). Their normal weight is `theme.typography.weights.menuControl: '600'`; precise-pointer hover, keyboard focus and touch press use `menuControlActive: '700'`. Only the text gets heavier; hidden decorative sizing text reserves the heavier width, while the icon and 44px minimum touch target stay fixed. These controls have no underline.
+
+Both labels reuse the shared gold outline/glow and 1000ms sweep. Hover or keyboard focus also gives their lettering one gentle jiggle: `theme.motion.playful.menuJiggleDuration: 500`, `menuJiggleTravel: 1.5` pixels, `menuJiggleTilt: 2` degrees. Other text and collaboration-button jelly keep their existing settings. Rapid replay replaces the current jiggle; touch scrolling does not trigger hover motion.
+
+The brand inside the open drawer glows until native closing completes. `theme.motion.playful.drawerBrandGlowDuration: 1800` sets its pulse period; it reuses the existing gold colors and glow strengths. Header/footer brands keep their current effects. Background tabs, reduced/disabled motion and missing animation/observer APIs use readable static gold styling. Closing, Escape, navigation and resizing to desktop release the glow, focus and scroll state through the existing dialog lifecycle.
+
+Primary yellow and highlighted-word circles now default to `#ffe600` across desktop and mobile. Phone display profiles or night-color settings can still affect perceived color. Gold and Press-marker colors are separate settings.
