@@ -97,3 +97,8 @@ html[data-motion-enabled="false"] a,html[data-motion-enabled="false"] .process-u
 @media (prefers-reduced-motion: no-preference) {
  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) #mobile-drawer[open][data-drawer-glow] #drawer-title .wordmark-text { animation: label-gold-glow var(--drawer-brand-glow-duration) ease-in-out infinite; }
 }
+
+/* Control display must never override the desktop navigation breakpoint. */
+@media (min-width: 64rem) { .menu-toggle.menu-control { display: none; } }
+
+.menu-control > span[aria-hidden] { font-weight: var(--menu-control-weight); }

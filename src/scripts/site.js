@@ -1,7 +1,7 @@
 import {createDialogController} from './dialog.js';
 let disposeNavigation;
 /** Initialize accessible responsive navigation. @returns {void} Owns abortable input handlers and shared cancellable dialog transitions. */
-export function initNavigation(){disposeNavigation?.();const drawer=document.querySelector('#mobile-drawer');const opener=document.querySelector('[data-menu-open]');if(!(drawer instanceof HTMLDialogElement)||!(opener instanceof HTMLButtonElement))return;const events=new AbortController();const desktop=matchMedia('(min-width: 64rem)');const controller=createDialogController(drawer,{axis:'x',distance:16,onOpen:()=>opener.setAttribute('aria-expanded','true'),onClosed:()=>opener.setAttribute('aria-expanded','false')});
+export function initNavigation(){disposeNavigation?.();const drawer=document.querySelector('#mobile-drawer');const opener=document.querySelector('[data-menu-open]');if(!(drawer instanceof HTMLDialogElement)||!(opener instanceof HTMLButtonElement))return;const events=new AbortController();const desktop=matchMedia('(min-width: 64rem)');const controller=createDialogController(drawer,{axis:'x',distance:16,onOpen:()=>{opener.setAttribute('aria-expanded','true');if(typeof Element.prototype.animate==='function'&&typeof IntersectionObserver==='function')drawer.setAttribute('data-drawer-glow','');},onClosed:()=>{opener.setAttribute('aria-expanded','false');drawer.removeAttribute('data-drawer-glow');}});
   /** Open/reopen drawer. @returns {void} Delegates lifecycle and preserves trigger focus. */
   function openMenu(){controller.open(opener);}
   /** Request cancellable close. @returns {void} Delegates native-modal cleanup. */
