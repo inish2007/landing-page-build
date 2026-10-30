@@ -1,0 +1,38 @@
+/* Native inline decorations follow every wrapped text fragment, not the anchor box.
+   Captions intentionally have no new underline. No pseudo-element or text duplication. */
+a[data-link-feedback] { text-decoration: none !important; }
+a[data-link-feedback="text"] :is(.link-label,.outline-base) {
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--link-line);
+  text-decoration-color: transparent;
+  text-underline-offset: .3em;
+  transition: text-decoration-color var(--link-underline-duration) ease;
+}
+.editorial-links a[data-link-feedback="text"] .link-label { text-decoration-color: currentColor; text-underline-offset: .2em; }
+a[data-link-feedback="text"][aria-current="page"] .outline-base { text-decoration-color: currentColor; text-underline-offset: .4em; }
+a[data-link-feedback="text"]:focus-visible :is(.link-label,.outline-base) { text-decoration-color: currentColor; transition: none; }
+@media (hover: hover) and (pointer: fine) {
+  a[data-link-feedback="text"]:hover :is(.link-label,.outline-base) { text-decoration-color: currentColor; }
+}
+
+/* Arrow feedback is local: gallery controls keep their separate existing travel.
+   Reset the old broad anchor-hover utility, including external-arrow diagonal travel. */
+a[data-link-feedback="text"] .playful-arrow,[data-link-feedback="caption"] .playful-arrow {
+  transform: none;
+  transition: transform var(--link-arrow-duration) var(--motion-ease);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) :is(a[data-link-feedback="text"]:focus-visible .playful-arrow,.home-collage a:focus-visible [data-link-feedback="caption"] .playful-arrow) { transform: translateX(var(--link-arrow-distance)); }
+  @media (hover: hover) and (pointer: fine) {
+    html[data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) :is(a[data-link-feedback="text"]:hover .playful-arrow,[data-link-feedback="caption"]:hover .playful-arrow) { transform: translateX(var(--link-arrow-distance)); }
+  }
+}
+
+/* Pressed text dims without moving the click target, images or neighboring content. */
+a[data-link-feedback],[data-link-feedback="caption"] { transition: opacity var(--link-release-duration) ease; }
+a[data-link-feedback]:active,[data-link-pressed],.home-collage a:active [data-link-feedback="caption"] { opacity: var(--link-press-opacity); transition-duration: var(--link-press-duration); }
+
+@media (prefers-reduced-motion: reduce) {
+  a[data-link-feedback],[data-link-feedback="caption"],a[data-link-feedback] :is(.link-label,.outline-base,.playful-arrow),[data-link-feedback="caption"] .playful-arrow { transition: none !important; }
+}
+html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) :is(a[data-link-feedback],[data-link-feedback="caption"],a[data-link-feedback] .link-label,a[data-link-feedback] .outline-base,a[data-link-feedback] .playful-arrow,[data-link-feedback="caption"] .playful-arrow) { transition: none !important; }

@@ -20,6 +20,6 @@ const imageKeys = page.imageKeys || [];
     <div class="editorial-prose" data-motion-group>{proseGroups.map(group=>group.marked ? <div class="press-marker-group" data-motion="press-marker">{group.blocks.map(block=><div class="editorial-block"><p><span class="press-marker-ink">{block.text}</span></p></div>)}</div> : group.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>))}</div>
   </div>
   {page.mediaKey && <AnimatedMedia mediaKey={page.mediaKey} />}
-  {copy.links && copy.links.length > 0 && <nav class:list={["editorial-links",page.textNamespace === "editorial.press" && "press-article-links"]} aria-label={copy.title}>{copy.links.map(link => <a class="playful-link" href={link.href}>{link.label}<span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
+  {copy.links && copy.links.length > 0 && <nav class:list={["editorial-links",page.textNamespace === "editorial.press" && "press-article-links"]} aria-label={copy.title}>{copy.links.map(link => <a data-link-feedback="text" class="playful-link" href={link.href}><span class="link-label">{link.label}</span><span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
   <div class="editorial-image-grid">{Array.from({length:Math.max(0,(page.imageCount || 0)-1)}).map((_, index) => <ResponsiveImage imageKey={imageKeys[index + 1] || "homeIntroSide"} aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
 </article>

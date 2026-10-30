@@ -15,6 +15,7 @@ import '../styles/components/pages.css';
 import '../styles/components/navigation.css';
 import '../styles/components/motion.css';
 import '../styles/components/home-responsive.css';
+import '../styles/components/text-links.css';
 interface Props { title?: string; }
 const { title = getCopy('common.siteName') } = Astro.props;
 ---
@@ -35,6 +36,7 @@ const { title = getCopy('common.siteName') } = Astro.props;
     <MobileDrawer />
     <script>
       import '../scripts/site.js';
+      import '../scripts/text-links.js';
       import '../scripts/motion.js';
       import {updateCopyrightYear} from '../scripts/copyright.js';
       updateCopyrightYear();

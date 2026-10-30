@@ -90,7 +90,7 @@ export function initMotion(){
     const owner=event.target instanceof Element?event.target.closest('[data-text-jelly]'):null;
     if(!owner||!canReveal||!settings.playful||preference.matches||document.hidden||document.documentElement.dataset.motionEnabled==='false'||document.documentElement.dataset.playfulEnabled==='false')return;
     if(event.type==='pointerover'&&(!finePointer.matches||event.pointerType==='touch'))return;
-    if(owner.matches('button,.pill-link,.menu-control'))return;
+    if(owner.matches('button,.pill-link,.menu-control,a[data-link-feedback]')||owner.querySelector('[data-link-feedback="caption"]'))return;
     const target=owner.querySelector('.jelly-text');if(!target)return;const hit=owner.matches('.home-collage a')?target:owner;
     if(event.type==='pointerover'&&!hit.contains(event.target))return;
     if(event.relatedTarget instanceof Node&&hit.contains(event.relatedTarget))return;
