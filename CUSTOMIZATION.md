@@ -6,10 +6,10 @@ The file groups `text`, `images`, `media`, `navigation`, `pages`, `artworks`, `b
 
 ## 1. Open the project and preview changes
 
-1. Open `D:/projects/landing-page-build` in your editor.
+1. Open `D:/projects/landing-page-build-quiet-luxury` in your editor.
 2. Open `src/config/site.ts`.
 3. Run `npm run dev` from the project folder.
-4. Open the local address printed in the terminal (normally `http://127.0.0.1:4321/`).
+4. Open the local address printed in the terminal (use `http://127.0.0.1:4325/` with `npm run dev -- --port 4325`).
 5. Save a configuration/content edit and check the preview. For a production preview, run `npm run build` again after editing.
 
 Keep quotes, commas and brackets intact. In JSON use double quotes and no trailing commas. Use `npm run check` to find TypeScript mistakes and `npm run build` to validate content and media paths.
@@ -429,3 +429,18 @@ Under `theme.motion.playful`, `glowEnabled: false` removes repeating gold halos,
 Artwork uses `cardLift: 0`, `cardTilt: 0`, `cardScale: 1.015` and the existing700ms image timing. Yellow filled controls use `buttonHoverLift: 2`, `buttonHoverDuration: 220` and `buttonHoverShadow: '0 5px 14px rgb(0 0 0 / .12)'`. Existing `buttonPressDistance: 1` and `buttonDuration: 160` control press feedback. Only the visual surface/letters move; click targets and dimensions stay fixed. Touch does not trigger hover. Reduced/disabled/inactive motion cancels movement and shadow. GIF labels update inside their text span so the button surface remains intact.
 
 The two circle draws and six-image alternating48px drop retain their existing settings and persistence. All14pages still share the original reveal, dialog, media, copyright and ordinary text-link behavior.
+
+
+## Quiet luxury opening and motion
+
+The opening uses `home.hero.headlineSegments` and `home.hero.workLabel` in the text dictionary. Its action follows the header navigation entry with ID `work`; update that destination centrally. The dummy content remains editable. Desktop uses a 5:7 text/image split; below 1024px text and action appear above the image. Existing image proportions and focal points remain configured normally.
+
+Current settings supersede older timing examples above. `theme.motion.entryDuration` is 450ms, `pageDuration` and `dialogOpen` are 280ms, and `dialogClose` remains 160ms. In `playful`, `imageRevealDuration` is 1000ms and `revealTravel` is 8px; image hover remains 700ms at scale 1.015.
+
+`theme.motion.quiet` adds headingDuration (550ms), headingTravel (8px), mobileTravel (4px), mobileImageDuration (700ms), captionDuration (350ms), and captionDelay (100ms). Mobile motion settings apply below 768px. Captions share their photo's cancellation lifecycle. Initial viewport content is immediately available; only eligible below-fold content enters. The existing circle and alternating image-strip settings are unchanged.
+
+Refinement gaps: heading 64px desktop/32px mobile, homepage captions 20px, gallery captions 16px, metadata 6px. Fonts, colors and original media remain unchanged. All customization tests use private builds/servers; production browser tests honor SITE_TEST_URL.
+
+For a local preview use port 4325 (development) or 4335 (production), after checking availability. Physical-device smoothness and visitor comprehension require real-device/user review; browser emulation alone does not establish those outcomes.
+
+Reference-inspired composition: homepage art left/text right on desktop; text-first on mobile. Rounded frames on hero and supporting page shells retain original fonts, palette and assets. Font loading now uses swap for immediate readable fallback.

@@ -2,8 +2,8 @@ import {SITE_TEST_URL as TEST_URL} from './test-helper.mjs';
 import fs from 'node:fs';import {test} from 'node:test';import assert from 'node:assert/strict';import {launchBrowser,enableShineForTest} from './test-helper.mjs';import site from '../src/config/site.ts';import {getFontPreloads,createThemeCss} from '../src/config/theme.ts';
 const URL=process.env.SITE_TEST_URL||TEST_URL;
 /** Real central choices, duplicate families and opt-out must control preload markup without extra assets. */
-test('font preloads follow central normal faces, deduplicate and preserve bounded block fallback',()=>{
-  const config=structuredClone(site);assert.equal(getFontPreloads(config).length,3);assert.match(createThemeCss(config),/font-display:block/);
+test('font preloads follow central normal faces, deduplicate and preserve immediate readable fallback',()=>{
+  const config=structuredClone(site);assert.equal(getFontPreloads(config).length,3);assert.match(createThemeCss(config),/font-display:swap/);
   config.theme.typography.fonts.primary=config.theme.typography.fonts.brand;config.theme.typography.fonts.secondary=config.theme.typography.fonts.brand;assert.equal(getFontPreloads(config).length,1);
   config.theme.typography.loading.preload=false;assert.deepEqual(getFontPreloads(config),[]);
 });
