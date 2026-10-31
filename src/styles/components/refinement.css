@@ -57,3 +57,10 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 .hero-copy h1 { font-size:var(--text-display); max-width:10ch; }
 .page-shell { margin-block:24px; width:calc(100% - 2 * var(--page-gutter)); border:1px solid var(--color-border); border-radius:24px; }
 @media(max-width:63.999rem) { .home-hero { grid-template-columns:minmax(0,1fr); margin-block:12px 40px; padding:20px; border-radius:18px; gap:24px; } .hero-copy { grid-column:1; grid-row:1; } .home-hero > .image-frame { grid-column:1; grid-row:2; } .hero-copy h1 { font-size:var(--text-h1); max-width:none; } .page-shell { width:calc(100% - 2 * var(--page-gutter)); padding-inline:20px; border-radius:18px; } }
+/* Shared body frames leave focus rings and decorative accents free to overflow. */
+:is(.home-hero,.page-shell,.framed-section) { border:var(--frame-width) solid var(--color-border); border-radius:var(--frame-radius); }
+.framed-section { max-width:var(--content-max); width:calc(100% - 2 * var(--page-gutter)); margin:24px auto 64px; }
+.home-collaborations > .image-frame,.home-final > .image-frame { border-radius:var(--frame-radius) var(--frame-radius) 0 0; overflow:hidden; }
+@media(max-width:63.999rem) { :is(.home-hero,.page-shell,.framed-section) { border-radius:var(--frame-mobileRadius); } .home-collaborations > .image-frame,.home-final > .image-frame { border-radius:var(--frame-mobileRadius) var(--frame-mobileRadius) 0 0; } .framed-section { margin-block:12px 40px; } }
+/* Brand lettering is never underlined; focus outlines remain independent. */
+:is(.brand,.footer-brand):is(:hover,:focus,:focus-visible,:active), :is(.brand,.footer-brand) .wordmark-text { text-decoration:none!important; }
