@@ -16,3 +16,12 @@
 .hero-artwork[data-panel-settle] .hero-artwork-panel,.hero-artwork[data-panel-settle] .hero-artwork-panel::before,.hero-artwork[data-panel-settle] .hero-artwork-panel::after { transition:none!important; }
 @media(max-width:47.999rem) { .hero-artwork { aspect-ratio:var(--hero-mobileStageRatio)!important; } .hero-artwork-panel { border-radius:calc(var(--hero-mobileCornerRadius) * 1px); } .hero-artwork-panel img { object-position:var(--image-position-mobile); } .hero-artwork[data-panel-ready] { --panel-x:0px;--panel-y:calc(var(--hero-mobileSlide) * -1px);--panel-tilt-y:calc(var(--hero-mobileTiltY) * -1deg);--panel-tilt-x:calc(var(--hero-mobileTiltX) * 1deg);--panel-depth:calc(var(--hero-mobileDepth) * 1px);--panel-scale:var(--hero-mobilePanelScale); } }
 @media(prefers-reduced-motion:reduce) { .hero-artwork .hero-artwork-panel { transform:none!important;box-shadow:none!important;transition:none!important; } .hero-artwork-action { display:none; } .hero-artwork-panel::after,.hero-artwork-panel::before { opacity:0!important;transition:none!important; } }
+
+/* Fit the photograph to the available first screen without changing its aspect ratio. */
+.home-hero > .hero-artwork { width:min(100%,var(--hero-fit-width,calc((100svh - 300px) * 1.25))); justify-self:center; min-width:0; }
+@media(max-width:63.999rem) { .home-hero > .hero-artwork { width:min(100%,var(--hero-fit-width,calc((100svh - 350px) * .8))); } }
+@media(max-height:500px) and (min-width:600px) and (max-width:63.999rem) {
+ .home-hero { grid-template-columns:minmax(0,7fr) minmax(0,5fr); padding-block:12px; gap:20px; }
+ .home-hero > .hero-artwork { grid-column:1;grid-row:1; }
+ .home-hero .hero-copy { grid-column:2;grid-row:1; }
+}
