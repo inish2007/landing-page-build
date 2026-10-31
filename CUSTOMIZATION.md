@@ -444,3 +444,6 @@ Refinement gaps: heading 64px desktop/32px mobile, homepage captions 20px, galle
 For a local preview use port 4325 (development) or 4335 (production), after checking availability. Physical-device smoothness and visitor comprehension require real-device/user review; browser emulation alone does not establish those outcomes.
 
 Reference-inspired composition: homepage art left/text right on desktop; text-first on mobile. Rounded frames on hero and supporting page shells retain original fonts, palette and assets. Font loading now uses swap for immediate readable fallback.
+
+## First-look artwork and bold link feedback
+Edit theme.motion.hero for enabled, scale1.025/mobileScale1.012 and duration1200/mobileDuration800. Only the decoded onscreen inner hero image settles, once per fresh document; text/action remain available. History restoration, active page transitions and reduced/disabled/inactive motion skip or cancel it. theme.textLinks.hoverUnderlineThickness defaults3px. All linked text, captions and text wordmarks receive this line on hover/focus; buttons/icons remain undecorated and Process retains its single SVG line.

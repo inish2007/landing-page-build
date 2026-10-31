@@ -36,3 +36,15 @@ a[data-link-feedback]:active,[data-link-pressed],.home-collage a:active [data-li
   a[data-link-feedback],[data-link-feedback="caption"],a[data-link-feedback] :is(.link-label,.outline-base,.playful-arrow),[data-link-feedback="caption"] .playful-arrow { transition: none !important; }
 }
 html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) :is(a[data-link-feedback],[data-link-feedback="caption"],a[data-link-feedback] .link-label,a[data-link-feedback] .outline-base,a[data-link-feedback] .playful-arrow,[data-link-feedback="caption"] .playful-arrow) { transition: none !important; }
+/* Bold text-only interaction lines; decorative arrows and images stay undecorated. */
+a[data-link-feedback="text"] .outline-base { text-decoration:none; }
+a[data-link-feedback="text"] .outline-base .link-words { text-decoration:underline; text-decoration-color:transparent; text-decoration-thickness:var(--link-line); text-underline-offset:.3em; }
+a[data-link-feedback="text"][aria-current="page"] .link-words { text-decoration-color:currentColor; }
+.home-collage a .link-words, :is(.brand,.footer-brand) .wordmark-text { text-decoration:underline; text-decoration-color:transparent; text-decoration-thickness:var(--link-line); text-underline-offset:.2em; }
+:is(a[data-link-feedback="text"] .link-label,a .link-words,.wordmark-text) { transition:text-decoration-color var(--link-underline-duration) ease,text-decoration-thickness var(--link-underline-duration) ease; }
+:is(a[data-link-feedback="text"]:focus-visible .link-label,a:focus-visible .link-words,.brand:focus-visible .wordmark-text,.footer-brand:focus-visible .wordmark-text) { text-decoration-color:currentColor; text-decoration-thickness:var(--link-hover-line); }
+@media(hover:hover) and (pointer:fine) { :is(a[data-link-feedback="text"]:hover .link-label,a[data-link-feedback="text"]:hover .link-words,.home-collage a:hover .link-words,.brand:hover .wordmark-text,.footer-brand:hover .wordmark-text) { text-decoration-color:currentColor; text-decoration-thickness:var(--link-hover-line); } }
+a[data-link-feedback="text"]:is(:hover,:focus-visible) .outline-base { text-decoration:none; }
+@media(prefers-reduced-motion:reduce) { :is(.link-label,.link-words,.wordmark-text) { transition:none!important; } }
+html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) :is(.link-label,.link-words,.wordmark-text) { transition:none!important; }
+:is(a[data-link-feedback="text"]:focus-visible .link-label,a:focus-visible .link-words,.brand:focus-visible .wordmark-text,.footer-brand:focus-visible .wordmark-text) { transition:none; }

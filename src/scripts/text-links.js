@@ -9,7 +9,7 @@ export function initTextLinkPress(){
   /** Use only primary direct input; mouse and keyboard retain native :active behavior. */
   function start(event){
     clear();if(!event.isPrimary||event.button!==0||!['touch','pen'].includes(event.pointerType)||!(event.target instanceof Element))return;
-    const owner=event.target.closest('.filled-button,a[data-link-feedback],[data-link-feedback="caption"]');
+    const owner=event.target.closest('.filled-button,.brand,.footer-brand,a[data-link-feedback],[data-link-feedback="caption"]');
     if(!owner||owner.matches(':disabled')||owner.closest('[aria-disabled="true"]'))return;
     target=owner;pointer=event.pointerId;attribute=owner.matches('.filled-button')?'data-button-pressed':'data-link-pressed';target.setAttribute(attribute,'');
   }
