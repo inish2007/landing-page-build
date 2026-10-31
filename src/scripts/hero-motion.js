@@ -1,5 +1,6 @@
 /** One decoded hero settle per fresh document; base image and text are always visible. */
 export function initHeroMotion(){
+ if(document.querySelector('[data-hero-panel-enabled="true"]'))return;
  const image=document.querySelector('.home-hero .image-frame img');if(!(image instanceof HTMLImageElement))return;
  const css=getComputedStyle(document.documentElement),value=(key)=>parseFloat(css.getPropertyValue(key));
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');const events=new AbortController();let effect,observer,done=false,cancelled=false;

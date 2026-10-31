@@ -1,0 +1,13 @@
+---
+import site from '../config/site';
+import {getImage,getCopy} from '../utils/content';
+interface Props {imageKey?:string}
+const {imageKey}=Astro.props;
+const image=getImage(imageKey);
+---
+<div class="hero-artwork image-frame" data-hero-panel-enabled={String(site.theme.motion.hero.panelEnabled)} style={`--image-ratio:3 / 2;--image-fit:${image.fit||'cover'};--image-position:${image.position?.desktop||'50% 50%'};--image-position-mobile:${image.position?.mobile||image.position?.desktop||'50% 50%'}`}>
+ <button type="button" class="hero-artwork-toggle" disabled aria-label={getCopy('home.hero.viewFlatLabel')} aria-pressed="false" data-flat-label={getCopy('home.hero.viewFlatLabel')} data-depth-label={getCopy('home.hero.viewDepthLabel')}>
+  <span class="hero-artwork-panel"><img src={image.src} srcset={image.sources?.map(s=>s.src+' '+s.width+'w').join(', ')} sizes="(max-width:63.999rem) 100vw, 58vw" alt={image.alt} width={image.width} height={image.height} loading="eager" fetchpriority="high" decoding="async" /></span>
+  <span class="hero-artwork-action" aria-hidden="true" hidden>{getCopy('home.hero.viewFlatLabel')}</span>
+ </button>
+</div>

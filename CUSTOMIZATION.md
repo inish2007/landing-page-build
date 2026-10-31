@@ -458,3 +458,12 @@ Brand wordmarks no longer receive underlines in any state. Ordinary linked text 
 `theme.motion.playful.labelRollEnabled` defaults true; `labelRollDuration` defaults 320ms. Yellow filled controls share ButtonLabel: one accessible original and one aria-hidden decorative copy roll inside a local clipping window, while existing face lift/shadow and press settings retain fixed click targets. Play/Pause updates both copies centrally. Touch only presses; reduced/disabled/inactive motion settles immediately. Set labelRollEnabled false to retain the ordinary label with existing face feedback.
 
 A generated desktop/mobile floating-panel image is a private visual concept only. No 3D code, library or replacement asset has been added. User approval of that preview is required before any later 3D implementation.
+
+
+## Interactive hero artwork
+
+The approved floating panel is now implemented with CSS perspective, not WebGL or a generated replacement image. Click/tap the panel, or use Enter/Space, to switch between floating and flat views. The small action label updates between View in 2D and View in 3D; edit home.hero.viewFlatLabel/viewDepthLabel in the central text dictionary. The heading/action and stage space remain stationary.
+
+Settings live under theme.motion.hero: panelEnabled true; panelDuration650ms; tiltY7/tiltX2 degrees; mobileTiltY3/mobileTiltX1; depth6/mobileDepth3px; slide12/mobileSlide4px; panelEasing cubic-bezier(0.22,1,0.36,1). Mobile settings apply below768px. Set panelEnabled false to restore the previous flat-image settle behavior. The enabled/master/playful switches and reduced motion control whether the toggle is available.
+
+The panel is static and flat until its existing image decodes. Failed images, no JavaScript, unsupported transforms or reduced/disabled motion retain the flat fallback with no active toggle. Backgrounding/navigation settles the selected destination. A namespaced heroPanelView value in the current browser history entry restores selection when returning; fresh loads start floating. The old image-scale entrance is skipped while the panel feature is enabled.

@@ -1,0 +1,16 @@
+/* The stage reserves the original crop; only its inner photographic panel transforms. */
+.hero-artwork { position:relative; perspective:1200px; overflow:visible!important; background:transparent; }
+.hero-artwork-toggle { display:block; position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:transparent; color:var(--color-text); cursor:pointer; border-radius:12px; text-align:inherit; }
+.hero-artwork-toggle:disabled { cursor:default; opacity:1; }
+.hero-artwork-toggle:focus-visible { outline:2px solid var(--color-focus); outline-offset:8px; }
+.hero-artwork-panel { position:absolute; inset:0; display:block; border-radius:12px; overflow:hidden; transform-origin:center; }
+.hero-artwork-panel img { width:100%; height:100%; object-fit:var(--image-fit); object-position:var(--image-position); }
+.hero-artwork-action { position:absolute; right:12px; bottom:12px; padding:8px 12px; border-radius:20px; font-family:var(--font-sans); font-size:12px; background:var(--color-canvas); color:var(--color-text); }
+.hero-artwork[data-panel-ready] { --panel-x:calc(var(--hero-slide) * -1px); --panel-y:0px; --panel-tilt-y:calc(var(--hero-tiltY) * -1deg); --panel-tilt-x:calc(var(--hero-tiltX) * 1deg); --panel-depth:calc(var(--hero-depth) * 1px); }
+.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel { transform:translateX(var(--panel-x)) translateY(var(--panel-y)) rotateY(var(--panel-tilt-y)) rotateX(var(--panel-tilt-x)); box-shadow:var(--panel-depth) 2px 0 var(--color-border),0 18px 28px rgb(0 0 0 / .14); }
+.hero-artwork[data-panel-ready] .hero-artwork-panel { transition:transform calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing),box-shadow calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing); }
+.hero-artwork[data-panel-view="2d"] .hero-artwork-panel { transform:none; box-shadow:0 3px 8px rgb(0 0 0 / .04); }
+.hero-artwork[data-panel-settle] .hero-artwork-panel { transition:none!important; }
+@media(max-width:47.999rem) { .hero-artwork-panel img { object-position:var(--image-position-mobile); } .hero-artwork[data-panel-ready] { --panel-x:0px;--panel-y:calc(var(--hero-mobileSlide) * -1px);--panel-tilt-y:calc(var(--hero-mobileTiltY) * -1deg);--panel-tilt-x:calc(var(--hero-mobileTiltX) * 1deg);--panel-depth:calc(var(--hero-mobileDepth) * 1px); } }
+@media(prefers-reduced-motion:reduce) { .hero-artwork .hero-artwork-panel { transform:none!important;box-shadow:none!important;transition:none!important; } .hero-artwork-action { display:none; } }
+.hero-artwork-toggle { perspective:1200px; }

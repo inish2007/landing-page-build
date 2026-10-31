@@ -32,7 +32,9 @@
         }
       ],
       "subheadline": "Lana Gomez Art",
-      "workLabel": "Explore work"
+      "workLabel": "Explore work",
+      "viewFlatLabel": "View in 2D",
+      "viewDepthLabel": "View in 3D"
     },
     "statement": {
       "eyebrow": "The Process",

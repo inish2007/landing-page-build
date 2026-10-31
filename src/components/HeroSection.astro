@@ -5,11 +5,11 @@ interface Props {id:string;textNamespace?:string;imageKey?:string}
 import { getCopy } from '../utils/content';
 import FormattedText from './FormattedText.astro';
 import {getNavigation} from '../utils/content';
-import ResponsiveImage from './ResponsiveImage.astro';
+import HeroArtwork from './HeroArtwork.astro';
 const { id, textNamespace, imageKey } = Astro.props;
 const work = getNavigation('header').find(link => link.id === 'work')!;
 ---
 <section id={id} class="home-hero" aria-labelledby="home-title">
   <div class="hero-copy"><h1 id="home-title"><FormattedText segments={getCopy(textNamespace + '.headlineSegments')} /></h1><a class="hero-work pill-link filled-button" href={work.path}><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text"><ButtonLabel text={getCopy(textNamespace + '.workLabel')} /></span></a></div>
-  <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" eager />
+  <HeroArtwork imageKey={imageKey} />
 </section>
