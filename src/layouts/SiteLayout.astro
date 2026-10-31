@@ -39,6 +39,7 @@ const { title = getCopy('common.siteName') } = Astro.props;
       import '../scripts/site.js';
       import '../scripts/text-links.js';
       import '../scripts/motion.js';
+      import '../scripts/hero-motion.js';
       import {updateCopyrightYear} from '../scripts/copyright.js';
       updateCopyrightYear();
       window.addEventListener('pageshow',updateCopyrightYear);

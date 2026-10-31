@@ -37,7 +37,7 @@ export const site = {
   theme: {
     // Ordinary text links: distances/thickness in px, durations in ms. Legacy pressLinks still controls the Process SVG.
     refinement:{proseMaxWidth:'60ch',proseLineHeight:'1.6',headingGapDesktop:'64px',headingGapMobile:'32px',captionGap:'20px',galleryCaptionGap:'16px',galleryMetadataGap:'6px',fieldGap:'8px',fieldGroupGap:'24px'},
-    textLinks:{underlineThickness:1,underlineDuration:180,arrowDistance:3,arrowDuration:220,pressOpacity:0.82,pressDuration:90,releaseDuration:160},
+    textLinks:{hoverUnderlineThickness:3,underlineThickness:1,underlineDuration:180,arrowDistance:3,arrowDuration:220,pressOpacity:0.82,pressDuration:90,releaseDuration:160},
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
     pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
@@ -70,7 +70,7 @@ export const site = {
     },
     spacing:{'1':'0.5rem','2':'1rem','3':'1.5rem','4':'2.5rem','5':'4rem','6':'6rem'},
     layout:{maxWidth:'90rem',narrowWidth:'56rem',pageGutter:'clamp(1.25rem, 3vw, 3rem)'},
-    motion:{quiet:{headingDuration:550,headingTravel:8,mobileTravel:4,mobileImageDuration:700,captionDuration:350,captionDelay:100},enabled:true as boolean,pageTransitions:true as boolean,entryDuration:450,entryStagger:70,maxStagger:210,maxConcurrent:6,dialogOpen:280,dialogClose:160,pageDuration:280,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
+    motion:{hero:{enabled:true as boolean,scale:1.025,mobileScale:1.012,duration:1200,mobileDuration:800},quiet:{headingDuration:550,headingTravel:8,mobileTravel:4,mobileImageDuration:700,captionDuration:350,captionDelay:100},enabled:true as boolean,pageTransitions:true as boolean,entryDuration:450,entryStagger:70,maxStagger:210,maxConcurrent:6,dialogOpen:280,dialogClose:160,pageDuration:280,fast:'160ms',standard:'160ms',easing:'cubic-bezier(0.16, 1, 0.3, 1)',
       // Playful interactions: distances in px, tilt in degrees, durations in ms.
       playful:{enabled:true as boolean,shineEnabled:false as boolean,glowEnabled:false as boolean,brandWobbleEnabled:false as boolean,buttonHoverLift:2,buttonHoverDuration:220,buttonHoverShadow:'0 5px 14px rgb(0 0 0 / .12)',buttonOpacity:1,buttonPressDistance:1,buttonDuration:160,menuJiggleDuration:500,menuJiggleTravel:1.5,menuJiggleTilt:2,drawerBrandGlowDuration:1800,labelGlowDuration:1800,labelGlowLow:3,labelGlowHigh:6,aboutGlowDuration:1800,jellyDuration:600,shineDuration:1000,jellyWide:1.04,jellyNarrow:0.96,socialDrop:{enabled:true as boolean,duration:1100,stagger:120,distance:48,alternateOnLoad:true as boolean},imageRevealDuration:1000,imageNearDistance:100,imageDecodeTimeout:4000,imageHoverDuration:700,imageEasing:'cubic-bezier(0.45, 0, 0.55, 1)',circleDrawDuration:900,hoverDuration:220,cardLift:0,cardTilt:0,cardScale:1.015,pressScale:0.98,arrowTravel:4,revealTravel:8,accentDuration:420}},
   } satisfies SiteTheme,
