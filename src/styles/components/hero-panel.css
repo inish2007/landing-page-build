@@ -1,25 +1,18 @@
-/* The stage reserves the original crop; only its inner photographic panel transforms. */
-.hero-artwork { position:relative; perspective:1200px; overflow:visible!important; background:transparent; }
-.hero-artwork-toggle { display:block; position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:transparent; color:var(--color-text); cursor:pointer; border-radius:12px; text-align:inherit; }
+/* Stable stage; reversible photographic canvas with a warm perpendicular material edge. */
+.hero-artwork { position:relative; overflow:visible!important; border-radius:0!important; background:transparent; aspect-ratio:var(--hero-stageRatio)!important; }
+.hero-artwork-toggle { display:block; position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:transparent; color:var(--color-text); cursor:pointer; border-radius:4px; text-align:inherit; perspective:calc(var(--hero-perspective) * 1px); perspective-origin:var(--hero-perspectiveOrigin); }
 .hero-artwork-toggle:disabled { cursor:default; opacity:1; }
 .hero-artwork-toggle:focus-visible { outline:2px solid var(--color-focus); outline-offset:8px; }
-.hero-artwork-panel { position:absolute; inset:0; display:block; border-radius:12px; overflow:visible; transform-origin:center; transform-style:preserve-3d; }
+.hero-artwork-panel { position:absolute; inset:0; display:block; border-radius:calc(var(--hero-cornerRadius) * 1px); overflow:visible; transform-origin:center; transform-style:preserve-3d; }
 .hero-artwork-panel img { width:100%; height:100%; border-radius:inherit; object-fit:var(--image-fit); object-position:var(--image-position); }
 .hero-artwork-action { position:absolute; right:12px; bottom:12px; padding:8px 12px; border-radius:20px; font-family:var(--font-sans); font-size:12px; background:var(--color-canvas); color:var(--color-text); }
-.hero-artwork[data-panel-ready] { --panel-x:calc(var(--hero-slide) * -1px); --panel-y:0px; --panel-tilt-y:calc(var(--hero-tiltY) * -1deg); --panel-tilt-x:calc(var(--hero-tiltX) * 1deg); --panel-depth:calc(var(--hero-depth) * 1px); }
-.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel { transform:translateX(var(--panel-x)) translateY(var(--panel-y)) rotateY(var(--panel-tilt-y)) rotateX(var(--panel-tilt-x)) scale(var(--panel-scale)); box-shadow:0 28px 32px -8px rgb(0 0 0 / .28); }
+.hero-artwork[data-panel-ready] { --panel-x:calc(var(--hero-slide) * -1px); --panel-y:0px; --panel-tilt-y:calc(var(--hero-tiltY) * -1deg); --panel-tilt-x:calc(var(--hero-tiltX) * 1deg); --panel-depth:calc(var(--hero-depth) * 1px); --panel-scale:var(--hero-panelScale); background:linear-gradient(165deg,var(--hero-backdropTop),var(--hero-backdropBottom)); }
+.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel { transform:translateX(var(--panel-x)) translateY(var(--panel-y)) rotateY(var(--panel-tilt-y)) rotateX(var(--panel-tilt-x)) scale(var(--panel-scale)); box-shadow:var(--hero-contactShadow),var(--hero-groundingShadow); }
 .hero-artwork[data-panel-ready] .hero-artwork-panel { transition:transform calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing),box-shadow calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing); }
-.hero-artwork[data-panel-view="2d"] .hero-artwork-panel { transform:none; box-shadow:0 3px 8px rgb(0 0 0 / .04); }
-.hero-artwork[data-panel-settle] .hero-artwork-panel { transition:none!important; }
-@media(max-width:47.999rem) { .hero-artwork-panel img { object-position:var(--image-position-mobile); } .hero-artwork[data-panel-ready] { --panel-x:0px;--panel-y:calc(var(--hero-mobileSlide) * -1px);--panel-tilt-y:calc(var(--hero-mobileTiltY) * -1deg);--panel-tilt-x:calc(var(--hero-mobileTiltX) * 1deg);--panel-depth:calc(var(--hero-mobileDepth) * 1px); } }
-@media(prefers-reduced-motion:reduce) { .hero-artwork .hero-artwork-panel { transform:none!important;box-shadow:none!important;transition:none!important; } .hero-artwork-action { display:none; } }
-.hero-artwork-toggle { perspective:1200px; }
-
-/* A separate gallery backdrop, inset face and actual perpendicular side establish depth. */
-.hero-artwork[data-panel-ready] { --panel-scale:var(--hero-panelScale); background:linear-gradient(140deg,var(--color-border),var(--color-canvas)); }
-.hero-artwork-panel::after { content:''; position:absolute; top:0; bottom:0; left:100%; width:var(--panel-depth); background:linear-gradient(to right,var(--color-border),color-mix(in srgb,var(--color-border) 70%,var(--color-text))); transform-origin:left center; transform:rotateY(90deg); opacity:0; pointer-events:none; transition:opacity calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing); }
-.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel::after { opacity:1; }
-.hero-artwork-panel img { box-shadow:inset 0 0 0 1px rgb(255 255 255 / .3); }
-.hero-artwork[data-panel-settle] .hero-artwork-panel::after { transition:none!important; }
-@media(max-width:47.999rem) { .hero-artwork[data-panel-ready] { --panel-scale:var(--hero-mobilePanelScale); } }
-@media(prefers-reduced-motion:reduce) { .hero-artwork-panel::after { opacity:0!important;transition:none!important; } }
+.hero-artwork[data-panel-view="2d"] .hero-artwork-panel { transform:none; box-shadow:var(--hero-flatShadow); }
+.hero-artwork-panel::after { content:''; position:absolute; top:0; bottom:0; left:100%; width:var(--panel-depth); background:repeating-linear-gradient(0deg,transparent 0 2px,rgb(80 60 35 / .12) 2px 3px),repeating-linear-gradient(90deg,transparent 0 2px,rgb(255 255 255 / .14) 2px 3px),linear-gradient(to right,var(--hero-edgeLight),var(--hero-edgeDark)); transform-origin:left center; transform:rotateY(90deg); opacity:0; pointer-events:none; transition:opacity calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing); }
+.hero-artwork-panel::before { content:''; position:absolute; inset:0; border:1px solid var(--hero-highlight); border-radius:inherit; pointer-events:none; transform:translateZ(.1px); opacity:0; transition:opacity calc(var(--hero-panelDuration) * 1ms) var(--hero-panelEasing); }
+.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel::after,.hero-artwork[data-panel-ready][data-panel-view="3d"] .hero-artwork-panel::before { opacity:1; }
+.hero-artwork[data-panel-settle] .hero-artwork-panel,.hero-artwork[data-panel-settle] .hero-artwork-panel::before,.hero-artwork[data-panel-settle] .hero-artwork-panel::after { transition:none!important; }
+@media(max-width:47.999rem) { .hero-artwork { aspect-ratio:var(--hero-mobileStageRatio)!important; } .hero-artwork-panel { border-radius:calc(var(--hero-mobileCornerRadius) * 1px); } .hero-artwork-panel img { object-position:var(--image-position-mobile); } .hero-artwork[data-panel-ready] { --panel-x:0px;--panel-y:calc(var(--hero-mobileSlide) * -1px);--panel-tilt-y:calc(var(--hero-mobileTiltY) * -1deg);--panel-tilt-x:calc(var(--hero-mobileTiltX) * 1deg);--panel-depth:calc(var(--hero-mobileDepth) * 1px);--panel-scale:var(--hero-mobilePanelScale); } }
+@media(prefers-reduced-motion:reduce) { .hero-artwork .hero-artwork-panel { transform:none!important;box-shadow:none!important;transition:none!important; } .hero-artwork-action { display:none; } .hero-artwork-panel::after,.hero-artwork-panel::before { opacity:0!important;transition:none!important; } }

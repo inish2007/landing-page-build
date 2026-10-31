@@ -469,3 +469,10 @@ Settings live under theme.motion.hero: panelEnabled true; panelDuration650ms; ti
 The panel is static and flat until its existing image decodes. Failed images, no JavaScript, unsupported transforms or reduced/disabled motion retain the flat fallback with no active toggle. Backgrounding/navigation settles the selected destination. A namespaced heroPanelView value in the current browser history entry restores selection when returning; fresh loads start floating. The old image-scale entrance is skipped while the panel feature is enabled.
 
 Depth refinement: the floating view now leaves visible gallery-backdrop space around the panel; a perpendicular CSS side face and stronger grounding shadow distinguish it from a tilted flat photograph. Flat view returns to full stage size. No artwork pixels/assets are replaced.
+
+
+## Reference canvas finish
+
+The hero now reserves stageRatio `'5 / 4'` on desktop/tablet and mobileStageRatio `'4 / 5'` below768px. Central hero settings define perspective1000px, perspectiveOrigin85%50%, tiltY20/tiltX2, mobileTiltY10/mobileTiltX1, cornerRadius4/mobileCornerRadius3, depth20/mobileDepth10. Scale remains .96/.94 and sliding timing650ms. The reference-style centered cover crop is shared by both views. The hero may be taller, while its heading/action remain immediately available.
+
+Material-only settings edgeLight/edgeDark create the warm linen-textured side face; highlight controls its thin front rim. contactShadow and groundingShadow control the separate tight/soft shadows; flatShadow applies to2D. backdropTop/backdropBottom set the continuous neutral stage surface, with no inner rounded-card outline. These settings do not change branding or other pages. All decoration is CSS, pointer-transparent and hidden/settled appropriately in static fallbacks.
