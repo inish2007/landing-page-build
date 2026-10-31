@@ -231,21 +231,21 @@ Open `src/config/site.ts` and find `theme.motion.playful`. The main motion switc
 |---|---:|---|
 | enabled | true | Artwork/brand/arrow/underline and circle enhancements |
 | hoverDuration | 220 | Button/link/arrow transition duration, milliseconds |
-| imageRevealDuration | 1000 | Image/card reveal duration, milliseconds |
+| imageRevealDuration | 1400 | Image/card reveal duration, milliseconds |
 | imageHoverDuration | 700 | Image hover and return duration, milliseconds |
 | imageEasing | cubic-bezier(0.45, 0, 0.55, 1) | Gradual image ease-in/ease-out |
-| cardLift | 6 | Artwork lift, pixels; keep small |
-| cardTilt | 1.5 | Pointer-only artwork tilt, degrees |
-| cardScale | 1.03 | Pointer-only artwork image scale |
-| pressScale | 0.98 | Button scale while pressed |
+| cardLift | 0 | Artwork lift, pixels; keep small |
+| cardTilt | 0 | Pointer-only artwork tilt, degrees |
+| cardScale | 1.015 | Artwork hover/focus image scale |
+| pressScale | 0.98 | Legacy compatibility value; standard buttons do not scale |
 | arrowTravel | 4 | Legacy/gallery-control arrow travel; ordinary links use `theme.textLinks.arrowDistance` |
 | revealTravel | 18 | Upward entry distance for eligible image-only units, pixels |
 | accentDuration | 420 | One-shot brand wobble duration, milliseconds |
 | circleDrawDuration | 900 | Circle stroke draw/replay duration, milliseconds |
 
-For gentler artwork movement, change `cardLift: 2`, `cardTilt: 0.5`, and `cardScale: 1.01`. For stationary branding and artwork, set `enabled: false` inside `playful`. Save, run `npm run check` and `npm run build`, then preview desktop and mobile.
+For a smaller zoom, set `cardScale: 1.01` while leaving lift/tilt at0. For stationary artwork use `cardScale: 1`; branding is already stationary with `brandWobbleEnabled: false`. The `playful.enabled` master also controls signature effects, so leave it enabled to retain circles and the six-image sequence. Save, run `npm run check` and `npm run build`, then preview desktop and mobile.
 
-Buttons lift 2px and compress while held; keyboard artwork focus lifts without tilt. Hover movement requires a precise pointer. Circle strokes draw once when first visible and replay on precise-pointer hover or keyboard focus; brand wobble plays once per deliberate hover/focus. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
+Filled buttons lift2px on hover and press to1px below neutral; artwork uses gentle zoom without tilt/lift. Hover movement requires a precise pointer. Circle strokes retain their first-view/hover/focus drawing; brand wobble and gold glow are disabled in the creative defaults. There are no continuous decorative loops. Reduced motion and backgrounding stop the effects. Existing GIF controls and dialog timing are unchanged.
 
 These are reusable Tailwind utilities backed by generated CSS variables. You do not need to edit component classes, keyframes or JavaScript to change the settings above.
 
@@ -301,11 +301,11 @@ About is a normal-flow caption beneath its unchanged picture, using the same dar
 
 Moving light sweeps are disabled in the client baseline: `theme.motion.playful.shineEnabled: false`. Existing glow is separate and remains enabled. Setting `shineEnabled` to `true` explicitly restores the retained non-button shine capability; `shineDuration` remains 1000ms for compatibility. Image logos do not shine. This optional setting is not enabled in this candidate.
 
-Collaboration pills and normal buttons use a soft press: `theme.motion.playful.buttonPressDistance: 1` (px) and `buttonDuration: 160` (ms). Only their visual face moves down while pressed, returning smoothly on release. The interactive target stays stationary; there is no hover movement, fade, scaling, jelly or bounce. Reduced/disabled/inactive motion keeps the face static. Image-card buttons retain their separate artwork hover. No hover lift or fade is configured for yellow buttons. Native touch pressed-state timing varies: installed Edge can activate it only on release, making the 1px effect brief. The immediate touch-state helper described below is scoped to ordinary text links, not filled buttons. `buttonOpacity` remains at 1 and old jelly/menu-jiggle settings retain their names for compatibility; they no longer animate buttons.
+Collaboration pills and normal buttons use a soft press: `theme.motion.playful.buttonPressDistance: 1` (px) and `buttonDuration: 160` (ms). Only their visual face moves down while pressed, returning smoothly on release. The interactive target stays stationary; there is no fade, scaling, jelly or bounce; filled controls have the restrained hover lift described below. Reduced/disabled/inactive motion keeps the face static. Image-card buttons retain their separate artwork hover. In the creative version, yellow filled buttons lift their visual face2px over220ms with a soft shadow, while the target remains fixed; press moves the face to1px below neutral. The shared passive touch/pen handler now covers filled buttons too, giving immediate feedback and clearing on movement/cancellation/release. Menu/lightbox text controls retain their original soft press. `buttonOpacity` remains at 1 and old jelly/menu-jiggle settings retain their names for compatibility; they no longer animate buttons.
 
 ## Entry shine and About caption
 
-Navigation labels use theme.typography.weights.navigation(default600); wordmark/heading font weights are unchanged. Navbar lettering keeps the shared gold glow without a text outline; optional masked fill sweeps are disabled by default. About sits beneath the image with dark text and the same glow as the other captions. There is no box, padding, overlay or image dimming. A decorative aria-hidden copy supplies a moving gold fill through a narrow mask; it is not a duplicate accessible heading. Unsupported masks keep the ordinary base text.
+Navigation labels use theme.typography.weights.navigation(default600); wordmark/heading font weights are unchanged. Navbar lettering is clean without gold glow or text outlines; optional masked fill sweeps remain disabled by default. About sits beneath the image with the same clean dark text as the other captions. There is no box, padding, overlay or image dimming. A decorative aria-hidden copy supplies a moving gold fill through a narrow mask; it is not a duplicate accessible heading. Unsupported masks keep the ordinary base text.
 
 Optional shine lifecycle (only when `shineEnabled: true`): non-button wordmarks/headings/labels use the existing 1000ms `shineDuration`, once on visible entry and on precise-pointer hover or keyboard focus. Completed entry effects do not replay on ordinary scrolling/history restoration. Reduced/disabled motion, inactive tabs and navigation cancel effects. Buttons retain soft-press feedback even when optional shine is enabled.
 
@@ -366,7 +366,7 @@ Keyboard focus can replay a text accent during the browser's normal focus scroll
 
 The full navigation appears at 1024px and wider. Below that breakpoint, Open Menu and Close Menu use the existing Plus Jakarta Sans font at 16px (`theme.typography.sizes.menuControl: '1rem'`). Their normal weight is `theme.typography.weights.menuControl: '600'`; precise-pointer hover, keyboard focus and touch press use `menuControlActive: '700'`. Only the text gets heavier; hidden decorative sizing text reserves the heavier width, while the icon and 44px minimum touch target stay fixed. These controls have no underline.
 
-Both labels retain gold glow without text outlines, but no longer run light sweeps or jiggle. They use the visual-only 1px soft press. The old compatible jiggle settings remain: `theme.motion.playful.menuJiggleDuration: 500`, `menuJiggleTravel: 1.5` pixels, `menuJiggleTilt: 2` degrees. Other non-button text jelly keeps its existing settings. Touch scrolling does not trigger hover feedback.
+Both menu labels retain dark readable text, with gold glow, outlines, light sweeps and jiggle disabled in the creative version. They use the visual-only 1px soft press. The old compatible jiggle settings remain: `theme.motion.playful.menuJiggleDuration: 500`, `menuJiggleTravel: 1.5` pixels, `menuJiggleTilt: 2` degrees. Other non-button text jelly keeps its existing settings. Touch scrolling does not trigger hover feedback.
 
 The brand inside the open drawer glows until native closing completes. `theme.motion.playful.drawerBrandGlowDuration: 1800` sets its pulse period; it reuses the existing gold colors and glow strengths. Header/footer brands keep their current effects. Background tabs, reduced/disabled motion and missing animation/observer APIs use readable static gold styling. Closing, Escape, navigation and resizing to desktop release the glow, focus and scroll state through the existing dialog lifecycle.
 
@@ -380,11 +380,11 @@ Configured links accept `/site-path/`, `#fragment`, full `https://` or `http://`
 
 All website text now has zero-width gold strokes, including navigation, titles, homepage captions, footer headings, Open/Close labels and the drawer brand. `theme.typography.sizes.labelStroke` and `aboutStroke` retain their existing names and default to `'0px'` for compatibility. There are no separate per-label sweep stroke overrides.
 
-Gold glow remains; shine is now disabled by default: decorative `.outline-sweep` copies use gold-light **fill** under the existing moving mask, with zero stroke. They remain absolutely positioned, hidden between sweeps and hidden from assistive technology. Their 1000ms duration, triggers, cancellation and static fallbacks are unchanged. Optional wordmark shine capability, drawer-brand glow and non-button text jelly are retained. Menu/button jiggle is replaced by a visual-only soft press. Normal fills, fonts, weights, geometry, underlines, yellow circles/buttons and image motion are unchanged. The Figma export was not modified.
+Gold glow and brand wobble are disabled by default in the creative version; shine also remains disabled: decorative `.outline-sweep` copies use gold-light **fill** under the existing moving mask, with zero stroke. They remain absolutely positioned, hidden between sweeps and hidden from assistive technology. Their 1000ms duration, triggers, cancellation and static fallbacks are unchanged. Legacy optional shine/glow/wobble configuration names remain compatible; ordinary links do not squash. Menu/button jiggle is replaced by a visual-only soft press. Normal fills, fonts, weights, geometry, underlines, yellow circles/buttons and image motion are unchanged. The Figma export was not modified.
 
-## Baseline candidate — awaiting freeze approval
+## Protected baseline and separate creative version
 
-The candidate baseline disables moving light swipes and uses visual-only soft-press button feedback. It retains zero-width text outlines, gold glow, true yellow accents, original native scrollbars, existing image reveals/hover, six-card alternation, dialogs, GIF controls and centralized editing. Creative redesign work must start from a separate development copy/branch after the baseline is tagged and backed up. The user requires explicit approval before creating the freeze tag or local backup. Neither has been created yet. After approval, record the exact tag/commit, source/build checksums and restore instructions; never edit the frozen copy.
+The approved baseline is protected by tag `freeze/client-baseline-2026-10-31`. Creative refinement happens on `creative/redesign` in a separate working folder. This branch does not change the frozen tag, original main folder or verified backup. No creative push, merge, deployment or new freeze is implied.
 
 Mobile refinements load after the shared base styles through the common layout. This preserves the existing intended narrow-screen single-column sections and three-column/two-row social strip consistently in development and production.
 
@@ -407,4 +407,25 @@ For example, change `arrowDistance: 3` to `arrowDistance: 2` for a smaller respo
 
 Transitions use CSS. A small delegated touch/pen handler marks a press immediately and clears it on release, movement, cancellation, backgrounding or history restoration. It never captures input, prevents defaults or delays navigation. Without JavaScript, links retain native press behavior and usable CSS hover/focus styling. Reduced motion or disabled master/playful motion removes movement and transitions while keeping immediate feedback. Gallery controls keep their separate arrow movement. Filled buttons, brand names, menu controls, social icons, image cards, Process's hand-drawn line, glow and image motion retain their existing behavior.
 
-This update is a local candidate only. Freeze tag/backup still require explicit user approval; no publication is part of this change.
+This creative update is local only. The existing frozen tag/backup remain protected; publication, merge and any later freeze require separate authorization.
+
+
+## Creative premium gallery settings
+
+The creative version preserves the same content, fonts, image ratios/crops, grid columns, color palette and branding sizes. No new visual library or external media was added.
+
+`theme.refinement` centralizes layout refinements:
+
+| Setting | Default |
+| --- | --- |
+| `proseMaxWidth` / `proseLineHeight` | `60ch` / `1.6` |
+| `headingGapDesktop` / `headingGapMobile` | `56px` / `40px` |
+| `captionGap` | `16px` |
+| `galleryCaptionGap` / `galleryMetadataGap` | `12px` / `4px` |
+| `fieldGap` / `fieldGroupGap` | `8px` / `24px` |
+
+Under `theme.motion.playful`, `glowEnabled: false` removes repeating gold halos, including the drawer brand; `brandWobbleEnabled: false` keeps wordmarks still. `shineEnabled` remains false and both text-stroke sizes remain0px. The collaboration heading retains its ordinary dark readability shadow over the image. Legacy durations remain available for custom opt-in components.
+
+Artwork uses `cardLift: 0`, `cardTilt: 0`, `cardScale: 1.015` and the existing700ms image timing. Yellow filled controls use `buttonHoverLift: 2`, `buttonHoverDuration: 220` and `buttonHoverShadow: '0 5px 14px rgb(0 0 0 / .12)'`. Existing `buttonPressDistance: 1` and `buttonDuration: 160` control press feedback. Only the visual surface/letters move; click targets and dimensions stay fixed. Touch does not trigger hover. Reduced/disabled/inactive motion cancels movement and shadow. GIF labels update inside their text span so the button surface remains intact.
+
+The two circle draws and six-image alternating48px drop retain their existing settings and persistence. All14pages still share the original reveal, dialog, media, copyright and ordinary text-link behavior.
