@@ -42,3 +42,11 @@ html[data-motion-enabled] .filled-button > :is(.button-surface,.button-face,.jel
 }
 html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) .filled-button > :is(.button-surface,.button-face,.jelly-surface,.jelly-text) { transform: none !important; transition: none !important; }
 html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motion-inactive="true"]) .filled-button :is(.button-surface,.jelly-surface)::after { opacity: 0; transition: none; }
+
+/* Immediately readable opening, independent of animation and image loading. */
+.home-hero { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); align-items:center; gap:clamp(24px,4vw,64px); max-width:var(--content-max); margin-inline:auto; padding:32px var(--page-gutter) 64px; }
+.hero-copy { min-width:0; }
+.hero-copy h1 { font-size:var(--text-h1); line-height:var(--line-heading); overflow-wrap:anywhere; }
+.hero-work { display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:24px; max-width:100%; text-align:center; }
+.home-hero > .image-frame { min-width:0; width:100%; }
+@media(max-width:63.999rem) { .home-hero { grid-template-columns:minmax(0,1fr); gap:24px; padding-block:16px 40px; } .hero-work { margin-top:16px; } }
