@@ -1,4 +1,5 @@
 ---
+import ButtonLabel from './ButtonLabel.astro';
 interface Props {id:string;textNamespace?:string;imageKey?:string}
 /** Opening portrait composition. Props: id, textNamespace, imageKey from pages.home. */
 import { getCopy } from '../utils/content';
@@ -9,6 +10,6 @@ const { id, textNamespace, imageKey } = Astro.props;
 const work = getNavigation('header').find(link => link.id === 'work')!;
 ---
 <section id={id} class="home-hero" aria-labelledby="home-title">
-  <div class="hero-copy"><h1 id="home-title"><FormattedText segments={getCopy(textNamespace + '.headlineSegments')} /></h1><a class="hero-work pill-link filled-button" href={work.path}><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text">{getCopy(textNamespace + '.workLabel')}</span></a></div>
+  <div class="hero-copy"><h1 id="home-title"><FormattedText segments={getCopy(textNamespace + '.headlineSegments')} /></h1><a class="hero-work pill-link filled-button" href={work.path}><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text"><ButtonLabel text={getCopy(textNamespace + '.workLabel')} /></span></a></div>
   <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" eager />
 </section>

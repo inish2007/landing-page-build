@@ -1,0 +1,5 @@
+---
+interface Props {text:string}
+const {text}=Astro.props;
+---
+<span class="button-roll" data-roll-label={text}><span data-roll-original>{text}</span><span data-roll-copy aria-hidden="true">{text}</span></span>

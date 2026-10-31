@@ -447,3 +447,14 @@ Reference-inspired composition: homepage art left/text right on desktop; text-fi
 
 ## First-look artwork and bold link feedback
 Edit theme.motion.hero for enabled, scale1.025/mobileScale1.012 and duration1200/mobileDuration800. Only the decoded onscreen inner hero image settles, once per fresh document; text/action remain available. History restoration, active page transitions and reduced/disabled/inactive motion skip or cancel it. theme.textLinks.hoverUnderlineThickness defaults3px. All linked text, captions and text wordmarks receive this line on hover/focus; buttons/icons remain undecorated and Process retains its single SVG line.
+
+
+## Shared frames and rolling yellow labels
+
+`theme.frame` centralizes width (1px), radius (24px), and mobileRadius (18px below 1024px). Hero/supporting pages and the four major homepage groups share this border; individual cards and paragraphs remain unframed. Header/footer remain open. The existing border color is reused; decorative overflow/focus outlines remain visible.
+
+Brand wordmarks no longer receive underlines in any state. Ordinary linked text retains the configured thick hover/focus treatment.
+
+`theme.motion.playful.labelRollEnabled` defaults true; `labelRollDuration` defaults 320ms. Yellow filled controls share ButtonLabel: one accessible original and one aria-hidden decorative copy roll inside a local clipping window, while existing face lift/shadow and press settings retain fixed click targets. Play/Pause updates both copies centrally. Touch only presses; reduced/disabled/inactive motion settles immediately. Set labelRollEnabled false to retain the ordinary label with existing face feedback.
+
+A generated desktop/mobile floating-panel image is a private visual concept only. No 3D code, library or replacement asset has been added. User approval of that preview is required before any later 3D implementation.

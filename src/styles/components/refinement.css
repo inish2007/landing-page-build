@@ -64,3 +64,19 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 @media(max-width:63.999rem) { :is(.home-hero,.page-shell,.framed-section) { border-radius:var(--frame-mobileRadius); } .home-collaborations > .image-frame,.home-final > .image-frame { border-radius:var(--frame-mobileRadius) var(--frame-mobileRadius) 0 0; } .framed-section { margin-block:12px 40px; } }
 /* Brand lettering is never underlined; focus outlines remain independent. */
 :is(.brand,.footer-brand):is(:hover,:focus,:focus-visible,:active), :is(.brand,.footer-brand) .wordmark-text { text-decoration:none!important; }
+/* Two visual copies, one accessible label; clipping is local to lettering only. */
+.button-roll { display:inline-block; position:relative; overflow:hidden; vertical-align:top; line-height:inherit; }
+.button-roll > [data-roll-original] { display:block; }
+.button-roll > [data-roll-copy] { position:absolute; top:100%; left:0; width:100%; pointer-events:none; }
+@media(prefers-reduced-motion:no-preference) {
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .button-roll > [data-roll-original],
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .button-roll > [data-roll-copy] { transition:transform var(--label-roll-duration) var(--motion-ease); }
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:focus-visible .button-roll > [data-roll-original],
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:focus-visible .button-roll > [data-roll-copy] { transform:translateY(-100%); }
+ @media(hover:hover) and (pointer:fine) {
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:hover .button-roll > [data-roll-original],
+ html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:hover .button-roll > [data-roll-copy] { transform:translateY(-100%); }
+ }
+}
+.home-collaborations > .image-frame { border-radius:var(--frame-radius); }
+@media(max-width:63.999rem) { .home-collaborations > .image-frame { border-radius:var(--frame-mobileRadius); } }
