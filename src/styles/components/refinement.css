@@ -90,5 +90,5 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 /* Reserved for real noninteractive editorial labels/attributions when present. */
 .editorial-label,.quote-attribution { color:var(--color-bronze); }
 
-/* Static, restrained elevation on the homepage hero frame. */
-.home-hero { box-shadow:var(--frame-heroShadow); border-color:color-mix(in srgb,var(--color-stone-border) 92%,var(--color-text)); }
+/* Consistent, restrained elevation on all major rounded section frames. */
+:is(.home-hero,.page-shell,.framed-section) { box-shadow:var(--frame-heroShadow); border-color:color-mix(in srgb,var(--color-stone-border) 92%,var(--color-text)); }

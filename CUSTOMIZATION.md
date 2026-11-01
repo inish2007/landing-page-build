@@ -497,3 +497,5 @@ Bronze is reserved for real .editorial-label/.quote-attribution elements; curren
 Hero frame elevation: theme.frame.heroShadow controls the static two-layer warm shadow beneath the homepage hero only. Border, padding, radius and click targets stay unchanged. Set to 'none' to remove elevation.
 
 Hero border uses92% stoneBorder mixed with8% existing text color for slightly stronger definition. Its1px width and other frame borders remain unchanged.
+
+Shared frame elevation: all major rounded hero/page/section frames now reuse the same mild stone border and theme.frame.heroShadow (legacy token name retained). Header/footer divider lines, fields, individual artwork cards and dialogs are excluded. Spacing and radii remain unchanged.
