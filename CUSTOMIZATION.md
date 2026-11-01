@@ -488,3 +488,8 @@ New typed hero controls: offsetY (canonical desktop pixels), textureStrength (.0
 Private reference/corner comparisons and measured results live in ignored evidence/canvas-calibration. The reference changes photographic content and illumination: exact pixel identity is not expected. Selected backdrop samples match, while the original photograph retains some gray-face differences to avoid aggressive changes to pigment colors.
 
 Current presentation: panelEnabled is false. The homepage renders an ordinary flat photograph with no toggle or 3D controls. Photo brightness/contrast are1 (original appearance); framing and viewport fit remain. The existing subtle decoded-image settle is restored.
+
+## Warm gallery additions
+Existing white/black/yellow remain unchanged. Edit theme.colors.ivory (#F8F5EF), warmStone (#EEE9E1), stoneBorder (#D8D0C4), bronze (#806548). Theme serialization exposes color-ivory/color-warm-stone/color-stone-border/color-bronze CSS variables. Ivory applies to homepage introduction/collaboration group; stone to homepage quote and contact fields; stoneBorder to shared frames/header-footer dividers. Existing gray form borders/focus outlines remain for legibility. Photo pixels, crops and filters are untouched.
+
+Bronze is reserved for real .editorial-label/.quote-attribution elements; current content has no eligible labels/attribution, so no text was invented or recolored. Headings/body/brand/navigation remain dark. The collaboration photograph covers its group's ivory background; no overlay or extra padding was added just to expose the color. All spacing/radii and the flat hero remain unchanged.

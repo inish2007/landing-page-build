@@ -80,3 +80,12 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 }
 .home-collaborations > .image-frame { border-radius:var(--frame-radius); }
 @media(max-width:63.999rem) { .home-collaborations > .image-frame { border-radius:var(--frame-mobileRadius); } }
+
+/* Additive warm gallery palette; photos and primary brand colors remain untouched. */
+.home-intro,.home-collaborations { background-color:var(--color-ivory); }
+.collage-quote { background-color:var(--color-warm-stone); }
+:is(.home-hero,.page-shell,.framed-section) { border-color:var(--color-stone-border); }
+.site-header,.site-footer { border-color:var(--color-stone-border); }
+.contact-form :is(input,textarea) { background-color:var(--color-warm-stone); }
+/* Reserved for real noninteractive editorial labels/attributions when present. */
+.editorial-label,.quote-attribution { color:var(--color-bronze); }

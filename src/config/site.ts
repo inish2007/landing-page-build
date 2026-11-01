@@ -42,6 +42,7 @@ export const site = {
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
     pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
+      ivory:'#F8F5EF', warmStone:'#EEE9E1', stoneBorder:'#D8D0C4', bronze:'#806548',
       aboutFill:'#ffffff', aboutOutline:'#d4a72c', aboutShadow:'0 1px 2px #171717, 0 0 1px #171717', plaque:'#171717', plaqueText:'#ffffff', goldDark:'#8a5a00', goldMid:'#d4a72c', goldLight:'#fff0ad',
       primary:'#ffe600', circle:'#ffe600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
       text:'#171717', border:'#e6e4df', accentText:'#171717', focus:'#171717',
