@@ -78,13 +78,13 @@
   "social": [
     {
       "id": "instagram",
-      "url": "https://www.instagram.com/lanagomez/",
+      "url": "{instagramUrl}",
       "labelKey": "footer.instagram",
       "isExternal": true
     },
     {
       "id": "facebook",
-      "url": "https://www.facebook.com/LanaGomezArt/",
+      "url": "{facebookUrl}",
       "labelKey": "footer.facebook",
       "isExternal": true
     }

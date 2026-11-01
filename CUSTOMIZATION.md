@@ -1,5 +1,7 @@
 # Customize your website
 
+**Client setup now starts in `src/content/client.json`.** See [CLIENT_EDITING.md](CLIENT_EDITING.md) for the short guide. That file is the single source for brand name/mark, receiving email, Instagram/Facebook, copyright and design credit; it supersedes older instructions below that edit those values directly in text/navigation. Page copy and images remain in their existing central dictionaries.
+
 Start with **`src/config/site.ts`**. This is the website’s main configuration entry point. You do not need to edit individual Astro components.
 
 The file groups `text`, `images`, `media`, `navigation`, `pages`, `artworks`, `branding`, `icons`, `links`, and `theme`. Large content dictionaries are imported from `src/content/` so each value has one canonical home rather than a duplicate in every component. Clicking an import in your editor opens the relevant content file.
@@ -429,3 +431,11 @@ Under `theme.motion.playful`, `glowEnabled: false` removes repeating gold halos,
 Artwork uses `cardLift: 0`, `cardTilt: 0`, `cardScale: 1.015` and the existing700ms image timing. Yellow filled controls use `buttonHoverLift: 2`, `buttonHoverDuration: 220` and `buttonHoverShadow: '0 5px 14px rgb(0 0 0 / .12)'`. Existing `buttonPressDistance: 1` and `buttonDuration: 160` control press feedback. Only the visual surface/letters move; click targets and dimensions stay fixed. Touch does not trigger hover. Reduced/disabled/inactive motion cancels movement and shadow. GIF labels update inside their text span so the button surface remains intact.
 
 The two circle draws and six-image alternating48px drop retain their existing settings and persistence. All14pages still share the original reveal, dialog, media, copyright and ordinary text-link behavior.
+
+
+## Client details and real enquiry setup (current)
+`src/content/client.json` is the canonical public client profile. `createClientContent` resolves the text/navigation templates once, covering direct site.text readers as well as getCopy/getBrandName. Change brandName once to update wordmarks/accessibility labels, brand references, hero copy and copyright; optional brandMark is appended to wordmarks. `{brandName}`, `{brandUpperName}`, `{brandDisplayName}` and client tokens are editable copy placeholders. `{year}` remains owned by the existing copyright helper. Product titles/route URLs and independent third-party credits do not silently rename. Image logos are separate assets and must be replaced explicitly.
+
+Set contactEmail to a real receiving Gmail or another email, rebuild and publish the chosen branch. A blank value leaves the form inactive with no endpoint/mailto link. A configured value creates a native POST to FormSubmit with visitor email as reply address, name/message, editable subject and hidden honeypot; provider captcha stays enabled. One-time recipient inbox activation is required via FormSubmit after the owner submits the setup enquiry. The provider's page handles captcha/confirmation and network/service errors; the site never reports local validation as delivered mail. JavaScript only prevents duplicate submits and resets after history restoration; no-JavaScript still posts natively when configured. No API key/password or new dependencies. No real delivery has been verified without the owner's configured and activated inbox.
+
+Setting either social URL empty hides that link; empty Instagram also omits the six linked social images. All replacement image metadata/crops and page content still live in images.json/text.en.json, mapped by pages.json/artworks.json. Full instructions: CLIENT_EDITING.md. Each branch has its own profile; changing one does not change the other. Frozen tags/backups remain immutable.

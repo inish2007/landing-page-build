@@ -6,9 +6,9 @@ import site from '../config/site';
 const navigation = site.navigation;
 import ResponsiveImage from './ResponsiveImage.astro';
 const { id, textNamespace, imageKey } = Astro.props;
-const social = navigation.social.find(link => link.id === 'instagram')!;
+const social = navigation.social.find(link => link.id === 'instagram');
 ---
 <section id={id} aria-label={getCopy(textNamespace + '.heading')}>
   <ResponsiveImage imageKey={imageKey} aspectRatio="3 / 2" />
-  <div class="social-strip" data-motion="social-drop">{[1,2,3,4,5,6].map(index => <a class="playful-card" data-social-drop-item={index} href={social.url} aria-label={getCopy(social.labelKey)}><ResponsiveImage sizes="(max-width: 47.999rem) 33vw, 16vw" imageKey={'social' + index} aspectRatio="1 / 1" /></a>)}</div>
+  {social && <div class="social-strip" data-motion="social-drop">{[1,2,3,4,5,6].map(index => <a class="playful-card" data-social-drop-item={index} href={social.url} aria-label={getCopy(social.labelKey)}><ResponsiveImage sizes="(max-width: 47.999rem) 33vw, 16vw" imageKey={'social' + index} aspectRatio="1 / 1" /></a>)}</div>}
 </section>

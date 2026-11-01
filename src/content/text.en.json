@@ -1,6 +1,6 @@
 {
   "common": {
-    "siteName": "Lana Gomez",
+    "siteName": "{brandDisplayName}",
     "skipToContent": "Skip to Content",
     "menuOpenLabel": "Open Menu",
     "menuCloseLabel": "Close Menu",
@@ -8,7 +8,7 @@
     "footerNavigation": "Footer navigation",
     "scrollDown": "Explore",
     "backToTop": "Return to top",
-    "statusIndicator": "Lana Gomez Art"
+    "statusIndicator": "{brandName} Art"
   },
   "nav": {
     "home": "Home",
@@ -20,24 +20,27 @@
     "press": "Press",
     "collaborations": "Collaborations",
     "contact": "Contact",
-    "pagerie": "Pagerie x LANA GOMEZ",
-    "shay": "SHAY x LANA GOMEZ"
+    "pagerie": "Pagerie x {brandUpperName}",
+    "shay": "SHAY x {brandUpperName}"
   },
   "home": {
     "hero": {
-      "eyebrow": "Lana Gomez Art",
+      "eyebrow": "{brandName} Art",
       "headlineSegments": [
         {
-          "text": "Lana Gomez Art"
+          "text": "{brandName} Art"
         }
       ],
-      "subheadline": "Lana Gomez Art"
+      "subheadline": "{brandName} Art",
+      "workLabel": "Explore work",
+      "viewFlatLabel": "View in 2D",
+      "viewDepthLabel": "View in 3D"
     },
     "statement": {
       "eyebrow": "The Process",
       "statementSegments": [
         {
-          "text": "Lana Gomez’s artistic journey is a testament to the boundless spirit of a kind-hearted "
+          "text": "{brandName}’s artistic journey is a testament to the boundless spirit of a kind-hearted "
         },
         {
           "text": "rebel.",
@@ -48,9 +51,9 @@
       "buttonLabel": "The Process"
     },
     "collaborations": {
-      "heading": "Lana’s Collaborations",
-      "shayLabel": "SHAY X LANA GOMEZ",
-      "pagerieLabel": "PAGERIE X LANA GOMEZ"
+      "heading": "{brandName}’s Collaborations",
+      "shayLabel": "SHAY X {brandUpperName}",
+      "pagerieLabel": "PAGERIE X {brandUpperName}"
     },
     "features": {
       "heading": "Explore",
@@ -79,7 +82,7 @@
       ]
     },
     "cta": {
-      "heading": "Lana Gomez in the studio",
+      "heading": "{brandName} in the studio",
       "body": "",
       "buttonLabel": "Contact"
     },
@@ -91,8 +94,8 @@
     "tagline": "",
     "colophonLabel": "Colophon & Notices",
     "privacyLabel": "Privacy Policy",
-    "copyright": "© {year} Lana Gomez Art. All Rights Reserved.",
-    "designCredit": "Design By Vibe Tribe Creative",
+    "copyright": "{copyright}",
+    "designCredit": "{designCredit}",
     "connect": "Connect",
     "explore": "Explore",
     "inquire": "Inquire",
@@ -106,19 +109,19 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "Lana Gomez's artistic journey is a testament to the boundless spirit of a kind-hearted rebel. Following her studies in art at the University of Tennessee, Lana made her way to Los Angeles, where she embarked on a continual exploration of acrylics and a diverse range of materials. Her exceptional talent soon captured the attention of the renowned interior designer Kelly Wearstler, resulting in a series of successful collaborations. Notably, from 2008 to 2009, Lana served as the resident painter at Wearstler's esteemed design studio."
+          "text": "{brandName}'s artistic journey is a testament to the boundless spirit of a kind-hearted rebel. Following her studies in art at the University of Tennessee, {brandName} made her way to Los Angeles, where she embarked on a continual exploration of acrylics and a diverse range of materials. Her exceptional talent soon captured the attention of the renowned interior designer Kelly Wearstler, resulting in a series of successful collaborations. Notably, from 2008 to 2009, {brandName} served as the resident painter at Wearstler's esteemed design studio."
         },
         {
           "tag": "P",
-          "text": "A significant milestone in Lana's career was the commission by Kelly Wearstler to create a mural-sized masterpiece, which found its place in Wearstler's celebrated book, \"Hue.\" Undeterred by convention, Lana Gomez has done things such as an extraordinary mural covering 2 walls of a children's play space, a custom Gibson Guitar auctioned off at the prestigious Naples Winter Wine Festival, collaborated with Ivan Preciado on a collaborative piece, as well as 10-foot guitar sculpture for the city of West Hollywood."
+          "text": "A significant milestone in {brandName}'s career was the commission by Kelly Wearstler to create a mural-sized masterpiece, which found its place in Wearstler's celebrated book, \"Hue.\" Undeterred by convention, {brandName} has done things such as an extraordinary mural covering 2 walls of a children's play space, a custom Gibson Guitar auctioned off at the prestigious Naples Winter Wine Festival, collaborated with Ivan Preciado on a collaborative piece, as well as 10-foot guitar sculpture for the city of West Hollywood."
         },
         {
           "tag": "P",
-          "text": "Lana Gomez's artistry has found a global stage, with her work showcased in galleries and exhibitions in New York, Miami, Washington, D.C., and Los Angeles. Her pieces adorn diverse spaces worldwide, leaving a lasting impression on the art scene. Her creative journey has garnered recognition in influential publications such as The New Yorker, InStyle, Lonny, Los Angeles Confidential, and House Beautiful."
+          "text": "{brandName}'s artistry has found a global stage, with her work showcased in galleries and exhibitions in New York, Miami, Washington, D.C., and Los Angeles. Her pieces adorn diverse spaces worldwide, leaving a lasting impression on the art scene. Her creative journey has garnered recognition in influential publications such as The New Yorker, InStyle, Lonny, Los Angeles Confidential, and House Beautiful."
         },
         {
           "tag": "H2",
-          "text": "Lana continues to push the boundaries of her artistic expression, leaving a profound mark on the world of contemporary art and design."
+          "text": "{brandName} continues to push the boundaries of her artistic expression, leaving a profound mark on the world of contemporary art and design."
         }
       ]
     },
@@ -162,12 +165,12 @@
         },
         {
           "tag": "P",
-          "text": "FOUR QUESTIONS FOR LANA GOMEZGULFSHORE LIFE",
+          "text": "FOUR QUESTIONS FOR {brandUpperName}GULFSHORE LIFE",
           "highlight": "press-marker"
         },
         {
           "tag": "P",
-          "text": "ARTIST LANA GOMEZ USES LIFE AS HER CANVASJEWISH JOURNAL",
+          "text": "ARTIST {brandUpperName} USES LIFE AS HER CANVASJEWISH JOURNAL",
           "highlight": "press-marker"
         },
         {
@@ -186,11 +189,11 @@
           "href": "https://www.architecturaldigest.com/story/feast-your-eyes-on-kelly-wearstlers-latest-project"
         },
         {
-          "label": "FOUR QUESTIONS FOR LANA GOMEZ\nGULFSHORE LIFE",
+          "label": "FOUR QUESTIONS FOR {brandUpperName}\nGULFSHORE LIFE",
           "href": "https://www.gulfshorelife.com/2014/04/09/four-questions-for-lana-gomez/"
         },
         {
-          "label": "ARTIST LANA GOMEZ USES LIFE AS HER CANVAS\nJEWISH JOURNAL",
+          "label": "ARTIST {brandUpperName} USES LIFE AS HER CANVAS\nJEWISH JOURNAL",
           "href": "https://jewishjournal.com/culture/arts/305596/artist-lana-gomez-uses-life-as-her-canvas/"
         },
         {
@@ -200,11 +203,11 @@
       ]
     },
     "collaborations": {
-      "title": "Lana’s Collaborations",
+      "title": "{brandName}’s Collaborations",
       "blocks": [
         {
           "tag": "P",
-          "text": "A HANDBAG COLLABORATION CREATED BY LANA GOMEZ IN PARTNERSHIP WITH PAGERIE"
+          "text": "A HANDBAG COLLABORATION CREATED BY {brandUpperName} IN PARTNERSHIP WITH PAGERIE"
         },
         {
           "tag": "P",
@@ -224,7 +227,7 @@
         },
         {
           "tag": "P",
-          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist Lana Gomez, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by Lana herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
+          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist {brandName}, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by {brandName} herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
         },
         {
           "tag": "P",
@@ -233,11 +236,11 @@
       ],
       "links": [
         {
-          "label": "PAGERIE X LANA GOMEZ",
+          "label": "PAGERIE X {brandUpperName}",
           "href": "/pagerie-lana-gomez-luxury-bags/"
         },
         {
-          "label": "SHAY X LANA GOMEZ",
+          "label": "SHAY X {brandUpperName}",
           "href": "/shay-lanagomez-luxury-jewelry-collection/"
         },
         {
@@ -251,7 +254,7 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "A HANDBAG COLLABORATION CREATED BY LANA GOMEZ IN PARTNERSHIP WITH PAGERIE"
+          "text": "A HANDBAG COLLABORATION CREATED BY {brandUpperName} IN PARTNERSHIP WITH PAGERIE"
         },
         {
           "tag": "P",
@@ -271,7 +274,7 @@
         },
         {
           "tag": "P",
-          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist Lana Gomez, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by Lana herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
+          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist {brandName}, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by {brandName} herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
         },
         {
           "tag": "P",
@@ -286,11 +289,11 @@
       ]
     },
     "shay-lanagomez-luxury-jewelry-collection": {
-      "title": "SHAY x LANA GOMEZ",
+      "title": "SHAY x {brandUpperName}",
       "blocks": [
         {
           "tag": "P",
-          "text": "A JEWELRY COLLABORATION BY SHAY IN PARTNERSHIP WITH LANA GOMEZ"
+          "text": "A JEWELRY COLLABORATION BY SHAY IN PARTNERSHIP WITH {brandUpperName}"
         },
         {
           "tag": "P",
@@ -306,7 +309,7 @@
         },
         {
           "tag": "P",
-          "text": "When Tanaz and Ladan joined long time SHAY enthusiast Lana Gomez, the collaboration felt inevitable. United by friendship, artistry, and family drive values, they’ve created a capsule that transforms Lana’s signature cultural forms into 18k gold, diamond, and emerald jewels."
+          "text": "When Tanaz and Ladan joined long time SHAY enthusiast {brandName}, the collaboration felt inevitable. United by friendship, artistry, and family drive values, they’ve created a capsule that transforms {brandName}’s signature cultural forms into 18k gold, diamond, and emerald jewels."
         },
         {
           "tag": "P",
@@ -329,11 +332,11 @@
       ]
     },
     "home-1": {
-      "title": "Lana Gomez Art",
+      "title": "{brandName} Art",
       "blocks": [
         {
           "tag": "P",
-          "text": "Lana Gomez’s artistic journey is a testament to the boundless spirit of a kind-hearted rebel."
+          "text": "{brandName}’s artistic journey is a testament to the boundless spirit of a kind-hearted rebel."
         }
       ]
     }
@@ -603,15 +606,18 @@
   },
   "contact": {
     "title": "Contact",
-    "body": "For pricing, commissions, brand partnerships and media inquiries please contact Lanagomezart@gmail.com.",
+    "body": "For pricing, commissions, brand partnerships and media inquiries, send an enquiry using the form below.",
     "emailLabel": "Email the studio",
-    "email": "Lanagomezart@gmail.com",
-    "localNotice": "Local form preview only. No message is sent or stored.",
+    "email": "{contactEmail}",
+    "localNotice": "Your name, email and message are sent through FormSubmit to the studio. You may be asked to complete a security check.",
     "nameLabel": "Name",
     "emailField": "Email",
     "messageLabel": "Message",
-    "submit": "Preview inquiry",
-    "success": "Your inquiry is valid. This local preview has not sent or stored it."
+    "submit": "Send enquiry",
+    "success": "Continue on the secure form page to complete your enquiry.",
+    "unavailable": "Enquiries are not available yet. Please check back soon.",
+    "subject": "{brandName} website enquiry",
+    "sending": "Opening secure submission…"
   },
   "legal": {
     "colophon": {
@@ -632,7 +638,7 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "This local build includes no analytics or tracking scripts. The inquiry preview validates fields in your browser and does not send or store messages."
+          "text": "{contactPrivacy}"
         },
         {
           "tag": "P",

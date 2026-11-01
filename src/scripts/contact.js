@@ -1,9 +1,9 @@
-/** Bind local-only form validation. @returns {void} Reveals submit control, prevents network submission and reports local status. */
-export function initContactForm(){const form=document.querySelector('[data-contact-form]');if(!(form instanceof HTMLFormElement))return;
-  /** Validate and report preview status without network/storage. @param {SubmitEvent} event Submit attempt. @returns {void} Prevents default and updates status. */
-  function handleInquirySubmit(event){event.preventDefault();if(!form.reportValidity())return;const status=form.querySelector('[data-contact-status]');status.textContent=status.dataset.validMessage;}
-  /** Clear stale preview status after editing. @returns {void} Updates local status text. */
-  function clearInquiryStatus(){form.querySelector('[data-contact-status]').textContent='';}
-  form.addEventListener('submit',handleInquirySubmit);form.addEventListener('input',clearInquiryStatus);form.querySelector('[data-contact-submit]').hidden=false;
+/** Native POST preserves captcha and no-JavaScript support; never claims local validation is delivery. */
+export function initContactForm(){
+ const form=document.querySelector('[data-contact-form]');if(!(form instanceof HTMLFormElement))return;
+ const button=form.querySelector('[data-contact-submit]'),status=form.querySelector('[data-contact-status]');let pending=false;
+ function restore(){pending=false;button.disabled=form.dataset.contactReady!=='true';form.removeAttribute('aria-busy');status.textContent='';}
+ function handleInquirySubmit(event){if(form.dataset.contactReady!=='true'||pending){event.preventDefault();return;}if(!form.reportValidity()){event.preventDefault();return;}pending=true;button.disabled=true;form.setAttribute('aria-busy','true');status.textContent=status.dataset.sendingMessage;}
+ form.addEventListener('submit',handleInquirySubmit);window.addEventListener('pageshow',restore);restore();
 }
 initContactForm();
