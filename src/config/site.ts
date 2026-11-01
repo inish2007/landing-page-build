@@ -4,15 +4,21 @@
  * Theme, branding, media overrides, icons and route links are managed here.
  * See CUSTOMIZATION.md for practical examples and local font-license requirements.
  */
-import text from '../content/text.en.json' with { type:'json' };
+import textTemplate from '../content/text.en.json' with { type:'json' };
 import images from '../content/images.json' with { type:'json' };
-import navigation from '../content/navigation.json' with { type:'json' };
+import navigationTemplate from '../content/navigation.json' with { type:'json' };
 import pages from '../content/pages.json' with { type:'json' };
 import artworks from '../content/artworks.json' with { type:'json' };
 import media from '../content/media.json' with { type:'json' };
 import type { ImageAsset, SiteTheme, PageConfiguration, NavigationLink, MediaAsset, Artwork } from './types.ts';
 
+import client from '../content/client.json' with { type:'json' };
+import {createClientContent,getContactAction} from '../utils/client.ts';
+const {text,navigation}=createClientContent(textTemplate,navigationTemplate,client);
+
 export const site = {
+  client,
+  contact:{action:getContactAction(client.contactEmail)},
   // Canonical editable copy: headings, paragraphs, labels, buttons, credits, copyright.
   text,
   images: images satisfies Record<string,ImageAsset>,

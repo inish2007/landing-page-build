@@ -28,7 +28,7 @@ export function validateSiteUrls(config:UrlConfiguration):string[] {
   const errors:string[]=[];
   const check=(value:unknown,context:string,asset=false)=>{try{(asset?assertLocalAssetPath:assertSafeLinkUrl)(value,context);}catch(error){errors.push((error as Error).message);}};
   const textLinks=(value:unknown,context:string)=>{if(!value||typeof value!=='object')return;for(const[key,child]of Object.entries(value)){const at=context+'.'+key;if(key==='href'||key==='url')check(child,at);else textLinks(child,at);}};
-  textLinks(config.text,'text');check('mailto:'+config.text.contact.email,'text.contact.email');
+  textLinks(config.text,'text');if(config.text.contact.email)check('mailto:'+config.text.contact.email,'text.contact.email');
   for(const[area,links]of Object.entries(config.navigation))for(const[index,link]of links.entries())for(const key of ['path','url'] as const)if(link[key]!==undefined)check(link[key],`navigation.${area}.${index}.${key}`);
   for(const[key,value]of Object.entries(config.links))check(value,'links.'+key);
   for(const[key,page]of Object.entries(config.pages))if(page.path!==undefined){check(page.path,'pages.'+key+'.path');if(!page.path.startsWith('/')||page.path.startsWith('//'))errors.push('pages.'+key+'.path: use a local route');}
