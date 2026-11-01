@@ -91,4 +91,4 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 .editorial-label,.quote-attribution { color:var(--color-bronze); }
 
 /* Static, restrained elevation on the homepage hero frame. */
-.home-hero { box-shadow:var(--frame-heroShadow); }
+.home-hero { box-shadow:var(--frame-heroShadow); border-color:color-mix(in srgb,var(--color-stone-border) 92%,var(--color-text)); }
