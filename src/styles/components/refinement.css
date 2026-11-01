@@ -89,3 +89,6 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 .contact-form :is(input,textarea) { background-color:var(--color-warm-stone); }
 /* Reserved for real noninteractive editorial labels/attributions when present. */
 .editorial-label,.quote-attribution { color:var(--color-bronze); }
+
+/* Static, restrained elevation on the homepage hero frame. */
+.home-hero { box-shadow:var(--frame-heroShadow); }
