@@ -64,31 +64,68 @@ html:is([data-motion-enabled="false"],[data-playful-enabled="false"],[data-motio
 @media(max-width:63.999rem) { :is(.home-hero,.page-shell,.framed-section) { border-radius:var(--frame-mobileRadius); } .home-collaborations > .image-frame,.home-final > .image-frame { border-radius:var(--frame-mobileRadius) var(--frame-mobileRadius) 0 0; } .framed-section { margin-block:12px 40px; } }
 /* Brand lettering is never underlined; focus outlines remain independent. */
 :is(.brand,.footer-brand):is(:hover,:focus,:focus-visible,:active), :is(.brand,.footer-brand) .wordmark-text { text-decoration:none!important; }
-/* Two visual copies, one accessible label; clipping is local to lettering only. */
-.button-roll { display:inline-block; position:relative; overflow:hidden; vertical-align:top; line-height:inherit; }
-.button-roll > [data-roll-original] { display:block; }
-.button-roll > [data-roll-copy] { position:absolute; top:100%; left:0; width:100%; pointer-events:none; }
-@media(prefers-reduced-motion:no-preference) {
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .button-roll > [data-roll-original],
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .button-roll > [data-roll-copy] { transition:transform var(--label-roll-duration) var(--motion-ease); }
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:focus-visible .button-roll > [data-roll-original],
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:focus-visible .button-roll > [data-roll-copy] { transform:translateY(-100%); }
- @media(hover:hover) and (pointer:fine) {
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:hover .button-roll > [data-roll-original],
- html[data-label-roll-enabled="true"][data-motion-enabled="true"][data-playful-enabled="true"]:not([data-motion-inactive="true"]) .filled-button:hover .button-roll > [data-roll-copy] { transform:translateY(-100%); }
- }
+/* One visible label; the hidden bold reserve keeps hover targets stationary. */
+.button-label { display:inline-grid; vertical-align:top; max-width:100%; line-height:inherit; text-align:center; }
+.button-label > span { grid-area:1 / 1; }
+.button-label > [data-button-reserve] { visibility:hidden; pointer-events:none; font-weight:var(--button-label-hover-weight); }
+.filled-button:focus-visible:not(:disabled,[aria-disabled="true"]) [data-button-original] { font-weight:var(--button-label-hover-weight); }
+@media(hover:hover) and (pointer:fine) {
+ .filled-button:hover:not(:disabled,[aria-disabled="true"]) [data-button-original] { font-weight:var(--button-label-hover-weight); }
 }
 .home-collaborations > .image-frame { border-radius:var(--frame-radius); }
 @media(max-width:63.999rem) { .home-collaborations > .image-frame { border-radius:var(--frame-mobileRadius); } }
 
 /* Additive warm gallery palette; photos and primary brand colors remain untouched. */
-.home-intro,.home-collaborations { background-color:var(--color-ivory); }
-.collage-quote { background-color:var(--color-warm-stone); }
+.home-intro { background-color:var(--color-blush); }
+.home-collaborations { background-color:var(--color-ivory); }
+.collage-quote { background-color:var(--color-charcoal); color:var(--color-ivory); padding:24px; }
+@media(max-width:47.999rem) { .collage-quote { padding:16px; } }
 :is(.home-hero,.page-shell,.framed-section) { border-color:var(--color-stone-border); }
 .site-header,.site-footer { border-color:var(--color-stone-border); }
-.contact-form :is(input,textarea) { background-color:var(--color-warm-stone); }
+.contact-form :is(input,textarea) { background-color:var(--color-blush); }
 /* Reserved for real noninteractive editorial labels/attributions when present. */
 .editorial-label,.quote-attribution { color:var(--color-bronze); }
 
 /* Consistent, restrained elevation on all major rounded section frames. */
 :is(.home-hero,.page-shell,.framed-section) { box-shadow:var(--frame-heroShadow); border-color:color-mix(in srgb,var(--color-stone-border) 92%,var(--color-text)); }
+
+/* Blush/charcoal rhythm across the shared editorial, gallery and contact layouts. */
+.page-heading { background:var(--color-blush); padding:clamp(16px,2vw,24px); border-radius:var(--frame-mobileRadius); }
+.editorial-page,.contact-page { background:var(--color-ivory); }
+.gallery-page,.artwork-dialog,.home-hero { background:var(--color-canvas); }
+.site-footer { background:var(--color-charcoal); color:var(--color-ivory); --color-focus:var(--color-ivory); --color-text:var(--color-ivory); }
+.site-footer :is(h2,p) { color:inherit; }
+.site-footer .footer-intro p { color:var(--color-ivory); }
+.brand,#drawer-title { color:var(--color-accent-text); }
+.site-footer .footer-brand { color:var(--color-ivory); }
+.mobile-drawer { background:var(--color-ivory); }
+/* Serif displays, sans reading copy; font files and brand lettering are retained. */
+h1,h2,h3,.collage-quote { font-optical-sizing:auto; }
+.editorial-prose,.contact-intro,.contact-form,.gallery-card p { font-family:var(--font-sans); line-height:var(--line-body); }
+.desktop-nav { font-size:var(--text-nav); }
+.filled-button { font-family:var(--font-sans); font-size:var(--text-button); font-weight:var(--button-label-weight); letter-spacing:.01em; }
+.hero-copy h1 { font-size:var(--text-display); }
+@media(max-width:63.999rem) { .hero-copy h1 { font-size:clamp(2.25rem,4vw,2.75rem); } }
+
+.site-footer .footer-social img { filter:brightness(0) invert(1); }
+/* Let enlarged text wrap inside the existing mobile gutters instead of widening grids. */
+.home-intro > *,.home-hero > * { min-width:0; }
+.button-label > span { overflow-wrap:anywhere; }
+@media(max-width:29.999rem) {
+ .pill-link { min-width:min(14rem,100%); }
+}
+/* Keep the refreshed typography usable at enlarged text sizes. */
+.site-footer { grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr)); }
+.site-footer > * { min-width:0; }
+.footer-group h2,.small-link { overflow-wrap:anywhere; max-width:100%; }
+@media(max-width:47.999rem) { .site-footer { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+/* Gutters keep their physical width while user text scaling remains unrestricted. */
+main { overflow-wrap:anywhere; }
+.highlight-circle { max-width:100%; }
+.editorial-grid > * { min-width:0; }
+.intro-copy { padding-inline:min(var(--space-2),16px); }
+.footer-group a { overflow-wrap:anywhere; }
+@media(max-width:63.999rem) {
+ .site-footer { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .footer-intro { grid-column:1 / -1; }
+}
