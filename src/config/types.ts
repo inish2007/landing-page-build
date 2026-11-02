@@ -1,5 +1,5 @@
 /** Shared configuration contracts. Content stays in canonical JSON dictionaries imported by site.ts. */
-export interface ImageAsset { src: string; alt: string; width: number; height: number; fit?: string; position?: { desktop?: string; mobile?: string }; credit?: string; sources?: {src:string;width:number}[] }
+export interface ImageAsset { src: string; alt: string; width: number; height: number; fit?: string; position?: { desktop?: string; mobile?: string }; credit?: string; sourceUrl?:string; sources?: {src:string;width:number}[] }
 export interface MediaAsset { src:string; poster:string; width:number; height:number; altKey:string; source?:string; license?:string }
 export interface NavigationLink { id:string; path?:string; url?:string; labelKey:string; isExternal?:boolean }
 export interface FontFace { src:string; format:string; weight:string; style:'normal'|'italic' }
@@ -24,4 +24,4 @@ export interface SiteTheme {
 }
 
 /** Homepage-only editorial showcase; artwork IDs resolve through the existing central dictionaries. */
-export interface OpenStudioConfiguration {featuredIds:string[];workIds:string[];transitionDuration:number}
+export interface OpenStudioConfiguration {featuredIds:string[];workIds:string[];transitionDuration:number;colors:{canvas:string;ink:string;accent:string;border:string}}

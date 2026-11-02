@@ -32,7 +32,7 @@ export function validateSiteUrls(config:UrlConfiguration):string[] {
   for(const[area,links]of Object.entries(config.navigation))for(const[index,link]of links.entries())for(const key of ['path','url'] as const)if(link[key]!==undefined)check(link[key],`navigation.${area}.${index}.${key}`);
   for(const[key,value]of Object.entries(config.links))check(value,'links.'+key);
   for(const[key,page]of Object.entries(config.pages))if(page.path!==undefined){check(page.path,'pages.'+key+'.path');if(!page.path.startsWith('/')||page.path.startsWith('//'))errors.push('pages.'+key+'.path: use a local route');}
-  for(const[key,image]of Object.entries(config.images)){check(image.src,'images.'+key+'.src',true);for(const[index,source]of(image.sources||[]).entries())check(source.src,`images.${key}.sources.${index}.src`,true);}
+  for(const[key,image]of Object.entries(config.images)){check(image.src,'images.'+key+'.src',true);if(image.sourceUrl)check(image.sourceUrl,'images.'+key+'.sourceUrl');for(const[index,source]of(image.sources||[]).entries())check(source.src,`images.${key}.sources.${index}.src`,true);}
   for(const[key,media]of Object.entries(config.media))for(const field of ['src','poster'] as const)check(media[field],`media.${key}.${field}`,true);
   if(config.branding.logo)check(config.branding.logo.src,'branding.logo.src',true);
   if(config.branding.favicon)check(config.branding.favicon,'branding.favicon',true);

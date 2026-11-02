@@ -1,17 +1,23 @@
-# Local editable artist portfolio
+# Open Studio — homepage review
+
+This branch is the homepage-first editorial concept, based on quiet-luxury b773a85. Other pages retain that version’s design. Real CC0 demonstration artworks are credited; they are not client work.
+
+Worktree: `D:/projects/landing-page-build-open-studio`. Preview: `http://127.0.0.1:4337/`. Development port:4327. Do not replace the main/quiet-luxury previews.
+
+## Local editable artist portfolio
 
 The site is built with Astro, authored CSS and vanilla JavaScript. Content is temporary supplied artist copy. Images and fonts are hosted locally; video slots use the locally stored GIF with pause and reduced-motion support.
 
 Use Node.js 24.19 or later (build tools load the typed configuration directly).
 
-Run from `D:/projects/landing-page-build-creative`:
+Run from `D:/projects/landing-page-build-open-studio`:
 
 ```powershell
 npm ci
-npm run dev -- --port 4325 --strictPort
+npm run dev -- --port 4327 --strictPort
 ```
 
-Open http://127.0.0.1:4325/ (or the local URL printed if occupied).
+Open http://127.0.0.1:4327/ (or the local URL printed if occupied).
 
 ```powershell
 npm run build

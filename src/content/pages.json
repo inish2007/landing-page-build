@@ -4,33 +4,9 @@
     "metaDescriptionKey": "home.hero.subheadline",
     "sections": [
       {
-        "id": "hero",
-        "component": "HeroSection",
-        "imageKey": "homeHero",
-        "textNamespace": "home.hero"
-      },
-      {
-        "id": "intro",
-        "component": "StatementSection",
-        "imageKey": "homeIntroSide",
-        "textNamespace": "home.statement"
-      },
-      {
-        "id": "collaborations",
-        "component": "SelectedWorkSection",
-        "imageKey": "collaborationBackdrop",
-        "textNamespace": "home.collaborations"
-      },
-      {
-        "id": "features",
-        "component": "SelectedWorkSection",
-        "textNamespace": "home.features"
-      },
-      {
-        "id": "cta",
-        "component": "ContactCtaSection",
-        "imageKey": "studioWide",
-        "textNamespace": "home.cta"
+        "id": "open-studio",
+        "component": "OpenStudioHome",
+        "textNamespace": "openStudio"
       }
     ]
   },

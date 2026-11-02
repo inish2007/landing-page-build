@@ -1329,7 +1329,8 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Otto Freundlich (German, 1878–1943). Composition. Cleveland Museum of Art, CC0."
+    "credit": "Otto Freundlich (German, 1878–1943). Composition. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1992.277"
   },
   "studio-143278": {
     "src": "/images/open-studio/143278.webp",
@@ -1341,7 +1342,8 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Piet Mondrian (Dutch, 1872–1944). Composition with Red, Yellow, and Blue. Cleveland Museum of Art, CC0."
+    "credit": "Piet Mondrian (Dutch, 1872–1944). Composition with Red, Yellow, and Blue. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1967.215"
   },
   "studio-137078": {
     "src": "/images/open-studio/137078.webp",
@@ -1353,7 +1355,8 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Paul Klee (German, 1879–1940). With the Dot. Cleveland Museum of Art, CC0."
+    "credit": "Paul Klee (German, 1879–1940). With the Dot. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1961.50"
   },
   "studio-144705": {
     "src": "/images/open-studio/144705.webp",
@@ -1365,7 +1368,8 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Paul Klee (German, 1879–1940). Carnival in the Snow. Cleveland Museum of Art, CC0."
+    "credit": "Paul Klee (German, 1879–1940). Carnival in the Snow. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1969.46"
   },
   "studio-156571": {
     "src": "/images/open-studio/156571.webp",
@@ -1377,7 +1381,8 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Paul Klee (German, 1879–1940). God of War. Cleveland Museum of Art, CC0."
+    "credit": "Paul Klee (German, 1879–1940). God of War. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1992.278"
   },
   "studio-155039": {
     "src": "/images/open-studio/155039.webp",
@@ -1389,6 +1394,7 @@
       "desktop": "50% 50%",
       "mobile": "50% 50%"
     },
-    "credit": "Robert Delaunay (French, 1885–1941). La Tour. Cleveland Museum of Art, CC0."
+    "credit": "Robert Delaunay (French, 1885–1941). La Tour. Cleveland Museum of Art, CC0.",
+    "sourceUrl": "https://clevelandart.org/art/1989.59"
   }
 }

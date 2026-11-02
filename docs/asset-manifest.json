@@ -535,5 +535,19 @@
       "/the-process/",
       "/home-1/"
     ]
+  },
+  "openStudioCollection": {
+    "manifest": "docs/open-studio-artworks.json",
+    "license": "CC0-1.0",
+    "purpose": "Temporary real-art demonstration collection, not client artwork",
+    "retrievalDate": "2026-11-02",
+    "imageFiles": [
+      "/images/open-studio/156570.webp",
+      "/images/open-studio/143278.webp",
+      "/images/open-studio/137078.webp",
+      "/images/open-studio/144705.webp",
+      "/images/open-studio/156571.webp",
+      "/images/open-studio/155039.webp"
+    ]
   }
 }

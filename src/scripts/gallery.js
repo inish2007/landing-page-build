@@ -5,7 +5,7 @@ export function initGallery(){disposeGallery?.();const dialog=document.querySele
   /** Render current item safely. @returns {void} Updates image and text only. */
   function renderArtwork(){const item=items[index];const image=dialog.querySelector('[data-lightbox-image]');image.src=item.image.src;image.alt=item.image.alt;image.width=item.image.width;image.height=item.image.height;dialog.querySelector('#artwork-title').textContent=item.title;dialog.querySelector('[data-lightbox-caption]').textContent=item.caption;}
   /** Open chosen artwork or reverse closure. @param {MouseEvent} event Trigger. @returns {void} Renders and delegates focus/scroll ownership. */
-  function openArtwork(event){index=items.findIndex(item=>item.id===event.currentTarget.dataset.artwork);if(index<0)return;renderArtwork();controller.open(event.currentTarget);}
+  function openArtwork(event){if(typeof dialog.showModal!=='function')return;event.preventDefault();index=items.findIndex(item=>item.id===event.currentTarget.dataset.artwork);if(index<0)return;renderArtwork();controller.open(event.currentTarget);}
   /** Request close. @returns {void} Retains native modality through closing. */
   function closeArtwork(){controller.close();}
   /** Select previous record with wraparound. @returns {void} Updates dialog content. */

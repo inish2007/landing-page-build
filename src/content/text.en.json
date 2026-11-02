@@ -689,12 +689,12 @@
     "introBody": "A meeting of bold shapes, playful marks and unexpected connections. Take your time. Follow a colour. See where it leads.",
     "detailCaption": "Detail of Composition — Otto Freundlich. Full artwork above.",
     "process": "Discover the process",
-    "quote": "“As an artist, I believe in the unique and powerful language of creative expression, & my canvas is where I give voice to this belief.”",
     "contactLabel": "Keep the conversation going",
     "contactTitle": "Something caught\nyour eye?",
     "contact": "Get in touch",
     "demo": "Demonstration collection: these credited open-access artworks are not the client’s own work.",
     "creditLink": "Artwork sources & credits",
-    "number": "No."
+    "number": "No.",
+    "imageError": "Artwork preview unavailable. Explore the collection below."
   }
 }

@@ -27,6 +27,7 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
  * Whitelist of supported Astro section components.
  */
 export const COMPONENT_WHITELIST = [
+  'OpenStudioHome',
   'HeroSection',
   'StatementSection',
   'SelectedWorkSection',

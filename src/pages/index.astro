@@ -1,15 +1,7 @@
 ---
-/** Home route: ordered page configuration maps to shared section components. No props. */
 import SiteLayout from '../layouts/SiteLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import StatementSection from '../components/StatementSection.astro';
-import SelectedWorkSection from '../components/SelectedWorkSection.astro';
-import ContactCtaSection from '../components/ContactCtaSection.astro';
-import { getPageConfig, getCopy } from '../utils/content';
-import '../styles/components/home.css';
-const page = getPageConfig('home')!;
-const components = { HeroSection, StatementSection, SelectedWorkSection, ContactCtaSection };
+import OpenStudioHome from '../components/OpenStudioHome.astro';
+import {getCopy,getPageConfig} from '../utils/content';
+const page=getPageConfig('home')!;
 ---
-<SiteLayout title={getCopy(page.titleKey)}>
-  {page.sections.map(section => { const Section = components[section.component as keyof typeof components]; return <Section {...section} />; })}
-</SiteLayout>
+<SiteLayout title={getCopy(page.titleKey)} pageClass="open-studio-page"><OpenStudioHome /></SiteLayout>

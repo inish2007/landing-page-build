@@ -6,7 +6,7 @@ const URL=process.env.SITE_TEST_URL||TEST_URL;
 test('live preview remains unchanged while a private customization fixture builds',async()=>{
   const fixture=createFixture('preview-stability');let browser;
   try{
-    fs.appendFileSync(fixture.file('src/config/site.ts'),"\nsite.theme.colors.text='#ff00ff';site.theme.typography.sizes.body='28px';site.text.common.siteName='Private Fixture Only';\n");
+    fs.appendFileSync(fixture.file('src/config/site.ts'),"\nsite.theme.colors.text='#ff00ff';site.openStudio.colors.ink='#ff00ff';site.theme.typography.sizes.body='28px';site.text.common.siteName='Private Fixture Only';\n");
     browser=await launchBrowser();const page=await browser.newPage({reducedMotion:'reduce',viewport:{width:1440,height:900}});
     async function readLive(){await page.goto(URL);await page.evaluate(()=>document.fonts.ready);return page.evaluate(()=>{const css=getComputedStyle(document.body);return{font:css.fontFamily,size:css.fontSize,color:css.color,brand:document.querySelector('.brand').getAttribute('aria-label'),gutter:getComputedStyle(document.documentElement).getPropertyValue('--page-gutter')};});}
     const baseline=await readLive();let finished=false,buildError;const build=new Promise(resolve=>execFile(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{cwd:fixture.root},error=>{buildError=error;finished=true;resolve();}));
