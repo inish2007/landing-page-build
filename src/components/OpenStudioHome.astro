@@ -4,7 +4,6 @@ import FormattedText from './FormattedText.astro';
 import {getCopy,getArtworks,getImage} from '../utils/content';
 import {serializeJsonForHtml} from '../utils/serialize';
 import ButtonLabel from './ButtonLabel.astro';
-import '../styles/components/open-studio.css';
 const settings=site.openStudio;
 const copy=site.text.openStudio;
 const works=settings.workIds.map(id=>{const item=getArtworks(id);if(!item)throw Error('Unknown studio work: '+id);return{id,title:getCopy(item.titleKey),caption:getCopy(item.captionKey),image:getImage(item.imageKey)};});

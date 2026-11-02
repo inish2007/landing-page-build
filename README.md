@@ -1,6 +1,6 @@
 # Open Studio — homepage review
 
-This branch is the homepage-first editorial concept, based on quiet-luxury b773a85. Other pages retain that version’s design. Real CC0 demonstration artworks are credited; they are not client work.
+This branch is the Open Studio editorial concept, based on quiet-luxury b773a85. The approved open visual system now extends across all 14 pages. Real CC0 demonstration artworks are credited; they are not client work.
 
 Worktree: `D:/projects/landing-page-build-open-studio`. Preview: `http://127.0.0.1:4337/`. Development port:4327. Do not replace the main/quiet-luxury previews.
 

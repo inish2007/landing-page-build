@@ -8,7 +8,7 @@ import GoldenOutlineText from './GoldenOutlineText.astro';
 ---
 <section class="contact-page page-shell">
   <header class="page-heading"><h1 data-accent="outline"><GoldenOutlineText text={getCopy('contact.title')} /></h1></header>
-  <p class="contact-intro">{getCopy('contact.body')}</p>{action && <a data-link-feedback="text" class="text-link" href={'mailto:' + getCopy('contact.email')}><span class="link-label">{getCopy('contact.emailLabel')}</span></a>}
+  <div class="studio-contact-grid"><div class="studio-contact-copy"><p class="contact-intro">{getCopy('contact.body')}</p>{action && <a data-link-feedback="text" class="text-link" href={'mailto:' + getCopy('contact.email')}><span class="link-label">{getCopy('contact.emailLabel')}</span></a>}</div>
   <form method="post" action={action} data-contact-ready={String(Boolean(action))} class="contact-form" data-motion="reveal" data-contact-form aria-describedby="contact-notice">
     <p id="contact-notice">{getCopy(action ? 'contact.localNotice' : 'contact.unavailable')}</p>
     <input type="hidden" name="_subject" value={getCopy('contact.subject')} />
@@ -18,6 +18,6 @@ import GoldenOutlineText from './GoldenOutlineText.astro';
     <div class="form-field"><label for="inquiry-message">{getCopy('contact.messageLabel')}</label><textarea id="inquiry-message" name="message" disabled={!action} rows="6" required maxlength="5000"></textarea></div>
     <button class="playful-button filled-button" type="submit" disabled={!action} data-contact-submit><span class="button-surface" aria-hidden="true"></span><span class="button-face"><ButtonLabel text={getCopy('contact.submit')} /></span></button>
     <p data-contact-status role="status" data-sending-message={getCopy('contact.sending')}></p>
-  </form>
+  </form></div>
 </section>
 <script>import '../scripts/contact.js';</script>

@@ -46,4 +46,4 @@ Useful slots: `homeHero`, `homeIntroSide`, `collaborationBackdrop`, `aboutPrevie
 ## Preview and check
 Run `npm run check` and `npm run build`. A static production preview must be rebuilt after edits. Editing local files does not update a published site until the approved version is published. See `CUSTOMIZATION.md` for fonts, colors, logos, crops, navigation and advanced controls.
 
-Both main and quiet-luxury support these settings independently. Neither automatically edits the other branch. Frozen tags/backups stay unchanged.
+Main, quiet-luxury and open-studio support these settings independently. Neither automatically edits the other branch. Frozen tags/backups stay unchanged.

@@ -18,8 +18,9 @@ import '../styles/components/home-responsive.css';
 import '../styles/components/text-links.css';
 import '../styles/components/refinement.css';
 import '../styles/components/hero-panel.css';
+import '../styles/components/open-studio.css';
 interface Props { title?: string; pageClass?:string; }
-const { title = getCopy('common.siteName'),pageClass } = Astro.props;
+const { title = getCopy('common.siteName'),pageClass = 'open-studio-page studio-inner-page' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" data-label-roll-enabled={String(site.theme.motion.playful.labelRollEnabled)} data-motion-enabled={String(site.theme.motion.enabled)} data-playful-enabled={String(site.theme.motion.playful.enabled)} data-shine-enabled={String(site.theme.motion.playful.shineEnabled)} data-glow-enabled={String(site.theme.motion.playful.glowEnabled)} data-brand-wobble-enabled={String(site.theme.motion.playful.brandWobbleEnabled)}>
