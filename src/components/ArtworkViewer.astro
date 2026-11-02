@@ -1,0 +1,10 @@
+---
+import site from '../config/site';
+import {getCopy} from '../utils/content';
+---
+<dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title" data-settings={JSON.stringify(site.openStudio.artworkInteraction)}>
+<header class="artwork-toolbar"><span data-artwork-position></span><button type="button" data-lightbox-close>{getCopy('gallery.close')} ×</button></header>
+<div class="artwork-stage"><img data-lightbox-image alt="" /></div>
+<footer class="artwork-footer"><div><h2 id="artwork-title"></h2><p data-lightbox-caption></p><p role="status" data-artwork-status></p><button type="button" data-artwork-retry hidden>{getCopy('gallery.retry')}</button></div><div class="lightbox-controls"><button type="button" data-lightbox-prev aria-label={getCopy('gallery.previous')}>←</button><button type="button" data-lightbox-next aria-label={getCopy('gallery.next')}>→</button></div></footer>
+<span hidden data-loading-label>{getCopy('gallery.loading')}</span><span hidden data-error-label>{getCopy('gallery.error')}</span>
+</dialog>

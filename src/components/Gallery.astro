@@ -1,9 +1,9 @@
 ---
+import ArtworkViewer from './ArtworkViewer.astro';
 import type { PageConfiguration } from '../config/types';
 import GoldenOutlineText from './GoldenOutlineText.astro';
 interface Props {page:PageConfiguration}
 /** Ordered gallery and native modal. Props: page with collection/titleKey. Canonical copy via artworks title/caption keys. */
-import SiteIcon from './SiteIcon.astro';
 import { serializeJsonForHtml } from '../utils/serialize';
 import { getCopy, getArtworks, getImage } from '../utils/content';
 import ResponsiveImage from './ResponsiveImage.astro';
@@ -13,15 +13,10 @@ const items = getArtworks().filter(item => item.collection === page.collection).
 <section class="gallery-page page-shell">
   <header class="page-heading"><h1 data-accent="outline"><GoldenOutlineText text={getCopy(page.titleKey)} /></h1></header>
   <div class="gallery-grid" data-motion-group>{items.map(item => <figure class="gallery-card" data-motion="reveal">
-    <button class="gallery-open playful-card" data-artwork={item.id} aria-label={getCopy('gallery.open') + ': ' + getCopy(item.titleKey)}><ResponsiveImage imageKey={item.imageKey} aspectRatio="4 / 5" sizes="(max-width: 48rem) 100vw, 33vw" /></button>
+    <a href={getImage(item.imageKey).src} class="gallery-open playful-card" data-artwork={item.id} aria-label={getCopy('gallery.open') + ': ' + getCopy(item.titleKey)}><ResponsiveImage imageKey={item.imageKey} aspectRatio="4 / 5" sizes="(max-width: 48rem) 100vw, 33vw" /><span class="artwork-cue" aria-hidden="true">{getCopy("gallery.view")} ↗</span></a>
     <figcaption><h2>{getCopy(item.titleKey)}</h2><p>{getCopy(item.captionKey)}</p></figcaption>
   </figure>)}</div>
 </section>
-<dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title">
-  <button class="playful-button" data-lightbox-close><span class="button-face">{getCopy('gallery.close')} <SiteIcon name="close" /></span></button>
-  <img data-lightbox-image alt="" />
-  <h2 id="artwork-title"></h2><p data-lightbox-caption></p>
-  <div class="lightbox-controls"><button class="playful-button" data-lightbox-prev><span class="button-face">{getCopy('gallery.previous')} <SiteIcon name="previous" /></span></button><button class="playful-button" data-lightbox-next><span class="button-face">{getCopy('gallery.next')} <SiteIcon name="next" /></span></button></div>
-</dialog>
+<ArtworkViewer />
 <script type="application/json" id="artworks-data" set:html={serializeJsonForHtml(items.map(item => ({id:item.id,title:getCopy(item.titleKey),caption:getCopy(item.captionKey),image:getImage(item.imageKey)})))} />
 <script>import '../scripts/gallery.js';</script>

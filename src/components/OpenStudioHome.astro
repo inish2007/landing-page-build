@@ -1,4 +1,5 @@
 ---
+import ArtworkViewer from './ArtworkViewer.astro';
 import site from '../config/site';
 import FormattedText from './FormattedText.astro';
 import {getCopy,getArtworks,getImage} from '../utils/content';
@@ -17,19 +18,19 @@ const first=featured[0];
   <figure class="studio-feature" data-studio-feature>
    <a class="studio-stage" href={first.image.src} data-artwork={first.id} data-studio-open aria-label={`${copy.view}: ${first.title}`}>
     {featured.map((item,i)=><img data-studio-slide={i} src={item.image.src} width={item.image.width} height={item.image.height} alt={`${copy.detail}: ${item.image.alt}`} loading={i===0?'eager':'lazy'} fetchpriority={i===0?'high':'auto'} decoding="async" hidden={i!==0} />)}
-   </a>
+   <span class="artwork-cue" aria-hidden="true">{getCopy("gallery.view")} ↗</span></a>
    <p class="studio-image-error" data-studio-error hidden>{copy.imageError}</p><figcaption class="studio-feature-caption"><div class="studio-caption-content"><div><p class="studio-feature-title" data-studio-title>{first.title}</p><p class="studio-detail">{copy.detail}</p></div>{featured.map(item=><div class="studio-caption-reserve" aria-hidden="true"><p class="studio-feature-title">{item.title}</p><p class="studio-detail">{copy.detail}</p></div>)}</div><div class="studio-controls" data-studio-controls hidden><span role="status" aria-live="polite" data-studio-position aria-label={copy.position}>01 / {String(featured.length).padStart(2,'0')}</span><button type="button" data-studio-prev aria-label={copy.previous}>←</button><button type="button" data-studio-next aria-label={copy.next}>→</button></div></figcaption>
   </figure>
  </section>
  <section class="studio-selection" id="selected-work" aria-labelledby="selection-title">
   <div class="studio-section-heading"><p class="studio-eyebrow">{copy.selectedLabel}</p><h2 id="selection-title">{copy.selected}</h2></div>
-  <div class="studio-collage">{works.map((item,i)=><figure class={`studio-work studio-work-${i+1}`} data-motion="reveal"><a class="studio-work-image" href={item.image.src} data-artwork={item.id} aria-label={`${copy.view}: ${item.title}`}><img src={item.image.src} width={item.image.width} height={item.image.height} alt={item.image.alt} loading="lazy" decoding="async" /></a><figcaption><span class="studio-work-number">{String(i+1).padStart(2,'0')}</span><div><h3>{item.title}</h3></div><span aria-hidden="true">↗</span></figcaption></figure>)}</div>
+  <div class="studio-collage">{works.map((item,i)=><figure class={`studio-work studio-work-${i+1}`} data-motion="reveal"><a class="studio-work-image" href={item.image.src} data-artwork={item.id} aria-label={`${copy.view}: ${item.title}`}><img src={item.image.src} width={item.image.width} height={item.image.height} alt={item.image.alt} loading="lazy" decoding="async" /><span class="artwork-cue" aria-hidden="true">{getCopy("gallery.view")} ↗</span></a><figcaption><span class="studio-work-number">{String(i+1).padStart(2,'0')}</span><div><h3>{item.title}</h3></div><span aria-hidden="true">↗</span></figcaption></figure>)}</div>
   <a class="studio-text-link" href="/work/">{copy.allWork} <span aria-hidden="true">↗</span></a>
  </section>
  <section class="studio-intro" aria-labelledby="studio-intro-title"><figure><img src={works[0].image.src} width={works[0].image.width} height={works[0].image.height} alt={copy.detailCaption} loading="lazy" /></figure><div><p class="studio-eyebrow">{copy.introLabel}</p><h2 id="studio-intro-title">{copy.introTitle}</h2><p class="studio-prose">{copy.introBody}</p><a class="studio-text-link" href="/the-process/">{copy.process} ↗</a></div></section>
  <section class="studio-statement" aria-label={copy.introLabel}><span class="studio-asterisk" aria-hidden="true">✳</span><blockquote><FormattedText segments={getCopy('home.features.quoteSegments')} /></blockquote></section>
  <section class="studio-invitation" aria-labelledby="invitation-title"><p class="studio-eyebrow">{copy.contactLabel}</p><div><h2 id="invitation-title">{copy.contactTitle}</h2><a class="studio-explore pill-link filled-button" href="/contact/"><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text"><ButtonLabel text={copy.contact} /></span><span aria-hidden="true"> ↗</span></a></div></section>
- <dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-title"><button type="button" data-lightbox-close>{getCopy('gallery.close')} ×</button><img data-lightbox-image alt="" /><h2 id="artwork-title"></h2><p data-lightbox-caption></p><div class="lightbox-controls"><button type="button" data-lightbox-prev>{getCopy('gallery.previous')} ←</button><button type="button" data-lightbox-next>{getCopy('gallery.next')} →</button></div></dialog>
+ <ArtworkViewer />
  <script type="application/json" id="artworks-data" set:html={serializeJsonForHtml(works)} />
  <script type="application/json" id="studio-featured-data" set:html={serializeJsonForHtml(featured)} />
 </div>

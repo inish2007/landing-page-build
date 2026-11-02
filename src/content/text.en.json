@@ -347,7 +347,11 @@
     "open": "View fullsize",
     "close": "Close artwork",
     "previous": "Previous artwork",
-    "next": "Next artwork"
+    "next": "Next artwork",
+    "view": "View artwork",
+    "loading": "Loading artwork…",
+    "error": "Artwork unavailable. Please retry.",
+    "retry": "Retry"
   },
   "artworks": {
     "available-1": {

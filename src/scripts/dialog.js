@@ -17,7 +17,7 @@ export function createDialogController(dialog,options={}){
     /** Commit only the current animation intent. @returns {void} Settles dialog and releases temporary effects. */
     function complete(){if(token!==generation)return;if(!opening){finishClose();return;}cancelEffect();state='open';dialog.dataset.motionState='open';}
     if(!settings.enabled||preference.matches||!dialog.animate||document.hidden){complete();return;}
-    try{animation=dialog.animate([from,{opacity:opening?1:0,transform:opening?'translate3d(0,0,0)':offset}],{duration:opening?settings.dialogOpen:settings.dialogClose,easing:settings.easing,fill:'both'});animation.finished.then(complete,()=>{});}catch{complete();}
+    try{animation=dialog.animate([from,{opacity:opening?1:0,transform:opening?'translate3d(0,0,0)':offset}],{duration:opening?(options.openDuration??settings.dialogOpen):(options.closeDuration??settings.dialogClose),easing:settings.easing,fill:'both'});animation.finished.then(complete,()=>{});}catch{complete();}
   }
   /** Open or reverse an in-progress close. @param {HTMLElement} [trigger] Return-focus target. @returns {void} Maintains native modal isolation. */
   function open(trigger){if(state==='open'||state==='opening')return;if(!dialog.open){returnFocus=trigger||document.activeElement;lockScroll(dialog);try{dialog.showModal();}catch(error){unlockScroll(dialog);throw error;}options.onOpen?.();}transition(true);}
