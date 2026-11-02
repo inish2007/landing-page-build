@@ -3,7 +3,7 @@ import type { PageConfiguration, EditorialCopy } from '../config/types';
 import GoldenOutlineText from './GoldenOutlineText.astro';
 interface Props {page:PageConfiguration}
 /** Supporting editorial page. Props: page configuration; copy blocks from centralized textNamespace. */
-import { getCopy } from '../utils/content';
+import { getCopy, getImage } from '../utils/content';
 import ResponsiveImage from './ResponsiveImage.astro';
 import AnimatedMedia from './AnimatedMedia.astro';
 import SiteIcon from './SiteIcon.astro';
@@ -12,14 +12,18 @@ const copy = getCopy<EditorialCopy>(page.textNamespace!);
 const goldTitle = page.textNamespace?.startsWith('editorial.') && page.textNamespace !== 'editorial.home-1';
 const proseGroups = copy.blocks.reduce<{marked:boolean;blocks:typeof copy.blocks}[]>((groups,block)=>{const marked=block.tag==='P'&&block.highlight==='press-marker';const last=groups.at(-1);if(last?.marked===marked)last.blocks.push(block);else groups.push({marked,blocks:[block]});return groups;},[]);
 const imageKeys = page.imageKeys || [];
+const variant=page.studioVariant || "reading";
+const study=page.studyImageKey ? getImage(page.studyImageKey) : null;
 ---
-<article class="editorial-page page-shell">
+<article class:list={["editorial-page page-shell",`studio-variant-${variant}`]}>
   <header class="page-heading" data-motion="reveal"><h1 data-accent={goldTitle ? "outline" : undefined}>{goldTitle ? <GoldenOutlineText text={copy.title} /> : copy.title}</h1></header>
+  {page.placeholderNoticeKey && <p class="studio-placeholder">{getCopy(page.placeholderNoticeKey)}</p>}
   <div class="editorial-grid">
-    {(page.imageCount || 0) > 0 && <ResponsiveImage imageKey={imageKeys[0] || "homeHero"} aspectRatio="4 / 5" eager />}
+    {(page.imageCount || 0) > 0 && variant !== "collaborations" && <ResponsiveImage imageKey={imageKeys[0] || "homeHero"} aspectRatio="4 / 5" eager />}
     <div class="editorial-prose" data-motion-group>{proseGroups.map(group=>group.marked ? <div class="press-marker-group" data-motion="press-marker">{group.blocks.map(block=><div class="editorial-block"><p><span class="press-marker-ink">{block.text}</span></p></div>)}</div> : group.blocks.map(block => <div class="editorial-block" data-motion="reveal">{block.tag.startsWith('H') ? <h2>{block.text}</h2> : <p>{block.text}</p>}</div>))}</div>
   </div>
+  {study && <figure class="studio-colour-study"><img src={study.src} width={study.width} height={study.height} alt={study.alt} loading="lazy" /><figcaption><a href={study.sourceUrl}>{getCopy("openStudio.studyCaption")}</a></figcaption></figure>}
   {page.mediaKey && <AnimatedMedia mediaKey={page.mediaKey} />}
-  {copy.links && copy.links.length > 0 && <nav class:list={["editorial-links",page.textNamespace === "editorial.press" && "press-article-links"]} aria-label={copy.title}>{copy.links.map(link => <a data-link-feedback="text" class="playful-link" href={link.href}><span class="link-label">{link.label}</span><span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
-  <div class="editorial-image-grid">{Array.from({length:Math.max(0,(page.imageCount || 0)-1)}).map((_, index) => <ResponsiveImage imageKey={imageKeys[index + 1] || "homeIntroSide"} aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" />)}</div>
+  {copy.links && copy.links.length > 0 && <nav class:list={["editorial-links",page.textNamespace === "editorial.press" && "press-article-links"]} aria-label={copy.title}>{copy.links.map((link,index) => <a data-link-feedback="text" class="playful-link" href={link.href}>{variant === "collaborations" && index < 2 && <figure class="studio-project-preview"><ResponsiveImage imageKey={imageKeys[index]} aspectRatio="4 / 3" /><figcaption>{page.placeholderNoticeKey && getCopy(page.placeholderNoticeKey)}</figcaption></figure>}<span class="studio-link-index" aria-hidden="true">{String(index+1).padStart(2,"0")}</span><span class="studio-link-text"><span class="link-label">{link.label}</span></span><span aria-hidden="true"> <SiteIcon name="external" /></span></a>)}</nav>}
+  <div class="editorial-image-grid">{Array.from({length:Math.max(0,(page.imageCount || 0)-(variant === "collaborations" ? 2 : 1))}).map((_, index) => <figure class="studio-editorial-figure"><ResponsiveImage imageKey={imageKeys[index + (variant === "collaborations" ? 2 : 1)] || "homeIntroSide"} aspectRatio="4 / 3" sizes="(max-width: 48rem) 100vw, 50vw" /><figcaption>{variant === "process" && <span class="studio-sequence">{String(index+2).padStart(2,"0")} / </span>}{page.placeholderNoticeKey && getCopy(page.placeholderNoticeKey)}</figcaption></figure>)}</div>
 </article>

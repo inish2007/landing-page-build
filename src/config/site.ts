@@ -25,7 +25,10 @@ export const site = {
   images: images satisfies Record<string,ImageAsset>,
   media: media satisfies Record<string,MediaAsset>,
   navigation: navigation satisfies Record<string,NavigationLink[]>,
-  pages: pages satisfies Record<string,PageConfiguration>,
+  pages: Object.fromEntries(Object.entries(pages).map(([id,page])=>{
+    if("studioVariant" in page && !["biography","process","press","collaborations","project","reading","media"].includes(page.studioVariant)) throw new Error("Unknown studio page variant: "+id);
+    return [id,page as PageConfiguration];
+  })),
   artworks: artworks satisfies Artwork[],
   branding: {
     wordmarkScale:{width:1.3,height:1.55},
