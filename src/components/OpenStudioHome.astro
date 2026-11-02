@@ -14,12 +14,12 @@ const first=featured[0];
 ---
 <div class="open-studio" style={`--studio-transition:${settings.transitionDuration}ms`}>
  <section class="studio-opening" aria-labelledby="studio-title">
-  <div class="studio-heading-row"><div><h1 id="studio-title">{copy.title}</h1><p>{copy.description}</p></div><a class="studio-explore pill-link filled-button" href="/work/"><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text"><ButtonLabel text={copy.explore} /></span><span aria-hidden="true"> ↗</span></a></div>
+  <h1 id="studio-title" class="sr-only">{copy.title}</h1>
   <figure class="studio-feature" data-studio-feature>
    <a class="studio-stage" href={first.image.src} data-artwork={first.id} data-studio-open aria-label={`${copy.view}: ${first.title}`}>
     {featured.map((item,i)=><img data-studio-slide={i} src={item.image.src} width={item.image.width} height={item.image.height} alt={`${copy.detail}: ${item.image.alt}`} loading={i===0?'eager':'lazy'} fetchpriority={i===0?'high':'auto'} decoding="async" hidden={i!==0} />)}
    <span class="artwork-cue" aria-hidden="true">{getCopy("gallery.view")} ↗</span></a>
-   <p class="studio-image-error" data-studio-error hidden>{copy.imageError}</p><figcaption class="studio-feature-caption"><div class="studio-caption-content"><div><p class="studio-feature-title" data-studio-title>{first.title}</p><p class="studio-detail">{copy.detail}</p></div>{featured.map(item=><div class="studio-caption-reserve" aria-hidden="true"><p class="studio-feature-title">{item.title}</p><p class="studio-detail">{copy.detail}</p></div>)}</div><div class="studio-controls" data-studio-controls hidden><span role="status" aria-live="polite" data-studio-position aria-label={copy.position}>01 / {String(featured.length).padStart(2,'0')}</span><button type="button" data-studio-prev aria-label={copy.previous}>←</button><button type="button" data-studio-next aria-label={copy.next}>→</button></div></figcaption>
+   <p class="studio-image-error" data-studio-error hidden>{copy.imageError}</p><figcaption class="studio-feature-caption"><div class="studio-controls" data-studio-controls hidden><span role="status" aria-live="polite" data-studio-position aria-label={copy.position}>01 / {String(featured.length).padStart(2,'0')}</span><button type="button" data-studio-prev aria-label={copy.previous}>←</button><button type="button" data-studio-next aria-label={copy.next}>→</button></div></figcaption>
   </figure>
  </section>
  <section class="studio-selection" id="selected-work" aria-labelledby="selection-title">
