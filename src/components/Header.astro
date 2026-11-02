@@ -1,4 +1,5 @@
 ---
+import {navigationCurrent} from '../utils/navigation';
 /** Shared brand and responsive navigation. No props; consumes common.*, nav.*, images.siteLogo and navigation.header. */
 import { getBrandName, getCopy, getNavigation } from '../utils/content';
 import GoldenOutlineText from './GoldenOutlineText.astro';
@@ -14,7 +15,7 @@ const current = Astro.url.pathname;
     <BrandWordmark />
   </a>
   <nav class="desktop-nav" aria-label={getCopy('common.primaryNavigation')}>
-    {getNavigation('header').map(link => <a data-link-feedback="text" data-accent="outline" data-text-jelly class="playful-link" href={link.path} aria-current={current === link.path ? 'page' : undefined}><GoldenOutlineText text={getCopy(link.labelKey)} jelly /></a>)}
+    {getNavigation('header').map(link => <a data-link-feedback="text" data-accent="outline" data-text-jelly class="playful-link" href={link.path} aria-current={navigationCurrent(current,link.path)}><GoldenOutlineText text={getCopy(link.labelKey)} jelly /></a>)}
   </nav>
   <button class="menu-toggle menu-control" data-accent="outline" data-text-jelly data-menu-jiggle data-menu-open aria-controls="mobile-drawer" aria-expanded="false" hidden><GoldenOutlineText text={getCopy('common.menuOpenLabel')} jelly reserveWeight /><span aria-hidden="true"> <SiteIcon name="menu" /></span></button>
 </header>
