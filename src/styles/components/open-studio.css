@@ -277,8 +277,8 @@ html[data-motion-enabled="false"] .artwork-cue,html[data-motion-inactive="true"]
 .contact-artwork img{width:100%;height:clamp(300px,36vw,550px);object-fit:contain;object-position:left top;}
 @media(max-width:767px){.collaboration-features,.collaboration-story,.collaboration-images{grid-template-columns:minmax(0,1fr);}.collaboration-images > :first-child{grid-column:auto;}.studio-contact-grid{grid-template-areas:"intro" "form" "art";grid-template-rows:auto;}.contact-artwork img{height:auto;max-height:550px;}}
 /* Hand-lettered links and persistent section navigation feedback. */
-.open-studio-page a:not(.brand,.footer-brand){font-family:var(--font-brand);}
-.open-studio-page a :is(.link-label,.link-words,.outlined-label,.outline-base,.studio-link-text,.collaboration-project-title,.jelly-text){font-family:inherit;}
-.open-studio-page :is(.desktop-nav a,.site-footer nav a,.studio-text-link,.editorial-links a){font-size:max(18px,1em);}
-.open-studio-page :is(.desktop-nav,#mobile-drawer nav) a[aria-current] .link-words{background:var(--studio-accent);color:var(--studio-ink);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.25em;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.open-studio-page :is(.desktop-nav,#mobile-drawer nav) a{font-family:var(--font-brand);}
+.open-studio-page :is(.desktop-nav,#mobile-drawer nav) a :is(.link-words,.outlined-label,.outline-base){font-family:inherit;}
+.open-studio-page .desktop-nav a{font-size:max(18px,1em);}
+.open-studio-page :is(.desktop-nav,#mobile-drawer nav) a[aria-current] .link-words{background:transparent;color:var(--studio-ink);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.25em;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
 .studio-about-link{margin-right:28px;}
