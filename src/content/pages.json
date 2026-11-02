@@ -140,7 +140,19 @@
       "collaborationsImage6"
     ],
     "studioVariant": "collaborations",
-    "placeholderNoticeKey": "openStudio.placeholderNotice"
+    "placeholderNoticeKey": "openStudio.placeholderNotice",
+    "composition": {
+      "featureImageIndexes": [
+        0,
+        1
+      ],
+      "storyImageIndex": 2,
+      "remainingImageIndexes": [
+        3,
+        4,
+        5
+      ]
+    }
   },
   "pagerie-lana-gomez-luxury-bags": {
     "path": "/pagerie-lana-gomez-luxury-bags/",
@@ -201,7 +213,8 @@
         "id": "contact-form",
         "component": "ContactForm"
       }
-    ]
+    ],
+    "studyImageKey": "studio-156570"
   },
   "colophon": {
     "path": "/colophon/",

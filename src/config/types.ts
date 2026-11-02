@@ -9,7 +9,7 @@ export interface EditorialBlock { tag:string; text:string; highlight?:'press-mar
 export interface EditorialCopy { title:string; blocks:EditorialBlock[]; links?:{label:string;href:string}[] }
 export interface PageSection { id:string; component:string; imageKey?:string; textNamespace?:string }
 export type StudioPageVariant = 'biography'|'process'|'press'|'collaborations'|'project'|'reading'|'media';
-export interface PageConfiguration { studioVariant?:StudioPageVariant; placeholderNoticeKey?:string; studyImageKey?:string; path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; imageKeys?:string[]; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
+export interface PageConfiguration { composition?:{featureImageIndexes:number[];storyImageIndex:number;remainingImageIndexes:number[]}; studioVariant?:StudioPageVariant; placeholderNoticeKey?:string; studyImageKey?:string; path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; imageKeys?:string[]; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
 export interface Artwork { id:string; collection:string; titleKey:string; captionKey:string; imageKey:string; order:number }
 export interface SiteTheme {
   colors: Record<'blush'|'charcoal'|'ivory'|'warmStone'|'stoneBorder'|'bronze'|'aboutFill'|'aboutOutline'|'aboutShadow'|'plaque'|'plaqueText'|'goldDark'|'goldMid'|'goldLight'|'circle'|'primary'|'secondary'|'background'|'surface'|'text'|'border'|'accentText'|'focus'|'subtleBackground'|'onMedia'|'shadow'|'overlay'|'modalOverlay',string>;

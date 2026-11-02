@@ -1,0 +1,16 @@
+---
+import type {PageConfiguration,EditorialCopy} from '../config/types';
+import {getCopy} from '../utils/content';
+import ResponsiveImage from './ResponsiveImage.astro';
+interface Props {page:PageConfiguration}
+const {page}=Astro.props;
+const copy=getCopy<EditorialCopy>(page.textNamespace!);
+const group=page.composition!;
+const images=page.imageKeys!;
+---
+<article class="editorial-page page-shell studio-variant-collaborations collaboration-presence">
+<header class="page-heading"><h1>{copy.title}</h1></header>
+<nav class="collaboration-features" aria-label={copy.title}>{group.featureImageIndexes.map((imageIndex,index)=><a href={copy.links![index].href} data-link-feedback="text"><ResponsiveImage imageKey={images[imageIndex]} aspectRatio="4 / 3" eager /><span class="collaboration-project-title"><span class="link-label">{copy.links![index].label}</span><span aria-hidden="true">↗</span></span></a>)}</nav>
+<div class="collaboration-story"><ResponsiveImage imageKey={images[group.storyImageIndex]} aspectRatio="4 / 3" /><div class="editorial-prose">{copy.blocks.map(block=><div class="editorial-block">{block.tag.startsWith('H')?<h2>{block.text}</h2>:<p>{block.text}</p>}</div>)}<a class="studio-text-link" data-link-feedback="text" href={copy.links![2].href}><span class="link-label">{copy.links![2].label}</span> <span aria-hidden="true">↗</span></a></div></div>
+<div class="collaboration-images">{group.remainingImageIndexes.map(i=><ResponsiveImage imageKey={images[i]} aspectRatio="4 / 3" />)}</div>
+</article>
