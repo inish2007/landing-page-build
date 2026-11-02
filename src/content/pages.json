@@ -29,7 +29,9 @@
       "aboutImage3",
       "aboutImage4",
       "aboutImage5"
-    ]
+    ],
+    "studioVariant": "biography",
+    "placeholderNoticeKey": "openStudio.placeholderNotice"
   },
   "the-process": {
     "path": "/the-process/",
@@ -52,7 +54,10 @@
       "the-processImage4",
       "the-processImage5",
       "the-processImage6"
-    ]
+    ],
+    "studioVariant": "process",
+    "placeholderNoticeKey": "openStudio.placeholderNotice",
+    "studyImageKey": "studio-156570"
   },
   "available-art": {
     "path": "/available-art/",
@@ -64,7 +69,8 @@
         "id": "available-art-gallery",
         "component": "Gallery"
       }
-    ]
+    ],
+    "placeholderNoticeKey": "openStudio.galleryPlaceholder"
   },
   "archived": {
     "path": "/archived/",
@@ -76,7 +82,8 @@
         "id": "archived-gallery",
         "component": "Gallery"
       }
-    ]
+    ],
+    "placeholderNoticeKey": "openStudio.galleryPlaceholder"
   },
   "work": {
     "path": "/work/",
@@ -88,7 +95,8 @@
         "id": "work-gallery",
         "component": "Gallery"
       }
-    ]
+    ],
+    "placeholderNoticeKey": "openStudio.galleryPlaceholder"
   },
   "press": {
     "path": "/press/",
@@ -106,7 +114,9 @@
     "imageKeys": [
       "pressImage1",
       "pressImage2"
-    ]
+    ],
+    "studioVariant": "press",
+    "placeholderNoticeKey": "openStudio.placeholderNotice"
   },
   "collaborations": {
     "path": "/collaborations/",
@@ -128,7 +138,9 @@
       "collaborationsImage4",
       "collaborationsImage5",
       "collaborationsImage6"
-    ]
+    ],
+    "studioVariant": "collaborations",
+    "placeholderNoticeKey": "openStudio.placeholderNotice"
   },
   "pagerie-lana-gomez-luxury-bags": {
     "path": "/pagerie-lana-gomez-luxury-bags/",
@@ -150,7 +162,9 @@
       "pagerie-lana-gomez-luxury-bagsImage4",
       "pagerie-lana-gomez-luxury-bagsImage5",
       "pagerie-lana-gomez-luxury-bagsImage6"
-    ]
+    ],
+    "studioVariant": "project",
+    "placeholderNoticeKey": "openStudio.placeholderNotice"
   },
   "shay-lanagomez-luxury-jewelry-collection": {
     "path": "/shay-lanagomez-luxury-jewelry-collection/",
@@ -174,7 +188,9 @@
       "shay-lanagomez-luxury-jewelry-collectionImage6",
       "shay-lanagomez-luxury-jewelry-collectionImage7",
       "shay-lanagomez-luxury-jewelry-collectionImage8"
-    ]
+    ],
+    "studioVariant": "project",
+    "placeholderNoticeKey": "openStudio.placeholderNotice"
   },
   "contact": {
     "path": "/contact/",
@@ -199,7 +215,8 @@
         "component": "EditorialHeader",
         "textNamespace": "legal.colophon"
       }
-    ]
+    ],
+    "studioVariant": "reading"
   },
   "privacy": {
     "path": "/privacy/",
@@ -213,7 +230,8 @@
         "component": "EditorialHeader",
         "textNamespace": "legal.privacy"
       }
-    ]
+    ],
+    "studioVariant": "reading"
   },
   "home-1": {
     "path": "/home-1/",
@@ -228,6 +246,7 @@
         "component": "EditorialHeader",
         "textNamespace": "editorial.home-1"
       }
-    ]
+    ],
+    "studioVariant": "media"
   }
 }

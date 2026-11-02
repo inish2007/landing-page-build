@@ -653,7 +653,7 @@
         },
         {
           "tag": "P",
-          "text": "The artist copy was supplied as temporary reference content. Original ownership and design credit remain acknowledged. All ordinary imagery currently uses the user-supplied dark placeholder; the user-selected wallpaper GIF replaces video slots. No open license is asserted for supplied copy or media."
+          "text": "Reference artist copy and named projects are temporary demonstration content. Supporting image slots and gallery photographs remain supplied placeholders and do not depict the named artist, products or artwork records. The selected Open Studio collection and labelled colour study use credited CC0 museum artwork; these are not the client’s own work. The wallpaper animation remains supplied demonstration media."
         }
       ]
     },
@@ -695,6 +695,9 @@
     "demo": "Demonstration collection: these credited open-access artworks are not the client’s own work.",
     "creditLink": "Artwork sources & credits",
     "number": "No.",
-    "imageError": "Artwork preview unavailable. Explore the collection below."
+    "imageError": "Artwork preview unavailable. Explore the collection below.",
+    "placeholderNotice": "Image placeholder — client photography to be supplied. Reference text is retained for demonstration.",
+    "galleryPlaceholder": "Demonstration layout: images are placeholders and do not depict the named artworks. Titles, dimensions and availability are reference content.",
+    "studyCaption": "Colour study: Composition, Otto Freundlich, 1924 · Cleveland Museum of Art · CC0. Demonstration artwork, not the client’s work."
   }
 }
