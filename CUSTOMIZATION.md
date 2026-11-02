@@ -530,3 +530,19 @@ Real artwork credits: docs/open-studio-artworks.json and THIRD_PARTY_NOTICES.md.
 SiteLayout loads open-studio.css globally; supporting routes receive open-studio-page/studio-inner-page automatically. Homepage keeps its existing composition. All page shells and heading backgrounds are open/transparent with no enclosing borders, radii or card shadows. Gallery/editorial/contact/legal routes share the homepage palette via site.openStudio.colors. Gallery and secondary editorial images use staggered desktop placement and a readable mobile sequence; existing image sources/crops, copy, links and record counts are unchanged.
 
 ContactForm adds only layout wrappers: introductory copy and fields align in two desktop columns and stack on mobile. Existing labels, native POST, setup-disabled state and no-JavaScript behaviour remain. Field underlines use a stronger ink/stone mix and retain keyboard outlines. Yellow lift/bold-label feedback, text-link feedback, brand exclusions, gallery focus management and media controls remain. Client data is still edited once in client.json; no new per-page settings are needed.
+
+
+## Shared layout controls — 3 November 2026
+Edit `site.openStudio.layout` to refine the supporting pages without touching components. Values are typed and emit checked CSS variables:
+
+| Setting | Default | Applies to |
+|---|---|---|
+| headingGapDesktop | 48 | Title-to-content gap in pixels, at768px and above |
+| headingGapMobile | 32 | Title-to-content gap in pixels below768px |
+| proseMaxWidth | 56ch | Editorial/legal reading column and contact intro maximum |
+| proseLineHeight | 1.65 | Unitless reading line height |
+| galleryOffset | 64 | Desktop second-column/tablet alternate offset; desktop third column uses twice this |
+| galleryRowGapDesktop | 72 | Gallery row spacing in pixels |
+| galleryRowGapMobile | 52 | Gallery row spacing in pixels below768px |
+
+The existing theme body size remains17–18px. Mobile galleries reset offsets and retain their original reading order. Header/footer/page columns share the same physical gutter. Homepage feature/collage composition, artwork records, images/crops, copy and URLs are unchanged; these new spacing controls target inner pages. The existing colors, fonts, client profile and contact settings remain canonical.

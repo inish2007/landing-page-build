@@ -17,7 +17,7 @@ import {createClientContent,getContactAction} from '../utils/client.ts';
 const {text,navigation}=createClientContent(textTemplate,navigationTemplate,client);
 
 export const site = {
-  openStudio:{featuredIds:['studio-156570','studio-144705','studio-143278'],workIds:['studio-156570','studio-143278','studio-137078','studio-144705','studio-156571','studio-155039'],transitionDuration:200,colors:{canvas:'#faf9f6',ink:'#292526',accent:'#ffe600',border:'#d8d0c4'}} satisfies OpenStudioConfiguration,
+  openStudio:{featuredIds:['studio-156570','studio-144705','studio-143278'],workIds:['studio-156570','studio-143278','studio-137078','studio-144705','studio-156571','studio-155039'],transitionDuration:200,layout:{headingGapDesktop:48,headingGapMobile:32,proseMaxWidth:'56ch',proseLineHeight:1.65,galleryOffset:64,galleryRowGapDesktop:72,galleryRowGapMobile:52},colors:{canvas:'#faf9f6',ink:'#292526',accent:'#ffe600',border:'#d8d0c4'}} satisfies OpenStudioConfiguration,
   client,
   contact:{action:getContactAction(client.contactEmail)},
   // Canonical editable copy: headings, paragraphs, labels, buttons, credits, copyright.

@@ -6,13 +6,13 @@ const URL=process.env.SITE_TEST_URL||TEST_URL;
 test('live preview remains unchanged while a private customization fixture builds',async()=>{
   const fixture=createFixture('preview-stability');let browser;
   try{
-    fs.appendFileSync(fixture.file('src/config/site.ts'),"\nsite.theme.colors.text='#ff00ff';site.openStudio.colors.ink='#ff00ff';site.theme.typography.sizes.body='28px';site.text.common.siteName='Private Fixture Only';\n");
+    fs.appendFileSync(fixture.file('src/config/site.ts'),"\nsite.theme.colors.text='#ff00ff';site.openStudio.colors.ink='#ff00ff';site.openStudio.layout.headingGapDesktop=80;site.openStudio.layout.proseLineHeight=1.8;site.openStudio.layout.galleryOffset=100;site.theme.typography.sizes.body='28px';site.text.common.siteName='Private Fixture Only';\n");
     browser=await launchBrowser();const page=await browser.newPage({reducedMotion:'reduce',viewport:{width:1440,height:900}});
     async function readLive(){await page.goto(URL);await page.evaluate(()=>document.fonts.ready);return page.evaluate(()=>{const css=getComputedStyle(document.body);return{font:css.fontFamily,size:css.fontSize,color:css.color,brand:document.querySelector('.brand').getAttribute('aria-label'),gutter:getComputedStyle(document.documentElement).getPropertyValue('--page-gutter')};});}
     const baseline=await readLive();let finished=false,buildError;const build=new Promise(resolve=>execFile(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{cwd:fixture.root},error=>{buildError=error;finished=true;resolve();}));
     let reloads=0;do{assert.deepEqual(await readLive(),baseline);reloads++;}while(!finished&&reloads<12);
     await build;assert.ifError(buildError);assert.ok(reloads>=1);fixture.assertUnchanged();
-    const privateUrl=await fixture.serve();await page.goto(privateUrl);assert.equal(await page.locator('.brand').getAttribute('aria-label'),'Private Fixture Only');assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).fontSize),'28px');assert.deepEqual(await readLive(),baseline);
+    const privateUrl=await fixture.serve();await page.goto(privateUrl);assert.equal(await page.locator('.brand').getAttribute('aria-label'),'Private Fixture Only');assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).fontSize),'28px');await page.goto(privateUrl+'/about/');assert.equal(await page.locator('.page-heading').evaluate(e=>getComputedStyle(e).marginBottom),'80px');assert.equal(await page.locator('.editorial-prose p').first().evaluate(e=>getComputedStyle(e).lineHeight),'50.4px');await page.goto(privateUrl+'/work/');assert.equal(await page.locator('.gallery-card').nth(1).evaluate(e=>getComputedStyle(e).marginTop),'100px');assert.deepEqual(await readLive(),baseline);
     fs.writeFileSync('evidence/font-loading/preview-isolation.json',JSON.stringify({reloads,baseline,privateBrand:'Private Fixture Only'},null,2));
   }finally{await browser?.close();await fixture.close();}
 });

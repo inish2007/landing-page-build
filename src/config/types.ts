@@ -24,4 +24,4 @@ export interface SiteTheme {
 }
 
 /** Homepage-only editorial showcase; artwork IDs resolve through the existing central dictionaries. */
-export interface OpenStudioConfiguration {featuredIds:string[];workIds:string[];transitionDuration:number;colors:{canvas:string;ink:string;accent:string;border:string}}
+export interface OpenStudioConfiguration {featuredIds:string[];workIds:string[];transitionDuration:number;layout:{headingGapDesktop:number;headingGapMobile:number;proseMaxWidth:string;proseLineHeight:number;galleryOffset:number;galleryRowGapDesktop:number;galleryRowGapMobile:number};colors:{canvas:string;ink:string;accent:string;border:string}}
