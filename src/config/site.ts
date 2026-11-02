@@ -75,7 +75,7 @@ export const site = {
           {src:'/fonts/caveat-brush-regular.ttf',format:'truetype',weight:'400',style:'normal'},
         ]},
       },
-      sizes: {menuControl:'1rem',labelStroke:'0px',aboutStroke:'0px',plaquePadding:'.18em .38em',footer:'clamp(0.875rem, 2.25vw, 1.125rem)',processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1.0625rem, 0.25vw + 1rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'clamp(0.875rem, 0.15vw + 0.8rem, 0.9375rem)',button:'clamp(0.875rem, 0.15vw + 0.8rem, 0.9375rem)',root:'100%'},
+      sizes: {menuControl:'1rem',labelStroke:'0px',aboutStroke:'0px',plaquePadding:'.18em .38em',footer:'clamp(0.875rem, 2.25vw, 1.125rem)',processLink:'clamp(1.125rem, 1.7vw, 1.5rem)',brand:'clamp(1.7rem, 2.5vw, 2.6rem)',display:'clamp(2.25rem, 5vw + 1rem, 5.5rem)',statement:'clamp(1.75rem, 3.5vw + 0.8rem, 4rem)',h1:'clamp(1.625rem, 2.5vw + 0.8rem, 3rem)',h2:'clamp(1.375rem, 1.8vw + 0.6rem, 2.25rem)',body:'clamp(1.0625rem, 0.25vw + 1rem, 1.125rem)',caption:'clamp(0.8125rem, 0.2vw + 0.75rem, 0.875rem)',nav:'clamp(.9375rem,1.1vw,1rem)',button:'clamp(0.875rem, 0.15vw + 0.8rem, 0.9375rem)',root:'100%'},
       weights:{menuControl:'600',menuControlActive:'700',navigation:'500',button:'600',buttonHover:'700',regular:'400',heading:'400',brand:'400',strong:'700'},
       lineHeights:{footer:'1.25',body:'1.6',heading:'1.15',display:'1.05',brand:'.95'},
       tracking:{heading:'-.025em',editorial:'-.02em'},

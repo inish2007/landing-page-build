@@ -579,3 +579,6 @@ navigationCurrent() is the shared desktop/drawer current-route resolver: normali
 
 ## Navigation-only brush font
 This supersedes the previous all-link brush styling: only desktop navigation and mobile drawer links use the brand font and18px desktop minimum. Other anchors inherit their original typefaces/sizes. Current page/section markers retain3px underline and transparent background. About homepage link remains. No other link feedback or brand exclusions change.
+
+## Professional navigation typography
+Desktop and mobile navigation now use the existing primary sans font (Plus Jakarta Sans), with the canonical navigation weight500. Desktop size uses theme.typography.sizes.nav at15–16px; mobile drawer retains its larger accessible menu scale. Brush typography remains on the brand wordmarks. Active page/section underlines and transparent backgrounds remain.
