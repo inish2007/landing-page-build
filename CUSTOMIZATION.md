@@ -546,3 +546,10 @@ Edit `site.openStudio.layout` to refine the supporting pages without touching co
 | galleryRowGapMobile | 52 | Gallery row spacing in pixels below768px |
 
 The existing theme body size remains17–18px. Mobile galleries reset offsets and retain their original reading order. Header/footer/page columns share the same physical gutter. Homepage feature/collage composition, artwork records, images/crops, copy and URLs are unchanged; these new spacing controls target inner pages. The existing colors, fonts, client profile and contact settings remain canonical.
+
+## Artfully composed page variants
+Supporting routes choose a typed studioVariant in pages.json: biography, process, press, collaborations, project, reading or media. Existing imageKeys control ordered imagery; the collaborations index places its first two images with the existing two project links, then renders the remaining images. Project pages alternate wide and paired images without changing the sequence. All reference copy and destinations remain editable in the existing dictionaries.
+
+placeholderNoticeKey provides a visible, editable notice for unmatched imagery. Gallery titles, dimensions and availability remain reference records: do not remove their demonstration notice until matching client images and records are supplied together. About images are placeholders, never substitute a stock portrait as the client. Process studyImageKey references an existing credited CC0 artwork, separate from client photographs. Its source link and studyCaption must be replaced together with that artwork. No new download or license claim is introduced; the existing asset manifest and notices cover the reused image.
+
+The compositions retain the original image ratios/crops, media controls, contact setup, shared colors/fonts and client profile. Page variants are validated at configuration load; an unknown variant fails the build. Subtle existing motion remains canonical. Evidence and comparison scripts are private and ignored.
