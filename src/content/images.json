@@ -1318,5 +1318,77 @@
       "mobile": "50% 50%"
     },
     "credit": "The Biglin Brothers Turning the Stake — Thomas Eakins (American, 1844–1916). Cleveland Museum of Art, CC0."
+  },
+  "studio-156570": {
+    "src": "/images/open-studio/156570.webp",
+    "width": 1295,
+    "height": 1800,
+    "alt": "Composition — Otto Freundlich (German, 1878–1943)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Otto Freundlich (German, 1878–1943). Composition. Cleveland Museum of Art, CC0."
+  },
+  "studio-143278": {
+    "src": "/images/open-studio/143278.webp",
+    "width": 1775,
+    "height": 1800,
+    "alt": "Composition with Red, Yellow, and Blue — Piet Mondrian (Dutch, 1872–1944)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Piet Mondrian (Dutch, 1872–1944). Composition with Red, Yellow, and Blue. Cleveland Museum of Art, CC0."
+  },
+  "studio-137078": {
+    "src": "/images/open-studio/137078.webp",
+    "width": 1800,
+    "height": 1536,
+    "alt": "With the Dot — Paul Klee (German, 1879–1940)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Paul Klee (German, 1879–1940). With the Dot. Cleveland Museum of Art, CC0."
+  },
+  "studio-144705": {
+    "src": "/images/open-studio/144705.webp",
+    "width": 1536,
+    "height": 1676,
+    "alt": "Carnival in the Snow — Paul Klee (German, 1879–1940)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Paul Klee (German, 1879–1940). Carnival in the Snow. Cleveland Museum of Art, CC0."
+  },
+  "studio-156571": {
+    "src": "/images/open-studio/156571.webp",
+    "width": 1555,
+    "height": 1800,
+    "alt": "God of War — Paul Klee (German, 1879–1940)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Paul Klee (German, 1879–1940). God of War. Cleveland Museum of Art, CC0."
+  },
+  "studio-155039": {
+    "src": "/images/open-studio/155039.webp",
+    "width": 1341,
+    "height": 1800,
+    "alt": "La Tour — Robert Delaunay (French, 1885–1941)",
+    "fit": "contain",
+    "position": {
+      "desktop": "50% 50%",
+      "mobile": "50% 50%"
+    },
+    "credit": "Robert Delaunay (French, 1885–1941). La Tour. Cleveland Museum of Art, CC0."
   }
 }

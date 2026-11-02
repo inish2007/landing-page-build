@@ -115,3 +115,7 @@ Retrieved 2026-10-29. The user explicitly selected this asset for video slots. L
 ## CC0 museum demo image collection
 
 The110 active demo pictures in public/images/demo/ were downloaded from the Cleveland Museum of Art Open Access API on2026-10-29. Every selected object supplied an image and share_license_status=CC0. Museum policy: https://www.clevelandart.org/open-access . License: https://creativecommons.org/publicdomain/zero/1.0/ . Individual titles, creators, object/source URLs, download URLs, original license status, local dimensions and SHA-256 hashes are recorded in docs/demo-image-sources.json. Images were resized without changing proportions and encoded as WebP. These are third-party demo images, not works created by the named site owner; no museum endorsement is implied. The previous dark placeholder is retained locally, but no longer fills the110 picture slots. Existing GIF/poster and font/icon notices remain unchanged.
+
+
+## Open Studio demonstration collection
+Six real artworks from Cleveland Museum of Art, individually marked CC0 in their collection API records. Full creators, titles, source/download URLs, dimensions and image SHA256 checksums: docs/open-studio-artworks.json. These are temporary credited demonstration images, not client artwork. Policy: https://www.clevelandart.org/open-access

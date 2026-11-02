@@ -597,6 +597,30 @@
     "archived-22": {
       "title": "Fly Me To The Moon - SOLD ",
       "caption": "Acrylic, Mixed Media - 48″ x 60″"
+    },
+    "studio-156570": {
+      "title": "Composition",
+      "caption": "Otto Freundlich (German, 1878–1943) · 1924 · Cleveland Museum of Art · CC0"
+    },
+    "studio-143278": {
+      "title": "Composition with Red, Yellow, and Blue",
+      "caption": "Piet Mondrian (Dutch, 1872–1944) · 1927 · Cleveland Museum of Art · CC0"
+    },
+    "studio-137078": {
+      "title": "With the Dot",
+      "caption": "Paul Klee (German, 1879–1940) · 1916 · Cleveland Museum of Art · CC0"
+    },
+    "studio-144705": {
+      "title": "Carnival in the Snow",
+      "caption": "Paul Klee (German, 1879–1940) · 1923 · Cleveland Museum of Art · CC0"
+    },
+    "studio-156571": {
+      "title": "God of War",
+      "caption": "Paul Klee (German, 1879–1940) · 1937 · Cleveland Museum of Art · CC0"
+    },
+    "studio-155039": {
+      "title": "La Tour",
+      "caption": "Robert Delaunay (French, 1885–1941) · 1926 · Cleveland Museum of Art · CC0"
     }
   },
   "media": {
@@ -646,5 +670,31 @@
         }
       ]
     }
+  },
+  "openStudio": {
+    "eyebrow": "An open studio / Art portfolio",
+    "title": "{brandName} Art",
+    "description": "Paintings, colour and creative expression.",
+    "explore": "Explore work",
+    "previous": "Previous featured artwork",
+    "next": "Next featured artwork",
+    "position": "Featured artwork",
+    "detail": "Detail view — explore the complete work below",
+    "selected": "A conversation in colour.",
+    "selectedLabel": "Selected works / Demo collection",
+    "view": "View artwork",
+    "allWork": "Explore the full collection",
+    "introLabel": "A closer look",
+    "introTitle": "Colour moves.\nCuriosity follows.",
+    "introBody": "A meeting of bold shapes, playful marks and unexpected connections. Take your time. Follow a colour. See where it leads.",
+    "detailCaption": "Detail of Composition — Otto Freundlich. Full artwork above.",
+    "process": "Discover the process",
+    "quote": "“As an artist, I believe in the unique and powerful language of creative expression, & my canvas is where I give voice to this belief.”",
+    "contactLabel": "Keep the conversation going",
+    "contactTitle": "Something caught\nyour eye?",
+    "contact": "Get in touch",
+    "demo": "Demonstration collection: these credited open-access artworks are not the client’s own work.",
+    "creditLink": "Artwork sources & credits",
+    "number": "No."
   }
 }

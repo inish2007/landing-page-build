@@ -10,13 +10,14 @@ import navigationTemplate from '../content/navigation.json' with { type:'json' }
 import pages from '../content/pages.json' with { type:'json' };
 import artworks from '../content/artworks.json' with { type:'json' };
 import media from '../content/media.json' with { type:'json' };
-import type { ImageAsset, SiteTheme, PageConfiguration, NavigationLink, MediaAsset, Artwork } from './types.ts';
+import type { OpenStudioConfiguration, ImageAsset, SiteTheme, PageConfiguration, NavigationLink, MediaAsset, Artwork } from './types.ts';
 
 import client from '../content/client.json' with { type:'json' };
 import {createClientContent,getContactAction} from '../utils/client.ts';
 const {text,navigation}=createClientContent(textTemplate,navigationTemplate,client);
 
 export const site = {
+  openStudio:{featuredIds:['studio-156570','studio-144705','studio-143278'],workIds:['studio-156570','studio-143278','studio-137078','studio-144705','studio-156571','studio-155039'],transitionDuration:200} satisfies OpenStudioConfiguration,
   client,
   contact:{action:getContactAction(client.contactEmail)},
   // Canonical editable copy: headings, paragraphs, labels, buttons, credits, copyright.

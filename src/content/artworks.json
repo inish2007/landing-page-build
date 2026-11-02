@@ -494,5 +494,53 @@
     "captionKey": "artworks.archived-22.caption",
     "imageKey": "archived-22Image",
     "order": 22
+  },
+  {
+    "id": "studio-156570",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-156570.title",
+    "captionKey": "artworks.studio-156570.caption",
+    "imageKey": "studio-156570",
+    "order": 1
+  },
+  {
+    "id": "studio-143278",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-143278.title",
+    "captionKey": "artworks.studio-143278.caption",
+    "imageKey": "studio-143278",
+    "order": 2
+  },
+  {
+    "id": "studio-137078",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-137078.title",
+    "captionKey": "artworks.studio-137078.caption",
+    "imageKey": "studio-137078",
+    "order": 3
+  },
+  {
+    "id": "studio-144705",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-144705.title",
+    "captionKey": "artworks.studio-144705.caption",
+    "imageKey": "studio-144705",
+    "order": 4
+  },
+  {
+    "id": "studio-156571",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-156571.title",
+    "captionKey": "artworks.studio-156571.caption",
+    "imageKey": "studio-156571",
+    "order": 5
+  },
+  {
+    "id": "studio-155039",
+    "collection": "open-studio",
+    "titleKey": "artworks.studio-155039.title",
+    "captionKey": "artworks.studio-155039.caption",
+    "imageKey": "studio-155039",
+    "order": 6
   }
 ]
