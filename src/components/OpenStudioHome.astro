@@ -8,18 +8,18 @@ import ButtonLabel from './ButtonLabel.astro';
 const settings=site.openStudio;
 const copy=site.text.openStudio;
 const works=settings.workIds.map(id=>{const item=getArtworks(id);if(!item)throw Error('Unknown studio work: '+id);return{id,title:getCopy(item.titleKey),caption:"",image:getImage(item.imageKey)};});
-const featured=settings.featuredIds.map(id=>{const item=works.find(w=>w.id===id);if(!item)throw Error('Featured work must be in studio collection');return item;});
+const featured=works;
 const first=featured[0];
 
 ---
-<div class="open-studio" style={`--studio-transition:${settings.transitionDuration}ms`}>
+<div class="open-studio" data-slideshow={JSON.stringify(settings.slideshow)} data-play-label={copy.play} data-pause-label={copy.pause} style={`--studio-transition:${settings.transitionDuration}ms`}>
  <section class="studio-opening" aria-labelledby="studio-title">
   <h1 id="studio-title" class="sr-only">{copy.title}</h1>
   <figure class="studio-feature" data-studio-feature>
    <a class="studio-stage" href={first.image.src} data-artwork={first.id} data-studio-open aria-label={`${copy.view}: ${first.title}`}>
     {featured.map((item,i)=><img data-studio-slide={i} src={item.image.src} width={item.image.width} height={item.image.height} alt={`${copy.detail}: ${item.image.alt}`} loading={i===0?'eager':'lazy'} fetchpriority={i===0?'high':'auto'} decoding="async" hidden={i!==0} />)}
    <span class="artwork-cue" aria-hidden="true">{getCopy("gallery.view")} ↗</span></a>
-   <p class="studio-image-error" data-studio-error hidden>{copy.imageError}</p><figcaption class="studio-feature-caption"><div class="studio-controls" data-studio-controls hidden><span role="status" aria-live="polite" data-studio-position aria-label={copy.position}>01 / {String(featured.length).padStart(2,'0')}</span><button type="button" data-studio-prev aria-label={copy.previous}>←</button><button type="button" data-studio-next aria-label={copy.next}>→</button></div></figcaption>
+   <p class="studio-image-error" data-studio-error hidden>{copy.imageError}</p><figcaption class="studio-feature-caption"><div class="studio-controls" data-studio-controls hidden><span data-studio-position aria-label={copy.position}>01 / {String(featured.length).padStart(2,'0')}</span><button type="button" class="studio-playback" data-studio-play>{copy.pause}</button><button type="button" data-studio-prev aria-label={copy.previous}>←</button><button type="button" data-studio-next aria-label={copy.next}>→</button></div><span class="sr-only" role="status" data-studio-announcement></span></figcaption>
   </figure>
  </section>
  <section class="studio-selection" id="selected-work" aria-labelledby="selection-title">

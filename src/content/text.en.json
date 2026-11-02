@@ -702,6 +702,8 @@
     "imageError": "Artwork preview unavailable. Explore the collection below.",
     "placeholderNotice": "Image placeholder — client photography to be supplied. Reference text is retained for demonstration.",
     "galleryPlaceholder": "Demonstration layout: images are placeholders and do not depict the named artworks. Titles, dimensions and availability are reference content.",
-    "studyCaption": "Colour study: Composition, Otto Freundlich, 1924 · Cleveland Museum of Art · CC0. Demonstration artwork, not the client’s work."
+    "studyCaption": "Colour study: Composition, Otto Freundlich, 1924 · Cleveland Museum of Art · CC0. Demonstration artwork, not the client’s work.",
+    "play": "Play slideshow",
+    "pause": "Pause slideshow"
   }
 }
