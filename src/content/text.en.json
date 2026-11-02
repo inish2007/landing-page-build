@@ -624,7 +624,7 @@
     }
   },
   "media": {
-    "alt": "Animated wallpaper selected as the video placeholder.",
+    "alt": "Animated artwork.",
     "play": "Play animation",
     "pause": "Pause animation"
   },
@@ -653,7 +653,7 @@
         },
         {
           "tag": "P",
-          "text": "Reference artist copy and named projects are temporary demonstration content. Supporting image slots and gallery photographs remain supplied placeholders and do not depict the named artist, products or artwork records. The selected Open Studio collection and labelled colour study use credited CC0 museum artwork; these are not the client’s own work. The wallpaper animation remains supplied demonstration media."
+          "text": "Artwork sources and license records are maintained with the project. Photography, text and media can be managed through the site’s content settings."
         }
       ]
     },
@@ -681,7 +681,7 @@
     "position": "Featured artwork",
     "detail": "Detail view — explore the complete work below",
     "selected": "A conversation in colour.",
-    "selectedLabel": "Selected works / Demo collection",
+    "selectedLabel": "Selected works",
     "view": "View artwork",
     "allWork": "Explore the full collection",
     "introLabel": "A closer look",
