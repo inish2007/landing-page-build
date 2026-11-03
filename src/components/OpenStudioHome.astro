@@ -28,7 +28,7 @@ const first=featured[0];
   <a class="studio-text-link" href="/work/">{copy.allWork} <span aria-hidden="true">↗</span></a>
  </section>
  <section class="studio-intro" aria-labelledby="studio-intro-title"><figure><img src={works[0].image.src} width={works[0].image.width} height={works[0].image.height} alt={copy.detailCaption} loading="lazy" /></figure><div><p class="studio-eyebrow">{copy.introLabel}</p><h2 id="studio-intro-title">{copy.introTitle}</h2><p class="studio-prose">{copy.introBody}</p><a class="studio-text-link studio-about-link" href={site.pages.about.path}>{getCopy("nav.about")} ↗</a><a class="studio-text-link" href="/the-process/">{copy.process} ↗</a></div></section>
- <section class="studio-statement" aria-label={copy.introLabel}><span class="studio-asterisk" aria-hidden="true">✳</span><blockquote><FormattedText segments={getCopy('home.features.quoteSegments')} /></blockquote></section>
+ <section class="studio-statement" aria-label={copy.introLabel}><blockquote><FormattedText segments={getCopy('home.features.quoteSegments')} /></blockquote></section>
  <section class="studio-invitation" aria-labelledby="invitation-title"><p class="studio-eyebrow">{copy.contactLabel}</p><div><h2 id="invitation-title">{copy.contactTitle}</h2><a class="studio-explore pill-link filled-button" href="/contact/"><span class="jelly-surface" aria-hidden="true"></span><span class="jelly-text"><ButtonLabel text={copy.contact} /></span><span aria-hidden="true"> ↗</span></a></div></section>
  <ArtworkViewer />
  <script type="application/json" id="artworks-data" set:html={serializeJsonForHtml(works)} />
