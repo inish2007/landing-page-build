@@ -10,8 +10,8 @@ test('font preloads follow central normal faces, deduplicate and preserve immedi
 /** The approved quiet response replaces squash without moving text or link targets. */
 test('ordinary link hover/focus suppresses legacy text jelly while optional gold remains independently cancellable',async()=>{
  const browser=await launchBrowser();try{const page=await browser.newPage({viewport:{width:1440,height:900}});await enableShineForTest(page);await page.goto(URL);await page.evaluate(()=>document.fonts.ready);
- assert.equal(await page.locator('.desktop-nav [data-text-jelly]').count(),6);
- for(const selector of ['.desktop-nav a:first-child','.small-link','.collage-about','.collage-press','.collage-archive','.collage-contact']){
+ assert.equal(await page.locator('.desktop-nav [data-text-jelly]').count(),5);
+ for(const selector of ['.desktop-nav a:first-child','.small-link','.collage-about','.collage-archive','.collage-contact']){
  const owner=page.locator(selector);await owner.scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.getAnimations().every(a=>'animationName' in a||a.playState!=='running'));
  const box=await owner.evaluate(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight]);await owner.locator('.outline-base').hover();assert.equal(await owner.locator('.jelly-text').evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length),0);assert.deepEqual(await owner.evaluate(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight]),box);
  await page.mouse.move(0,0);await page.keyboard.press('Tab');await owner.focus();assert.equal(await owner.locator('.jelly-text').evaluate(e=>e.getAnimations().filter(a=>a.effect.getTiming().duration===600).length),0);assert.equal(await owner.evaluate(e=>getComputedStyle(e).transform),'none');await owner.evaluate(e=>e.blur());

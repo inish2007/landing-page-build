@@ -17,7 +17,6 @@
 .home-collage h2 { font-size: var(--text-h1); text-align: center; margin-top: var(--space-2); }
 .collage-about { grid-column: 1 / 9; position: relative; }
 /* About is a normal-flow caption; the whole photograph stays unobstructed. */
-.collage-press { grid-column: 9 / 12; margin-top: var(--space-6); }
 .collage-quote { grid-column: 1 / 9; font-family: var(--font-serif); font-size: var(--text-h1); line-height: var(--line-heading); letter-spacing: var(--tracking-editorial); }
 .collage-archive { grid-column: 6 / 9; }
 .collage-artwork { grid-column: 9 / 13; margin-top: var(--space-6); }

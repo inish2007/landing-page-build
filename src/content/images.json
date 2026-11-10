@@ -47,18 +47,6 @@
     },
     "credit": "Table Fountain — . Cleveland Museum of Art, CC0."
   },
-  "pressPreview": {
-    "src": "/images/demo/home/press-preview.webp",
-    "alt": "Demo image: Covered Tureen on Stand (Pot-à-oille) — Juste-Aurèle Meissonnier (French, 1695–1750); Pierre-François Bonnestrenne (French); Henry Adnet (French, 1745).",
-    "width": 1920,
-    "height": 1377,
-    "fit": "cover",
-    "position": {
-      "desktop": "50% 50%",
-      "mobile": "50% 50%"
-    },
-    "credit": "Covered Tureen on Stand (Pot-à-oille) — Juste-Aurèle Meissonnier (French, 1695–1750); Pierre-François Bonnestrenne (French); Henry Adnet (French, 1745). Cleveland Museum of Art, CC0."
-  },
   "archivePreview": {
     "src": "/images/demo/home/archive-preview.webp",
     "alt": "Demo image: Ballgame Palma — .",
@@ -310,30 +298,6 @@
       "mobile": "50% 50%"
     },
     "credit": "Sunny Autumn Day — George Inness (American, 1825–1894). Cleveland Museum of Art, CC0."
-  },
-  "pressImage1": {
-    "src": "/images/demo/press/image-01.webp",
-    "alt": "Demo image: Antiochus and Stratonice — Jean-Auguste-Dominique Ingres (French, 1780–1867).",
-    "width": 900,
-    "height": 674,
-    "fit": "cover",
-    "position": {
-      "desktop": "50% 50%",
-      "mobile": "50% 50%"
-    },
-    "credit": "Antiochus and Stratonice — Jean-Auguste-Dominique Ingres (French, 1780–1867). Cleveland Museum of Art, CC0."
-  },
-  "pressImage2": {
-    "src": "/images/demo/press/image-02.webp",
-    "alt": "Demo image: Saint John the Baptist in a Landscape — Petrus Christus (Netherlandish, c. 1410–1475/76).",
-    "width": 287,
-    "height": 893,
-    "fit": "cover",
-    "position": {
-      "desktop": "50% 50%",
-      "mobile": "50% 50%"
-    },
-    "credit": "Saint John the Baptist in a Landscape — Petrus Christus (Netherlandish, c. 1410–1475/76). Cleveland Museum of Art, CC0."
   },
   "collaborationsImage1": {
     "src": "/images/demo/collaborations/image-01.webp",

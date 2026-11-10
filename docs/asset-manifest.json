@@ -280,28 +280,6 @@
       ]
     },
     {
-      "id": "pressPreview",
-      "localPath": "/images/artist-content/press-preview.jpg",
-      "source": "User-supplied local snapshot",
-      "license": "Not verified; original owners retain rights",
-      "usage": "Temporary local content per user instruction on 2026-10-29",
-      "modifications": "Renamed source, plus quality-82 WebP width derivatives (480/960/1600 where source permits) via scripts/generate-responsive-images.mjs",
-      "derivatives": [
-        {
-          "src": "/images/artist-content/press-preview-480.webp",
-          "width": 480
-        },
-        {
-          "src": "/images/artist-content/press-preview-960.webp",
-          "width": 960
-        },
-        {
-          "src": "/images/artist-content/press-preview-1600.webp",
-          "width": 1600
-        }
-      ]
-    },
-    {
       "id": "archivePreview",
       "localPath": "/images/artist-content/archive-preview.png",
       "source": "User-supplied local snapshot",

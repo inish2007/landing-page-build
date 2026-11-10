@@ -26,7 +26,7 @@ export const site = {
   media: media satisfies Record<string,MediaAsset>,
   navigation: navigation satisfies Record<string,NavigationLink[]>,
   pages: Object.fromEntries(Object.entries(pages).map(([id,page])=>{
-    if("studioVariant" in page && !["biography","process","press","collaborations","project","reading","media"].includes(page.studioVariant)) throw new Error("Unknown studio page variant: "+id);
+    if("studioVariant" in page && !["biography","process","collaborations","project","reading","media"].includes(page.studioVariant)) throw new Error("Unknown studio page variant: "+id);
     return [id,page as PageConfiguration];
   })),
   artworks: artworks satisfies Artwork[],
@@ -50,7 +50,6 @@ export const site = {
     refinement:{proseMaxWidth:'60ch',proseLineHeight:'1.6',headingGapDesktop:'64px',headingGapMobile:'32px',captionGap:'20px',galleryCaptionGap:'16px',galleryMetadataGap:'6px',fieldGap:'8px',fieldGroupGap:'24px'},
     textLinks:{hoverUnderlineThickness:3,underlineThickness:1,underlineDuration:180,arrowDistance:3,arrowDuration:220,pressOpacity:0.82,pressDuration:90,releaseDuration:160},
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
-    pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
       blush:'#F4E8E2', charcoal:'#292526', ivory:'#FFF8F1', warmStone:'#EEE9E1', stoneBorder:'#D8D0C4', bronze:'#806548',
       aboutFill:'#ffffff', aboutOutline:'#d4a72c', aboutShadow:'0 1px 2px #171717, 0 0 1px #171717', plaque:'#171717', plaqueText:'#ffffff', goldDark:'#8a5a00', goldMid:'#d4a72c', goldLight:'#fff0ad',

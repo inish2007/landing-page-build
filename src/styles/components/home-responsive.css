@@ -24,7 +24,6 @@
   .pill-link { font-size: var(--text-caption); padding: var(--space-2) var(--space-3); }
   .home-collage { grid-template-columns: repeat(6,minmax(0,1fr)); gap: var(--space-4) var(--space-2); }
   .collage-about { grid-column: 1 / 7; }
-  .collage-press { grid-column: 3 / 6; margin-top: 0; }
   .collage-quote { grid-column: 1 / 7; font-size: var(--text-statement); padding-block: var(--space-2); }
   .collage-archive { grid-column: 1 / 4; }
   .collage-artwork { grid-column: 4 / 7; margin-top: var(--space-5); }
