@@ -19,12 +19,6 @@
       "isExternal": false
     },
     {
-      "id": "press",
-      "path": "/press/",
-      "labelKey": "nav.press",
-      "isExternal": false
-    },
-    {
       "id": "collaborations",
       "path": "/collaborations/",
       "labelKey": "nav.collaborations",
@@ -60,12 +54,6 @@
       "id": "about",
       "path": "/about/",
       "labelKey": "nav.about",
-      "isExternal": false
-    },
-    {
-      "id": "press",
-      "path": "/press/",
-      "labelKey": "nav.press",
       "isExternal": false
     },
     {

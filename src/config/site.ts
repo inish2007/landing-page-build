@@ -39,7 +39,6 @@ export const site = {
     refinement:{proseMaxWidth:'60ch',proseLineHeight:'1.6',headingGapDesktop:'56px',headingGapMobile:'40px',captionGap:'16px',galleryCaptionGap:'12px',galleryMetadataGap:'4px',fieldGap:'8px',fieldGroupGap:'24px'},
     textLinks:{underlineThickness:1,underlineDuration:180,arrowDistance:3,arrowDuration:220,pressOpacity:0.82,pressDuration:90,releaseDuration:160},
     pressLinks:{normalThickness:1,hoverThickness:3,duration:160},
-    pressMarker:{color:'#fff230',opacity:0.55,thickness:28,overhang:2,edgeCurve:2,duration:900,stagger:1000},
     colors: {
       aboutFill:'#ffffff', aboutOutline:'#d4a72c', aboutShadow:'0 1px 2px #171717, 0 0 1px #171717', plaque:'#171717', plaqueText:'#ffffff', goldDark:'#8a5a00', goldMid:'#d4a72c', goldLight:'#fff0ad',
       primary:'#ffe600', circle:'#ffe600', secondary:'#545454', background:'#ffffff', surface:'#ffffff',
