@@ -114,24 +114,6 @@
       }
     ]
   },
-  "press": {
-    "path": "/press/",
-    "kind": "editorial",
-    "titleKey": "editorial.press.title",
-    "textNamespace": "editorial.press",
-    "imageCount": 2,
-    "sections": [
-      {
-        "id": "press-content",
-        "component": "EditorialHeader",
-        "textNamespace": "editorial.press"
-      }
-    ],
-    "imageKeys": [
-      "pressImage1",
-      "pressImage2"
-    ]
-  },
   "collaborations": {
     "path": "/collaborations/",
     "kind": "editorial",

@@ -18,7 +18,7 @@ async function verifyResponsiveHome() {
       assert.equal(await page.locator('.home-collaborations').evaluate(section=>{const image=section.querySelector('.image-frame').getBoundingClientRect(),bounds=section.getBoundingClientRect();return Math.abs(image.left-bounds.left)<1&&Math.abs(image.right-bounds.right)<1;}),true,'collaboration image must fill section at '+width);
       assert.equal(await page.locator('main h1').count(),1);
       assert.equal(await page.locator('main > section').count(),5);
-      assert.equal(await page.locator('main img').count(),15);
+      assert.equal(await page.locator('main img').count(),14);
       assert.equal(await page.locator('main img').evaluateAll(es=>es.every(e=>e.complete&&e.naturalWidth>0)),true);
       assert.equal(await page.evaluate(() => document.fonts.check('24px "Caveat Brush"')),true);
       assert.match(await page.locator('.brand').evaluate(e=>getComputedStyle(e).fontFamily),/Caveat Brush/);

@@ -5,7 +5,7 @@ export interface NavigationLink { id:string; path?:string; url?:string; labelKey
 export interface FontFace { src:string; format:string; weight:string; style:'normal'|'italic' }
 export interface FontDefinition { family:string; fallback:string; faces:FontFace[] }
 export interface TextSegment { text:string; emphasis?:string; highlight?:string }
-export interface EditorialBlock { tag:string; text:string; highlight?:'press-marker' }
+export interface EditorialBlock { tag:string; text:string }
 export interface EditorialCopy { title:string; blocks:EditorialBlock[]; links?:{label:string;href:string}[] }
 export interface PageSection { id:string; component:string; imageKey?:string; textNamespace?:string }
 export interface PageConfiguration { path?:string; titleKey:string; kind?:string; textNamespace?:string; imageCount?:number; imageKeys?:string[]; collection?:string; mediaKey?:string; sections:PageSection[]; metaDescriptionKey?:string }
@@ -16,7 +16,6 @@ export interface SiteTheme {
   refinement:Record<'proseMaxWidth'|'proseLineHeight'|'headingGapDesktop'|'headingGapMobile'|'captionGap'|'galleryCaptionGap'|'galleryMetadataGap'|'fieldGap'|'fieldGroupGap',string>;
   textLinks:{underlineThickness:number;underlineDuration:number;arrowDistance:number;arrowDuration:number;pressOpacity:number;pressDuration:number;releaseDuration:number};
   pressLinks:{normalThickness:number;hoverThickness:number;duration:number};
-  pressMarker:{color:string;opacity:number;thickness:number;overhang:number;edgeCurve:number;duration:number;stagger:number};
   spacing:Record<'1'|'2'|'3'|'4'|'5'|'6',string>;
   layout: { maxWidth:string; narrowWidth:string; pageGutter:string };
   motion: { enabled:boolean; pageTransitions:boolean; entryDuration:number; entryStagger:number; maxStagger:number; maxConcurrent:number; dialogOpen:number; dialogClose:number; pageDuration:number; fast:string; standard:string; easing:string; playful:{enabled:boolean;shineEnabled:boolean;glowEnabled:boolean;brandWobbleEnabled:boolean;buttonHoverLift:number;buttonHoverDuration:number;buttonHoverShadow:string;buttonOpacity:number;buttonPressDistance:number;buttonDuration:number;menuJiggleDuration:number;menuJiggleTravel:number;menuJiggleTilt:number;drawerBrandGlowDuration:number;labelGlowDuration:number;labelGlowLow:number;labelGlowHigh:number;aboutGlowDuration:number;jellyDuration:number;shineDuration:number;jellyWide:number;jellyNarrow:number;socialDrop:{enabled:boolean;duration:number;stagger:number;distance:number;alternateOnLoad:boolean};imageRevealDuration:number;imageNearDistance:number;imageDecodeTimeout:number;imageHoverDuration:number;imageEasing:string;circleDrawDuration:number;hoverDuration:number;cardLift:number;cardTilt:number;cardScale:number;pressScale:number;arrowTravel:number;revealTravel:number;accentDuration:number} };

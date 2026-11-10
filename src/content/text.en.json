@@ -17,7 +17,6 @@
     "archived": "Archived",
     "about": "About",
     "process": "The Process",
-    "press": "Press",
     "collaborations": "Collaborations",
     "contact": "Contact",
     "pagerie": "Pagerie x {brandUpperName}",
@@ -58,7 +57,6 @@
     "features": {
       "heading": "Explore",
       "aboutLabel": "About",
-      "pressLabel": "Press",
       "archivedLabel": "Archived",
       "contactLabel": "Contact",
       "quoteSegments": [
@@ -139,66 +137,6 @@
         {
           "tag": "H2",
           "text": "I create with the intention that when others gaze upon my art, they too will find themselves drawn into their own nostalgic memories while connecting with and drawing inspiration from my personal narrative."
-        }
-      ]
-    },
-    "press": {
-      "title": "Featured In",
-      "blocks": [
-        {
-          "tag": "H2",
-          "text": "Featured In:"
-        },
-        {
-          "tag": "H2",
-          "text": "Highlights"
-        },
-        {
-          "tag": "P",
-          "text": "HOME IS WHERE THE ART ISW MAGAZINE",
-          "highlight": "press-marker"
-        },
-        {
-          "tag": "P",
-          "text": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECTARCHITECTURAL DIGEST",
-          "highlight": "press-marker"
-        },
-        {
-          "tag": "P",
-          "text": "FOUR QUESTIONS FOR {brandUpperName}GULFSHORE LIFE",
-          "highlight": "press-marker"
-        },
-        {
-          "tag": "P",
-          "text": "ARTIST {brandUpperName} USES LIFE AS HER CANVASJEWISH JOURNAL",
-          "highlight": "press-marker"
-        },
-        {
-          "tag": "P",
-          "text": "ART BASEL MIAMI RECAPHUFF POST STYLE",
-          "highlight": "press-marker"
-        }
-      ],
-      "links": [
-        {
-          "label": "HOME IS WHERE THE ART IS\nW MAGAZINE",
-          "href": "https://www.wmagazine.com/life/esther-kim-joseph-varet-various-small-fires-home"
-        },
-        {
-          "label": "FEAST YOUR EYES ON KELLY WEARSTLER’S LATEST PROJECT\nARCHITECTURAL DIGEST",
-          "href": "https://www.architecturaldigest.com/story/feast-your-eyes-on-kelly-wearstlers-latest-project"
-        },
-        {
-          "label": "FOUR QUESTIONS FOR {brandUpperName}\nGULFSHORE LIFE",
-          "href": "https://www.gulfshorelife.com/2014/04/09/four-questions-for-lana-gomez/"
-        },
-        {
-          "label": "ARTIST {brandUpperName} USES LIFE AS HER CANVAS\nJEWISH JOURNAL",
-          "href": "https://jewishjournal.com/culture/arts/305596/artist-lana-gomez-uses-life-as-her-canvas/"
-        },
-        {
-          "label": "ART BASEL MIAMI RECAP\nHUFF POST STYLE",
-          "href": "https://www.huffpost.com/entry/art-basel-miami-mansion-h_b_6300476"
         }
       ]
     },
@@ -642,7 +580,7 @@
         },
         {
           "tag": "P",
-          "text": "Email, social, press and shop links open independent services if you choose to follow them. Their privacy practices apply there."
+          "text": "Email, social and shop links open independent services if you choose to follow them. Their privacy practices apply there."
         }
       ]
     }
