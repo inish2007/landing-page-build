@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+  <!-- Minimalist Fine Art Studio Icon: Artist Palette & Flowing Brush Contour -->
+  <path d="M 100 24 C 54 24 24 58 24 104 C 24 150 58 176 100 176 C 114 176 126 166 126 152 C 126 142 120 134 120 126 C 120 114 130 104 142 104 L 156 104 C 168 104 176 94 176 82 C 176 48 142 24 100 24 Z" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Pigment wells / color nodes -->
+  <circle cx="62" cy="74" r="9" fill="currentColor" />
+  <circle cx="94" cy="56" r="9" fill="currentColor" />
+  <circle cx="132" cy="66" r="9" fill="currentColor" />
+  <circle cx="56" cy="116" r="9" fill="currentColor" />
+  
+  <!-- Thumb hole with delicate double rim -->
+  <ellipse cx="146" cy="142" rx="14" ry="18" stroke-width="3" />
+</svg>

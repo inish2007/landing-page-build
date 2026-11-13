@@ -1,0 +1,663 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/components/logo-showcase.css';
+---
+
+<SiteLayout title="Brand Identity, Logos & Font Options | Lana Gomez Art">
+  <div class="logo-showcase-page theme-light scale-normal" id="showcase-root">
+    
+    <!-- Hero Header -->
+    <header class="showcase-hero">
+      <div class="showcase-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        Brand Identity &amp; Typography Studio
+      </div>
+      <h1 class="showcase-title">Logos, Typography &amp; Brand Marks</h1>
+      <p class="showcase-subtitle">
+        Interactive presentation of curated logo designs, typography treatments, and brand marks for Lana Gomez Art. Test custom wording, switch background atmospheres, and preview logos live in the navigation bar.
+      </p>
+    </header>
+
+    <!-- Sticky Interactive Controls -->
+    <div class="showcase-controls-wrapper">
+      <div class="showcase-controls">
+        <div class="control-input-group">
+          <span class="control-input-label">Text:</span>
+          <input 
+            type="text" 
+            id="brand-text-input" 
+            class="control-text-input" 
+            value="Lana Gomez" 
+            placeholder="Type your brand name..." 
+            aria-label="Brand Name Preview Input"
+          />
+        </div>
+
+        <div class="control-presets">
+          <button class="preset-btn" data-preset="Lana Gomez">Lana Gomez</button>
+          <button class="preset-btn" data-preset="LANA GOMEZ">LANA GOMEZ</button>
+          <button class="preset-btn" data-preset="Lana Gomez Art">Lana Gomez Art</button>
+          <button class="preset-btn" data-preset="LG STUDIO">LG STUDIO</button>
+          <button class="preset-btn" data-preset="Studio Lana">Studio Lana</button>
+        </div>
+
+        <div class="control-toggles">
+          <div class="theme-pill-group" role="radiogroup" aria-label="Atmosphere Theme">
+            <button class="pill-btn active" data-theme="theme-light">Light</button>
+            <button class="pill-btn" data-theme="theme-obsidian">Obsidian</button>
+            <button class="pill-btn" data-theme="theme-gold">Gold Leaf</button>
+          </div>
+
+          <div class="scale-pill-group" role="radiogroup" aria-label="Scale Size">
+            <button class="pill-btn" data-scale="scale-compact">S</button>
+            <button class="pill-btn active" data-scale="scale-normal">M</button>
+            <button class="pill-btn" data-scale="scale-large">L</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Logo Variations -->
+    <section class="showcase-section" id="logos">
+      <div class="section-header">
+        <h2 class="section-title">01. Logo &amp; Wordmark Directions</h2>
+        <span class="section-hint">Click &ldquo;Preview in Header&rdquo; to test any logo live on the site</span>
+      </div>
+
+      <div class="logo-grid">
+        
+        <!-- Logo 1: Caveat Brush (Expressive Signature) -->
+        <article class="logo-card" data-card-id="logo-1" data-font="Caveat Brush" data-style="Expressive Artist Signature">
+          <div class="card-top">
+            <span class="card-tag">Option 01 &bull; Signature</span>
+            <span class="card-font-name">Caveat Brush</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-caveat">Lana Gomez</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Organic, warm, hand-painted calligraphy capturing the personal gesture and spontaneity of an artist&rsquo;s studio signature.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Caveat Brush" data-class="style-caveat">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 1: Expressive Signature (Caveat Brush)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 2: Fraunces (Haute Editorial) -->
+        <article class="logo-card" data-card-id="logo-2" data-font="Fraunces" data-style="Haute Editorial Serif">
+          <div class="card-top">
+            <span class="card-tag">Option 02 &bull; Gallery Serif</span>
+            <span class="card-font-name">Fraunces Variable</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-fraunces">Lana Gomez</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">High-contrast, soft-serif typography inspired by 20th-century exhibition monographs and quiet luxury editorial publications.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Fraunces" data-class="style-fraunces">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 2: Haute Editorial Serif (Fraunces)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 3: Plus Jakarta Sans (Modern Architectural) -->
+        <article class="logo-card" data-card-id="logo-3" data-font="Plus Jakarta Sans" data-style="Modern Architectural Sans">
+          <div class="card-top">
+            <span class="card-tag">Option 03 &bull; Architectural</span>
+            <span class="card-font-name">Plus Jakarta Sans</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-jakarta">LANA GOMEZ</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Geometric sans-serif with wide luxury tracking. Clean, precise, and contemporary—reflecting high-end interior and architectural collaborations.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Plus Jakarta Sans" data-class="style-jakarta">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 3: Modern Architectural Sans (Plus Jakarta Sans)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 4: Cinzel (Classical Roman) -->
+        <article class="logo-card" data-card-id="logo-4" data-font="Cinzel" data-style="Classical Roman Inscription">
+          <div class="card-top">
+            <span class="card-tag">Option 04 &bull; Classical</span>
+            <span class="card-font-name">Cinzel Display</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-cinzel">LANA GOMEZ</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Classical Roman proportions with chiseled lapidary serifs, conveying timeless museum authority and heritage craftsmanship.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Cinzel" data-class="style-cinzel">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 4: Classical Roman Inscription (Cinzel)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 5: Cormorant Garamond (Haute Couture) -->
+        <article class="logo-card" data-card-id="logo-5" data-font="Cormorant Garamond" data-style="Parisian Haute Couture">
+          <div class="card-top">
+            <span class="card-tag">Option 05 &bull; Haute Couture</span>
+            <span class="card-font-name">Cormorant Garamond</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-cormorant">Lana Gomez</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Graceful, flowing display italics with razor-sharp terminal drops. Evokes Paris fashion houses, high jewelry, and bespoke craft.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Cormorant Garamond" data-class="style-cormorant">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 5: Parisian Haute Couture (Cormorant Garamond)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 6: Syne (Avant-Garde Sculptural) -->
+        <article class="logo-card" data-card-id="logo-6" data-font="Syne" data-style="Avant-Garde Contemporary">
+          <div class="card-top">
+            <span class="card-tag">Option 06 &bull; Avant-Garde</span>
+            <span class="card-font-name">Syne Extra Bold</span>
+          </div>
+          <div class="logo-preview-stage">
+            <span class="preview-content dynamic-text style-syne">Lana Gomez</span>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Bold, tactile contemporary curves with distinctive character widths. Tailored for progressive art collectors and cutting-edge galleries.</p>
+            <div class="card-actions">
+              <button class="action-btn header-preview-btn" data-font="Syne" data-class="style-syne">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview in Nav
+              </button>
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 6: Avant-Garde Contemporary (Syne)">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 7: Monogram Seal + Wordmark Lockup -->
+        <article class="logo-card" data-card-id="logo-7" data-font="Lockup" data-style="Interlocking Monogram Lockup">
+          <div class="card-top">
+            <span class="card-tag">Option 07 &bull; Lockup</span>
+            <span class="card-font-name">Seal + Serif</span>
+          </div>
+          <div class="logo-preview-stage">
+            <div class="lockup-container">
+              <svg class="lockup-mark" viewBox="0 0 240 240" fill="none" stroke="currentColor">
+                <circle cx="120" cy="120" r="102" stroke-width="2" />
+                <circle cx="120" cy="120" r="95" stroke-width="1" stroke-dasharray="2 3" opacity="0.6" />
+                <path d="M 85 70 L 85 160 C 85 163 87 165 90 165 L 140 165" stroke-width="7" stroke-linecap="round" />
+                <path d="M 160 88 C 148 72 128 66 108 72 C 86 78 72 98 72 120 C 72 144 88 168 116 168 C 142 168 164 150 164 125 L 122 125" stroke-width="7" stroke-linecap="round" />
+              </svg>
+              <span class="preview-content dynamic-text style-fraunces" style="font-size: 1.6rem !important;">Lana Gomez</span>
+            </div>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Formal lockup pairing the interlocking LG seal with refined serif typography. Ideal for high-end stationery, packaging, and digital branding.</p>
+            <div class="card-actions">
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 7: Interlocking Monogram Seal Lockup">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Logo 8: Atelier Stamp + Architectural Caps -->
+        <article class="logo-card" data-card-id="logo-8" data-font="Lockup" data-style="Atelier Stamp Lockup">
+          <div class="card-top">
+            <span class="card-tag">Option 08 &bull; Stamp Lockup</span>
+            <span class="card-font-name">Stamp + Sans</span>
+          </div>
+          <div class="logo-preview-stage">
+            <div class="lockup-container">
+              <svg class="lockup-mark" viewBox="0 0 300 300" fill="none" stroke="currentColor" style="width: 60px; height: 60px;">
+                <circle cx="150" cy="150" r="140" stroke-width="2.5" />
+                <circle cx="150" cy="150" r="90" stroke-width="1.5" stroke-dasharray="3 3" />
+                <g transform="translate(150, 150) scale(0.65) translate(-120, -120)">
+                  <path d="M 90 75 L 90 160 C 90 163 92 165 95 165 L 140 165" stroke-width="8" stroke-linecap="round" />
+                  <path d="M 160 90 C 148 74 128 68 108 74 C 86 80 72 100 72 120 C 72 144 88 168 116 168 C 142 168 164 150 164 125 L 122 125" stroke-width="8" stroke-linecap="round" />
+                </g>
+              </svg>
+              <span class="preview-content dynamic-text style-jakarta" style="font-size: 1.3rem !important;">LANA GOMEZ ART</span>
+            </div>
+          </div>
+          <div class="card-details">
+            <p class="card-desc">Authenticity seal stamp paired with uppercase architectural sans-serif, inspired by fine art registry certificates and luxury collaborations.</p>
+            <div class="card-actions">
+              <button class="action-btn primary select-choice-btn" data-type="logo" data-val="Option 8: Atelier Stamp Lockup">
+                Select Option
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Typography & Font Library Specimens -->
+    <section class="showcase-section" id="fonts">
+      <div class="section-header">
+        <h2 class="section-title">02. Typography &amp; Font Specifications</h2>
+        <span class="section-hint">Detailed character sets, weights, and suggested roles</span>
+      </div>
+
+      <div class="specimen-grid">
+        
+        <!-- Font Specimen 1: Caveat Brush -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Caveat Brush</h3>
+              <span class="specimen-category">Expressive Script &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Caveat Brush">Choose Font</button>
+          </div>
+          <div class="specimen-display style-caveat dynamic-text">
+            Lana Gomez Art
+          </div>
+          <div class="specimen-glyphs style-caveat">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Artist Signature, Hero Accents, Limited Edition Certificates.<br />
+            <strong>Characteristics:</strong> Flowing brush strokes, natural hand rhythm, spontaneous energy.
+          </div>
+        </article>
+
+        <!-- Font Specimen 2: Fraunces -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Fraunces Variable</h3>
+              <span class="specimen-category">Variable Display Serif &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Fraunces Variable">Choose Font</button>
+          </div>
+          <div class="specimen-display style-fraunces dynamic-text">
+            Lana Gomez Art
+          </div>
+          <div class="specimen-glyphs style-fraunces">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Primary Editorial, Page Headings, Exhibition Titles, Logo Wordmark.<br />
+            <strong>Characteristics:</strong> Variable optical sizing, voluptuous soft serifs, quiet luxury warmth.
+          </div>
+        </article>
+
+        <!-- Font Specimen 3: Plus Jakarta Sans -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Plus Jakarta Sans</h3>
+              <span class="specimen-category">Geometric Sans &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Plus Jakarta Sans">Choose Font</button>
+          </div>
+          <div class="specimen-display style-jakarta dynamic-text">
+            LANA GOMEZ ART
+          </div>
+          <div class="specimen-glyphs style-jakarta">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Navigation, Subheadings, Artwork Metadata, Body Prose.<br />
+            <strong>Characteristics:</strong> Clean humanist geometric proportions, high readability across all screen sizes.
+          </div>
+        </article>
+
+        <!-- Font Specimen 4: Cinzel -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Cinzel</h3>
+              <span class="specimen-category">Roman Lapidary Serif &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Cinzel">Choose Font</button>
+          </div>
+          <div class="specimen-display style-cinzel dynamic-text">
+            LANA GOMEZ
+          </div>
+          <div class="specimen-glyphs style-cinzel">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Luxury Heritage Wordmark, Museum Plaques, Monolith Titles.<br />
+            <strong>Characteristics:</strong> Inspired by classical Roman first-century inscriptions, authoritative and chiseled.
+          </div>
+        </article>
+
+        <!-- Font Specimen 5: Cormorant Garamond -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Cormorant Garamond</h3>
+              <span class="specimen-category">Traditional Garamond Display &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Cormorant Garamond">Choose Font</button>
+          </div>
+          <div class="specimen-display style-cormorant dynamic-text">
+            Lana Gomez Art
+          </div>
+          <div class="specimen-glyphs style-cormorant">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Haute Couture Wordmark, Editorial Quotes, Fine Art Statements.<br />
+            <strong>Characteristics:</strong> Ultra-fine serifs, delicate hairline contrasts, traditional European grandeur.
+          </div>
+        </article>
+
+        <!-- Font Specimen 6: Syne -->
+        <article class="specimen-card">
+          <div class="specimen-header">
+            <div>
+              <h3 class="specimen-font-title">Syne</h3>
+              <span class="specimen-category">Contemporary Display Sans &bull; OFL License</span>
+            </div>
+            <button class="action-btn primary select-choice-btn" data-type="font" data-val="Syne">Choose Font</button>
+          </div>
+          <div class="specimen-display style-syne dynamic-text">
+            Lana Gomez Art
+          </div>
+          <div class="specimen-glyphs style-syne">
+            <div>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+            <div>a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+            <div>0 1 2 3 4 5 6 7 8 9 &amp; # &euro; $ &pound; ! ? &bull; &mdash;</div>
+          </div>
+          <div class="specimen-meta">
+            <strong>Recommended Role:</strong> Cutting-edge Gallery Collateral, Digital Art Drops, Modern Exhibitions.<br />
+            <strong>Characteristics:</strong> Tactile, bold geometry with sculptured counter-forms.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Brand Icons & Symbol Library -->
+    <section class="showcase-section" id="icons">
+      <div class="section-header">
+        <h2 class="section-title">03. Brand Icons &amp; Symbol Marks</h2>
+        <span class="section-hint">Vector SVG assets suitable for embossing, app icons, favicons, and seals</span>
+      </div>
+
+      <div class="icon-grid">
+        
+        <!-- Icon 1: Monogram Seal LG -->
+        <article class="icon-card">
+          <div class="icon-preview-box">
+            <svg viewBox="0 0 240 240" fill="none" stroke="currentColor">
+              <circle cx="120" cy="120" r="102" stroke-width="2" />
+              <circle cx="120" cy="120" r="95" stroke-width="1" stroke-dasharray="2 3" opacity="0.6" />
+              <path d="M 120 28 L 123 33 L 120 38 L 117 33 Z" fill="currentColor" />
+              <path d="M 120 202 L 123 207 L 120 212 L 117 207 Z" fill="currentColor" />
+              <path d="M 85 70 L 85 160 C 85 163 87 165 90 165 L 140 165" stroke-width="6.5" stroke-linecap="round" />
+              <path d="M 160 88 C 148 72 128 66 108 72 C 86 78 72 98 72 120 C 72 144 88 168 116 168 C 142 168 164 150 164 125 L 122 125" stroke-width="6.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="icon-title">Interlocking Monogram Crest</h3>
+          <p class="icon-desc">Intertwined &ldquo;L&rdquo; and &ldquo;G&rdquo; with celestial cardinal points. Tailored for leather embossing (The Lana Bag) and luxury wax seals.</p>
+          <div class="icon-btn-row">
+            <a href="/icons/brand/monogram-seal-lg.svg" download class="action-btn">Download SVG</a>
+            <button class="action-btn primary select-choice-btn" data-type="icon" data-val="Interlocking Monogram Crest">Select Icon</button>
+          </div>
+        </article>
+
+        <!-- Icon 2: Atelier Authenticity Stamp -->
+        <article class="icon-card">
+          <div class="icon-preview-box">
+            <svg viewBox="0 0 300 300" fill="none" stroke="currentColor">
+              <circle cx="150" cy="150" r="140" stroke-width="2.5" />
+              <circle cx="150" cy="150" r="134" stroke-width="1" stroke-dasharray="3 3" opacity="0.6" />
+              <circle cx="150" cy="150" r="88" stroke-width="1.5" />
+              <g transform="translate(150, 150) scale(0.65) translate(-120, -120)">
+                <path d="M 90 75 L 90 160 C 90 163 92 165 95 165 L 140 165" stroke-width="8" stroke-linecap="round" />
+                <path d="M 160 90 C 148 74 128 68 108 74 C 86 80 72 100 72 120 C 72 144 88 168 116 168 C 142 168 164 150 164 125 L 122 125" stroke-width="8" stroke-linecap="round" />
+              </g>
+            </svg>
+          </div>
+          <h3 class="icon-title">Atelier Authenticity Stamp</h3>
+          <p class="icon-desc">Curved typography atelier seal. Designed for artwork authenticity plaques, packaging tape, and collector documentation.</p>
+          <div class="icon-btn-row">
+            <a href="/icons/brand/stamp-authenticity.svg" download class="action-btn">Download SVG</a>
+            <button class="action-btn primary select-choice-btn" data-type="icon" data-val="Atelier Authenticity Stamp">Select Icon</button>
+          </div>
+        </article>
+
+        <!-- Icon 3: Geometric Bauhaus Monogram -->
+        <article class="icon-card">
+          <div class="icon-preview-box">
+            <svg viewBox="0 0 200 200" fill="none">
+              <rect x="10" y="10" width="180" height="180" rx="16" stroke="currentColor" stroke-width="3" opacity="0.4" />
+              <path d="M 52 46 L 52 148 L 118 148" stroke="currentColor" stroke-width="12" stroke-linecap="square" />
+              <path d="M 148 58 L 102 58 C 82 58 76 72 76 96 C 76 122 84 148 122 148 L 148 148 L 148 104 L 112 104" stroke="currentColor" stroke-width="12" stroke-linecap="square" />
+            </svg>
+          </div>
+          <h3 class="icon-title">Architectural Bauhaus Mark</h3>
+          <p class="icon-desc">Sharp modernist interlocking geometric structure. Ideal for web favicons, mobile app icons, and interior hardware engravings.</p>
+          <div class="icon-btn-row">
+            <a href="/icons/brand/wordmark-symbol-lg.svg" download class="action-btn">Download SVG</a>
+            <button class="action-btn primary select-choice-btn" data-type="icon" data-val="Architectural Bauhaus Mark">Select Icon</button>
+          </div>
+        </article>
+
+        <!-- Icon 4: Fine Art Palette & Brush -->
+        <article class="icon-card">
+          <div class="icon-preview-box">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor">
+              <path d="M 100 24 C 54 24 24 58 24 104 C 24 150 58 176 100 176 C 114 176 126 166 126 152 C 126 142 120 134 120 126 C 120 114 130 104 142 104 L 156 104 C 168 104 176 94 176 82 C 176 48 142 24 100 24 Z" stroke-width="5" stroke-linecap="round" />
+              <circle cx="62" cy="74" r="8" fill="currentColor" />
+              <circle cx="94" cy="56" r="8" fill="currentColor" />
+              <circle cx="132" cy="66" r="8" fill="currentColor" />
+              <ellipse cx="146" cy="142" rx="14" ry="18" stroke-width="3" />
+            </svg>
+          </div>
+          <h3 class="icon-title">Studio Palette &amp; Pigment</h3>
+          <p class="icon-desc">Delicate line-art artist palette with pigment nodes. Captures the physical intimacy of oil and acrylic mixing in the studio.</p>
+          <div class="icon-btn-row">
+            <a href="/icons/brand/artist-palette-mark.svg" download class="action-btn">Download SVG</a>
+            <button class="action-btn primary select-choice-btn" data-type="icon" data-val="Studio Palette & Pigment">Select Icon</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Selection Summary Banner -->
+      <div class="selection-summary-card">
+        <div class="summary-info">
+          <h3>Your Brand Identity Selections</h3>
+          <div class="summary-picks">
+            <div class="summary-pick-item">Selected Logo Direction: <strong id="selected-logo-text">Option 2: Haute Editorial Serif (Fraunces)</strong></div>
+            <div class="summary-pick-item">Selected Typography: <strong id="selected-font-text">Fraunces Variable</strong></div>
+            <div class="summary-pick-item">Selected Brand Icon: <strong id="selected-icon-text">Interlocking Monogram Crest</strong></div>
+          </div>
+        </div>
+        <button id="copy-summary-btn" class="copy-feedback-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy Choices for Team Reply
+        </button>
+      </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notice">Selections copied to clipboard!</div>
+
+  </div>
+
+  <!-- Client-side Interactive Logic -->
+  <script is:inline>
+    (function() {
+      const root = document.getElementById('showcase-root');
+      const textInput = document.getElementById('brand-text-input');
+      const presetBtns = document.querySelectorAll('.preset-btn');
+      const themeBtns = document.querySelectorAll('.theme-pill-group .pill-btn');
+      const scaleBtns = document.querySelectorAll('.scale-pill-group .pill-btn');
+      const dynamicTexts = document.querySelectorAll('.dynamic-text');
+      const headerPreviewBtns = document.querySelectorAll('.header-preview-btn');
+      const selectChoiceBtns = document.querySelectorAll('.select-choice-btn');
+      const selectedLogoText = document.getElementById('selected-logo-text');
+      const selectedFontText = document.getElementById('selected-font-text');
+      const selectedIconText = document.getElementById('selected-icon-text');
+      const copySummaryBtn = document.getElementById('copy-summary-btn');
+      const toast = document.getElementById('toast');
+
+      let currentLogo = "Option 2: Haute Editorial Serif (Fraunces)";
+      let currentFont = "Fraunces Variable";
+      let currentIcon = "Interlocking Monogram Crest";
+
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2600);
+      }
+
+      // Live text input synchronizer
+      function updateAllText(val) {
+        if (!val || !val.trim()) val = "Lana Gomez";
+        dynamicTexts.forEach(el => {
+          // If the element has style-jakarta or style-cinzel and is uppercase, maintain case
+          if (el.classList.contains('style-jakarta') || el.classList.contains('style-cinzel')) {
+            el.textContent = val.toUpperCase();
+          } else {
+            el.textContent = val;
+          }
+        });
+      }
+
+      if (textInput) {
+        textInput.addEventListener('input', (e) => updateAllText(e.target.value));
+      }
+
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-preset');
+          if (textInput && val) {
+            textInput.value = val;
+            updateAllText(val);
+          }
+        });
+      });
+
+      // Atmosphere theme switcher
+      themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          themeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const targetTheme = btn.getAttribute('data-theme');
+          root.classList.remove('theme-light', 'theme-obsidian', 'theme-gold');
+          root.classList.add(targetTheme);
+        });
+      });
+
+      // Scale switcher
+      scaleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          scaleBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const targetScale = btn.getAttribute('data-scale');
+          root.classList.remove('scale-compact', 'scale-normal', 'scale-large');
+          root.classList.add(targetScale);
+        });
+      });
+
+      // Live Navigation Header Swap
+      const navBrand = document.querySelector('.site-header .brand .wordmark-text') || document.querySelector('.site-header .brand');
+
+      headerPreviewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const font = btn.getAttribute('data-font');
+          const className = btn.getAttribute('data-class');
+          if (navBrand) {
+            navBrand.className = 'wordmark-text ' + className;
+            navBrand.style.fontFamily = getComputedStyle(document.querySelector('.' + className)).fontFamily;
+            navBrand.textContent = textInput.value || 'Lana Gomez';
+            showToast(`Previewing "${font}" live in site navigation above!`);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Selection tracking
+      selectChoiceBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.getAttribute('data-type');
+          const val = btn.getAttribute('data-val');
+
+          // Highlight active state
+          document.querySelectorAll(`.select-choice-btn[data-type="${type}"]`).forEach(b => {
+            b.classList.remove('is-active');
+            b.textContent = type === 'logo' ? 'Select Option' : type === 'font' ? 'Choose Font' : 'Select Icon';
+          });
+          btn.classList.add('is-active');
+          btn.textContent = 'Selected ✓';
+
+          if (type === 'logo') {
+            currentLogo = val;
+            if (selectedLogoText) selectedLogoText.textContent = val;
+          } else if (type === 'font') {
+            currentFont = val;
+            if (selectedFontText) selectedFontText.textContent = val;
+          } else if (type === 'icon') {
+            currentIcon = val;
+            if (selectedIconText) selectedIconText.textContent = val;
+          }
+
+          showToast(`Selected: ${val}`);
+        });
+      });
+
+      // Copy Summary helper
+      if (copySummaryBtn) {
+        copySummaryBtn.addEventListener('click', () => {
+          const summaryText = `Our Lana Gomez Art brand selections:\n• Logo Direction: ${currentLogo}\n• Typography Choice: ${currentFont}\n• Brand Icon / Mark: ${currentIcon}\n\nReviewed on the live /logo/ showcase page.`;
+          navigator.clipboard.writeText(summaryText).then(() => {
+            showToast("Copied your selections to clipboard! Ready to paste into chat or email.");
+          }).catch(() => {
+            showToast("Selection recorded!");
+          });
+        });
+      }
+    })();
+  </script>
+</SiteLayout>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Minimalist Architectural Geometric Monogram (LG) -->
+  <rect x="10" y="10" width="180" height="180" rx="16" stroke="currentColor" stroke-width="2.5" opacity="0.3" />
+  
+  <!-- Architectural L -->
+  <path d="M 52 46 L 52 148 L 118 148" stroke="currentColor" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter" />
+
+  <!-- Overlapping Architectural G -->
+  <path d="M 148 58 L 102 58 C 82 58 76 72 76 96 C 76 122 84 148 122 148 L 148 148 L 148 104 L 112 104" stroke="currentColor" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter" />
+</svg>
