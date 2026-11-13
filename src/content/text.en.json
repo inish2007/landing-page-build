@@ -1,6 +1,6 @@
 {
   "common": {
-    "siteName": "{brandDisplayName}",
+    "siteName": "Lana Gomez",
     "skipToContent": "Skip to Content",
     "menuOpenLabel": "Open Menu",
     "menuCloseLabel": "Close Menu",
@@ -8,7 +8,7 @@
     "footerNavigation": "Footer navigation",
     "scrollDown": "Explore",
     "backToTop": "Return to top",
-    "statusIndicator": "{brandName} Art"
+    "statusIndicator": "Lana Gomez Art"
   },
   "nav": {
     "home": "Home",
@@ -19,30 +19,27 @@
     "process": "The Process",
     "collaborations": "Collaborations",
     "contact": "Contact",
-    "pagerie": "Pagerie x {brandUpperName}",
-    "shay": "SHAY x {brandUpperName}"
+    "pagerie": "Pagerie x LANA GOMEZ",
+    "shay": "SHAY x LANA GOMEZ"
   },
   "home": {
     "hero": {
-      "eyebrow": "{brandName} Art",
+      "eyebrow": "Lana Gomez Art",
       "headlineSegments": [
         {
-          "text": "{brandName} Art"
+          "text": "Lana Gomez Art"
         }
       ],
-      "subheadline": "{brandName} Art",
-      "workLabel": "Explore work",
-      "viewFlatLabel": "View in 2D",
-      "viewDepthLabel": "View in 3D"
+      "subheadline": "Lana Gomez Art"
     },
     "statement": {
       "eyebrow": "The Process",
       "statementSegments": [
         {
-          "text": "{brandName}’s artistic journey is a testament to the boundless spirit of a kind-hearted "
+          "text": "Art driven by spontaneous gesture and vibrant "
         },
         {
-          "text": "rebel.",
+          "text": "expression.",
           "emphasis": "italic",
           "highlight": "circle"
         }
@@ -50,9 +47,9 @@
       "buttonLabel": "The Process"
     },
     "collaborations": {
-      "heading": "{brandName}’s Collaborations",
-      "shayLabel": "SHAY X {brandUpperName}",
-      "pagerieLabel": "PAGERIE X {brandUpperName}"
+      "heading": "Lana’s Collaborations",
+      "shayLabel": "SHAY X LANA GOMEZ",
+      "pagerieLabel": "PAGERIE X LANA GOMEZ"
     },
     "features": {
       "heading": "Explore",
@@ -68,19 +65,19 @@
           "highlight": "circle"
         },
         {
-          "text": ", I believe in the unique and powerful language of "
+          "text": ", my canvas is where "
         },
         {
           "text": "creative expression",
           "emphasis": "italic"
         },
         {
-          "text": ", & my canvas is where I give voice to this belief.”"
+          "text": " speaks freely.”"
         }
       ]
     },
     "cta": {
-      "heading": "{brandName} in the studio",
+      "heading": "Lana Gomez in the studio",
       "body": "",
       "buttonLabel": "Contact"
     },
@@ -92,8 +89,8 @@
     "tagline": "",
     "colophonLabel": "Colophon & Notices",
     "privacyLabel": "Privacy Policy",
-    "copyright": "{copyright}",
-    "designCredit": "{designCredit}",
+    "copyright": "© {year} Lana Gomez Art. All Rights Reserved.",
+    "designCredit": "Design By Vibe Tribe Creative",
     "connect": "Connect",
     "explore": "Explore",
     "inquire": "Inquire",
@@ -107,19 +104,19 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "{brandName}'s artistic journey is a testament to the boundless spirit of a kind-hearted rebel. Following her studies in art at the University of Tennessee, {brandName} made her way to Los Angeles, where she embarked on a continual exploration of acrylics and a diverse range of materials. Her exceptional talent soon captured the attention of the renowned interior designer Kelly Wearstler, resulting in a series of successful collaborations. Notably, from 2008 to 2009, {brandName} served as the resident painter at Wearstler's esteemed design studio."
+          "text": "Lana Gomez is an American contemporary artist based in Los Angeles, known for vibrant, large-scale acrylics and energetic mixed-media compositions."
         },
         {
           "tag": "P",
-          "text": "A significant milestone in {brandName}'s career was the commission by Kelly Wearstler to create a mural-sized masterpiece, which found its place in Wearstler's celebrated book, \"Hue.\" Undeterred by convention, {brandName} has done things such as an extraordinary mural covering 2 walls of a children's play space, a custom Gibson Guitar auctioned off at the prestigious Naples Winter Wine Festival, collaborated with Ivan Preciado on a collaborative piece, as well as 10-foot guitar sculpture for the city of West Hollywood."
+          "text": "Her work spans private collections, public installations, and collaborations—including serving as resident painter for Kelly Wearstler, featured in Wearstler’s monograph Hue."
         },
         {
           "tag": "P",
-          "text": "{brandName}'s artistry has found a global stage, with her work showcased in galleries and exhibitions in New York, Miami, Washington, D.C., and Los Angeles. Her pieces adorn diverse spaces worldwide, leaving a lasting impression on the art scene. Her creative journey has garnered recognition in influential publications such as The New Yorker, InStyle, Lonny, Los Angeles Confidential, and House Beautiful."
+          "text": "Exhibited across New York, Miami, Washington, D.C., and Los Angeles, her work has been featured in The New Yorker, InStyle, and House Beautiful."
         },
         {
           "tag": "H2",
-          "text": "{brandName} continues to push the boundaries of her artistic expression, leaving a profound mark on the world of contemporary art and design."
+          "text": "Bold color, spontaneous gesture, and contemporary spirit."
         }
       ]
     },
@@ -128,62 +125,38 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "As an artist, I believe in the unique and powerful language of creative expression, and my canvas is where I give voice to this belief. My artistic journey is guided by the spontaneity that flows through me, allowing my creativity to take center stage. Every stroke on my canvas pays homage to a cherished moment from my past, an ode to the experiences that have shaped my life."
+          "text": "Every canvas begins with spontaneous gesture and intuitive color. Layering acrylics, textures, and fluid motion, each piece captures personal memory and raw creative energy."
         },
         {
           "tag": "H2",
-          "text": "“Through my work, whether it's the vivid play of colors, the graceful dance of shapes, or the intricate interplay of forms, I offer a glimpse into the world as I see it.”"
+          "text": "“Color and form are an invitation to see the world with curiosity and joy.”"
         },
         {
           "tag": "H2",
-          "text": "I create with the intention that when others gaze upon my art, they too will find themselves drawn into their own nostalgic memories while connecting with and drawing inspiration from my personal narrative."
+          "text": "Art created to spark emotion, memory, and connection."
         }
       ]
     },
     "collaborations": {
-      "title": "{brandName}’s Collaborations",
+      "title": "Lana’s Collaborations",
       "blocks": [
         {
           "tag": "P",
-          "text": "A HANDBAG COLLABORATION CREATED BY {brandUpperName} IN PARTNERSHIP WITH PAGERIE"
+          "text": "Limited editions and bespoke design partnerships uniting contemporary fine art with luxury craft."
         },
         {
-          "tag": "P",
-          "text": "An ode to the Modern Renaissance Woman: multifaceted, creative, strong, tender all at once. This is more than an accessory. It’s a collector’s item. A story. A fragment of art you can carry with you. All bags are handcrafted from one painting – no two bags are alike."
-        },
-        {
-          "tag": "P",
-          "text": "SHOP THE COLLECTION"
-        },
-        {
-          "tag": "H3",
-          "text": "About the collaboration"
-        },
-        {
-          "tag": "P",
-          "text": "50 BAGS. 50 STORIES. 50 UNIQUE PIECESOF ART."
-        },
-        {
-          "tag": "P",
-          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist {brandName}, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by {brandName} herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
-        },
-        {
-          "tag": "P",
-          "text": "Handcrafted from Pagerie’s signature grain leather and finished with custom surgical-grade stainless steel hardware, The Lana Bag blends timeless artistry with purposeful design. Lightweight and effortless to carry, it was created for the multifaceted woman who values rarity, craftsmanship, and functionality in equal measure."
+          "tag": "H2",
+          "text": "Wearable art and modern fine jewelry."
         }
       ],
       "links": [
         {
-          "label": "PAGERIE X {brandUpperName}",
+          "label": "PAGERIE X LANA GOMEZ",
           "href": "/pagerie-lana-gomez-luxury-bags/"
         },
         {
-          "label": "SHAY X {brandUpperName}",
+          "label": "SHAY X LANA GOMEZ",
           "href": "/shay-lanagomez-luxury-jewelry-collection/"
-        },
-        {
-          "label": "SHOP THE COLLECTION",
-          "href": "https://www.pagerie.com"
         }
       ]
     },
@@ -192,31 +165,15 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "A HANDBAG COLLABORATION CREATED BY {brandUpperName} IN PARTNERSHIP WITH PAGERIE"
+          "text": "A limited edition of 50 numbered handbags created in partnership with luxury house Pagerie."
         },
         {
           "tag": "P",
-          "text": "An ode to the Modern Renaissance Woman: multifaceted, creative, strong, tender all at once. This is more than an accessory. It’s a collector’s item. A story. A fragment of art you can carry with you. All bags are handcrafted from one painting – no two bags are alike."
+          "text": "Each piece is cut from a single original painting by Lana Gomez, handcrafted in signature grain leather with surgical-grade stainless steel hardware."
         },
         {
-          "tag": "P",
-          "text": "SHOP THE COLLECTION"
-        },
-        {
-          "tag": "H3",
-          "text": "About the collaboration"
-        },
-        {
-          "tag": "P",
-          "text": "50 BAGS. 50 STORIES. 50 UNIQUE PIECESOF ART."
-        },
-        {
-          "tag": "P",
-          "text": "The Lana Bag is more than a handbag. It’s wearable art. Created in partnership with artist {brandName}, only 50 handbags exist worldwide, each one a numbered piece cut from a larger artwork painted by {brandName} herself. Every bag is entirely unique, yet together they form part of a greater masterpiece."
-        },
-        {
-          "tag": "P",
-          "text": "Handcrafted from Pagerie’s signature grain leather and finished with custom surgical-grade stainless steel hardware, The Lana Bag blends timeless artistry with purposeful design. Lightweight and effortless to carry, it was created for the multifaceted woman who values rarity, craftsmanship, and functionality in equal measure."
+          "tag": "H2",
+          "text": "Wearable art. No two bags are alike."
         }
       ],
       "links": [
@@ -227,54 +184,34 @@
       ]
     },
     "shay-lanagomez-luxury-jewelry-collection": {
-      "title": "SHAY x {brandUpperName}",
+      "title": "SHAY x LANA GOMEZ",
       "blocks": [
         {
           "tag": "P",
-          "text": "A JEWELRY COLLABORATION BY SHAY IN PARTNERSHIP WITH {brandUpperName}"
+          "text": "A fine jewelry collaboration with SHAY, transforming Lana Gomez’s signature forms into 18k gold, diamond, and emerald jewels."
         },
         {
-          "tag": "P",
-          "text": "Modern heirlooms to celebrate feminine strength, individuality, and creative power. Made by women, designed by women."
-        },
-        {
-          "tag": "P",
-          "text": "SHOP THE COLLECTION"
-        },
-        {
-          "tag": "H3",
-          "text": "About the collaboration"
-        },
-        {
-          "tag": "P",
-          "text": "When Tanaz and Ladan joined long time SHAY enthusiast {brandName}, the collaboration felt inevitable. United by friendship, artistry, and family drive values, they’ve created a capsule that transforms {brandName}’s signature cultural forms into 18k gold, diamond, and emerald jewels."
-        },
-        {
-          "tag": "P",
-          "text": "The result: modern heirlooms that celebrate feminine strength, individuality, and creative power, made by women, designed for women, and destined to be collected."
-        },
-        {
-          "tag": "P",
-          "text": "THREE WOMEN. THREE CREATIVE FORCES. ONE VISION."
+          "tag": "H2",
+          "text": "Modern heirlooms celebrating feminine strength and creative power."
         }
       ],
       "links": [
         {
-          "label": "SHOP THE",
-          "href": "https://shayjewelry.com/collections/shay-x-lana-gomez?srsltid=AfmBOorBznmoQ0kGPm84vB8exLbVjnQHvdhHx7mUgOYq-PqOLH0QJDX_"
+          "label": "SHOP SHAY X LANA GOMEZ",
+          "href": "https://shayjewelry.com/collections/shay-x-lana-gomez"
         },
         {
-          "label": "COLLECTION",
+          "label": "LANA'S EDIT",
           "href": "https://shayjewelry.com/collections/lanas-edit"
         }
       ]
     },
     "home-1": {
-      "title": "{brandName} Art",
+      "title": "Lana Gomez Art",
       "blocks": [
         {
           "tag": "P",
-          "text": "{brandName}’s artistic journey is a testament to the boundless spirit of a kind-hearted rebel."
+          "text": "Art driven by spontaneous gesture and vibrant expression."
         }
       ]
     }
@@ -544,18 +481,15 @@
   },
   "contact": {
     "title": "Contact",
-    "body": "For pricing, commissions, brand partnerships and media inquiries, send an enquiry using the form below.",
+    "body": "For acquisitions, commissions, and collaborations, contact the studio.",
     "emailLabel": "Email the studio",
-    "email": "{contactEmail}",
-    "localNotice": "Your name, email and message are sent through FormSubmit to the studio. You may be asked to complete a security check.",
+    "email": "Lanagomezart@gmail.com",
+    "localNotice": "Local form preview only. No message is sent or stored.",
     "nameLabel": "Name",
     "emailField": "Email",
     "messageLabel": "Message",
-    "submit": "Send enquiry",
-    "success": "Continue on the secure form page to complete your enquiry.",
-    "unavailable": "Enquiries are not available yet. Please check back soon.",
-    "subject": "{brandName} website enquiry",
-    "sending": "Opening secure submission…"
+    "submit": "Preview inquiry",
+    "success": "Your inquiry is valid. This local preview has not sent or stored it."
   },
   "legal": {
     "colophon": {
@@ -576,7 +510,7 @@
       "blocks": [
         {
           "tag": "P",
-          "text": "{contactPrivacy}"
+          "text": "This local build includes no analytics or tracking scripts. The inquiry preview validates fields in your browser and does not send or store messages."
         },
         {
           "tag": "P",
